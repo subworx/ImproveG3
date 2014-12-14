@@ -96,38 +96,11 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.1");
+ini_set("rom_version",          "0.3");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3 D855");
-ini_set("rom_date",             "2014.11.30");
+ini_set("rom_date",             "2014.12.01");
 
-
-##
-# Show Simple Splash
-#
-#splash(
-#  #-- Duration 2000ms / 2 seconds
-#    2000,
-  
-  #-- <AROMA Resource Dir>/sample.png
-#    "sample"
-#);
-
-##
-# Show Animated Splash
-#
-#anisplash(
-#  #-- Number of Loop
-#    4,
-  
-  #-- Frame 1 [ Image, duration in millisecond ]. <AROMA Resource Dir>/splash/a[1..6].png
-#    "splash/a1", 500,
-#    "splash/a2", 30,
-#    "splash/a3", 30,
-#    "splash/a4", 30,
-#    "splash/a5", 30,
-#    "splash/a6", 30
-#);
 
 #
 # Set Small Font to Support all fonts
@@ -140,84 +113,6 @@ fontresload( "1", "ttf/Roboto-Regular.ttf", "14" ); #-- Use sets of font (Font F
 #
 include("language_select.edify");
 #include("custombox_test.edify");
-
-
-###################################################################################################################
-#
-# SHOW LANGUAGE TEST MULTILINE
-#
-#viewbox(
-  #-- Title
-#    lang("langtest.title"),  #-- you can use lang("langtest.title") function or directly in string "<~langtest.title>"
-  
-  #-- Text
-#    "<~langtest.multiline>",
-  
-  #-- Icon
-#    "@info"
-#);
-
-#eval("alert(\"On Eval Function\",\"This Alert was executed from Eval Function...\", \"@info\");");
-
-
-###################################################################################################################
-#
-# STEP 1 - SELECT THEME
-#
-#selectbox(
-  #-- Title
-#    "<~themes.title>",
-  
-  #-- Sub Title
-#    "<~themes.desc>",
-  
-  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
-#    "@personalize",
-  
-  #-- Will be saved in /tmp/aroma/theme.prop
-#    "theme.prop",
-  
-  #---------------------------------[ Selectbox Without Group ]----------------------------------#
-  # TITLE            |  SUBTITLE                                                 | Initial Value #
-  #------------------+-----------------------------------------------------------+---------------#
-
-#    "Generic",            "Unthemed AROMA Installer",                                    1,      #-- selected.0 = 1
-#    "MIUI Theme",         "MIUI Theme by mickey-r & amarullz",                           0,      #-- selected.0 = 2
-#    "ICS Theme",          "Ice Cream Sandwitch by DemonWav & amarullz",                  0,      #-- selected.0 = 3
-#    "MIUI 4 Theme",       "MIUI 4/ICS Theme by amarullz & Lennox",                       0,      #-- selected.0 = 4
-#    "Touchwiz",           "Touchwiz Theme by titanic_fanatic",                           0,      #-- selected.0 = 5
-#    "Franzyroy",          "Franzyroy Theme by franzyroy",                                0       #-- selected.0 = 6
-
-  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
-#);
-
-##
-# SET THEME
-#
-#-- Change Info:
-# file_getprop : should use absolute path "/tmp/aroma/theme.prop"
-# prop         : just use relative path "theme.prop" will automatically read the "/tmp/aroma/theme.prop"
-#
-#if prop("theme.prop","selected.0")=="2" then
-#  theme("miui");
-#endif;
-
-#if prop("theme.prop","selected.0")=="3" then
-#  theme("ics");
-#endif;
-
-#if prop("theme.prop","selected.0")=="4" then
-#  theme("miui4");
-#endif;
-
-#if prop("theme.prop","selected.0")=="5" then
-#  theme("touchwiz");
-#endif;
-
-#if prop("theme.prop","selected.0")=="6" then
-#  theme("franzyroy");
-#endif;
-
 
 ###################################################################################################################
 #
@@ -244,7 +139,6 @@ viewbox(
   #-- Icon
     "@welcome"
 );
-
 
 ###################################################################################################################
 #
@@ -286,14 +180,12 @@ textbox(
     "@update",
   
   #-- Arg 4
-    "<~changelog.changelog>"
+    resread("changelog.txt");
 );
 
 ##
-##-- Back To English :D - and Use Roboto-Regular.ttf
+##-- Use Roboto-Regular.ttf
 ##
-#alert("Back To English","OK, Multilanguage demo ends here... It will use english now...", "@info");
-#loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "14" );
 ##
@@ -326,8 +218,11 @@ menubox(
   # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
   #-------------------------+-----------------------------------------------------------+---------------#
   
-    "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                                     "@customize",    #-- selected = 1
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",                						"@info"         #-- selected = 2
+    "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                                  "@customize",   #-- selected = 1
+	#"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 									 "@customize",   #-- selected = 
+	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",									 "@customize",	 #-- selected = 
+	#"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",									 "@customize",	 #-- selected = 
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",                					 "@info"         #-- selected = 2
 );
 
 
@@ -336,6 +231,9 @@ menubox(
 #                                         AROMA INSTALLER DEMO                                                    #
 #                                                                                                                 #
 ###################################################################################################################
+
+##-- insert 2+3
+##-- possibly include
 
 ##--------------------------------------
 #
@@ -373,6 +271,9 @@ if prop("demo.prop","selected")=="2" then
         "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/sdcard","m")+" MB</#></b>\n\n"+
       "SD-EXT Size\t\t: <b><#selectbg_g>"+getdisksize("/sd-ext","m")+" MB</#></b>\n"+
         "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/sd-ext","m")+" MB</#></b>\n\n"+
+	  "(/cust)\t\t: <b><#selectbg_g>"+getdisksize("/cust","m")+" MB</#></b>\n"+
+        "\tFree\t\t: <b><#selectbg_g>"+getdiskfree("/cust","m")+" MB</#></b>\n\n"+
+      
 
       ""
   );
@@ -408,482 +309,6 @@ if prop("demo.prop","selected")=="2" then
   back("2");
   
 endif;
-
-##--------------------------------------
-#
-# Dialog Demo
-#
-#if prop("demo.prop","selected")=="3" then
-
-  #-- Show Back Menu
-#  menubox(
-    #-- Title
-#      "AROMA Dialog Demo",
-    
-    #-- Sub Title
-#      "Please select menu below to Test AROMA Dialog Demonstration.",
-    
-    #-- Icon
-#      "@alert",
-      
-    #-- Will be saved in /tmp/aroma/dialog_demo.prop
-#      "dialog_demo.prop",
-      
-    #-------------------------+-----------------[ Menubox Items ]-------------------------+---------------#
-    # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
-    #-------------------------+-----------------------------------------------------------+---------------#
-    
-#      "Alert Demo",             "Show Alert Dialog with OK and Custom OK Button",            "@alert",      #-- selected = 1
-#      "Confirm Demo",           "Show Confirmation Dialog and Display The Selected Button",  "@info",       #-- selected = 2
-#      "Text Dialog",            "Show Text Dialog, same as Alert but text is scrollable",    "@agreement"   #-- selected = 3
-#  );
-  
-  #-- Show Alert
-#  if prop("dialog_demo.prop","selected")=="1" then
-    #-- Alert Demo 1
-#    alert(
-      #-- Title
-#        "Alert Demo 1",
-      #-- Text
-#        "Demo 1: Show Text only with default OK button..."
-#    );
-    
-    #-- Alert Demo 2
-#    alert(
-      #-- Title
-#        "Alert Demo 2",
-      #-- Text
-#        "Demo 2: Show Text and Info Icon with default OK button...",
-      #-- Icon
-#        "@info"
-#    );
-    
-    #-- Alert Demo 3
-#    alert(
-      #-- Title
-#        "Alert Demo 3",
-      #-- Text
-#        "Demo 3: Show Text and Alert Icon with default OK button...",
-      #-- Icon
-#        "@alert"
-#    );
-    
-    #-- Alert Demo 4
-#    alert(
-      #-- Title
-#        "Alert Demo 3",
-      #-- Text
-#        "Demo 3: Show Text and Alert Icon with custom OK button...",
-      #-- Icon
-#        "@alert",
-      #-- Ok text
-#        "Custom OK Text"
-#    );
-    
-#  endif;
-  
-  
-  #-- Show Confirm
-#  if prop("dialog_demo.prop","selected")=="2" then
-    #-- Confirm Demo 1
-#    if
-#      confirm(
-        #-- Title
-#          "Confirm Demo 1",
-        #-- Text
-#          "Please Select Yes or No?",
-        #-- Icon (Optional)
-#          "@info"
-#      )=="yes"
-#    then
-#      alert("Result","You press Yes Button...");
-#    else
-#      alert("Result","You press No Button...");
-#    endif;
-    
-    #-- Confirm Demo 2
-#    if
-#      confirm(
-        #-- Title
-#          "Confirm Demo 2",
-        #-- Text
-#          "Are you Noobs or Real Dev (lol)?",
-        #-- Icon (Optional)
-#          "@personalize",
-        #-- Yes Text
-#          "Noobs",
-        #-- No Text
-#          "Real Dev"
-#      )=="yes"
-#    then
-#      alert("You Are Noobs","But no problem if you are a human...");
-#    else
-#      alert("You Are Real Dev","That's Great! If you are not lie ...");
-#    endif;
-#  endif;
-  
-  #-- Show Confirm
-#  if prop("dialog_demo.prop","selected")=="3" then
-  
-    #-- TextDialog Demo 1
-#    textdialog(
-      #-- Title
-#        "TextDialog Demo 1",
-      #-- Text
-#        resread("license.txt")
-#    );
-    
-    #-- TextDialog Demo 2
-#    textdialog(
-      #-- Title
-#        "TextDialog Demo 2",
-      #-- Text
-#        resread("ams_sample.txt"),
-      #-- Custom OK Button Text (Optional)
-#        "Close"
-#    );
-#  endif;
-  
-  #-- Back to Dialog Demo Menu (Note: Dialog wasn't Wizard UI, so back("1") will back to dialog demo menu
-#  back("1");
-#endif;
-
-
-##--------------------------------------
-#
-# Back Sequence Demo
-#
-#if prop("demo.prop","selected")=="4" then
-
-  #-- Show Back Menu
-#  menubox(
-    #-- Title
-#      "AROMA Back Demo",
-    
-    #-- Sub Title
-#      "Please select menu below to Test Back Sequence Demonstration.\n\n<b>NOTE:</b> Back=1 is back to current UI.",
-    
-    #-- Icon
-#      "@customize",
-      
-    #-- Will be saved in /tmp/aroma/back_demo.prop
-#      "back_demo.prop",
-      
-    #-------------------------+-----------------[ Menubox Items ]-------------------------+---------------#
-    # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
-    #-------------------------+-----------------------------------------------------------+---------------#
-    
-#      "Demo Menu",              "Back = 2 - Back to Demo Menu",                              "@apps",       #-- selected = 1
-#      "Changelog",              "Back = 3 - Back to Changelog Screen",                       "@update",     #-- selected = 2
-#      "Terms and Conditions",   "Back = 4 - Back to Terms and Conditions",                   "@license",    #-- selected = 3
-#      "Welcome",                "Back = 5 - Back to Welcome Message",                        "@welcome",    #-- selected = 4
-#      "Select Theme",           "Back = 6 - Back to Select Theme",                           "@personalize" #-- selected = 5
-#  );
-  
-  #-- Back Size will be saved in "back_value" variable 
-#  setvar(
-    #-- Variable Name
-#      "back_value",
-    
-    #-- Variable Value ( use calculate to set selected+1 )
-#      cal(
-        #-- First Value
-#        prop("back_demo.prop","selected"), 
-        
-        #-- Operator (+ = add)
-#        "+",
-        
-        #-- Second Value
-#        "1"
-#      )
-#  );
-  
-  #-- Do Back Action
-#  back(
-#    getvar("back_value")
-#  );
-#endif;
-
-
-##--------------------------------------
-#
-# Presistent Data Demo
-#
-#if prop("demo.prop","selected")=="5" then
-	
-	#-- Ask SDCARD Mount Point
-#	if (getvar("sdcard_location")=="") then
-		#-- Confirm Demo 1
-#		if
-#		  confirm(
-			#-- Title
-#			  "SDCard Mount Point",
-			#-- Text
-#			  "Where is your SDCard mounted?",
-			#-- Icon (Optional)
-#			  "@info",
-			#-- Yes Text
-#			  "/sdcard",
-			#-- No Text
-#			  "/mnt/sdcard"
-#		  )=="yes"
-#		then
-#		  setvar("sdcard_location","/sdcard");
-#		else
-#		  setvar("sdcard_location","/mnt/sdcard");
-#		endif;
-#	endif;
-	
-	#-- Load aroma_demo_presistent.prop into variable
-#	setvar(
-	  #-- Variable name
-#	    "presistent_prop",
-	  #-- Value
-#	    read(
-		  #-- Absolute Path
-#			getvar("sdcard_location")+"/aroma_demo_presistent.prop"
-#		)
-#	);
-	
-	#-- Check is there any aroma_demo_presistent.prop in sdcard
-#	if (getvar("presistent_prop")!="") then
-		#-- aroma_demo_presistent.prop is available
-#		if
-#		  confirm(
-			#-- Title
-#			  "Load Data",
-			#-- Text
-#			  "Saved File <u>aroma_demo_presistent.prop</u> is Available in your SDCard\n\n"+
-#			  "Do you want to load previous customization data?",
-			#-- Icon (Optional)
-#			  "@info"
-#		  )=="yes"
-#		then
-		  #-- Write "presistent_prop" into temporary file
-#		  writetmpfile("presistent.prop",getvar("presistent_prop"));
-#		endif;
-#	endif;
-	
-	##
-	# Show Customize Test Checkbox
-	#
-#	checkbox(
-	  # Title
-#		"Select Main Mods",
-	  
-	  # Sub Title
-#		"This customize data will be saved into <b>aroma_demo_presistent.prop</b> in your sdcard:\n\n"+
-#		"After saving the data, try exit installer, then run this demo again.",
-	  
-	  # Icon
-#		"@update",
-	  
-	  # Will be saved in /tmp/aroma/mods.prop
-#		"presistent.prop",
-	  
-	  #----------------------------------[ Selectbox With Groups ]-----------------------------------#
-	  # TITLE            |  SUBTITLE                                                 | Initial Value #
-	  #------------------+-----------------------------------------------------------+---------------#
-#		"About Yourself",     "",                                                            2,      #-- Group 1
-#		"I am a real Dev",    "If you are the real developer",                               0,      #-- item.1.1
-#		"I am a noobs",       "If you are the real noobs",                                   0,      #-- item.1.2
-#		"I am xda-developers","If you have an account in xda-developers.com",                0,      #-- item.1.3
-		
-#		"Your Projects",      "",                                                            2,      #-- Group 2
-#		"Custom ROM",         "If you made a custom ROM",                                    0,      #-- item.2.1
-#		"Custom Troll",       "If you post many trolls in forum",                            0       #-- item.2.2
-
-	  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
-#	);
-	
-	##
-	# Show Save Confirmation
-	#
-#	if
-#	  confirm(
-		#-- Title
-#		  "Save Data",
-		#-- Text
-#		  "Your customize data will be saved into <u>aroma_demo_presistent.prop</u> in your SDCard\n\n"+
-#		  "Do you want to save it?",
-		#-- Icon (Optional)
-#		  "@info"
-#	  )=="yes"
-#	then
-	  #-- Write String Into File
-#	  write(
-		#-- Absolute path into the file
-#		  getvar("sdcard_location")+"/aroma_demo_presistent.prop",
-		
-		#-- File Content to be write into the file
-#		  readtmpfile("presistent.prop");
-#	  );
-	  
-	  #-- Show Alert
-#	  alert(
-		#-- Alert Title
-#		  "Data Has Been Saved",
-			
-		#-- Alert Text
-#		  "Customized data has been saved into your SDCard\n\n"+
-#		  "Try to exit the installer, then run this demo again.",
-			
-		#-- Alert Icon
-#		  "@info"
-#	  );
-	  
-#	endif;
-	
-	#-- Show Alert
-#	alert(
-	  #-- Alert Title
-#	    "Demo Finished",
-		
-	  #-- Alert Text
-#		"You will be back to Demo Main Menu",
-		
-	  #-- Alert Icon
-#		"@alert"
-#	);
-  
-	#-- Back to Dialog Demo Menu
-#	back("2");
-#endif;
-
-
-##--------------------------------------
-#
-# Other Demo
-#
-#if prop("demo.prop","selected")=="6" then
-
-  #-- Show Other Demo
-#  menubox(
-    #-- Title
-#      "AROMA Other Demo",
-    
-    #-- Sub Title
-#      "Please Select Misc Demo Below.",
-    
-    #-- Icon
-#      "@apps",
-      
-    #-- Will be saved in /tmp/aroma/other_demo.prop
-#      "other_demo.prop",
-      
-    #-------------------------+-----------------[ Menubox Items ]-------------------------+---------------#
-    # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
-    #-------------------------+-----------------------------------------------------------+---------------#
-    
-#      "Reboot",                 "Reboot Your Device",                                        "@alert",       #-- selected = 1
-#      "Exit",                   "Terminate AROMA Installer",                                 "@install",     #-- selected = 2
-#      "Calculation",            "cal() function demo",                                       "@agreement",   #-- selected = 3
-#      "Inline IF",              "iif() & cmp() function demo",                               "@info"         #-- selected = 4
-#  );
-  
-  #-- Reboot
-#  if prop("other_demo.prop","selected")=="1" then
-#  	if
-#  	  confirm(
-  		#-- Title
-#  		  "Reboot",
-  		#-- Text
-#  		  "Are you sure want to reboot your device?",
-  		#-- Icon (Optional)
-#  		  "@alert"
-#  	  )=="yes"
-#  	then
-  	  #
-  	  # reboot("onfinish");   - Reboot if anything finished
-  	  # reboot("now");        - Reboot Directly
-  	  # reboot("disable");    - If you set reboot("now") before, use this command to revert it.
-  	  #
-  	  #-- NEW
-  	  # reboot("onfinish", "recovery");
-  	  # reboot("now", "fastboot");
-  	  #
-#  	  if
-#    	  confirm(
-    		#-- Title
-#    		  "Reboot To Recovery",
-    		#-- Text
-#    		  "Do You Want to Reboot To Recovery ?",
-    		#-- Icon (Optional)
-#    		  "@alert"
-#    	  )=="yes"
-#    	then
-#  	    reboot("now", "recovery");
-#  	  else
-#  	    reboot("now");
-#  	  endif;
-#  	endif;
-#  endif;
-  
-  #-- Exit
-#  if prop("other_demo.prop","selected")=="2" then
-#	if
-#	  confirm(
-		#-- Title
-#		  "Exit",
-		#-- Text
-#		  "Are you sure want to exit the Installer?",
-		#-- Icon (Optional)
-#		  "@alert"
-#	  )=="yes"
-#	then
-	  #-- Exit - NOTE: Add dummy argument
-#	  exit("");
-#	endif;
-#  endif;
-  
-  #-- Calculation
-#  if prop("other_demo.prop","selected")=="3" then
-	#-- Calculation Alert
-#	alert(
-	  #-- Alert Title
-#	    "Calculation",
-		
-	  #-- Alert Text
-#		"1024 * 1024\t= "+cal("1024","*","1024")+"\n"+
-#		"2000 / 10\t= "+cal("2000","/","10")+"\n"+
-#		"468 + 520\t= "+cal("468","+","520")+"\n"+
-#		"9860 - 45\t= "+cal("9860","-","45")+"\n"+
-#		"1113 mod 99\t= "+cal("1113","%","99"),
-		
-	  #-- Alert Icon
-#		"@agreement"
-#	);
-#  endif;
-  
-  #-- Inline If
-#  if prop("other_demo.prop","selected")=="4" then
-	#-- Inline If Alert
-#	alert(
-	  #-- Alert Title
-#	    "Inline If",
-		
-	  #-- Alert Text
-#		"200 > 100\t= "+iif(cmp("200",">","100"),"True","False")+"\n"+
-#		"200 < 100\t= "+iif(cmp("200","<","100"),"True","False")+"\n"+
-#		"200 >= 200\t= "+iif(cmp("200",">=","200"),"True","False")+"\n"+
-#		"200 <= 100\t= "+iif(cmp("200","<=","100"),"True","False")+"\n"+
-#		"100 != 100\t= "+iif(cmp("100","!=","100"),"Yes, It's True","No, It's False")+"\n"+
-#		"410 == 410\t= "+iif(cmp("410","==","410"),"True","False")
-#		,
-		
-	  #-- Alert Icon
-#		"@agreement"
-#	);
-#  endif;
-  
-  
-  
-  #-- Back To Other Demo Menu
-#  back(
-#    getvar("1")
-#  );
-#endif;
-
 
 
 ###################################################################################################################
@@ -931,25 +356,32 @@ checkbox(
   # TITLE            |  SUBTITLE                                                                           | Initial Value #
   #------------------+-------------------------------------------------------------------------------------+---------------#
 
-  "<#selectbg_g><~customize.10></#>", "", 													                 2,  #-- Group 1. key = "item.1.x"
-	"EasyHome",           "<~customize.11>",      										                     0,    #-- item.1.1 = Un-Selected by default
-	"E-Mail",             "<~customize.12>",                                                                 0,    #-- item.1.2 = Un-Selected by default
-	"Face Unlock",        "<~customize.13>",                                                                 0,    #-- item.1.3 = Un-Selected by default
-	"File Manager",       "<~customize.14>",                											     0,    #-- item.1.4 = Un-Selected by default
-	"Home selector",	  "<~customize.15>",                                                				 0,    #-- item.1.5 = Un-Selected by default
-	"LG Health",		  "<~customize.16>",				   												 0,	   #-- item.1.6 = Un-Selected by default
-	"LG Keyboard Black Theme", "<~customize.17>",														     0,	   #-- item.1.7 = Un-Selected by default
-	"LGSearchWidgetProvider", "<~customize.18>",															 0,	   #-- item.1.8 = Un-Selected by default
-	"McAfee Security",    "<~customize.19>", 														   		 0,	   #-- item.1.9 = Un-Selected by default
-	"Music widget",		  "<~customize.110>",                     									   		 0,	   #-- item.1.10 = Un-Selected by default
-	"Music app",		  "<~customize.111>",                              									 0,	   #-- item.1.11 = Un-Selected by default
+  "<#0f0><~customize.10></#>", "", 													                 2,  #-- Group 1. key = "item.1.x"
+	"Accessibility",      "<~customize.11>",                                                                 0,    #-- item.1.1 = Un-Selected by default
+    "Answer me",          "<~customize.12>",         														 0,    #-- item.1.2 = Un-Selected by default
+	"EasyHome",           "<~customize.13>",      										                     0,    #-- item.1.3 = Un-Selected by default
+	"E-Mail",             "<~customize.14>",                                                                 0,    #-- item.1.4 = Un-Selected by default
+	"Face Unlock",        "<~customize.15>",                                                                 0,    #-- item.1.5 = Un-Selected by default
+	"File Manager",       "<~customize.16>",                											     0,    #-- item.1.6 = Un-Selected by default
+	"Home selector",	  "<~customize.17>",                                                				 0,    #-- item.1.7 = Un-Selected by default
+	"LG Backup",		  "<~customize.18>",    															 0,    #-- item.1.8 = Un-Selected by default
+	"LG Health",		  "<~customize.19>",				   												 0,	   #-- item.1.9 = Un-Selected by default
+	"LG Keyboard Black Theme", "<~customize.110>",														     0,	   #-- item.1.10 = Un-Selected by default
+	"LGSearchWidgetProvider", "<~customize.111>",															 0,	   #-- item.1.11 = Un-Selected by default
+	"McAfee Security",    "<~customize.112>", 														   		 0,	   #-- item.1.12 = Un-Selected by default
+	"Music widget",		  "<~customize.113>",                     									   		 0,	   #-- item.1.13 = Un-Selected by default
+	"Music app",		  "<~customize.114>",                              									 0,	   #-- item.1.14 = Un-Selected by default
+	"Smart Notice",		  "<~customize.115>",																 0,    #-- item.1.15 = Un-Selected by default
+	"Smart Tips",		  "<~customize.116>",														         0,    #-- item.1.16 = Un-Selected by default
   
-  "<#0080ff><~customie.20></#>", "", 									 	                                 2,  #-- Group 2. key = "item.2.x"
+  "<#0080ff><~customize.20></#>", "", 									 	                                 2,  #-- Group 2. key = "item.2.x"
 	"Home",				  "<~customize.21>",														         0,    #-- item.2.1 = Un-Selected by default
-	"Internet",           "<~customize.22>",               													 0,    #-- item.2.2 = Un-Selected by default
-	"LG Keyboard",        "<~customize.23>",   																 0,    #-- item.2.3 = Un-Selected by default
+	"Home Theme Optimus", "<~customize.22>",																 0,    #-- item.2.2 = Un-Selected by default
+	"Internet",           "<~customize.23>",               													 0,    #-- item.2.3 = Un-Selected by default
+	"LG Keyboard",        "<~customize.24>",   																 0,    #-- item.2.4 = Un-Selected by default
+	"LG Keyboard XT9",	  "<~customize.25>",																 0,	   #-- item.2.5 = Un-Selected by default
   
-  "<#selectbg_g><~customize.30></#>", "",                                       							 2,  #-- Group 3. key = "item.3.x"
+  "<#0f0><~customize.30></#>", "",                                       							 2,  #-- Group 3. key = "item.3.x"
 	"Chrome",             "<~customize.31>",                                                    			 0,    #-- item.3.1 = Un-Selected by default
 	"Drive",              "<~customize.32>",                                                                 0,    #-- item.3.2 = Un-Selected by default
 	"Gmail",              "<~customize.33>",                                                                 0,    #-- item.3.3 = Un-Selected by default
@@ -957,27 +389,23 @@ checkbox(
 	"Google Play Games",  "<~customize.35>",                                         				   		 0,    #-- item.3.5 = Un-Selected by default
 	"Google Play Movies", "<~customize.36>",                            					   				 0,    #-- item.3.6 = Un-Selected by default
 	"Google Play Music",  "<~customize.37>",       				   											 0,    #-- item.3.7 = Un-Selected by default
-	"Google+",            "<~customize.38>",                                                     		   	 0,    #-- item.3.8 = Un-Selected by default
-	"Hangouts", 	      "<~customize.39>",                                      				   			 0,    #-- item.3.9 = Un-Selected by default
-	"Maps",               "<~customize.310>",                                                  	   			 0,    #-- item.3.10 = Un-Selected by default
-	"Street View",        "<~customize.311>",                                                   			 0,    #-- item.3.11 = Un-Selected by default
-	"TalkBack", 	      "<~customize.312>",                                           			   		 0,    #-- item.3.12 = Un-Selected by default
-	"YouTube",			  "<~customize.313>",																 0,    #-- item.3.13 = Un-Selected by default
+	"Google Play Newsstand", "<~customize.38>",                                                              0,    #-- item.3.8 = Un-Selected by default
+	"Google Text-to-speech Engine", "<~customize.39>",														 0,    #-- item.3.9 = Un-Selected by default
+	"Google+",            "<~customize.310>",                                                     		   	 0,    #-- item.3.9 = Un-Selected by default
+	"Hangouts", 	      "<~customize.311>",                                      				   			 0,    #-- item.3.10 = Un-Selected by default
+	"Maps",               "<~customize.312>",                                                  	   			 0,    #-- item.3.11 = Un-Selected by default
+	"Street View",        "<~customize.313>",                                                   			 0,    #-- item.3.12 = Un-Selected by default
+	"TalkBack", 	      "<~customize.314>",                                           			   		 0,    #-- item.3.13 = Un-Selected by default
+	"YouTube",			  "<~customize.315>",																 0,    #-- item.3.14 = Un-Selected by default
 
   "<#0000ff><~customize.40></#>", "",  															             2,  #-- Group 4. key = "item.4.x"
-	"Accessibility",      "<~customize.41>",                                                                 0,    #-- item.4.1 = Un-Selected by default
-	"Answer me",          "<~customize.42>",         														 0,    #-- item.4.2 = Un-Selected by default
-	"App Updater",        "<~customize.43>",       															 0,    #-- item.4.3 = Un-Selected by default
-	"com.lge.sui.widget", "<~customize.44>",								   								 0,    #-- item.4.4 = Un-Selected by default
-	"Google Search",	  "<~customize.45>",								   								 0,    #-- item.4.5 = Un-Selected by default
-	"LG Backup",		  "<~customize.46>",    															 0,    #-- item.4.6 = Un-Selected by default
-	"LGInstallService",   "<~customize.47>",																 0,    #-- item.4.7 = Un-Selected by default
-	"Smart Notice",		  "<~customize.48>",																 0,    #-- item.4.8 = Un-Selected by default
-	"Smart Tips",		  "<~customize.49>",														         0,    #-- item.4.9 = Un-Selected by default
-	"Software Update",	  "<~customize.410>",				   												 0,    #-- item.4.10 = Un-Selected by default
-	"Update Center",	  "<~customize.411>",																 0,	   #-- item.4.11 = Un-Selected by default
+	"App Updates",        "<~customize.41>",       															 0,    #-- item.4.1 = Un-Selected by default
+	"Google Search",	  "<~customize.42>",								   								 0,    #-- item.4.2 = Un-Selected by default
+	"LGInstallService",   "<~customize.43>",																 0,    #-- item.4.3 = Un-Selected by default
+	"Software Update",	  "<~customize.44>",				   												 0,    #-- item.4.4 = Un-Selected by default
+	"Update Center",	  "<~customize.45>",																 0,	   #-- item.4.5 = Un-Selected by default
 
-  "<#selectbg_g><~customize.50></#>", "",	                												 2,  #-- Group 5. key = "item.5.x"
+  "<#0f0><~customize.50></#>", "",	                												 2,  #-- Group 5. key = "item.5.x"
     "Boot Animation",	  "<~customize.51>",                     											 0,    #-- item.5.1 = Un-Selected by default
 	"Shutdown Animation", "<~customize.52>",                                                      			 0,    #-- item.5.2 = Un-Selected by default
 	"Boot Sound",		  "<~customize.53>",															     0,    #-- item.5.3 = Un-Selected by default

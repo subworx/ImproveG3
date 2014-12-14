@@ -1,5 +1,24 @@
-<b><#selectbg_g>LG G3 Debloater</#></b>
-<*><b>0.1</b></*>
- <*>initial release</*>
- <*> supporting G3 D855</*>
- <*> only tested on 10L</*>
+<b><#0f0>ImproveG3</#></b>
+<b>0.1 - 2014.11.29</b>
+<*>initial release</*>
+<*>supporting G3 D855</*>
+<*>only tested on 10L</*>
+<b>0.2 - 2014.11.30</b>
+<*>added localization options</*>
+<b>0.3 - 2014.12.01</b>
+<*>actually does something now</*>
+<*>tested debloating, removed apps from list which cause real issues</*>
+<*>sorted apps to proper position if safe to remove without side-effects</*>
+<*>prepared main menu for next releases (lol)</*>
+
+<#00f><b>Known Issues</b></#>
+<*>none yet</*>
+
+<#0f0><b>TODO</b></#>
+<*>0.4: split script into parts for better readability</*>
+<*>0.4:  updater script: add big ifs for each section</*>
+<*>0.5: add sdcard fix (permissions.xml)</*>
+<*>0.6: include temp.mod, credit creator</*>
+<*>0.7: include screen oversharpen mod once stable, credit creator</*>
+<*>find details for Google Search</*>
+<*>need user reports for Google Apps as I have them in user space</*>
