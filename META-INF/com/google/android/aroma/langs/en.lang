@@ -114,6 +114,7 @@ debloatinstructions.warning=<#0f0><b>Safe</b></#>: Apps which are safe to remove
 <#006eff><b>Safe with Alternative</b></#>: Safe to remove, but have a replacement installed. <b><#00f>Can lead to Setup Loop after Factory Reset! (esp. Keyboard and Launcher)</#></b>\
 <#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store.\
 <#0000ff><b>Potentially dangerous</b></#>: Deleting these can or will have side-effects.\
+<#0000ff><b>Extremely dangerous</b></#>: side-effects galore.\
 <#0f0><b>Remove animations</b></#>: Remove boot/shutdown animations and sounds, plus LG bloat music.\
 \
 Please get in touch with me (subworx @ xda, German/English) if you have issues or you know more APKs which can be removed without side-effects.
@@ -130,7 +131,7 @@ debloatcustomize.11=(3.8 MB) More accessibility options than stock.
 debloatcustomize.12=(0.06 MB) Gesture answering (move phone to head)
 debloatcustomize.13=(3.8 MB) Dumbed down home screen
 debloatcustomize.14=(27.4 MB) LG Email Client
-debloatcustomize.15=(1.5 MB) Face Unlock app. Settings menu will ask to install another app if you want to use Face Unlock
+debloatcustomize.15=(1.5 MB) Face Unlock app. Option simply disappears from Settings.
 debloatcustomize.16=(8.9 MB) LG simple file browser
 debloatcustomize.17=(0.07 MB) Sets the default home app. Can be done manually by clearing app defaults in Settings -> Apps -> (launcher app)
 debloatcustomize.18=(12.8 MB) Removal causes Settings -> Backup and Restore -> LG Backup to disapper

@@ -74,10 +74,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.8");
+ini_set("rom_version",          "0.8.1");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3");
-ini_set("rom_date",             "2014.12.06");
+ini_set("rom_date",             "2014.12.10");
 
 
 #
@@ -827,30 +827,30 @@ if prop("demo.prop","selected")=="1" then
     # TITLE               | SUBTITLE                                        | Initial Value #
     #---------------------+-------------------------------------------------+---------------#
 
-    "<#0f0><~debloatcustomize.10></#>", "", 					                2,  #-- Group 1. key = "item.1.x"
+    "<#0f0><~debloatcustomize.10></#>", "", 					              2,  #-- Group 1. key = "item.1.x"
 	  "Accessibility",      "<~debloatcustomize.11>",                         0,    #-- item.1.1 = Un-Selected by default
-      "Answer me",          "<~debloatcustomize.12>",         				0,    #-- item.1.2 = Un-Selected by default
-	  "EasyHome",           "<~debloatcustomize.13>",      					0,    #-- item.1.3 = Un-Selected by default
+      "Answer me",          "<~debloatcustomize.12>",         				  0,    #-- item.1.2 = Un-Selected by default
+	  "EasyHome",           "<~debloatcustomize.13>",      					  0,    #-- item.1.3 = Un-Selected by default
 	  "E-Mail",             "<~debloatcustomize.14>",                         0,    #-- item.1.4 = Un-Selected by default
 	  "Face Unlock",        "<~debloatcustomize.15>",                         0,    #-- item.1.5 = Un-Selected by default
-	  "File Manager",       "<~debloatcustomize.16>",                			0,    #-- item.1.6 = Un-Selected by default
-	  "Home selector",	  "<~debloatcustomize.17>",                         0,    #-- item.1.7 = Un-Selected by default
-	  "LG Backup",		  "<~debloatcustomize.18>",    						0,    #-- item.1.8 = Un-Selected by default
-	  "LG Health",		  "<~debloatcustomize.19>",				   			0,	  #-- item.1.9 = Un-Selected by default
-	  "LG Keyboard Black Theme", "<~debloatcustomize.110>",					0,	  #-- item.1.10 = Un-Selected by default
-	  "LGSearchWidgetProvider", "<~debloatcustomize.111>",					0,	  #-- item.1.11 = Un-Selected by default
-	  "McAfee Security",    "<~debloatcustomize.112>", 						0,	  #-- item.1.12 = Un-Selected by default
-	  "Music widget",		  "<~debloatcustomize.113>",                     	0,	  #-- item.1.13 = Un-Selected by default
-	  "Music app",		  "<~debloatcustomize.114>",                        0,	  #-- item.1.14 = Un-Selected by default
- 	  "Smart Notice",		  "<~debloatcustomize.115>",						0,    #-- item.1.15 = Un-Selected by default
- 	  "Smart Tips",		  "<~debloatcustomize.116>",						0,    #-- item.1.16 = Un-Selected by default
+	  "File Manager",       "<~debloatcustomize.16>",                		  0,    #-- item.1.6 = Un-Selected by default
+	  "Home selector",	    "<~debloatcustomize.17>",                         0,    #-- item.1.7 = Un-Selected by default
+	  "LG Backup",		    "<~debloatcustomize.18>",    					  0,    #-- item.1.8 = Un-Selected by default
+	  "LG Health",		    "<~debloatcustomize.19>",				   		  0,	#-- item.1.9 = Un-Selected by default
+	  "LG Keyboard Black Theme", "<~debloatcustomize.110>",					  0,	#-- item.1.10 = Un-Selected by default
+	  "LGSearchWidgetProvider",  "<~debloatcustomize.111>",					  0,	#-- item.1.11 = Un-Selected by default
+	  "McAfee Security",    "<~debloatcustomize.112>", 						  0,	#-- item.1.12 = Un-Selected by default
+	  "Music widget",		"<~debloatcustomize.113>",                     	  0,	#-- item.1.13 = Un-Selected by default
+	  "Music app",		    "<~debloatcustomize.114>",                        0,    #-- item.1.14 = Un-Selected by default
+ 	  "Smart Notice",		"<~debloatcustomize.115>",						  0,    #-- item.1.15 = Un-Selected by default
+ 	  "Smart Tips",		    "<~debloatcustomize.116>",						  0,    #-- item.1.16 = Un-Selected by default
   
-    "<#006eff><~debloatcustomize.20></#>", "", 								2,  #-- Group 2. key = "item.2.x"
-	  "Home",				  "<~debloatcustomize.21>",							0,    #-- item.2.1 = Un-Selected by default
-	  "Home Theme Optimus", "<~debloatcustomize.22>",							0,    #-- item.2.2 = Un-Selected by default
-	  "Internet",           "<~debloatcustomize.23>",               			0,    #-- item.2.3 = Un-Selected by default
-	  "LG Keyboard",        "<~debloatcustomize.24>",   						0,    #-- item.2.4 = Un-Selected by default
-      "LG Keyboard XT9",	  "<~debloatcustomize.25>",							0,	  #-- item.2.5 = Un-Selected by default
+    "<#006eff><~debloatcustomize.20></#>", "", 								  2,  #-- Group 2. key = "item.2.x"
+	  "Home",				"<~debloatcustomize.21>",						  0,    #-- item.2.1 = Un-Selected by default
+	  "Home Theme Optimus", "<~debloatcustomize.22>",						  0,    #-- item.2.2 = Un-Selected by default
+	  "Internet",           "<~debloatcustomize.23>",               		  0,    #-- item.2.3 = Un-Selected by default
+	  "LG Keyboard",        "<~debloatcustomize.24>",   					  0,    #-- item.2.4 = Un-Selected by default
+      "LG Keyboard XT9",	"<~debloatcustomize.25>",						  0,    #-- item.2.5 = Un-Selected by default
   
     "<#0f0><~debloatcustomize.30></#>", "",                                   2,  #-- Group 3. key = "item.3.x"
 	  "Chrome",             "<~debloatcustomize.31>",                         0,    #-- item.3.1 = Un-Selected by default
@@ -859,29 +859,94 @@ if prop("demo.prop","selected")=="1" then
 	  "Google Play Books",  "<~debloatcustomize.34>",                         0,    #-- item.3.4 = Un-Selected by default
 	  "Google Play Games",  "<~debloatcustomize.35>",                         0,    #-- item.3.5 = Un-Selected by default
 	  "Google Play Movies", "<~debloatcustomize.36>",                         0,    #-- item.3.6 = Un-Selected by default
-	  "Google Play Music",  "<~debloatcustomize.37>",       				   	0,    #-- item.3.7 = Un-Selected by default
-	  "Google Play Newsstand", "<~debloatcustomize.38>",                      0,    #-- item.3.8 = Un-Selected by default
-	  "Google Text-to-speech Engine", "<~debloatcustomize.39>",				0,    #-- item.3.9 = Un-Selected by default
+	  "Google Play Music",  "<~debloatcustomize.37>",       				  0,    #-- item.3.7 = Un-Selected by default
+	  "Google Play Newsstand",        "<~debloatcustomize.38>",               0,    #-- item.3.8 = Un-Selected by default
+	  "Google Text-to-speech Engine", "<~debloatcustomize.39>",				  0,    #-- item.3.9 = Un-Selected by default
 	  "Google+",            "<~debloatcustomize.310>",                        0,    #-- item.3.10 = Un-Selected by default
-	  "Hangouts", 	      "<~debloatcustomize.311>",                        0,    #-- item.3.11 = Un-Selected by default
+	  "Hangouts", 	        "<~debloatcustomize.311>",                        0,    #-- item.3.11 = Un-Selected by default
 	  "Maps",               "<~debloatcustomize.312>",                        0,    #-- item.3.12 = Un-Selected by default
 	  "Street View",        "<~debloatcustomize.313>",                        0,    #-- item.3.13 = Un-Selected by default
-	  "TalkBack", 	      "<~debloatcustomize.314>",                        0,    #-- item.3.14 = Un-Selected by default
-      "YouTube",			  "<~debloatcustomize.315>",						0,    #-- item.3.15 = Un-Selected by default
+	  "TalkBack", 	        "<~debloatcustomize.314>",                        0,    #-- item.3.14 = Un-Selected by default
+      "YouTube",			"<~debloatcustomize.315>",						  0,    #-- item.3.15 = Un-Selected by default
 
-    "<#0000ff><~debloatcustomize.40></#>", "",  								2,  #-- Group 4. key = "item.4.x"
-	  "App Updates",        "<~debloatcustomize.41>",       					0,    #-- item.4.1 = Un-Selected by default
-	  "Google Search",	  "<~debloatcustomize.42>",							0,    #-- item.4.2 = Un-Selected by default
-	  "LGInstallService",   "<~debloatcustomize.43>",							0,    #-- item.4.3 = Un-Selected by default
-	  "Software Update",	  "<~debloatcustomize.44>",				   			0,    #-- item.4.4 = Un-Selected by default
-	  "Update Center",	  "<~debloatcustomize.45>",							0,	  #-- item.4.5 = Un-Selected by default
+    "<#0000ff><~debloatcustomize.40></#>", "",  							  2,  #-- Group 4. key = "item.4.x"
+	  "App Updates",        "<~debloatcustomize.41>",       				  0,    #-- item.4.1 = Un-Selected by default
+	  "Google Search",	    "<~debloatcustomize.42>",						  0,    #-- item.4.2 = Un-Selected by default
+	  "LGInstallService",   "<~debloatcustomize.43>",						  0,    #-- item.4.3 = Un-Selected by default
+	  "Software Update",	"<~debloatcustomize.44>",				   		  0,    #-- item.4.4 = Un-Selected by default
+	  "Update Center",	    "<~debloatcustomize.45>",						  0,    #-- item.4.5 = Un-Selected by default
 
-    "<#0f0><~debloatcustomize.50></#>", "",	                				2,  #-- Group 5. key = "item.5.x"
-      "Boot Animation",	  "<~debloatcustomize.51>",                     	0,    #-- item.5.1 = Un-Selected by default
+    "<#0f0><~debloatcustomize.50></#>", "",	                				  2,  #-- Group 5. key = "item.5.x"
+      "Boot Animation",	    "<~debloatcustomize.51>",                     	  0,    #-- item.5.1 = Un-Selected by default
 	  "Shutdown Animation", "<~debloatcustomize.52>",                         0,    #-- item.5.2 = Un-Selected by default
-	  "Boot Sound",		  "<~debloatcustomize.53>",							0,    #-- item.5.3 = Un-Selected by default
-	  "Shutdown Sound",	  "<~debloatcustomize.54>",							0,    #-- item.5.4 = Un-Selected by default
-	  "Stock music",	      "<~debloatcustomize.55>",							0     #-- item.5.5 = Un-Selected by default
+	  "Boot Sound",		    "<~debloatcustomize.53>",						  0,    #-- item.5.3 = Un-Selected by default
+	  "Shutdown Sound",	    "<~debloatcustomize.54>",						  0,    #-- item.5.4 = Un-Selected by default
+	  "Stock music",	    "<~debloatcustomize.55>",						  0,    #-- item.5.5 = Un-Selected by default
+
+    "<#00f>Extremely dangerous Sh!t</#>", "",	                                    2,  #-- Group 6. key = "item.6.x"
+      "ActionManager Service (MRG)", "com.lge.mrg.service (MRG)",                   0,    #-- item.6.1 = Un-Selected by default
+      "Board Content Provider (MRG)","com.lge.mrg.boardcontent (MRG)",              0,    #-- item.6.2 = Un-Selected by default
+      "com.lge.divx.permission",     "com.lge.divx.permission",                     0,    #-- item.6.3 = Un-Selected by default
+      "com.lge.lgdmsgcm",            "com.lge.lgdmsgcm (Software Updates?)",        0,    #-- item.6.4 = Un-Selected by default
+      "com.lge.lgdrm.permission",    "com.lge.lgdrm.permission",                    0,    #-- item.6.5 = Un-Selected by default
+      "com.lge.lgfota.permission",   "com.lge.lgfota.permission",                   0,    #-- item.6.6 = Un-Selected by default
+      "com.lge.permission",          "com.lge.permission (LG API Permissions)",     0,    #-- item.6.7 = Un-Selected by default
+      "Content lock",                "com.lge.privacylock",                         0,    #-- item.6.8 = Un-Selected by default
+	  "Downloads",		             "com.android.providers.downloads.ui",          0,    #-- item.6.9 = Un-Selected by default
+      "DRM Service",                 "com.lge.drmservice",                          0,    #-- item.6.10 = Un-Selected by default
+      "ELTest",                      "com.lge.eltest",                              0,    #-- item.6.11 = Un-Selected by default
+      "FormManager",                 "com.lge.formmanager",                         0,    #-- item.6.12 = Un-Selected by default
+      "Gallery",                     "com.android.gallery3d",                       0,    #-- item.6.13 = Un-Selected by default
+      "GNSS Air Test (CDMA)",        "com.lge.gnss.airtest",                        0,    #-- item.6.14 = Un-Selected by default
+      "GnssTest",                    "com.lge.gnsstest",                            0,    #-- item.6.15 = Un-Selected by default
+      "LG GNSS",                     "com.lge.gnsspostest",                         0,    #-- item.6.16 = Un-Selected by default
+      "com.lge.hiddenmenu - HiddenMenu", "com.lge.hiddenmenu",                      0,    #-- item.6.17 = Un-Selected by default
+      "LG Intelligent Agent",        "com.lge.ia",                     	            0,    #-- item.6.18 = Un-Selected by default
+      "LIA Informant",               "com.lge.ia.task.informant",                   0,    #-- item.6.19 = Un-Selected by default
+      "LIA MrGDBLogger",             "com.lge.ia.task.mrgdblogger",                 0,    #-- item.6.20 = Un-Selected by default
+      "LIA S4URecommender",          "com.lge.ia.task.s4urecommender",              0,    #-- item.6.21 = Un-Selected by default
+      "LG MLT",    	                 "com.lge.mlt",                     	        0,    #-- item.6.22 = Un-Selected by default
+      "LG PC Suite",                 "com.lge.pcsyncui",                     	    0,    #-- item.6.23 = Un-Selected by default
+      "LG PC Suite Service",         "com.lge.sync",                     	        0,    #-- item.6.24 = Un-Selected by default
+      "LGApduService",               "com.lge.smartcart.apdu.uicc",                 0,    #-- item.6.25 = Un-Selected by default
+      "LGATCMD Service",             "com.lge.android.atservice",                   0,    #-- item.6.26 = Un-Selected by default
+      "??? LGERCS.apk",              "LGERCS.apk",                     	            0,    #-- item.6.27 = Un-Selected by default
+      "??? LGERCSProvider.apk",      "LGERCSProvider.apk",                     	    0,    #-- item.6.28 = Un-Selected by default
+      "??? LGRcsCall.apk",           "LGRcsCall.apk",                     	        0,    #-- item.6.29 = Un-Selected by default
+      "??? LGRCSMessage.apk",        "LGRCSMessage.apk",                     	    0,    #-- item.6.30 = Un-Selected by default
+      "??? LGRCSServices.apk",       "LGRCSServices.apk",                           0,    #-- item.6.31 = Un-Selected by default
+      "License Provider",            "com.lge.eulaprovider",                        0,    #-- item.6.32 = Un-Selected by default
+      "Live Wallpaper Picker",       "com.android.wallpaper.livepicker",            0,    #-- item.6.33 = Un-Selected by default
+      "Lock Screen Settings",        "com.lge.lockscreensettings",                  0,    #-- item.6.34 = Un-Selected by default
+      "Multi-photo",                 "com.lge.livewallpaper.multiphoto",            0,    #-- item.6.35 = Un-Selected by default
+      "??? Phonesky.apk",            "Phonesky.apk",                                0,    #-- item.6.36 = Un-Selected by default
+      "Print Spooler 1",			 "com.android.printspooler",                    0,    #-- item.6.37 = Un-Selected by default
+	  "Quickset SDK",                "com.uei.lg.quicksetsdk.maxq616",              0,    #-- item.6.38 = Un-Selected by default
+	  "Remote support service",      "com.rsupport.rsperm",                         0,    #-- item.6.39 = Un-Selected by default
+      "Settings",                    "com.lge.settings.easy",                       0,    #-- item.6.40 = Un-Selected by default
+      "Shutdown Monitor",            "com.lge.shutdownmonitor",                     0,    #-- item.6.41 = Un-Selected by default
+      "Smart cleaning",              "com.lge.springcleaning",                      0,    #-- item.6.42 = Un-Selected by default
+      "Smart screen",                "com.lge.keepscreenon",                        0,    #-- item.6.43 = Un-Selected by default
+      "SmartShare Beam (WFDS)",      "com.lge.smartsharebeam (WDFS)",               0,    #-- item.6.44 = Un-Selected by default
+      "SmartShare Push",             "com.lge.smartsharepush",                      0,    #-- item.6.45 = Un-Selected by default
+      "SmartShare.Beam",             "itectokyo.wiflus.service",                    0,    #-- item.6.46 = Un-Selected by default
+      "SmartShare.Cloud",            "com.lge.cloudhub",                     	    0,    #-- item.6.47 = Un-Selected by default
+      "SmartShare.DLNA",             "com.lge.smartshare.dlna",                     0,    #-- item.6.48 = Un-Selected by default
+      "SmartShare.MediaServer",      "com.lge.smartshare",                          0,    #-- item.6.49 = Un-Selected by default
+      "SmartShare.Provider",         "com.lge.smartshare.provider",                 0,    #-- item.6.50 = Un-Selected by default
+      "Tags",                        "com.google.android.tag (NFC)",                0,    #-- item.6.51 = Un-Selected by default
+	  "Unified EULA",                "com.lge.eula",                       	        0,    #-- item.6.52 = Un-Selected by default
+      "Video",                       "com.lge.videoplayer",                         0,    #-- item.6.53 = Un-Selected by default
+      "Video Trim",                  "com.lge.videotool",                           0,    #-- item.6.54 = Un-Selected by default
+      "Voice Mate",                  "com.nuance.voicemate",                        0,    #-- item.6.55 = Un-Selected by default
+	  "Voice Recorder",              "com.lge.voicerecorder",                       0,    #-- item.6.56 = Un-Selected by default
+      "WAP Service",                 "com.lge.wapservice",                     	    0,    #-- item.6.57 = Un-Selected by default
+      "Weather",                     "com.lge.sizechangable.weather",               0,    #-- item.6.58 = Un-Selected by default
+      "WeatherPlatform",             "com.lge.sizechangable.weather.platform",      0,    #-- item.6.59 = Un-Selected by default
+      "Weather Theme",               "com.lge.sizechangable.weather.theme.optimus", 0,    #-- item.6.60 = Un-Selected by default
+      "Wfd Service (Qualcomm, WFDS)","com.qualcomm.wfd.service (WFDS)",             0,    #-- item.6.61 = Un-Selected by default
+	  "WfdsService (WFDS)",          "com.lge.wfds.service (WFDS)",                 0,    #-- item.6.62 = Un-Selected by default
+      "Widevine Keybox Test",        "com.lge.wv.hidden",                     	    0     #-- item.6.63 = Un-Selected by default
 
     #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
   );

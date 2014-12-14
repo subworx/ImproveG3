@@ -1,16 +1,17 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>0.8.1 - 2014.12.10</b>
+<*>Added section of ABSOLUTELY COMPLETELY DANGEROUS system apps. Do not remove unless you have a backup :)
+This is to figure out what can really be deleted with no or little side effects.</*>
 <b>0.8 - 2014.12.06</b>
 <*>Included Sharpening Mod by <#00f>Skin1980</#> on xda. This is dangerous!</*>
 <*>More warnings, less terms</*>
 <*>Beautified icons</*>
 <*>updated update-binary-installer with version from Skin1980's mod</*>
-<b>0.71 - 2014.12.05</b>
+<b>0.7.1 - 2014.12.05</b>
 <*>Added Google Search (thanks tobitege @ xda)</*>
 <*>Fixed profile/settings loss issue. Please report back</*>
 <*>If system (Google) app is updated, remove update apk also to completely get rid of it</*>
 <*>Fixed typo during updater-script saying Google+ was removed when actually Newsstand got deleted</*>
-<b>0.7 - 2014.12.01</b>
-<*>added approximate file sizes in Debloater module</*>
 <b>continued at bottom</b>
 
 <#00f><b>Known Issues</b></#>
@@ -26,6 +27,8 @@
 <*>beautify things (icons etc)</*>
 
 <b><#0f0>Changelog continued</#></b>
+<b>0.7 - 2014.12.01</b>
+<*>added approximate file sizes in Debloater module</*>
 <b>0.6 - 2014.12.01</b>
 <*>CPU Temperature Throttling Mod by <#00f>Robshr</#> on xda</*>
 <*>Removed sleep(300) on Debloating %)</*>

@@ -93,7 +93,7 @@ then
   #
 
   #ui_print("@Removing Packages");
-  show_progress(0.8, "-5000");
+  show_progress(0.8, "-3000");
   ui_print("@ Removing Safe Packages");
 
 	# Accessibility
@@ -328,6 +328,7 @@ then
 	  delete("/system/app/LGEIME.apk");
 	  delete("/system/app/LGEIME.odex");
 	  delete("/data/app/com.lge.ime-1.apk");
+	  delete("/data/app/com.lge.ime-2.apk");
 	  delete("/system/cust/overlay/app/com.lge.ime.apk");
 	  delete_recursive("/data/data/com.lge.ime");
     endif;
@@ -548,7 +549,7 @@ then
     endif;
 
   ui_print(" ");	
-  ui_print("@ Removing Potentially Unsafe Packages");
+  ui_print("@ Removing Potentially Dangerous Packages");
 	
 	# App Updates
     if
@@ -660,6 +661,707 @@ then
 	#  #delete(lgsound3);
 	#endif;
 
+  ui_print(" ");	
+  ui_print("@ Removing Ultra Dangerous Stuff");
+
+	# ActionManager Service (MRG)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.1") == "1"
+	then
+	  ui_print("  Removing ActionManager Service (MRG)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGActionManager.apk");
+	  delete("/system/priv-app/LGActionManager.odex");
+	  delete_recursive("/data/data/com.lge.mrg.service");
+	endif;
+	
+	# Board Content Provider (MRG)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.2") == "1"
+	then
+	  ui_print("  Removing Board Content Provider (MRG)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/BoardContentProvider.apk");
+	  delete("/system/app/BoardContentProvider.odex");
+	  delete_recursive("/data/data/com.lge.mrg.boardcontent");
+	endif;
+	
+	# DivX Permission
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.3") == "1"
+	then
+	  ui_print("  Removing com.lge.divx.permission");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGDivXDRM.apk");
+	  delete_recursive("/data/data/com.lge.divx.permission");
+	endif;
+	
+	# com.lge.lgdmsgcm (Software Update OTA)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.4") == "1"
+	then
+	  ui_print("  Removing com.lge.lgdmsgcm (Software Update related)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGDMSGCM.apk");
+	  delete("/system/app/LGDMSGCM.odex");
+	  delete_recursive("/data/data/com.lge.lgdmsgcm");
+	endif;
+	
+	# LG DRM Permission
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.5") == "1"
+	then
+	  ui_print("  Removing com.lge.lgdrm.permission");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGDrm.apk");
+	  delete_recursive("/data/data/com.lge.lgdrm.permission");
+	endif;
+	
+	# LG OTA Update Permission
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.6") == "1"
+	then
+	  ui_print("  Removing com.lge.lgfota.permission");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGFOTA.apk");
+	  delete("/system/app/LGFOTA.odex");
+	  delete_recursive("/data/data/com.lge.lgfota.permission");
+	endif;
+	
+	# LG API Permissions
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.7") == "1"
+	then
+	  ui_print("  Removing com.lge.permission");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/PermissionToAccessLgeApi.apk");
+	  delete("/system/app/PermissionToAccessLgeApi.odex");
+	  delete_recursive("/data/data/com.lge.permission");
+	endif;
+	
+	# Content Lock
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.8") == "1"
+	then
+	  ui_print("  Removing Content Lock");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGPrivacylock.apk");
+	  delete("/system/priv-app/LGPrivacylock.odex");
+	  delete_recursive("/data/data/com.lge.privacylock");
+	endif;
+	
+    # Downloads
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.6.9") == "1"
+    then
+      ui_print("  Removing Downloads");
+      #run_program("/tmp/aroma/sleep","300");
+	  delete("/data/preload/LGDownloadProviderUi.apk");
+	  delete("/data/preload/LGDownloadProviderUi.odex");
+  	  delete("/system/cust/overlay/app/com.android.providers.downloads.ui.apk");
+	  delete_recursive("/data/data/com.android.providers.downloads.ui");
+    endif;
+
+	# DRM Service
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.10") == "1"
+	then
+	  ui_print("  Removing DRM Service");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/DrmService.apk");
+	  delete("/system/app/DrmService.odex");
+	  delete_recursive("/data/data/com.lge.drmservice");
+	endif;
+	
+	# ELTest
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.11") == "1"
+	then
+	  ui_print("  Removing ELTest");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/ELTTest.apk");
+	  delete("/system/app/ELTTest.odex");
+	  delete_recursive("/data/data/com.lge.eltest");
+	endif;
+	
+	# FormManager
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.12") == "1"
+	then
+	  ui_print("  Removing FormManager");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGFormManager.apk");
+	  delete("/system/priv-app/LGFormManager.odex");
+	  delete_recursive("/data/data/com.lge.formmanager");
+	endif;
+	
+	# Gallery
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.13") == "1"
+	then
+	  ui_print("  Removing Gallery");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGGallery.apk");
+	  delete("/system/priv-app/LGGallery.odex");
+	  delete("/system/cust/overlay/app/com.android.gallery3d.apk");
+	  delete_recursive("/data/data/com.android.gallery3d");
+	endif;
+	
+	# GNSS Air Test (CDMA)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.14") == "1"
+	then
+	  ui_print("  Removing GNSS Air Test (CDMA)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/GnssAirTest.apk");
+	  delete("/system/app/GnssAirTest.odex");
+	  delete_recursive("/data/data/com.lge.gnss.airtest");
+	endif;
+	
+	# GnssTest
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.15") == "1"
+	then
+	  ui_print("  Removing GnssTest");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/GnssTest.apk");
+	  delete("/system/app/GnssTest.odex");
+	  delete_recursive("/data/data/com.lge.gnsstest");
+	endif;
+	
+	# LG GNSS
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.16") == "1"
+	then
+	  ui_print("  Removing LG GNSS");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/GnssPosTest.apk");
+	  delete("/system/app/GnssPosTest.odex");
+	  delete_recursive("/data/data/com.lge.gnsspostest");
+	endif;
+	
+	# com.lge.hiddenmenu - Hidden Menu
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.17") == "1"
+	then
+	  ui_print("  Removing com.lge.hiddenmenu - HiddenMenu");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/HiddenMenu.apk");
+	  delete("/system/app/HiddenMenu.odex");
+	  delete_recursive("/data/data/com.lge.hiddenmenu");
+	endif;
+	
+	# LG Intelligent Agent
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.18") == "1"
+	then
+	  ui_print("  Removing LG Intelligent Agent");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGLIA.apk");
+	  delete("/system/app/LGLIA.odex");
+	  delete_recursive("/data/data/com.lge.ia");
+	endif;
+	
+	# LIA Informant
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.19") == "1"
+	then
+	  ui_print("  Removing LIA Informant");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LIAInformant.apk");
+	  delete("/system/app/LIAInformant.odex");
+	  delete_recursive("/data/data/com.lge.ia.task.informant");
+	endif;
+	
+	# LIA MrGDBLogger (MRG?)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.20") == "1"
+	then
+	  ui_print("  Removing LIA MrGDBLogger (MRG?)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LIAMrGDBLogger.apk");
+	  delete("/system/app/LIAMrGDBLogger.odex");
+	  delete_recursive("/data/data/com.lge.ia.task.mrgdblogger");
+	endif;
+	
+	# LIA S4URecommender
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.21") == "1"
+	then
+	  ui_print("  Removing LIA S4URecommender");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LIAS4URecommender.apk");
+	  delete("/system/app/LIAS4URecommender.odex");
+	  delete_recursive("/data/data/com.lge.ia.task.s4urecommender");
+	endif;
+	
+	# LG MLT
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.22") == "1"
+	then
+	  ui_print("  Removing LG MLT");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/MLT.apk");
+	  delete("/system/priv-app/MLT.odex");
+	  delete_recursive("/data/data/com.lge.mlt");
+	endif;
+	
+	# LG PC Suite
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.23") == "1"
+	then
+	  ui_print("  Removing LG PC Suite");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGPCSuiteUI.apk");
+	  delete("/system/app/LGPCSuiteUI.odex");
+	  delete("/system/cust/app/overlay/com.lge.pcsyncui.apk");
+	  delete_recursive("/data/data/com.lge.pcsyncui");
+	  #find and add usb image
+	endif;
+	
+	# LG PC Suite Service
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.24") == "1"
+	then
+	  ui_print("  Removing LG PC Suite Service");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGPCSuite.apk");
+	  delete("/system/priv-app/LGPCSuite.odex");
+	  delete("/system/cust/app/overlay/com.lge.sync.apk");
+	  delete_recursive("/data/data/com.lge.sync");
+	endif;
+	
+	# LGApduService
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.25") == "1"
+	then
+	  ui_print("  Removing LGApduService");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGApduService.apk");
+	  delete("/system/app/LGApduService.odex");
+	  delete_recursive("/data/data/com.lge.smartcard.apdu.uicc");
+	endif;
+	
+	# LGATCMD Service
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.26") == "1"
+	then
+	  ui_print("  Removing LGATCMD Service");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGATCMDService.apk");
+	  delete("/system/app/LGATCMDService.odex");
+	  delete_recursive("/data/data/com.lge.android.atservice");
+	endif;
+	
+	# ??? LGERCS.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.27") == "1"
+	then
+	  ui_print("  Removing ??? LGERCS.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGERCS.apk");
+	  delete("/system/app/LGERCS.odex");
+	endif;
+	
+	# ??? LGERCSProvider.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.28") == "1"
+	then
+	  ui_print("  Removing ??? LGERCSProvider.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGERCSProvider.apk");
+	  delete("/system/app/LGERCSProvider.odex");
+	endif;
+	
+	# ??? LGRcsCall.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.29") == "1"
+	then
+	  ui_print("  Removing ??? LGRcsCall.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGRcsCall.apk");
+	  delete("/system/priv-app/LGRcsCall.odex");
+	endif;
+	
+	# ??? LGRCSMessage.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.30") == "1"
+	then
+	  ui_print("  Removing ??? LGRCSMessage.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGRCSMessage.apk");
+	  delete("/system/priv-app/LGRCSMessage.odex");
+	endif;
+	
+	# ??? LGRCSServices.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.31") == "1"
+	then
+	  ui_print("  Removing ??? LGRCSServices.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGRCSServices.apk");
+	  delete("/system/priv-app/LGRCSServices.odex");
+	endif;
+	
+	# License Provider
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.32") == "1"
+	then
+	  ui_print("  Removing License Provider");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LicenseProvider.apk");
+	  delete("/system/app/LicenseProvider.odex");
+	  #test
+	  delete("/data/app/com.lge.eulaprovider-*.apk");
+	  delete_recursive("/data/data/com.lge.eulaprovider");
+	endif;
+	
+	# Live Wallpaper Picker
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.33") == "1"
+	then
+	  ui_print("  Removing Live Wallpaper Picker");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGLiveWallpapersPicker.apk");
+	  delete("/system/priv-app/LGLiveWallpapersPicker.odex");
+	  delete_recursive("/data/data/com.android.wallpaper.livepicker");
+	endif;
+	
+	# Lock Screen Settings
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.34") == "1"
+	then
+	  ui_print("  Removing Lock Screen Settings");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGLockScreenSettings.apk");
+	  delete("/system/app/LGLockScreenSettings.odex");
+	  delete_recursive("/data/data/com.lge.lockscreensettings");
+	endif;
+	
+	# Multi-photo
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.35") == "1"
+	then
+	  ui_print("  Removing Multi-photo");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGLW_MultiPhoto.apk");
+	  delete("/system/priv-app/LGLW_MultiPhoto.odex");
+	  delete_recursive("/data/data/com.lge.livewallpaper.multiphoto");
+	endif;
+	
+	# ??? Phonesky.apk
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.36") == "1"
+	then
+	  ui_print("  Removing ??? Phonesky.apk");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/Phonesky.apk");
+	  delete("/system/priv-app/Phonesky.odex");
+	endif;
+	
+	# Print Spooler 1
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.37") == "1"
+	then
+	  ui_print("  Removing Print Spooler");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/PrintSpooler.apk");
+	  delete("/system/app/PrintSpooler.odex");
+	  delete_recursive("/data/data/com.android.printspooler");
+	endif;
+
+	# Quickset SDK
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.38") == "1"
+	then
+	  ui_print("  Removing Quickset SDK");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/QuicksetSDK.apk");
+	  delete_recursive("/data/data/com.uei.lg.quicksetsdk.maxq616");
+	endif;
+	
+	# Remote support service
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.39") == "1"
+	then
+	  ui_print("  Removing Remote support service");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/rspermlge.apk");
+	  delete("/system/app/rspermlge.odex");
+	  delete_recursive("/data/data/com.rsupport.rsperm");
+	endif;
+	
+	# Settings
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.40") == "1"
+	then
+	  ui_print("  Removing Settings");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGEasySettings.apk");
+	  delete("/system/app/LGEasySettings.odex");
+	  delete("/system/cust/app/overlay/com.lge.settings.easy.apk");
+	  delete_recursive("/data/data/com.lge.settings.easy");
+	endif;
+	
+	# Shutdown Monitor
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.41") == "1"
+	then
+	  ui_print("  Removing Shutdown Monitor");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/com.lge.shutdownmonitor.apk");
+	  delete("/system/app/com.lge.shutdownmonitor.odex");
+	  delete_recursive("/data/data/com.lge.shutdownmonitor");
+	endif;
+	
+	# Smart cleaning
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.42") == "1"
+	then
+	  ui_print("  Removing Smart cleaning");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGSpringCleaning.apk");
+	  delete("/system/app/LGSpringCleaning.odex");
+	  delete_recursive("/data/data/com.lge.springcleaning");
+	endif;
+	
+	# Smart screen
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.43") == "1"
+	then
+	  ui_print("  Removing Smart screen");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/WiseScreen.apk");
+	  delete("/system/priv-app/WiseScreen.odex");
+	  delete_recursive("/data/data/com.lge.keepscreenon");
+	endif;
+	
+	# SmartShare Beam (WFDS)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.44") == "1"
+	then
+	  ui_print("  Removing SmartShare Beam (WFDS)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGSmartShareBeam_WFDS.apk");
+	  delete("/system/priv-app/LGSmartShareBeam_WFDS.odex");
+	  delete_recursive("/data/data/com.lge.smartsharebeam");
+	endif;
+	
+	# SmartShare Push
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.45") == "1"
+	then
+	  ui_print("  Removing SmartShare Push");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGConnectionWizard.apk");
+	  delete("/system/priv-app/LGConnectionWizard.odex");
+	  delete("/system/cust/app/overlay/com.lge.smartsharepush.apk");
+	  delete_recursive("/data/data/com.lge.smartsharepush");
+	endif;
+	
+	# SmartShare.Beam
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.46") == "1"
+	then
+	  ui_print("  Removing SmartShare.Beam");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/SmartShareBeam.apk");
+	  delete("/system/priv-app/SmartShareBeam.odex");
+	  delete_recursive("/data/data/itectokyo.wiflus.service");
+	endif;
+	
+	# SmartShare.Cloud
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.47") == "1"
+	then
+	  ui_print("  Removing SmartShare.Cloud");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/CloudHub.apk");
+	  delete("/system/app/CloudHub.odex");
+	  delete_recursive("/data/data/com.lge.cloudhub");
+	endif;
+	
+	# SmartShare.DLNA
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.48") == "1"
+	then
+	  ui_print("  Removing SmartShare.DLNA");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/SmartShareDLNA.apk");
+	  delete("/system/app/SmartShareDLNA.odex");
+	  delete_recursive("/data/data/com.lge.smartshare.dlna");
+	endif;
+	
+	# SmartShare.MediaServer
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.49") == "1"
+	then
+	  ui_print("  Removing SmartShare.MediaServer");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/SmartShare.apk");
+	  delete("/system/app/SmartShare.odex");
+	  delete_recursive("/data/data/com.lge.smartshare");
+	endif;
+	
+	# SmartShare.Provider
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.50") == "1"
+	then
+	  ui_print("  Removing SmartShare.Provider");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/SmartShareProvider.apk");
+	  delete("/system/app/SmartShareProvider.odex");
+	  delete_recursive("/data/data/com.lge.smartshare.provider");
+	endif;
+	
+	# Tags (NFC)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.51") == "1"
+	then
+	  ui_print("  Removing Tags (NFC)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/TagGoogle.apk");
+	  delete("/system/priv-app/TagGoogle.odex");
+	  delete_recursive("/data/data/com.google.android.tag");
+	endif;
+	
+	# Unified EULA
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.52") == "1"
+	then
+	  ui_print("  Removing Unified EULA");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/UnifiedEULA.apk");
+	  delete("/system/app/UnifiedEULA.odex");
+	  delete("/system/cust/overlay/app/com.lge.eula.apk");
+	  delete_recursive("/data/data/com.lge.eula");
+	endif;
+	
+	# Video
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.53") == "1"
+	then
+	  ui_print("  Removing Video");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGVideo.apk");
+	  delete("/system/priv-app/LGVideo.odex");
+	  delete("/system/cust/app/overlay/com.lge.videoplayer.apk");
+	  delete_recursive("/data/data/com.lge.videoplayer");
+	endif;
+	
+	# Video Trim
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.54") == "1"
+	then
+	  ui_print("  Removing Video Trim");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGVidClip.apk");
+	  delete("/system/priv-app/LGVidClip.odex");
+	  delete("/system/cust/app/overlay/com.lge.videotool.apk");
+	  delete_recursive("/data/data/com.lge.videotool");
+	endif;
+	
+	# Voice Mate
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.55") == "1"
+	then
+	  ui_print("  Removing Voice Mate");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/data/app/com.nuance.voicemate-*.apk");
+	  delete("/data/app/com.nuance.voicemate-*.odex");
+	  delete_recursive("/data/data/com.nuance.voicemate");
+	endif;
+
+	# Voice Recorder
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.56") == "1"
+	then
+	  ui_print("  Removing Voice Recorder");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGVoiceRecorder.apk");
+	  delete("/system/priv-app/LGVoiceRecorder.odex");
+	  delete("/system/cust/app/overlay/com.lge.voicerecorder.apk");
+	  delete_recursive("/data/data/com.lge.voicerecorder");
+	endif;
+	
+	# WAP Service
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.57") == "1"
+	then
+	  ui_print("  Removing WAP Service");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/WapService.apk");
+	  delete("/system/priv-app/WapService.odex");
+	  delete_recursive("/data/data/com.lge.wapservice");
+	endif;
+	
+	# Weather
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.58") == "1"
+	then
+	  ui_print("  Removing Weather");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGWeather.apk");
+	  delete("/system/app/LGWeather.odex");
+	  delete("/system/cust/app/overlay/com.lge.sizechangable.weather.apk");
+	  delete_recursive("/data/data/com.lge.sizechangable.weather");
+	endif;
+	
+	# WeatherPlatform
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.59") == "1"
+	then
+	  ui_print("  Removing WeatherPlatform");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGWeatherService.apk");
+	  delete("/system/app/LGWeatherService.odex");
+	  delete_recursive("/data/data/com.lge.sizechangable.weather.platform");
+	endif;
+	
+	# Weather Theme
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.60") == "1"
+	then
+	  ui_print("  Removing Weather Theme");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/LGWeatherTheme.apk");
+	  delete("/system/app/LGWeatherTheme.odex");
+	  delete_recursive("/data/data/com.lge.sizechangable.weather.theme.optimus");
+	endif;
+
+	# Wfd Service (Qualcomm, WFDS)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.61") == "1"
+	then
+	  ui_print("  Removing Wfd Service (Qualcomm, WFDS)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGWFDSService.apk");
+	  delete("/system/priv-app/LGWFDSService.odex");
+	  delete_recursive("/data/data/com.lge.wfds.service");
+	endif;
+	
+	# WfdsService (WFDS)
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.62") == "1"
+	then
+	  ui_print("  Removing WfdsService (WFDS)");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/LGWFDSService.apk");
+	  delete("/system/priv-app/LGWFDSService.odex");
+	  delete_recursive("/data/data/com.lge.wfds.service");
+	endif;
+	
+	# Widevine Keybox Test
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.6.63") == "1"
+	then
+	  ui_print("  Removing Widevine Keybox Test");
+	  #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/app/WVTest.apk");
+	  delete("/system/app/WVTest.odex");
+	  delete_recursive("/data/data/com.lge.wv.hidden");
+	endif;
+	
 	ui_print(" ");
 	
   #####################################################################################################
@@ -677,6 +1379,8 @@ then
   # BEGIN SD FIX
   #
   ui_print("@SD Fix");
+  show_progress(0.8, "-3000");
+  ui_print(" ");
   
   # Stock
   if
@@ -713,6 +1417,8 @@ then
   # BEGIN CTT MOD
   #
   ui_print("@CTT MOD");
+  show_progress(0.8, "-3000");
+  ui_print(" ");
   
   # Stock
   if
@@ -774,6 +1480,8 @@ then
   #
 
   ui_print("@Sharpening Mod");
+  show_progress(0.8, "-3000");
+  ui_print(" ");
   ui_print("  Copying resources");
   package_extract_dir("oversharpen", "/tmp");
   ui_print(" ");
@@ -784,7 +1492,6 @@ then
   ui_print("  Running script and bumping boot image");
   run_program("/tmp/apply-patch.sh");
   ui_print(" ");
-  set_progress(1.0);
   ui_print("  Done");
   ui_print(" ");
 
