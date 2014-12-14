@@ -91,7 +91,7 @@ mainmenu.sdfixdesc=Erlaubt Apps unter Android 4.4 KitKat, wieder auf SD zu schre
 mainmenu.cttmod=CPU Thermal Throttling Mod
 mainmenu.cttdesc=ändert die Temperatur, ab wann das Gerät heruntertaktet. Erstellt von <#00f>Robshr</#> auf xda.
 mainmenu.sharp=Oversharpening Mod
-mainmenu.sharpdesc=ändert/entfernt Bildschirmüberzeichnung (Screen Oversharpening) per Kernelpatch. Erstellt von <#00f>Skin1980</#> on xda. Kernel MUSS Bump!ed sein! Noch nicht implementiert.
+mainmenu.sharpdesc=ändert/entfernt Bildschirmüberzeichnung (Screen Oversharpening) per Kernelpatch. Erstellt von <#00f>Skin1980</#> auf xda.
 mainmenu.systeminfo=System Info
 mainmenu.systemdesc=Geräte-/Partitionsinformationen
 
@@ -106,9 +106,9 @@ mainmenu.systemdesc=Geräte-/Partitionsinformationen
 debloatinstructions.title=Entkrepler Anleitung
 debloatinstructions.desc=Anleitung und Warnungen
 debloatinstructions.warning=<#0f0><b>Sicher</b></#>: Apps die man sicher entfernen kann. Entferne NICHTS was du benutzt!\
-<#0080ff><b>Sicher mit Alternative</b></#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben.\
+<#006eff><b>Sicher mit Alternative</b></#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben. </b><#00f>Können beim Factory Reset zum Setup Loop führen (besonders Keyboard und Launcher)!</#></b>\
 <#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden.\
-<#0000ff><b>Potentiell unsicher</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
+<#0000ff><b>Potentiell gefährlich</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
 <#0f0><b>Animationen entfernen</b></#>: Entfernt Boot/Shutdown Animationen und Klänge, plus LG Musik.\
 \
 Bitte melde dich bei mir (subworx @ xda, Deutsch/Englisch) wenn es Probleme gibt oder du weitere APKs kennst, die ohne Nebeneffekte entfernt werden können.
@@ -137,8 +137,8 @@ debloatcustomize.113=(1.5 MB) LG Musikplayer Widget
 debloatcustomize.114=(10.1 MB) LG Musikplayer
 debloatcustomize.115=(7.3 MB) Home Screen "Smart Notice" Widget. Funktioniert in anderen Launchern wie Nova nicht.
 debloatcustomize.116=(4.0 MB) LG Benutzungs-Tipps App, entfernen macht das halbe LG ganzseitige Widet nutzlos
-debloatcustomize.20=Sicher mit Alternative (~121 MB)
-debloatcustomize.21=(29.0 MB) Standard LG Launcher. Besser neuen Standard setzen vorm Entfernen.
+debloatcustomize.20=Sicher mit Alternative (~147 MB)
+debloatcustomize.21=(29.0 MB) Standard LG Launcher. Besser neuen Standard setzen vorm Entfernen. Kann evtl. zu Setup Loops führen, unbekannt ob das Integrieren eines anderen Launchers in /system hilft.
 debloatcustomize.22=(21.5 MB) Optimus Theme fuer LG Home Launcher. NICHT entfernen wenn du LG Home nutzt.
 debloatcustomize.23=(17.5 MB) Standard Browser. Nur entfernen wenn z.B. Chrome oder Opera installiert ist.
 debloatcustomize.24=(27.8 MB) Stock LG Tastatur. Besser neuen Standard setzen vorm Entfernen. Nur entfernen wenn z.B. Swype or AOSP Keyboard installiert ist.
@@ -146,7 +146,7 @@ debloatcustomize.25=(25.4 MB) LG Tastatur T9 Schreibkorrektur. Kann vermutlich w
 debloatcustomize.30=Google Apps (~208 MB)
 debloatcustomize.31=(16.0 MB) Browser
 debloatcustomize.32=(12.8 MB) Onlinespeicher
-debloatcustomize.33=(8.3 MB) Mailclient
+debloatcustomize.33=(8.3 MB) Mailclient.
 debloatcustomize.34=(13.3 MB) eBook App
 debloatcustomize.35=(4.5 MB) Teile Erfolge etc
 debloatcustomize.36=(8.3 MB) Direkter Zugriff auf gekaufte Filme
@@ -159,9 +159,9 @@ debloatcustomize.312=(25.6 MB) Maps, Navigation und mehr
 debloatcustomize.313=(0.5 MB) Maps Addin, ermöglicht Street View
 debloatcustomize.314=(3.4 MB) Google Eingabehilfen, z.B. Sprachausgabe
 debloatcustomize.315=(14.3 MB) YouTube Client
-debloatcustomize.40=Potentiell unsicher (~11 MB)
+debloatcustomize.40=Potentiell gefährlich (~11 MB)
 debloatcustomize.41=(6.6 MB) LG App Updates. Wenn du LG Apps laden/installieren willst, entferne dies NICHT
-debloatcustomize.42=Aktuell nicht eingebaut. XDA zufolge kann das nach einem Zurücksetzen auf Werkseinstellungen zum Bootloop führen. Ich habe das nicht vor, daher kann ich nicht sagen ob es schädlich ist. Kann natürlich per Play Store in den Userspace installiert werden.
+debloatcustomize.42=(26.6 MB) XDA zufolge kann das nach einem Zurücksetzen auf Werkseinstellungen zum Setup Loop führen.
 debloatcustomize.43=(0.2 MB) Mögliches Sicherheitsrisiko wie auf XDA berichtet, möglicherweise gefixt - auf jeden Fall benötigt App Updater das zum Laden und Installieren von LG Apps. Eventuell nötig für Software Updates (OTA)
 debloatcustomize.44=(4.3 MB) Verwaltet OTA Updates. Mit Root willst du das normalerweise nicht haben.
 debloatcustomize.45=(0.1 MB) LG Updater, zu finden unter Einstellungen -> über das Telefon -> Software Updates, benutzt um App Updater und Software Updater zu starten. FC ueber Einstellungen wenn Updater entfernt aber App/Software Updates vorhanden.

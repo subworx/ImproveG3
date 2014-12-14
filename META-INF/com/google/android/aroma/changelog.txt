@@ -1,6 +1,26 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>0.71 - 2014.12.05</b>
+<*>Added Google Search (thanks tobitege @ xda)</*>
+<*>Fixed profile/settings loss issue. Please report back</*>
+<*>If system (Google) app is updated, remove update apk also to completely get rid of it</*>
+<*>Fixed typo during updater-script saying Google+ was removed when actually Newsstand got deleted</*>
 <b>0.7 - 2014.12.01</b>
 <*>added approximate file sizes in Debloater module</*>
+<b>continued at bottom</b>
+
+<#00f><b>Known Issues</b></#>
+<*>installer (updater-script) log file sometimes is not written to SD</*>
+<*>sometimes no network is found. Disabling wifi+data and re-enabling them should help</*>
+<*>tell me</*>
+
+<#0f0><b>TODO</b></#>
+<*>include screen oversharpen mod once stable, credit creator</*>
+<*>find details for lg sounds/music</*>
+<*>need more user reports for Google Apps removal</*>
+<*>split aroma code into multiple files</*>
+<*>beautify things (icons etc)</*>
+
+<b><#0f0>Changelog continued</#></b>
 <b>0.6 - 2014.12.01</b>
 <*>CPU Temperature Throttling Mod by <#00f>Robshr</#> on xda</*>
 <*>Removed sleep(300) on Debloating %)</*>
@@ -22,15 +42,3 @@
 <*>initial release</*>
 <*>supporting G3 D855</*>
 <*>only tested on 10L</*>
-
-<#00f><b>Known Issues</b></#>
-<*>installer (updater-script) log file sometimes is not written to SD</*>
-<*>tell me</*>
-
-<#0f0><b>TODO</b></#>
-<*>include screen oversharpen mod once stable, credit creator</*>
-<*>find details for Google Search</*>
-<*>find details for lg sounds/music</*>
-<*>need user reports for Google Apps removal as I have them in user space</*>
-<*>split aroma code into multiple files</*>
-<*>beautify things (icons etc)</*>

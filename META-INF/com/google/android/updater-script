@@ -354,6 +354,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/ChromeWithBrowser.apk");
 	  delete("/system/app/ChromeWithBrowser.odex");
+	  delete("/data/app/com.android.chrome-1.apk");
+	  delete("/data/app/com.android.chrome-2.apk");
+	  delete("/data/app/com.android.chrome-3.apk");
 	  delete_recursive("/data/data/com.android.chrome");
     endif;
 	
@@ -365,9 +368,12 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/GoogleDrive.apk");
 	  delete("/system/app/GoogleDrive.odex");
+	  delete("/data/app/com.google.android.apps.docs-1.apk");
+	  delete("/data/app/com.google.android.apps.docs-2.apk");
+	  delete("/data/app/com.google.android.apps.docs-3.apk");
 	  delete_recursive("/data/data/com.google.android.apps.docs");
     endif;
-	
+
 	# Gmail
     if
       file_getprop("/tmp/aroma/customize.prop","item.3.3") == "1"
@@ -376,6 +382,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Gmail2.apk");
 	  delete("/system/app/Gmail2.odex");
+	  delete("/data/app/com.google.android.gm-1.apk");
+	  delete("/data/app/com.google.android.gm-2.apk");
+	  delete("/data/app/com.google.android.gm-3.apk");
 	  delete_recursive("/data/data/com.google.android.gm");
     endif;
 	
@@ -398,6 +407,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/PlayGames.apk");
 	  delete("/system/app/PlayGames.odex");
+	  delete("/data/app/com.google.android.play.games-1.apk");
+	  delete("/data/app/com.google.android.play.games-2.apk");
+	  delete("/data/app/com.google.android.play.games-3.apk");
 	  delete_recursive("/data/data/com.google.android.play.games");
     endif;
 	
@@ -409,6 +421,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Videos.apk");
 	  delete("/system/app/Videos.odex");
+	  delete("/data/app/com.google.android.videos-1.apk");
+	  delete("/data/app/com.google.android.videos-2.apk");
+	  delete("/data/app/com.google.android.videos-3.apk");
 	  delete_recursive("/data/data/com.google.android.videos");
     endif;
 	
@@ -420,6 +435,7 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Music2.apk");
 	  delete("/system/app/Music2.odex");
+	  delete("/data/app/com.google.android.music-2.apk");
 	  delete_recursive("/data/data/com.google.android.music");
     endif;
 	
@@ -427,10 +443,13 @@ then
     if
       file_getprop("/tmp/aroma/customize.prop","item.3.8") == "1"
     then
-      ui_print("  Removing Google+");
+      ui_print("  Removing Google Play Newsstand");
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Magazines.apk");
 	  delete("/system/app/Magazines.odex");
+	  delete("/data/app/com.google.android.apps.magazines-1.apk");
+	  delete("/data/app/com.google.android.apps.magazines-2.apk");
+	  delete("/data/app/com.google.android.apps.magazines-3.apk");
 	  delete_recursive("/data/data/com.google.android.apps.magazines");
     endif;
 	
@@ -441,6 +460,9 @@ then
 	  ui_print("  Removing Google Text-to-speech Engine");
 	  delete("/system/app/GoogleTTS.apk");
 	  delete("/system/app/GoogleTTS.odex");
+	  delete("/data/app/com.google.android.tts-1.apk");
+	  delete("/data/app/com.google.android.tts-2.apk");
+	  delete("/data/app/com.google.android.tts-3.apk");
 	  delete_recursive("/data/data/com.google.android.tts");
     endif;
 	  
@@ -452,6 +474,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/PlusOne.apk");
 	  delete("/system/app/PlusOne.odex");
+	  delete("/data/app/com.google.android.apps.plus-1.apk");
+	  delete("/data/app/com.google.android.apps.plus-2.apk");
+	  delete("/data/app/com.google.android.apps.plus-3.apk");
 	  delete_recursive("/data/data/com.google.android.apps.plus");
     endif;
 	
@@ -463,6 +488,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Hangouts.apk");
 	  delete("/system/app/Hangouts.odex");
+	  delete("/data/app/com.google.android.talk-1.apk");
+	  delete("/data/app/com.google.android.talk-2.apk");
+	  delete("/data/app/com.google.android.talk-3.apk");
 	  delete_recursive("/data/data/com.google.android.talk");
     endif;
 	
@@ -474,6 +502,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Maps.apk");
 	  delete("/system/app/Maps.odex");
+	  delete("/data/app/com.google.android.apps.maps-1.apk");
+	  delete("/data/app/com.google.android.apps.maps-2.apk");
+	  delete("/data/app/com.google.android.apps.maps-3.apk");
 	  delete_recursive("/data/data/com.google.android.apps.maps");
     endif;
 	
@@ -496,7 +527,10 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/talkback.apk");
 	  delete("/system/app/talkback.odex");
-	  delete_recursive("/data/data/");
+	  delete("/data/app/com.google.android.marvin.talkback-1.apk");
+	  delete("/data/app/com.google.android.marvin.talkback-2.apk");
+	  delete("/data/app/com.google.android.marvin.talkback-3.apk");
+	  delete_recursive("/data/data/com.google.android.marvin.talkback");
     endif;
 	
 	# YouTube
@@ -507,6 +541,9 @@ then
       #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/YouTube.apk");
 	  delete("/system/app/YouTube.odex");
+	  delete("/data/app/com.google.android.youtube-1.apk");
+	  delete("/data/app/com.google.android.youtube-2.apk");
+	  delete("/data/app/com.google.android.youtube-3.apk");
 	  delete_recursive("/data/data/com.google.android.youtube");
     endif;
 
@@ -524,18 +561,21 @@ then
 	  delete("/system/cust/overlay/app/com.lge.appbox.client.apk");
 	  delete_recursive("/data/data/com.lge.appbox.client");
     endif;
-	
-	# Google Search
-    #if
-    #  file_getprop("/tmp/aroma/customize.prop","item.4.2") == "1"
-    #then
-    #  ui_print("  Removing Google Search");
-    #  #run_program("/tmp/aroma/sleep","300");
-	  #delete("/system/.apk");
-	  #delete("/system/.odex");
-	  #delete_recursive("/data/data/");
-    #endif;
-	
+
+  	# Google Search
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.2") == "1"
+    then
+      ui_print("  Removing Google Search");
+      #run_program("/tmp/aroma/sleep","300");
+	  delete("/system/priv-app/Velvet.apk");
+	  delete("/system/priv-app/Velvet.odex");
+	  delete("/data/app/com.google.android.googlequicksearchbox-1.apk");
+	  delete("/data/app/com.google.android.googlequicksearchbox-2.apk");
+	  delete("/data/app/com.google.android.googlequicksearchbox-3.apk");
+	  delete_recursive("/data/data/com.google.android.googlequicksearchbox");
+    endif;
+
 	# LGInstallService
     if
       file_getprop("/tmp/aroma/customize.prop","item.4.3") == "1"
