@@ -1,0 +1,679 @@
+##
+#
+# AROMA Installer - Installer Script
+#       (c) 2011 by Ahmad Amarullah
+#           amarullz - xda-developers
+#
+#       Version 1.60 - TEST updater-script
+#       FOR LEARNING PORPOSE ONLY
+#
+##
+
+##
+#
+# OLD UPDATER-BINARY
+#
+# Here you can use old command for flashing files, like:
+#  mount
+#  umount
+#  delete_recursive
+#  format
+#  package_extract_dir
+#  set_perm_recursive
+#
+
+## CHECKING Configuration from aroma-config
+#
+# Check it using if else statement, with file_getprop
+# in /tmp/aroma
+#
+# Example:
+# if
+#      file_getprop("/tmp/aroma/customize.prop","item.6.3") == "1"
+# then
+#   ... here the command ...
+# endif;
+#
+
+## INFO COMMAND FOR AROMA
+#
+#-- DIFFERENT BEHAVIOUR
+#
+# set_progress(0.5);
+#    Set Progress position: 0.0 = 0%; 0.5 = 50%; 1.0 = 100%
+#    
+# show_progress(0.2, 400);
+#    show_progress( progress size, number of files to be extracted );
+#    if we had 50 files, and want to "add" 0.2 into progress after all finished
+#    use (0.2, 50)
+#
+# show_progress(0.2, "-2000");
+#    show_progress( progress size, wait for 2000ms );
+#    For show progress with time as progress indicator, use negative value. After 2second progress will add 0.2/20% into the value
+#    use (0.2, "-2000"). Note, use quote for value "-2000"
+#
+# ui_print("@ Title");
+#    Set progress title
+#
+# ui_print("Default Text");
+#    Set Normal Log Text
+#
+##
+
+#####################################################################################################
+#
+# EXAMPLES INSTALLER SCRIPT - It won't flash anything.
+#
+# This script will use run_program("/tmp/aroma/sleep","500"); to wait the command to another command
+# in real installation, you don't need it.... so delete the lines
+#
+#
+ui_print("Beginning with Debloating process.");
+ui_print(" ");
+ui_print(" ");
+
+set_progress(0.02);
+ui_print("@Mounting Devices");
+
+set_progress(0.06);
+ui_print("  Mounting /data");
+run_program("/sbin/busybox", "mount", "/data");
+
+set_progress(0.1);
+ui_print("  Mounting /system");
+run_program("/sbin/busybox", "mount", "/system");
+
+
+#set_progress(0.09);
+#ui_print("  Mounting /system");
+#run_program("/tmp/aroma/sleep","500");
+#
+# Example:
+# mount("MTD", "system", "/system");
+#
+
+#set_progress(0.1);
+#ui_print(" ");
+#ui_print("@Example Progress by Time for 10 Seconds");
+#show_progress(0.3, "-10000"); #-- Example show_progress with time as indicator for 10 second
+#run_program("/tmp/aroma/sleep","10000");
+#set_progress(0.4);
+
+#
+# Example Extract Files
+#
+#ui_print(" ");
+#ui_print("@Example Progress by Files");
+#ui_print("  Extracting Files Into Temporary");
+#ui_print("  For Exampling Progress by files");
+#show_progress(0.3, "1264");       #-- Example show_progress with files extracted as indicator - 158 x 8 Times files
+
+#-- Extract Then Delete It ( 8x )
+#ui_print("  Extract 1");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 2");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 3");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 4");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 5");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 6");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 7");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print("  Extract 8");
+#package_extract_dir("", "/tmp"); delete_recursive("/tmp/META-INF"); ui_print(" ");
+
+#ui_print(" ");
+#set_progress(0.7);
+
+ui_print("@Removing Packages");
+show_progress(0.8, "-11400"); #-- 38 package * 300ms per package = 11400ms
+##---- Customize Packages
+ui_print("@ Removing Safe Packages");
+	  
+    # EasyHome
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.1") == "1"
+    then
+      ui_print("@  Removing EasyHome");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/priv-app/LGEasyHome.apk");
+	  #delete("/system/priv-app/LGEasyHome.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+
+    # E-Mail
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.2") == "1"
+    then
+      ui_print("@  Removing E-Mail");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+    # Face Unlock
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.3") == "1"
+    then
+      ui_print("@  Removing Face Unlock");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+    # File Manager
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.4") == "1"
+    then
+      ui_print("@  Removing File Manager");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Home selector
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.5") == "1"
+    then
+      ui_print("@  Removing Home selector");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+
+	# LG Health
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.6") == "1"
+    then
+      ui_print("@  Removing LG Health");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# LG Keyboard Black Theme
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.7") == "1"
+    then
+      ui_print("@  Removing LG Keyboard Black Theme");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# LGSearchWidgetProvider
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.8") == "1"
+    then
+      ui_print("@  Removing LGSearchWidgetProvider");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# McAfee Security
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.9") == "1"
+    then
+      ui_print("@  Removing McAfee Security");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Music widget
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.10") == "1"
+    then
+      ui_print("@  Removing Music widget");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Music app
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.1.11") == "1"
+    then
+      ui_print("@  Removing Music app");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+
+ui_print("@ Removing Safe with Replacement Packages");
+
+	# Home
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.2.1") == "1"
+    then
+      ui_print("@  Removing Home");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Internet
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.2.2") == "1"
+    then
+      ui_print("@  Removing Internet");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# LG Keyboard
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.2.3") == "1"
+    then
+      ui_print("@  Removing LG Keyboard");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+
+ui_print("@ Removing Google Packages");
+	
+	# Chrome
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.1") == "1"
+    then
+      ui_print("@  Removing Chrome");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Drive
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.2") == "1"
+    then
+      ui_print("@  Removing Drive");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Gmail
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.3") == "1"
+    then
+      ui_print("@  Removing Gmail");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google Play Books
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.4") == "1"
+    then
+      ui_print("@  Removing Google Play Books");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google Play Games
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.5") == "1"
+    then
+      ui_print("@  Removing Google Play Games");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google Play Movies
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.6") == "1"
+    then
+      ui_print("@  Removing Google Play Movies");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google Play Music
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.7") == "1"
+    then
+      ui_print("@  Removing Google Play Music");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google+
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.8") == "1"
+    then
+      ui_print("@  Removing Google+");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Hangouts
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.9") == "1"
+    then
+      ui_print("@  Removing Hangouts");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Maps
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.10") == "1"
+    then
+      ui_print("@  Removing Maps");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Street View
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.11") == "1"
+    then
+      ui_print("@  Removing Street View");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# TalkBack
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.12") == "1"
+    then
+      ui_print("@  Removing TalkBack");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# YouTube
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.3.13") == "1"
+    then
+      ui_print("@  Removing YouTube");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+ui_print("@ Removing Potentially Unsafe Packages");
+	
+	# Accessibility
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.1") == "1"
+    then
+      ui_print("@  Removing Accessibility");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Answer Me
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.2") == "1"
+    then
+      ui_print("@  Removing Answer Me");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# App Updater
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.3") == "1"
+    then
+      ui_print("@  Removing App Updater");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# com.lge.sui.widget
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.4") == "1"
+    then
+      ui_print("@  Removing com.lge.sui.widget");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Google Search
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.5") == "1"
+    then
+      ui_print("@  Removing Google Search");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# LG Backup
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.6") == "1"
+    then
+      ui_print("@  Removing LG Backup");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# LGInstallService
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.7") == "1"
+    then
+      ui_print("@  Removing LGInstallService");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Smart Notice
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.8") == "1"
+    then
+      ui_print("@  Removing Smart Notice");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Smart Tips
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.9") == "1"
+    then
+      ui_print("@  Removing Smart Tips");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Software Update
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.10") == "1"
+    then
+      ui_print("@  Removing Software Update");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+	
+	# Update Center
+    if
+      file_getprop("/tmp/aroma/customize.prop","item.4.11") == "1"
+    then
+      ui_print("@  Removing Update Center");
+      run_program("/tmp/aroma/sleep","300");
+	  #delete("/system/.apk");
+	  #delete("/system/.odex");
+	  #delete_recursive("/data/data/");
+    endif;
+
+ui_print("@ Removing Animations");
+
+	# Boot Animation
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.5.1") == "1"
+	then
+	  ui_print("@  Removing Boot Animation");
+	  run_program("/tmp/aroma/sleep","300");
+	  #delete(bootanimation.zip);
+	endif;
+
+	# Shutdown Animation
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.5.2") == "1"
+	then
+	  ui_print("@  Removing Shutdown Animation");
+	  run_program("/tmp/aroma/sleep","300");
+	  #delete(shutdownanimation.zip);
+	endif;
+
+	# Boot Sound
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.5.3") == "1"
+	then
+	  ui_print("@  Removing Boot Sound");
+	  run_program("/tmp/aroma/sleep","300");
+	  #delete(bootsound);
+	endif;
+
+	# Shutdown Sound
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.5.4") == "1"
+	then
+	  ui_print("@  Removing Shutdown Sound");
+	  run_program("/tmp/aroma/sleep","300");
+	  #delete(shutdownsound);
+	endif;
+
+	# LG Sounds
+	if
+	  file_getprop("/tmp/aroma/customize.prop","item.5.5") == "1"
+	then
+	  ui_print("@  Removing LG Sounds");
+	  run_program("/tmp/aroma/sleep","300");
+	  #delete(lgsound1);
+	  #delete(lgsound2);
+	  #delete(lgsound3);
+	endif;
+	
+#--- END OF Customize
+ui_print(" ");
+
+#-- Kernel
+#ui_print("@Kernel & Mods");
+#if
+#  file_getprop("/tmp/aroma/mods.prop","selected.1") == "1"
+#then
+#  ui_print(" 2.6.8 Kernel");
+#endif;
+
+#if
+#  file_getprop("/tmp/aroma/mods.prop","selected.1") == "2"
+#then
+#  ui_print(" 3.0.0 Kernel");
+#endif;
+
+#if
+#  file_getprop("/tmp/aroma/mods.prop","selected.1") == "3"
+#then
+#  ui_print(" AROMA Kernel");
+#endif;
+#run_program("/tmp/aroma/sleep","500");
+#set_progress(0.93);
+
+
+#-- Boot Animation
+#ui_print(" Boot Animation selected = "+file_getprop("/tmp/aroma/mods.prop","selected.2"));
+#run_program("/tmp/aroma/sleep","500");
+#set_progress(0.95);
+
+#-- SD-EXT Mods
+#ui_print(" SD-EXT Mods selected = "+file_getprop("/tmp/aroma/mods.prop","selected.3"));
+#run_program("/tmp/aroma/sleep","500");
+#set_progress(0.97);
+
+#-- Input Method
+#ui_print(" Input Method selected = "+file_getprop("/tmp/aroma/mods.prop","selected.4"));
+#run_program("/tmp/aroma/sleep","500");
+#set_progress(0.98);
+
+#-- Camera
+#ui_print(" Camera selected = "+file_getprop("/tmp/aroma/mods.prop","selected.5"));
+#run_program("/tmp/aroma/sleep","500");
+#set_progress(0.99);
+
+#ui_print(" ");
+
+set_progress(0.92);
+ui_print("@Unmounting Devices");
+
+set_progress(0.95);
+ui_print("  Unmounting /data");
+run_program("/sbin/busybox", "umount", "/data");
+
+set_progress(0.98);
+ui_print("  Unmounting /system");
+run_program("/sbin/busybox", "umount", "/system");
+
+#-- Finish
+#ui_print(" ");
+ui_print("@Finished");
+set_progress(1);

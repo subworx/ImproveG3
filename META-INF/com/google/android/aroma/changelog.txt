@@ -1,0 +1,5 @@
+<b><#selectbg_g>LG G3 Debloater</#></b>
+<*><b>0.1</b></*>
+ <*>initial release</*>
+ <*> supporting G3 D855</*>
+ <*> only tested on 10L</*>
