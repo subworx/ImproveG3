@@ -18,6 +18,7 @@
 #
 #   Language  : German
 #   By        : Kalashnikitty (Midian666)
+#	Modified  : subworx
 #
 
 #
@@ -30,8 +31,9 @@ text_yes=Ja
 text_no=Nein
 text_about=Über
 text_calibrating=Kalibrierung
-text_quit=Installation beenden
-text_quit_msg=Installer wirklich beenden?
+text_quit=ImproveG3 beenden
+text_quit_msg=ImproveG3 wirklich beenden?
+text_finish=Fertig
 
 #
 #-- CUSTOM STRING RESOURCE
@@ -53,17 +55,127 @@ themes.title=Thema wählen
 themes.desc=Bitte wähle das Installations Thema, welches du während der Installation testen möchtest:
 
 welcome.title=Willkommen
-welcome.text1=Du bist dabei zu Installieren
-welcome.text2=Der AROMA Installer war das erste und das einzige anpassbare Touch Installer für ANDROID der Welt.
-welcome.version=VERSION
-welcome.codename=CODENAME
-welcome.updated=AKTUALISIERT
-welcome.next=Weiter drücken, um mit der Installation fortzufahren...
+welcome.text1=Willkommen bei 
+welcome.text2=Dieses Werkzeug entfernt System-Apps und verbessert andere Dinge. Es wurde nur getestet mit dem D855 (International Unlocked) mit dem 10L stock rooted ROM
+welcome.version=Version
+welcome.updated=Aktualisiert
+welcome.creator=Creator
+welcome.next=Weiter drücken, um mit dem Prozess fortzufahren...
 
 terms.title=AGB
-terms.desc=Bitte lese dir die AGB für den AROMA Installer genau durch.
+terms.desc=Bitte lese dir die AGB genau durch.
 terms.check=Ich stimme den AGBs zu...
 terms.confirm=Eingabe überprüfen...
 
 changelog.title=Changelog
-changelog.desc=AROMA Installer Changelog
+changelog.desc=ImproveG3 Changelog
+changelog.changelog=<b><#selectbg_g>ImproveG3</#></b>\
+<*><b>0.1</b></*>\
+ <*>Erstes Release</*>\
+ <*> Unterstützt G3 D855</*>\
+ <*> nur getestet auf ROM 10L</*>\
+<*><b>0.2</b></*>\
+ <*>Möglichkeit zur Lokalisierung</*>\
+\
+TODO\
+ <*> in 0.3 macht das Script auch was ;)</*>\
+ <*> habe temp.mod Ersteller gefragt wegen Use Permission</*>\
+ <*> habe screen deblur mod Ersteller gefragt wegen Use Permission</*>\
+ <*> scard Fix hinzufügen (permissions.xml)</*> 
+
+mainmenu.title=ImproveG3
+mainmenu.desc=Wähle deine Aktion
+mainmenu.removeapps=Entkrepeln
+mainmenu.removedesc=Auswählen, welche System-Apps du entfernen willst. BENUTZUNG AUF EIGENE GEFAHR!
+mainmenu.systeminfo=System Info
+mainmenu.systemdesc=Geräte-/Partitionsinformationen
+ 
+instructions.title=Anleitung
+instructions.desc=Anleitung und Warnungen
+instructions.warning=<#selectbg_g>Sicher</#>: Apps die man sicher entfernen kann. Entferne NICHTS was du benutzt!\
+<#0080ff>Sicher mit Alternative</#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben.\
+<#selectbg_g>Google Apps</#>: Alle GApps können aus dem Play Store installiert werden.\
+<#0000ff>Potentiell unsicher</#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
+<#selectbg_g>Animationen entfernen</#>: Entfernt Boot/Shutdown Animationen und Klänge, plus LG Musik.
+
+customize.title=Entkrepeln
+customize.desc=Wähle die Apps aus, die du entfernen willst.\
+Die Dateien werden von der Systempartition <b>gelöscht</b>.\
+Es gibt keinen Weg sie wiederzuholen ausser per ROM flashen.
+customize.10=Sicher
+customize.11=LG EasyHome abgedummter Home Screen
+customize.12=LG Email Client
+customize.13=Face Unlock app. Die Einstellungen fragen nach einer andren App falls du Face Unlock benutzen willst
+customize.14=LG simpler Dateibrowser
+customize.15=Wählt die Standard Home App aus. Kann manuell getan werden indem du App Standards löschst in Einstellungen -> Apps -> (launcher app)
+customize.16=LG Gesundheitstracker, entfernen macht das halbe LG ganzseitige Widget nutzlos
+customize.17=Schwarzes Theme für die LG Tastatur
+customize.18=LG Suchwidget
+customize.19=McAfee Sicherheitssoftware
+customize.110=LG Musikplayer Widget
+customize.111=LG Musikplayer
+customize.20=Sicher mit Alternative
+customize.21=Standard LG Launcher
+customize.22=Standard Browser. Nur entfernen wenn z.B. Chrome oder Opera installiert ist.
+customize.23=Stock LG Tastatur. Nur entfernen wenn z.B. Swype or AOSP Keyboard installiert ist.
+customize.30=Google Apps
+customize.31=Browser
+customize.32=Onlinespeicher
+customize.33=Mailclient
+customize.34=eBook App
+customize.35=Teile Erfolge etc
+customize.36=Direkter Zugriff auf gekaufte Filme
+customize.37=Alternativer Musicplayer mit Zugriff auf deine Cloud-Musik
+customize.38=Social Network Client
+customize.39=Telephonie und Messaging App
+customize.310=Maps, Navigation und mehr
+customize.311=Maps Addin, ermöglicht Street View
+customize.312=Google Eingabehilfen, z.B. Sprachausgabe
+customize.313=YouTube Client
+customize.40=Potentiell unsicher
+customize.41=Allgemeine Accessibility (Eingabehilfen) Optionen. Entfernen verursacht Force Close wenn man Eingabehilfen durch die Einstellungen öffnet
+customize.42=Per Geste abheben (Telefon zum Kopf bewegen), hatte keine Gelegenheit das zu testen
+customize.43=LG App Updater. Wenn du LG Apps laden/installieren willst, entferne dies NICHT
+customize.44=Irgend ein Widget - keine Ahnung aber Widgets können meistens weg :P
+customize.45=XDA zufolge kann das nach einem Zurücksetzen auf Werkseinstellungen zum Bootloop führen. Ich habe das nicht vor, daher kann ich nicht sagen ob es schädlich ist. Kann natürlich per Play Store in den Userspace installiert werden.
+customize.46=Entfernen verursacht Force Close bei Einstellungen -> Sichern und Wiederherstellen -> LG Backup
+customize.47=Mögliches Sicherheitsrisiko wie auf XDA berichtet, möglicherweise gefixt - auf jeden Fall benötigt App Updater das zum Laden und Installieren von LG Apps. Eventuell nötig für Software Updates (OTA)
+customize.48=Kartenmodul des Home Screen Smart Widgets. Habe nicht getestet ob das Widget eventuell crasht
+customize.49=LG Benutzungs-Tipps App, entfernen macht das halbe LG ganzseitige Widet nutzlos
+customize.410=Verwaltet OTA Updates. Mit Root willst du das normalerweise nicht haben.
+customize.411=LG Updater, zu finden unter Einstellungen -> über das Telefon -> Software Updates, benutzt um App Updater und Software Updater zu starten
+customize.50=Animationen entfernen
+customize.51=LG Bootanimation entfernen, die Standard Android Animation sollte laufen
+customize.52=LG Herunterfahren-Animation entfernen
+customize.53=LG Bootsound entfernen
+customize.54=LG Herunterfahren-Sound entfernen
+customize.55=Drei platzfressende Musikdateien entfernen
+customize.nextbutton=Entkrepeln
+
+confirmation.title=Bereit zum Entkrepeln
+confirmation.text=Der Wizard ist bereit, die ausgewählten Apps zu LöSCHEN.\
+\
+Drücke <b>Entkrepeln</b> um anzufangen.\
+\
+<#0000ff><b>I BIN NICHT HAFTBAR FüR IRGEND EINEN SCHADEN AN DEINEM GERäT\
+\
+STELLE SICHER DASS DU EIN FUNKTIONIERENDES NANDROID-BACKUP HAST, BEVOR DU WEITERMACHST\
+\
+</b></#>\
+Wenn du deine Einstellungen überprüfen oder ändern willst, drücke <b>Zurück</b>. Drücke die Menu-Taste -> ImproveG3 beenden um den Wizard zu verlassen.
+
+install.title=Lösche
+install.desc1=entkrepelt Dinge.\
+\
+Dies kann mehrere Minuten dauern.
+install.finish=Apps erfolgreich entfernt. Drücke Weiter um fortzufahren.
+
+postinstall.title=Post Entkrepeln
+postinstall.text=Entkrepeln abgeschlossen. Willst du ins Hauptmenu zurückkehren?
+postinstall.checkbox=Zurück zum Hauptmenu.
+
+finished.title=Entkrepeln abgeschlossen
+finished.text1=<#selectbg_g><b>Glückwunsch...</b></#>
+finished.text2=</b> hat dein Gerät entkrepelt.
+finished.installer=Installer Status
+finished.reboot=Das Gerät jetzt neu starten

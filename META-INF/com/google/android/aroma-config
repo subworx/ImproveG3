@@ -95,11 +95,11 @@
 ##
 # Initializing Rom Information
 #
-ini_set("rom_name",             "LG G3 D855 Debloater");
-ini_set("rom_version",          "10L");
+ini_set("rom_name",             "ImproveG3");
+ini_set("rom_version",          "0.1");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3 D855");
-ini_set("rom_date",             "2014.11.29");
+ini_set("rom_date",             "2014.11.30");
 
 
 ##
@@ -240,7 +240,7 @@ viewbox(
 	  "  <~welcome.creator>\t\t: <b><#selectbg_g>"+ini_get("rom_author")+"</#></b>\n\n\n"+
 	  
     "<~welcome.next>",
-  
+
   #-- Icon
     "@welcome"
 );
@@ -286,14 +286,14 @@ textbox(
     "@update",
   
   #-- Arg 4
-    resread("changelog.txt")
+    "<~changelog.changelog>"
 );
 
 ##
 ##-- Back To English :D - and Use Roboto-Regular.ttf
 ##
 #alert("Back To English","OK, Multilanguage demo ends here... It will use english now...", "@info");
-loadlang("langs/en.lang");
+#loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "14" );
 ##
@@ -311,10 +311,10 @@ gotolabel("aroma_installer_demo_pos");
 #
 menubox(
   #-- Title
-    "G3 Debloater Main Menu",
+    "<~mainmenu.title>",
   
   #-- Sub Title
-    "Please select below to start Debloating",
+    "<~mainmenu.desc>",
   
   #-- Icon
     "@apps",
@@ -326,8 +326,8 @@ menubox(
   # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
   #-------------------------+-----------------------------------------------------------+---------------#
   
-    "Remove apps",      	  "Select which system apps to remove. USE AT YOUR OWN RISK!", "@customize",    #-- selected = 1
-	"System Info",       	  "Get and show device/partition informations",                "@info"         #-- selected = 2
+    "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                                     "@customize",    #-- selected = 1
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",                						"@info"         #-- selected = 2
 );
 
 
@@ -892,6 +892,23 @@ endif;
 #                                                                                                                 #
 ###################################################################################################################
 
+###################################################################################################################
+#
+# STEP x - INSTRUCTIONS
+#
+textbox(
+  #-- Title
+    "<~instructions.title>",
+  
+  #-- Subtitle
+    "<~instructions.desc>",
+  
+  #-- Icon
+    "@alert",
+  
+  #-- Arg 4
+    "<~instructions.warning>"
+);
 
 ###################################################################################################################
 #
@@ -899,17 +916,10 @@ endif;
 #
 checkbox(
 #-- Title
-  "Select apps to remove",
+  "<~customize.title>",
   
 #-- Sub Title
-  "Select the apps you want to be removed.\n"+
-  "The files will be <b>deleted</b> from the system partition.\n"+
-  "There is no way to bring these back except flashing a ROM.\n"+
-  "<#selectbg_g>Safe</#>: Applications which are safe to remove. Do NOT remove anything if you use it!\n"+
-  "<#0080ff>Safe with Alternative</#>: Safe to remove, but have a replacement installed.\n"+
-  "<#selectbg_g>Google Apps</#>: All GApps can be reinstalled from Play Store.\n"+
-  "<#0000ff>Potentially unsafe</#>: Deleting these can or will have side-effects.\n"+
-  "<#selectbg_g>Remove animations</#>: remove boot/shutdown animations and sounds, plus LG bloat music.\n",
+  "<~customize.desc>",
   
 #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
   "@personalize",
@@ -921,69 +931,58 @@ checkbox(
   # TITLE            |  SUBTITLE                                                                           | Initial Value #
   #------------------+-------------------------------------------------------------------------------------+---------------#
 
-  "<#selectbg_g>Safe</#>", "", 																			       2,  #-- Group 1. key = "item.1.x"
-	"EasyHome",           "LG EasyHome dumbed down home screen",      										   0,      #-- item.1.1 = Un-Selected by default
-	"E-Mail",             "LG Email Client",                                                                   0,      #-- item.1.2 = Un-Selected by default
-	"Face Unlock",        "Face Unlock app. Settings menu will ask to install another app if you want "+
-	                      "to use Face Unlock",                                                                0,      #-- item.1.3 = Un-Selected by default
-	"File Manager",       "LG simple file browser",                											   0,      #-- item.1.4 = Un-Selected by default
-	"Home selector",	  "Default home app switcher. Can be done manually by clearing app defaults in "+
-	                      "Settings -> Apps -> (launcher app)",                                                0,      #-- item.1.5 = Un-Selected by default
-	"LG Health",		  "LG Health tracker, renders half the LG full page widget useless",				   0,	   #-- item.1.6 = Un-Selected by default
-	"LG Keyboard Black Theme", "Black theme for LG stock keyboard",											   0,	   #-- item.1.7 = Un-Selected by default
-	"LGSearchWidgetProvider", "LG Search widget",															   0,	   #-- item.1.8 = Un-Selected by default
-	"McAfee Security",    "McAfee security software", 														   0,	   #-- item.1.9 = Un-Selected by default
-	"Music widget",		  "LG Music player widget",                     									   0,	   #-- item.1.10 = Un-Selected by default
-	"Music app",		  "LG Music player",                              									   0,	   #-- item.1.11 = Un-Selected by default
+  "<#selectbg_g><~customize.10></#>", "", 													                 2,  #-- Group 1. key = "item.1.x"
+	"EasyHome",           "<~customize.11>",      										                     0,    #-- item.1.1 = Un-Selected by default
+	"E-Mail",             "<~customize.12>",                                                                 0,    #-- item.1.2 = Un-Selected by default
+	"Face Unlock",        "<~customize.13>",                                                                 0,    #-- item.1.3 = Un-Selected by default
+	"File Manager",       "<~customize.14>",                											     0,    #-- item.1.4 = Un-Selected by default
+	"Home selector",	  "<~customize.15>",                                                				 0,    #-- item.1.5 = Un-Selected by default
+	"LG Health",		  "<~customize.16>",				   												 0,	   #-- item.1.6 = Un-Selected by default
+	"LG Keyboard Black Theme", "<~customize.17>",														     0,	   #-- item.1.7 = Un-Selected by default
+	"LGSearchWidgetProvider", "<~customize.18>",															 0,	   #-- item.1.8 = Un-Selected by default
+	"McAfee Security",    "<~customize.19>", 														   		 0,	   #-- item.1.9 = Un-Selected by default
+	"Music widget",		  "<~customize.110>",                     									   		 0,	   #-- item.1.10 = Un-Selected by default
+	"Music app",		  "<~customize.111>",                              									 0,	   #-- item.1.11 = Un-Selected by default
   
-  "<#0080ff>Safe with Alternative</#>", "", 									 	                           2,  #-- Group 2. key = "item.2.x"
-	"Home",				  "Default LG Launcher",															   0,      #-- item.2.1 = Un-Selected by default
-	"Internet",           "Stock browser. Only remove if e.g. Chrome or Opera is installed.",                  0,      #-- item.2.2 = Un-Selected by default
-	"LG Keyboard",        "Stock LG keyboard. Only remove if e.g. Swype or AOSP Keyboard is installed.",       0,      #-- item.2.3 = Un-Selected by default
+  "<#0080ff><~customie.20></#>", "", 									 	                                 2,  #-- Group 2. key = "item.2.x"
+	"Home",				  "<~customize.21>",														         0,    #-- item.2.1 = Un-Selected by default
+	"Internet",           "<~customize.22>",               													 0,    #-- item.2.2 = Un-Selected by default
+	"LG Keyboard",        "<~customize.23>",   																 0,    #-- item.2.3 = Un-Selected by default
   
-  "<#selectbg_g>Google Apps</#>", "",                                       								   2,  #-- Group 3. key = "item.3.x"
-	"Chrome",             "Browser",                                                    					   0,      #-- item.3.1 = Un-Selected by default
-	"Drive",              "Online storage",                                                                    0,      #-- item.3.2 = Un-Selected by default
-	"Gmail",              "Mail client",                                                                       0,      #-- item.3.3 = Un-Selected by default
-	"Google Play Books",  "eBook app",                                                                         0,      #-- item.3.4 = Un-Selected by default
-	"Google Play Games",  "Share achievements etc",                                         				   0,      #-- item.3.5 = Un-Selected by default
-	"Google Play Movies", "Access your bought movies directly",                            					   0,      #-- item.3.6 = Un-Selected by default
-	"Google Play Music",  "Alternative music player with access to your cloud music",       				   0,      #-- item.3.7 = Un-Selected by default
-	"Google+",            "Social network client",                                                     		   0,      #-- item.3.8 = Un-Selected by default
-	"Hangouts", 	      "Telephony and messaging app",                                      				   0,      #-- item.3.9 = Un-Selected by default
-	"Maps",               "Maps, navigation and more",                                                  	   0,      #-- item.3.10 = Un-Selected by default
-	"Street View",        "Maps addin, enables Street View",                                                   0,      #-- item.3.11 = Un-Selected by default
-	"TalkBack", 	      "Accessibility assistance",                                           			   0,      #-- item.3.12 = Un-Selected by default
-	"YouTube",			  "YouTube client",																	   0,	   #-- item.3.13 = Un-Selected by default
+  "<#selectbg_g><~customize.30></#>", "",                                       							 2,  #-- Group 3. key = "item.3.x"
+	"Chrome",             "<~customize.31>",                                                    			 0,    #-- item.3.1 = Un-Selected by default
+	"Drive",              "<~customize.32>",                                                                 0,    #-- item.3.2 = Un-Selected by default
+	"Gmail",              "<~customize.33>",                                                                 0,    #-- item.3.3 = Un-Selected by default
+	"Google Play Books",  "<~customize.34>",                                                                 0,    #-- item.3.4 = Un-Selected by default
+	"Google Play Games",  "<~customize.35>",                                         				   		 0,    #-- item.3.5 = Un-Selected by default
+	"Google Play Movies", "<~customize.36>",                            					   				 0,    #-- item.3.6 = Un-Selected by default
+	"Google Play Music",  "<~customize.37>",       				   											 0,    #-- item.3.7 = Un-Selected by default
+	"Google+",            "<~customize.38>",                                                     		   	 0,    #-- item.3.8 = Un-Selected by default
+	"Hangouts", 	      "<~customize.39>",                                      				   			 0,    #-- item.3.9 = Un-Selected by default
+	"Maps",               "<~customize.310>",                                                  	   			 0,    #-- item.3.10 = Un-Selected by default
+	"Street View",        "<~customize.311>",                                                   			 0,    #-- item.3.11 = Un-Selected by default
+	"TalkBack", 	      "<~customize.312>",                                           			   		 0,    #-- item.3.12 = Un-Selected by default
+	"YouTube",			  "<~customize.313>",																 0,    #-- item.3.13 = Un-Selected by default
 
-  "<#0000ff>Potentially unsafe</#>", "",  															           2,  #-- Group 4. key = "item.4.x"
-	"Accessibility",      "General accessibility options. Will cause an FC if you open Accessibility "+
-                          "through the Settings",                                                              0,      #-- item.4.1 = Un-Selected by default
-	"Answer me",          "Gesture answering (move phone to head), had no chance to test this at all",         0,      #-- item.4.2 = Un-Selected by default
-	"App Updater",        "LG App updater. If you want to download/install LG Apps, do NOT remove this",       0,      #-- item.4.3 = Un-Selected by default
-	"com.lge.sui.widget", "some widget - no idea but widgets mostly can go :P",								   0,      #-- item.4.4 = Un-Selected by default
-	"Google Search",	  "According to XDA, this can lead to bootloops after a factory reset. I don't "+
-	                      "intend on resetting my device, so I cannot tell if it is harmful. Can of course "+
-						  "be reinstalled into userspace via the Play Store.",								   0,	   #-- item.4.5 = Un-Selected by default
-	"LG Backup",		  "Removal will cause FC when opening Settings -> Backup and Restore -> LG Backup",    0,      #-- item.4.6 = Un-Selected by default
-	"LGInstallService",   "Possible security risk as reported on XDA, possibly fixed - anyway, required "+
-	                      "for App Updater to download and install LG apps. Possibly also for Software "+
-						  "Updates (OTA).",																	   0,	   #-- item.4.7 = Un-Selected by default
-	"Smart Notice",		  "Cards module of the home screen Smart widget. Did not test if it might crash "+
-					      "the smart widget",																   0,	   #-- item.4.8 = Un-Selected by default
-	"Smart Tips",		  "LG usage tips app. Removing makes half the LG homescreen thingie (with the "+
-						  "health part) useless.",														       0,	   #-- item.4.9 = Un-Selected by default
-	"Software Update",	  "Manages OTA Updates. Normally with root you would not want this.",				   0,	   #-- item.4.10 = Un-Selected by default
-	"Update Center",	  "LG Updater, used for launching App Updater (which has no own shortcut) and "+
-						  "Software Updater, which can be found in Settings -> About Phone -> Software "+
-						  "Updates",																		   0,	   #-- item.4.11 = Un-Selected by default
+  "<#0000ff><~customize.40></#>", "",  															             2,  #-- Group 4. key = "item.4.x"
+	"Accessibility",      "<~customize.41>",                                                                 0,    #-- item.4.1 = Un-Selected by default
+	"Answer me",          "<~customize.42>",         														 0,    #-- item.4.2 = Un-Selected by default
+	"App Updater",        "<~customize.43>",       															 0,    #-- item.4.3 = Un-Selected by default
+	"com.lge.sui.widget", "<~customize.44>",								   								 0,    #-- item.4.4 = Un-Selected by default
+	"Google Search",	  "<~customize.45>",								   								 0,    #-- item.4.5 = Un-Selected by default
+	"LG Backup",		  "<~customize.46>",    															 0,    #-- item.4.6 = Un-Selected by default
+	"LGInstallService",   "<~customize.47>",																 0,    #-- item.4.7 = Un-Selected by default
+	"Smart Notice",		  "<~customize.48>",																 0,    #-- item.4.8 = Un-Selected by default
+	"Smart Tips",		  "<~customize.49>",														         0,    #-- item.4.9 = Un-Selected by default
+	"Software Update",	  "<~customize.410>",				   												 0,    #-- item.4.10 = Un-Selected by default
+	"Update Center",	  "<~customize.411>",																 0,	   #-- item.4.11 = Un-Selected by default
 
-  "<#selectbg_g>Remove Animations</#>", "",	                												   2,  #-- Group 5. key = "item.5.x"
-    "Boot Animation",	  "Remove LG boot animation, should show stock Android animation",                     0,      #-- item.5.1 = Un-Selected by default
-	"Shutdown Animation", "Remove LG shutdown animation",                                                      0,      #-- item.5.2 = Un-Selected by default
-	"Boot Sound",		  "Remove LG boot sound",															   0,	   #-- item.5.3 = Un-Selected by default
-	"Shutdown Sound",	  "Remove LG shutdown sound",														   0,      #-- item.5.4 = Un-Selected by default
-	"Stock music",	      "Remove three music files that take up space",									   0       #-- item.5.5 = Un-Selected by default
+  "<#selectbg_g><~customize.50></#>", "",	                												 2,  #-- Group 5. key = "item.5.x"
+    "Boot Animation",	  "<~customize.51>",                     											 0,    #-- item.5.1 = Un-Selected by default
+	"Shutdown Animation", "<~customize.52>",                                                      			 0,    #-- item.5.2 = Un-Selected by default
+	"Boot Sound",		  "<~customize.53>",															     0,    #-- item.5.3 = Un-Selected by default
+	"Shutdown Sound",	  "<~customize.54>",														   		 0,    #-- item.5.4 = Un-Selected by default
+	"Stock music",	      "<~customize.55>",									   							 0     #-- item.5.5 = Un-Selected by default
 	
 	
   #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
@@ -994,7 +993,7 @@ checkbox(
 #
 # Next Screen is Installation UI, So change the next button text to "Install Now"
 #
-ini_set("text_next", "Remove Selected");
+ini_set("text_next", "<~customize.nextbutton>");
 ini_set("icon_next", "@installbutton");
 
 ###################################################################################################################
@@ -1003,13 +1002,10 @@ ini_set("icon_next", "@installbutton");
 #
 viewbox(
   #-- Title
-    "Ready to Remove",
+    "<~confirmation.title>",
 
   #-- Text
-    "The wizard is ready to REMOVE the selected apps.\n\n"+
-	"Press <b>Remove Selected</b> to begin.\n\n"+
-	"<#0000ff><b></b>I AM NOT RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR DEVICE\n\nMAKE SURE YOU HAVE A WORKING NANDROID BACKUP BEFORE CONTINUING\n\n</#>"+
-	"If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.",
+    "<~confirmation.text>",
 
   #-- Icon
     "@install"
@@ -1019,7 +1015,7 @@ viewbox(
 #
 # Next Button in successfull installation should be back to "Next >"
 #
-ini_set("text_next", "Next");
+ini_set("text_next", "<~text_next>");
 ini_set("icon_next", "@next");
 
 #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
@@ -1033,17 +1029,16 @@ restotmp("exec_demo/sleep","sleep");
 setvar("retstatus",
   install(
 	#-- Title
-      "Removing",
+      "",
 	
 	#-- Installation Process message
-	  "<b>"+ini_get("rom_name")+"</b> removes stuff.\n\n"+
-	  "</b>. This may take several minutes.",
+	  "<b>"+ini_get("rom_name")+"</b> <~install.desc>",
 	
 	#-- Installation Icon
       "@install",
 	
 	#-- Installation Finish Message
-      "Apps successfully removed. Press Next to continue."
+      "<~install.finish>"
   )
 );
 
@@ -1052,16 +1047,16 @@ setvar("retstatus",
 #
 checkviewbox(
   #-- Title
-    "Post Installation",
+    "<~postinstall.title>",
   
   #-- Text
-    "Installation Finished. Do you want to go back to Main Menu?",
+    "<~postinstall.text>",
 	
   #-- Icon
     "@welcome",
 
   #-- Checkbox Text
-    "Back To Main Menu.",
+    "<~postinstall.checkbox>",
 
   #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
     "0",
@@ -1081,7 +1076,7 @@ endif;
 #
 # Next Button is "Finish"
 #
-ini_set("text_next", "Finish");
+ini_set("text_next", "<~text_finish>");
 ini_set("icon_next", "@finish");
 
 ###################################################################################################################
@@ -1096,18 +1091,17 @@ ini_set("icon_next", "@finish");
 #
 checkviewbox(
   #-- Title
-    "Debloating Completed",
+    "<~finished.title>",
   
   #-- Text
-    "<#selectbg_g><b>Congratulation...</b></#>\n\n"+
-    "<b>"+ini_get("rom_name")+"</b> has debloated your device.\n\n"+
-    "Installer Status: "+getvar("retstatus")+"\n\n",
+    "<~finished.text1>\n\n<b>" +ini_get("rom_name")+ "<~finished.text2>\n\n"+
+    "<~finished.installer>: "+getvar("retstatus")+"\n\n",
 	
   #-- Icon
     "@welcome",
 
   #-- Checkbox Text
-    "Reboot your device now.",
+    "<~finished.reboot>",
 
   #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
     "1",
