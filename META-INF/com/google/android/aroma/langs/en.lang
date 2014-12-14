@@ -85,7 +85,7 @@ changelog.desc=ImproveG3 Changelog
 mainmenu.title=ImproveG3
 mainmenu.desc=Select your action
 mainmenu.removeapps=Debloat
-mainmenu.removedesc=Select which system apps to remove. USE AT YOUR OWN RISK!
+mainmenu.removedesc=Select which system apps to remove. USE AT YOUR OWN RISK! CANNOT BE UNDONE!
 mainmenu.sdfix=KitKat SD Fix
 mainmenu.sdfixdesc=Allows apps in Android 4.4 KitKat to write to SD again.
 mainmenu.cttmod=CPU Thermal Throttling Mod
@@ -261,9 +261,79 @@ sdfixinstall.finish=Module successfully installed. Press Next to continue.
 sdfixpostinstall.title=Post Installation
 sdfixpostinstall.text=Installation finished. Do you want to go back to Main Menu or finish?
 sdfixpostinstall.checkbox=Back To Main Menu.
+
 #################################
 #
 # END SD FIX
+#
+
+
+#################################
+#
+# CTT MOD
+#
+
+#
+#-- CTT instructions
+#
+cttinstructions.title=CPU Thermal Throttling Mod
+cttinstructions.desc=Instructions and Warnings
+cttinstructions.warning=This mod changes when the CPU will be clocked down.\
+In contrast to disabling Thermal Mitigation stuff, this mod is <#0f0><b>perfectly safe</b></#>.\
+The original was created by <#00f><b>Robshr</b></#> on xda and is used with permission.\
+\
+LG clocks down the device to 1.5 GHz starting from 60°C and keeps using similarly conservative values.\
+With this mod the G3 clocks down to 2.26 GHz at 70/75/80°C.\
+The second and third "bump" are increased as well, <b>the last four bumps are left at factory settings</b>.\
+This ensures that the device delivers more power, but does not reach dangerous temperatures as the default emergency mechanisms will kick in.
+
+#
+#-- CTT customizations
+#
+cttcustomize.title=Choose action
+cttcustomize.desc=Choose an action
+cttcustomize.1=Stock
+cttcustomize.1desc=LG default - 1.5 GHz @ 60°C
+cttcustomize.2=70°C
+cttcustomize.2desc=Mod 2.26 GHz @ <b>70</b>°C
+cttcustomize.3=75°C
+cttcustomize.3desc=Mod 2.26 GHz @ <b>75</b>°C
+cttcustomize.4=80°C
+cttcustomize.4desc=Mod 2.26 GHz @ <b>80</b>°C
+cttcustomize.nextbutton=Install
+
+#
+#-- CTT confirmation
+#
+cttconfirmation.title=Ready to Install
+cttconfirmation.text=The wizard is ready to install the selected module.\
+\
+Press <b>Install</b> to begin.\
+\
+<#0000ff><b>NEITHER ROBSHR NOR I ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR DEVICE\
+\
+MAKE SURE YOU HAVE A WORKING NANDROID BACKUP BEFORE CONTINUING\
+\
+</b></#>\
+If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.
+
+#
+#-- CTT installation
+#
+cttinstall.title=Installing
+cttinstall.desc=installs the selected module.
+cttinstall.finish=Module successfully installed. Press Next to continue.
+
+#
+#-- CTT installation finished
+#
+cttpostinstall.title=Post Installation
+cttpostinstall.text=Installation finished. Do you want to go back to Main Menu or finish?
+cttpostinstall.checkbox=Back To Main Menu.
+
+#################################
+#
+# END CTT MOD
 #
 
 

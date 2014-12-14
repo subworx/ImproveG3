@@ -71,32 +71,10 @@
 #
 
 ##
-# Custom Key Code - Usefull For Some Device which not used
-#                   Standard key code for up/down/select/back/menu
-#
-# You can capture the keycode in
-# recovery using "aroma-keycapture-flashable.zip" Available in
-# AROMA Installer Thread.
-#
-# Press some key when it run, it will return key code,
-# that key can override up/down/select/back/menu actions in
-# AROMA Installer, you can even set your home key for up, or
-# volume down for select item
-#
-#-------- Uncomment & Modify this Code:
-#
-# ini_set("customkeycode_up",     "115");
-# ini_set("customkeycode_down",   "114");
-# ini_set("customkeycode_select", "116");
-# ini_set("customkeycode_menu",   "229");
-# ini_set("customkeycode_back",   "158");
-#
-
-##
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.5");
+ini_set("rom_version",          "0.6");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3 D855");
 ini_set("rom_date",             "2014.12.01");
@@ -220,9 +198,9 @@ menubox(
   
     "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                      "@customize",   #-- selected = 1
 	"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 2
-	#"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 
+	"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 3
 	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 3
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 4
 );
 
 
@@ -236,7 +214,7 @@ menubox(
 #
 # System Info Demo / selected 5
 #
-if prop("demo.prop","selected")=="3" then
+if prop("demo.prop","selected")=="4" then
 
   #-- Show Please Wait
   pleasewait("Get System Informations...");
@@ -319,9 +297,148 @@ endif;
 #
 # Temperature Mod / selected 3
 #
-#if prop("demo.prop","selected")=="3" then
-#  include("temperature.edify");
-#endif;
+if prop("demo.prop","selected")=="3" then
+  #########################################################################################################
+  #                                                                                                       #
+  #                                            CTT MOD                                                    #
+  #                                                                                                       #
+  #########################################################################################################
+
+  #########################################################################################################
+  #
+  # CTT MOD STEP 1 - INSTRUCTIONS
+  #
+  textbox(
+    #-- Title
+      "<~cttinstructions.title>",
+  
+    #-- Subtitle
+      "<~cttinstructions.desc>",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Arg 4
+      "<~cttinstructions.warning>"
+  );
+
+  #########################################################################################################
+  #
+  # CTT MOD STEP 2 - SELECT ACTION
+  #
+  selectbox(
+  #-- Title
+    "<~cttcustomize.title>",
+  
+  #-- Sub Title
+    "<~cttcustomize.desc>",
+  
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@personalize",
+  
+  #-- Will be saved in /tmp/aroma/ctt.prop
+    "ctt.prop",
+  
+  #-------------------------[ Selectbox Without Group ]--------------------------#
+  # TITLE                 |  SUBTITLE                            | Initial Value #
+  #-----------------------+--------------------------------------+---------------#
+
+    "<~cttcustomize.1>",    "<~cttcustomize.1desc>",               1,      #-- selected.0 = 1
+    "<~cttcustomize.2>",    "<~cttcustomize.2desc>",               0,      #-- selected.0 = 2
+    "<~cttcustomize.3>",    "<~cttcustomize.3desc>",               0,      #-- selected.0 = 3
+    "<~cttcustomize.4>",    "<~cttcustomize.4desc>",               0       #-- selected.0 = 4
+
+  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+  
+  ##
+  #
+  # Next Screen is Installation UI, So change the next button text to "Install Now"
+  #
+  ini_set("text_next", "<~cttcustomize.nextbutton>");
+  ini_set("icon_next", "@installbutton");
+
+  ###################################################################################################################
+  #
+  # CTT MOD STEP 3 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  #
+  viewbox(
+    #-- Title
+      "<~cttconfirmation.title>",
+
+    #-- Text
+      "<~cttconfirmation.text>",
+
+    #-- Icon
+      "@install"
+  );
+
+  ##
+  #
+  # Next Button in successfull installation should be back to "Next >"
+  #
+  ini_set("text_next", "<~text_next>");
+  ini_set("icon_next", "@next");
+
+  #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
+  restotmp("exec_demo/sleep","sleep");
+
+  ###################################################################################################################
+  #
+  # CTT MOD STEP 4 - INSTALLATION PROCESS
+  #
+  setvar("retstatus",
+    install(
+	  #-- Title
+        "<~cttinstall.title>",
+	
+	  #-- Installation Process message
+	    "<b>"+ini_get("rom_name")+"</b> <~cttinstall.desc>",
+	
+	  #-- Installation Icon
+        "@install",
+	
+	  #-- Installation Finish Message
+        "<~cttinstall.finish>"
+    )
+  );
+
+  ###################################################################################################################
+  #
+  # CTT MOD STEP 5 - ASK If We Want to go back to main menu
+  #
+  checkviewbox(
+    #-- Title
+      "<~cttpostinstall.title>",
+  
+    #-- Text
+      "<~cttpostinstall.text>",
+	
+    #-- Icon
+      "@welcome",
+
+    #-- Checkbox Text
+      "<~cttpostinstall.checkbox>",
+
+    #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+      "0",
+
+    #-- Save checked value in variable "reboot_it" (Optional)
+      "goto_mainmenu"
+  );
+  if
+    getvar("goto_mainmenu")=="1"
+  then
+    goto("aroma_installer_demo_pos");
+  endif;
+  
+  ##########
+  #
+  # END CTT MOD
+  #
+
+endif;
+
 
 ##--------------------------------------
 #
@@ -658,12 +775,12 @@ if prop("demo.prop","selected")=="1" then
     goto("aroma_installer_demo_pos");
   endif;
 
-endif;
-##########
-#
-# END DEBLOATER
-#
+  ##########
+  #
+  # END DEBLOATER
+  #
 
+endif;
 
 
 ##

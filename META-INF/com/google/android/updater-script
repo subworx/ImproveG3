@@ -94,14 +94,14 @@ then
 
   #ui_print("@Removing Packages");
   show_progress(0.8, "-5000");
-  ui_print("@ Removing Selected Safe Packages");
+  ui_print("@ Removing Safe Packages");
 
 	# Accessibility
     if
       file_getprop("/tmp/aroma/customize.prop","item.1.1") == "1"
     then
       ui_print("  Removing Accessibility");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGSettingsAccessibility.apk");
 	  delete("/system/priv-app/LGSettingsAccessibility.odex");
 	  delete("/system/cust/overlay/app/com.android.settingsaccessibility.apk");
@@ -113,7 +113,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.2") == "1"
     then
       ui_print("  Removing Answer Me");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGGestureAnswering.apk");
 	  delete("/system/priv-app/LGGestureAnswering.odex");
 	  delete_recursive("/data/data/com.lge.gestureanswering");
@@ -124,7 +124,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.3") == "1"
     then
       ui_print("  Removing EasyHome");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGEasyHome.apk");
 	  delete("/system/priv-app/LGEasyHome.odex");
   	  delete("/system/cust/overlay/app/com.lge.easyhome.apk");
@@ -136,7 +136,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.4") == "1"
     then
       ui_print("  Removing E-Mail");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGEmail.apk");
 	  delete("/system/priv-app/LGEmail.odex");
   	  delete("/system/cust/overlay/app/com.lge.email.apk");
@@ -148,7 +148,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.5") == "1"
     then
       ui_print("  Removing Face Unlock");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/FaceLock.apk");
 	  delete("/system/app/FaceLock.odex");
 	  delete_recursive("/data/data/com.android.facelock");
@@ -159,7 +159,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.6") == "1"
     then
       ui_print("  Removing File Manager");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGFileManager.apk");
 	  delete("/system/priv-app/LGFileManager.odex");
 	  delete("/system/cust/overlay/app/com.lge.filemanager.apk");
@@ -171,7 +171,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.7") == "1"
     then
       ui_print("  Removing Home selector");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/HomeSelector.apk");
 	  delete("/system/priv-app/HomeSelector.odex");
 	  delete_recursive("/data/data/com.lge.homeselector");
@@ -182,7 +182,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.8") == "1"
     then
       ui_print("  Removing LG Backup");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGBackup.apk");
 	  delete("/system/priv-app/LGBackup.odex");
 	  delete("/system/cust/overlay/app/com.lge.bnr.apk");
@@ -195,7 +195,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.9") == "1"
     then
       ui_print("  Removing LG Health");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGMyWellness.apk");
 	  delete("/system/priv-app/LGMyWellness.odex");
 	  delete("/system/cust/overlay/app/com.lge.lifetracker.apk");
@@ -207,7 +207,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.10") == "1"
     then
       ui_print("  Removing LG Keyboard Black Theme");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGEIME_THEME_BLACK3.apk");
 	  delete("/system/app/LGEIME_THEME_BLACK3.odex");
 	  delete_recursive("/data/data/com.lge.ime.theme.black");
@@ -218,7 +218,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.11") == "1"
     then
       ui_print("  Removing LGSearchWidgetProvider");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGSearchWidgetProvider.apk");
 	  delete("/system/app/LGSearchWidgetProvider.odex");
 	  delete_recursive("/data/data/com.lge.appwidget.lgsearch");
@@ -229,7 +229,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.12") == "1"
     then
       ui_print("  Removing McAfee Security");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGMcAfeeMobileSecurity.apk");
 	  delete("/system/priv-app/LGMcAfeeMobileSecurity.odex");
 	  delete("/data/app/com.wsandroid.suite.lge-1.apk");
@@ -241,7 +241,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.13") == "1"
     then
       ui_print("  Removing Music widget");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGMusicWidget.apk");
 	  delete("/system/priv-app/LGMusicWidget.odex");
       delete_recursive("/data/data/com.lge.sizechangable.musicwidget.widget");
@@ -252,7 +252,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.14") == "1"
     then
       ui_print("  Removing Music app");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGMusic.apk");
 	  delete("/system/priv-app/LGMusic.odex");
     endif;
@@ -262,7 +262,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.15") == "1"
     then
       ui_print("  Removing Smart Notice");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGConciergeBoard.apk");
 	  delete("/system/priv-app/LGConciergeBoard.odex");
 	  delete_recursive("/data/data/com.lge.concierge");
@@ -273,7 +273,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.1.16") == "1"
     then
       ui_print("  Removing Smart Tips");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGMyGuide.apk");
 	  delete("/system/priv-app/LGMyGuide.odex");
 	  delete("/system/cust/overlay/app/com.lge.doyouknow.apk");
@@ -281,14 +281,14 @@ then
     endif;
 
   ui_print(" ");
-  ui_print("@ Removing Selected Safe with Replacement Packages");
+  ui_print("@ Removing Safe with Replacement Packages");
 
 	# Home
     if
       file_getprop("/tmp/aroma/customize.prop","item.2.1") == "1"
     then
       ui_print("  Removing Home");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGHome.apk");
 	  delete("/system/priv-app/LGHome.odex");
 	  delete_recursive("/data/data/com.lge.launcher2");
@@ -300,7 +300,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.2.2") == "1"
     then
       ui_print("  Removing Home Theme Optimus");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGHome_Theme_Optimus.apk");
 	  delete("/system/app/LGHome_Theme_Optimus.odex");
 	  delete("/system/cust/overlay/app/com.lge.launcher2.theme.optimus.apk");
@@ -312,7 +312,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.2.3") == "1"
     then
       ui_print("  Removing Internet");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGBrowser.apk");
 	  delete("/system/priv-app/LGBrowser.odex");
 	  delete("/system/cust/overlay/app/com.android.browser.apk");
@@ -324,7 +324,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.2.4") == "1"
     then
       ui_print("  Removing LG Keyboard");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGEIME.apk");
 	  delete("/system/app/LGEIME.odex");
 	  delete("/data/app/com.lge.ime-1.apk");
@@ -337,21 +337,21 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.2.5") == "1"
     then
       ui_print("  Removing LG Keyboard XT9");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGEIME_DICT_XT9_bin.apk");
 	  delete("/system/app/LGEIME_DICT_XT9_bin.odex");
 	  delete_recursive("/data/data/com.lge.ime.dictionary.xt9");
     endif;
 	
   ui_print(" ");	
-  ui_print("@ Removing Selected Google Packages");
+  ui_print("@ Removing Google Packages");
 	
 	# Chrome
     if
       file_getprop("/tmp/aroma/customize.prop","item.3.1") == "1"
     then
       ui_print("  Removing Chrome");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/ChromeWithBrowser.apk");
 	  delete("/system/app/ChromeWithBrowser.odex");
 	  delete_recursive("/data/data/com.android.chrome");
@@ -362,7 +362,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.2") == "1"
     then
       ui_print("  Removing Drive");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/GoogleDrive.apk");
 	  delete("/system/app/GoogleDrive.odex");
 	  delete_recursive("/data/data/com.google.android.apps.docs");
@@ -373,7 +373,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.3") == "1"
     then
       ui_print("  Removing Gmail");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Gmail2.apk");
 	  delete("/system/app/Gmail2.odex");
 	  delete_recursive("/data/data/com.google.android.gm");
@@ -384,7 +384,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.4") == "1"
     then
       ui_print("  Removing Google Play Books");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Books.apk");
 	  delete("/system/app/Books.odex");
 	  delete_recursive("/data/data/com.google.android.apps.books");
@@ -395,7 +395,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.5") == "1"
     then
       ui_print("  Removing Google Play Games");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/PlayGames.apk");
 	  delete("/system/app/PlayGames.odex");
 	  delete_recursive("/data/data/com.google.android.play.games");
@@ -406,7 +406,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.6") == "1"
     then
       ui_print("  Removing Google Play Movies");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Videos.apk");
 	  delete("/system/app/Videos.odex");
 	  delete_recursive("/data/data/com.google.android.videos");
@@ -417,7 +417,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.7") == "1"
     then
       ui_print("  Removing Google Play Music");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Music2.apk");
 	  delete("/system/app/Music2.odex");
 	  delete_recursive("/data/data/com.google.android.music");
@@ -428,7 +428,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.8") == "1"
     then
       ui_print("  Removing Google+");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Magazines.apk");
 	  delete("/system/app/Magazines.odex");
 	  delete_recursive("/data/data/com.google.android.apps.magazines");
@@ -438,7 +438,7 @@ then
 	if
 	  file_getprop("/tmp/aroma/customize.prop","item.3.9") == "1"
 	then
-	  ui_print("@ Removing Google Text-to-speech Engine");
+	  ui_print("  Removing Google Text-to-speech Engine");
 	  delete("/system/app/GoogleTTS.apk");
 	  delete("/system/app/GoogleTTS.odex");
 	  delete_recursive("/data/data/com.google.android.tts");
@@ -449,7 +449,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.10") == "1"
     then
       ui_print("  Removing Google+");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/PlusOne.apk");
 	  delete("/system/app/PlusOne.odex");
 	  delete_recursive("/data/data/com.google.android.apps.plus");
@@ -460,7 +460,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.11") == "1"
     then
       ui_print("  Removing Hangouts");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Hangouts.apk");
 	  delete("/system/app/Hangouts.odex");
 	  delete_recursive("/data/data/com.google.android.talk");
@@ -471,7 +471,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.12") == "1"
     then
       ui_print("  Removing Maps");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Maps.apk");
 	  delete("/system/app/Maps.odex");
 	  delete_recursive("/data/data/com.google.android.apps.maps");
@@ -482,7 +482,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.13") == "1"
     then
       ui_print("  Removing Street View");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/Street.apk");
 	  delete("/system/app/Street.odex");
 	  delete_recursive("/data/data/com.google.android.street");
@@ -493,7 +493,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.14") == "1"
     then
       ui_print("  Removing TalkBack");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/talkback.apk");
 	  delete("/system/app/talkback.odex");
 	  delete_recursive("/data/data/");
@@ -504,21 +504,21 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.3.15") == "1"
     then
       ui_print("  Removing YouTube");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/YouTube.apk");
 	  delete("/system/app/YouTube.odex");
 	  delete_recursive("/data/data/com.google.android.youtube");
     endif;
 
   ui_print(" ");	
-  ui_print("@ Removing Selected Potentially Unsafe Packages");
+  ui_print("@ Removing Potentially Unsafe Packages");
 	
 	# App Updates
     if
       file_getprop("/tmp/aroma/customize.prop","item.4.1") == "1"
     then
       ui_print("  Removing App Updates");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGApplicationManager.apk");
 	  delete("/system/priv-app/LGApplicationManager.odex");
 	  delete("/system/cust/overlay/app/com.lge.appbox.client.apk");
@@ -530,7 +530,7 @@ then
     #  file_getprop("/tmp/aroma/customize.prop","item.4.2") == "1"
     #then
     #  ui_print("  Removing Google Search");
-    #  run_program("/tmp/aroma/sleep","300");
+    #  #run_program("/tmp/aroma/sleep","300");
 	  #delete("/system/.apk");
 	  #delete("/system/.odex");
 	  #delete_recursive("/data/data/");
@@ -541,7 +541,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.4.3") == "1"
     then
       ui_print("  Removing LGInstallService");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGInstallService.apk");
 	  delete("/system/priv-app/LGInstallService.odex");
 	  delete_recursive("/data/data/com.lge.lginstallservies");
@@ -552,7 +552,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.4.4") == "1"
     then
       ui_print("  Removing Software Update");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGDMSClient.apk");
 	  delete("/system/app/LGDMSClient.odex");
 	  delete_recursive("/data/data/com.lge.lgdmsclient");
@@ -563,7 +563,7 @@ then
       file_getprop("/tmp/aroma/customize.prop","item.4.5") == "1"
     then
       ui_print("  Removing Update Center");
-      run_program("/tmp/aroma/sleep","300");
+      #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGUpdateCenter.apk");
 	  delete("/system/priv-app/LGUpdateCenter.odex");
 	  delete("/system/cust/overlay/app/com.lge.updatecenter.apk");
@@ -571,14 +571,14 @@ then
     endif;
 
   ui_print(" ");	
-  ui_print("@ Removing Selected Animations");
+  ui_print("@ Removing Animations");
 
 	# Boot Animation
 	if
 	  file_getprop("/tmp/aroma/customize.prop","item.5.1") == "1"
 	then
 	  ui_print("  Removing Boot Animation");
-	  run_program("/tmp/aroma/sleep","300");
+	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/media/bootanimation.zip");
 	endif;
 
@@ -587,7 +587,7 @@ then
 	  file_getprop("/tmp/aroma/customize.prop","item.5.2") == "1"
 	then
 	  ui_print("  Removing Shutdown Animation");
-	  run_program("/tmp/aroma/sleep","300");
+	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/media/shutdownanimation.zip");
 	endif;
 
@@ -596,7 +596,7 @@ then
 	  file_getprop("/tmp/aroma/customize.prop","item.5.3") == "1"
 	then
 	  ui_print("  Removing Boot Sound");
-	  run_program("/tmp/aroma/sleep","300");
+	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/media/audio/ui/PowerOn.ogg");
 	endif;
 
@@ -605,7 +605,7 @@ then
 	  file_getprop("/tmp/aroma/customize.prop","item.5.4") == "1"
 	then
 	  ui_print("  Removing Shutdown Sound");
-	  run_program("/tmp/aroma/sleep","300");
+	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/media/audio/ui/PowerOff.ogg");
 	endif;
 
@@ -614,7 +614,7 @@ then
 	#  file_getprop("/tmp/aroma/customize.prop","item.5.5") == "1"
 	#then
 	#  ui_print("  Removing LG Sounds");
-	#  run_program("/tmp/aroma/sleep","300");
+	#  #run_program("/tmp/aroma/sleep","300");
 	#  #delete(lgsound1);
 	#  #delete(lgsound2);
 	#  #delete(lgsound3);
@@ -627,8 +627,6 @@ then
   # END DEBLOATER
   #
 endif;
-
-
 
 
 if
@@ -667,15 +665,60 @@ then
 endif;
 
 
-#
-#-- 3rd big 'if' for ctt mod
-#
+if
+  file_getprop("/tmp/aroma/demo.prop","selected") == "3"
+then
+  #####################################################################################################
+  #
+  # BEGIN CTT MOD
+  #
+  ui_print("@CTT MOD");
+  
+  # Stock
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "1"
+  then
+    ui_print("  Restoring stock 1.5 GHz @ 60°C");
+	package_extract_dir("system_thermalstock", "/system");
+  endif;
+  
+  # 70°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "2"
+  then
+    ui_print("  Installing mod 2.26 GHz @ 70°C");
+	package_extract_dir("system_thermal70_v31", "/system");
+  endif;
 
-#if
-#  file_getprop("/tmp/aroma/demo.prop","selected") == "3"
-#then
-#  ui_print("Applying CPU Thermal Throttling Mod");
-#endif;
+  # 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "3"
+  then
+    ui_print("  Installing mod 2.26 GHz @ 75°C");
+	package_extract_dir("system_thermal75_v41", "/system");
+  endif;
+
+  # 80°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "4"
+  then
+    ui_print("  Installing mod 2.26 GHz @ 80°C");
+	package_extract_dir("system_thermal80_v20", "/system");
+  endif;
+  
+  ui_print("  Setting permissions");
+  set_perm(0, 0, 0644, "/system/etc/thermal-engine-8974.conf");
+  set_perm(0, 0, 0777, "/system/etc/thermal-engine.conf");
+  set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+  set_perm(0, 0, 0777, "/system/etc/thermald.conf");
+  ui_print(" ");
+  
+  #####################################################################################################
+  #
+  # END CTT MOD
+  #
+
+endif;
 
 #
 #-- 4th big 'if' for oversharpening mod
@@ -731,8 +774,6 @@ endif;
 #run_program("/tmp/aroma/sleep","500");
 #set_progress(0.99);
 
-#ui_print(" ");
-
 set_progress(0.91);
 ui_print("@Unmounting Devices");
 
@@ -743,10 +784,6 @@ run_program("/sbin/busybox", "umount", "/data");
 set_progress(0.97);
 ui_print("  Unmounting /system");
 run_program("/sbin/busybox", "umount", "/system");
-
-#set_progress(0.98);
-#ui_print("  Unmounting /cust");
-#run_program("/sbin/busybox", "umount", "/cust");
 
 #-- Finish
 ui_print(" ");

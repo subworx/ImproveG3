@@ -85,13 +85,13 @@ changelog.desc=ImproveG3 Changelog
 mainmenu.title=ImproveG3
 mainmenu.desc=Wähle deine Aktion
 mainmenu.removeapps=Entkrepeln
-mainmenu.removedesc=Auswählen, welche System-Apps du entfernen willst. BENUTZUNG AUF EIGENE GEFAHR!
+mainmenu.removedesc=Auswählen, welche System-Apps du entfernen willst. BENUTZUNG AUF EIGENE GEFAHR! KANN NICHT RüCKGäNGIG GEMACHT WERDEN!
 mainmenu.sdfix=KitKat SD Fix
 mainmenu.sdfixdesc=Erlaubt Apps unter Android 4.4 KitKat, wieder auf SD zu schreiben.
 mainmenu.cttmod=CPU Thermal Throttling Mod
 mainmenu.cttdesc=ändert die Temperatur, ab wann das Gerät heruntertaktet. Erstellt von <#00f>Robshr</#> auf xda.
 mainmenu.sharp=Oversharpening Mod
-mainmenu.sharpdesc=ändert/entfernt überzeichnung (Oversharpening) per Kernelpatch. Erstellt von <#00f>Skin1980</#> on xda. Kernel MUSS Bump!ed sein! Noch nicht implementiert.
+mainmenu.sharpdesc=ändert/entfernt Bildschirmüberzeichnung (Screen Oversharpening) per Kernelpatch. Erstellt von <#00f>Skin1980</#> on xda. Kernel MUSS Bump!ed sein! Noch nicht implementiert.
 mainmenu.systeminfo=System Info
 mainmenu.systemdesc=Geräte-/Partitionsinformationen
 
@@ -262,9 +262,80 @@ sdfixinstall.finish=Modul installiert. Drücke Weiter, um fortzufahren.
 sdfixpostinstall.title=Post Installation
 sdfixpostinstall.text=Installation abgeschlossen. Willst du ins Hauptmenu zurückkehren?
 sdfixpostinstall.checkbox=Zurück zum Hauptmenu
+
 #################################
 #
 # END SD FIX
+#
+
+
+#################################
+#
+# CTT MOD
+#
+
+#
+#-- CTT Anleitung
+#
+cttinstructions.title=CPU Thermal Throttling Mod
+cttinstructions.desc=Anleitung und Warnung
+cttinstructions.warning=Diese Mod ändert, wann die CPU heruntergetaktet wird.\
+Im Gegensatz zum Abschalten der Thermal Mitigation Geschichten ist diese Mod <#0f0><b>komplett sicher</b></#>.\
+\
+Das Original stammt von <#00f><b>Robshr</b></#> auf xda und wird mit Genehmigung genutzt.\
+\
+LG taktet ab 60°C auf 1.5 GHz herunter und geht ähnlich konservativ weiter.\
+Mit dieser Modifikation taktet das G3 ab 70/75/80°C auf 2.26 GHz.\
+Der zweite und dritte Schritt sind ebenfalls erhöht, <b>die letzten vier Bumps sind im Originalzustand</b>.\
+Somit ist sichergestellt, dass das Gerät mehr Leistung liefert, aber keine gefährlichen Temperaturen erreicht werden, vorher treten die normalen Notfallmechanismen in Kraft.
+
+#
+#-- CTT Customizations
+#
+cttcustomize.title=Aktion wählen
+cttcustomize.desc=Wähle eine Aktion aus
+cttcustomize.1=Stock
+cttcustomize.1desc=LG Standard - 1.5 GHz @ 60°C
+cttcustomize.2=70°C
+cttcustomize.2desc=Mod 2.26 GHz @ <b>70</b>°C
+cttcustomize.3=75°C
+cttcustomize.3desc=Mod 2.26 GHz @ <b>75</b>°C
+cttcustomize.4=80°C
+cttcustomize.4desc=Mod 2.26 GHz @ <b>80</b>°C
+cttcustomize.nextbutton=Installieren
+
+#
+#-- CTT Bestätigung
+#
+cttconfirmation.title=Bereit zum Installieren
+cttconfirmation.text=Der Wizard ist bereit, das ausgewählten Modul zu installieren.\
+\
+Drücke <b>Installieren</b> um anzufangen.\
+\
+<#0000ff><b>WEDER ROBSHR NOCH ICH SIND HAFTBAR FüR IRGEND EINEN SCHADEN AN DEINEM GERäT\
+\
+STELLE SICHER DASS DU EIN FUNKTIONIERENDES NANDROID-BACKUP HAST, BEVOR DU WEITERMACHST\
+\
+</b></#>\
+Wenn du deine Einstellungen überprüfen oder ändern willst, drücke <b>Zurück</b>. Drücke die Menu-Taste -> ImproveG3 beenden um den Wizard zu verlassen.
+
+#
+#-- CTT Installation
+#
+cttinstall.title=Installiere
+cttinstall.desc=installiert das gewählte Modul.
+cttinstall.finish=Modul installiert. Drücke Weiter, um fortzufahren.
+
+#
+#-- CTT Post-Install
+#
+cttpostinstall.title=Post Installation
+cttpostinstall.text=Installation abgeschlossen. Willst du ins Hauptmenu zurückkehren?
+cttpostinstall.checkbox=Zurück zum Hauptmenu
+
+#################################
+#
+# END CTT MOD
 #
 
 

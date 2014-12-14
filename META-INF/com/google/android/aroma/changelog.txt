@@ -1,4 +1,7 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>0.6 - 2014.12.01</b>
+<*>CPU Temperature Throttling Mod by <#00f>Robshr</#> on xda</*>
+<*>Removed sleep(300) on Debloating %)</*>
 <b>0.5 - 2014.12.01</b>
 <*>added KitKat SD fix (platform.xml)</*>
 <*>reduzed script size</*>
@@ -19,11 +22,11 @@
 <*>only tested on 10L</*>
 
 <#00f><b>Known Issues</b></#>
+<*>installer (updater-script) log file sometimes is not written to SD</*>
 <*>tell me</*>
 
 <#0f0><b>TODO</b></#>
-<*>0.6: include temp.mod, credit creator</*>
-<*>0.7: include screen oversharpen mod once stable, credit creator</*>
+<*>include screen oversharpen mod once stable, credit creator</*>
 <*>find details for Google Search</*>
 <*>find details for lg sounds/music</*>
 <*>need user reports for Google Apps removal as I have them in user space</*>
