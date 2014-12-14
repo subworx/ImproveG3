@@ -110,14 +110,27 @@ mainmenu.systemdesc=Get and show device/partition informations
 #
 debloatinstructions.title=Debloater Instructions
 debloatinstructions.desc=Instructions and Warnings
-debloatinstructions.warning=<#0f0><b>Safe</b></#>: Apps which are safe to remove. Do NOT remove anything if you use it!\
+debloatinstructions.warning=Choose the correct Android version! Otherwise the apps won't be deleted, but their settings will.\
+\
+<#0f0><b>Safe</b></#>: Apps which are safe to remove. Do NOT remove anything if you use it!\
+\
 <#006eff><b>Safe with Alternative</b></#>: Safe to remove, but have a replacement installed. <b><#00f>Can lead to Setup Loop after Factory Reset! (esp. Keyboard and Launcher)</#></b>\
-<#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store.\
-<#0000ff><b>Potentially dangerous</b></#>: Deleting these can or will have side-effects.\
-<#0000ff><b>Extremely dangerous</b></#>: side-effects galore.\
+\
+<#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store. If you moved a GApp to userspace before, using the debloater on it will <b>delete the app settings</b> for the selected app but not the app!\
+\
 <#0f0><b>Remove animations</b></#>: Remove boot/shutdown animations and sounds, plus LG bloat music.\
 \
+<#0000ff><b>Potentially dangerous</b></#>: Deleting these can or will have side-effects.\
+\
+<#0000ff><b>Extremely dangerous</b></#>: side-effects galore.\
+\
 Please get in touch with me (subworx @ xda, German/English) if you have issues or you know more APKs which can be removed without side-effects.
+
+#
+#-- Debloater OS selection
+#
+debloatversion.title=Android Version
+debloatversion.desc=Choose your Android version. File paths depend on this.
 
 #
 #-- Debloater customizations

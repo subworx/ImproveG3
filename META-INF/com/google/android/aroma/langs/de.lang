@@ -110,14 +110,27 @@ mainmenu.systemdesc=Geräte-/Partitionsinformationen
 #
 debloatinstructions.title=Entkrepler Anleitung
 debloatinstructions.desc=Anleitung und Warnungen
-debloatinstructions.warning=<#0f0><b>Sicher</b></#>: Apps die man sicher entfernen kann. Entferne NICHTS was du benutzt!\
+debloatinstructions.warning=Wähle die korrekte Android Version! Ansonsten werden die Apps nicht gelöscht, aber ihre Einstellungen.\
+\
+<#0f0><b>Sicher</b></#>: Apps die man sicher entfernen kann. Entferne NICHTS was du benutzt!\
+\
 <#006eff><b>Sicher mit Alternative</b></#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben. </b><#00f>Können beim Factory Reset zum Setup Loop führen (besonders Keyboard und Launcher)!</#></b>\
-<#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden.\
-<#0000ff><b>Potentiell gefährlich</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
-<#0000ff><b>Extremely Dangerous</b></#>: Nebenwirkungen ahoi.\
+\
+<#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden. Solltest du eine GApp in den Userspace verschoben haben, wird der Entkrepler <b>alle Einstellungen der App</b> löschen, aber nicht die App selbst!\
+\
 <#0f0><b>Animationen entfernen</b></#>: Entfernt Boot/Shutdown Animationen und Klänge, plus LG Musik.\
 \
+<#0000ff><b>Potentiell gefährlich</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
+\
+<#0000ff><b>Extremely Dangerous</b></#>: Nebenwirkungen ahoi.\
+\
 Bitte melde dich bei mir (subworx @ xda, Deutsch/Englisch) wenn es Probleme gibt oder du weitere APKs kennst, die ohne Nebeneffekte entfernt werden können.
+
+#
+#-- Entkrepler OS Version
+#
+debloatversion.title=Android Version
+debloatversion.desc=Wähle deine Android Version. Die Pfade unterscheiden sich.
 
 #
 #-- Entkrepler Auwahl

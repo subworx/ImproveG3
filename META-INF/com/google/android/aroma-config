@@ -74,10 +74,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.8.1");
+ini_set("rom_version",          "0.9");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3");
-ini_set("rom_date",             "2014.12.10");
+ini_set("rom_date",             "2014.12.12");
 
 
 #
@@ -808,7 +808,35 @@ if prop("demo.prop","selected")=="1" then
 
   #########################################################################################################
   #
-  # DEBLOATER STEP 2 - CUSTOMIZE
+  # DEBLOATER STEP 2 - SELECT ANDROID VERSION
+  #
+  selectbox(
+  #-- Title
+    "<~debloatversion.title>",
+  
+  #-- Sub Title
+    "<~debloatversion.desc>",
+  
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@customize",
+  
+  #-- Will be saved in /tmp/aroma/version.prop
+    "version.prop",
+  
+  #-------------[ Selectbox Without Group ]-------------#
+  # TITLE      |  SUBTITLE              | Initial Value #
+  #------------+------------------------+---------------#
+
+    "4.4",        "KitKat",                1,      #-- selected.0 = 1
+    "5.0",        "Lollipop",              0       #-- selected.0 = 2
+
+  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+  
+  
+  #########################################################################################################
+  #
+  # DEBLOATER STEP 3 - CUSTOMIZE
   #
   checkbox(
   #-- Title
@@ -883,7 +911,7 @@ if prop("demo.prop","selected")=="1" then
 	  "Shutdown Sound",	    "<~debloatcustomize.54>",						  0,    #-- item.5.4 = Un-Selected by default
 	  "Stock music",	    "<~debloatcustomize.55>",						  0,    #-- item.5.5 = Un-Selected by default
 
-    "<#00f>Extremely dangerous Sh!t</#>", "",	                                    2,  #-- Group 6. key = "item.6.x"
+    "<#00f>Extremely dangerous Sh!t (4.4 ONLY)</#>", "",	                                    2,  #-- Group 6. key = "item.6.x"
       "ActionManager Service (MRG)", "com.lge.mrg.service (MRG)",                   0,    #-- item.6.1 = Un-Selected by default
       "Board Content Provider (MRG)","com.lge.mrg.boardcontent (MRG)",              0,    #-- item.6.2 = Un-Selected by default
       "com.lge.divx.permission",     "com.lge.divx.permission",                     0,    #-- item.6.3 = Un-Selected by default
