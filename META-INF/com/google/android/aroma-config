@@ -96,7 +96,7 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.4");
+ini_set("rom_version",          "0.5");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3 D855");
 ini_set("rom_date",             "2014.12.01");
@@ -219,10 +219,10 @@ menubox(
   #-------------------------+-----------------------------------------------+---------------#
   
     "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                      "@customize",   #-- selected = 1
-	#"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 
+	"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 2
 	#"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 
 	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 2
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 3
 );
 
 
@@ -236,7 +236,7 @@ menubox(
 #
 # System Info Demo / selected 5
 #
-if prop("demo.prop","selected")=="2" then
+if prop("demo.prop","selected")=="3" then
 
   #-- Show Please Wait
   pleasewait("Get System Informations...");
@@ -327,9 +327,145 @@ endif;
 #
 # SD Fix / selected 2
 #
-#if prop("demo.prop","selected")=="2" then
-#  include("sdfix.edify");
-#endif;
+if prop("demo.prop","selected")=="2" then
+  #########################################################################################################
+  #                                                                                                       #
+  #                                             SD FIX                                                    #
+  #                                                                                                       #
+  #########################################################################################################
+
+  #########################################################################################################
+  #
+  # SD FIX STEP 1 - INSTRUCTIONS
+  #
+  textbox(
+    #-- Title
+      "<~sdfixinstructions.title>",
+  
+    #-- Subtitle
+      "<~sdfixinstructions.desc>",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Arg 4
+      "<~sdfixinstructions.warning>"
+  );
+
+  #########################################################################################################
+  #
+  # SD FIX STEP 2 - SELECT ACTION
+  #
+  selectbox(
+  #-- Title
+    "<~sdfixcustomize.title>",
+  
+  #-- Sub Title
+    "<~sdfixcustomize.desc>",
+  
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@personalize",
+  
+  #-- Will be saved in /tmp/aroma/sdfix.prop
+    "sdfix.prop",
+  
+  #-------------------------[ Selectbox Without Group ]--------------------------#
+  # TITLE                 |  SUBTITLE                            | Initial Value #
+  #-----------------------+--------------------------------------+---------------#
+
+    "<~sdfixcustomize.1>", "<~sdfixcustomize.1desc>",              1,      #-- selected.0 = 1
+    "<~sdfixcustomize.2>", "<~sdfixcustomize.2desc>",              0       #-- selected.0 = 2
+
+  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+  
+  ##
+  #
+  # Next Screen is Installation UI, So change the next button text to "Install Now"
+  #
+  ini_set("text_next", "<~sdfixcustomize.nextbutton>");
+  ini_set("icon_next", "@installbutton");
+
+  ###################################################################################################################
+  #
+  # SD FIX STEP 3 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  #
+  viewbox(
+    #-- Title
+      "<~sdfixconfirmation.title>",
+
+    #-- Text
+      "<~sdfixconfirmation.text>",
+
+    #-- Icon
+      "@install"
+  );
+
+  ##
+  #
+  # Next Button in successfull installation should be back to "Next >"
+  #
+  ini_set("text_next", "<~text_next>");
+  ini_set("icon_next", "@next");
+
+  #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
+  restotmp("exec_demo/sleep","sleep");
+
+  ###################################################################################################################
+  #
+  # SD FIX STEP 4 - INSTALLATION PROCESS
+  #
+  setvar("retstatus",
+    install(
+	  #-- Title
+        "<~sdfixinstall.title>",
+	
+	  #-- Installation Process message
+	    "<b>"+ini_get("rom_name")+"</b> <~sdfixinstall.desc>",
+	
+	  #-- Installation Icon
+        "@install",
+	
+	  #-- Installation Finish Message
+        "<~sdfixinstall.finish>"
+    )
+  );
+
+  ###################################################################################################################
+  #
+  # SD FIX STEP 5 - ASK If We Want to go back to main menu
+  #
+  checkviewbox(
+    #-- Title
+      "<~sdfixpostinstall.title>",
+  
+    #-- Text
+      "<~sdfixpostinstall.text>",
+	
+    #-- Icon
+      "@welcome",
+
+    #-- Checkbox Text
+      "<~sdfixpostinstall.checkbox>",
+
+    #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+      "0",
+
+    #-- Save checked value in variable "reboot_it" (Optional)
+      "goto_mainmenu"
+  );
+  if
+    getvar("goto_mainmenu")=="1"
+  then
+    goto("aroma_installer_demo_pos");
+  endif;
+  
+  ##########
+  #
+  # END SD FIX
+  #
+ 
+endif;
 
 ##--------------------------------------
 #
@@ -495,7 +631,7 @@ if prop("demo.prop","selected")=="1" then
 
   ###################################################################################################################
   #
-  # DEBLOATER STEP 5 - ASK If We Want to back to demo main menu
+  # DEBLOATER STEP 5 - ASK If We Want to go back to main menu
   #
   checkviewbox(
     #-- Title

@@ -86,12 +86,14 @@ mainmenu.title=ImproveG3
 mainmenu.desc=Select your action
 mainmenu.removeapps=Debloat
 mainmenu.removedesc=Select which system apps to remove. USE AT YOUR OWN RISK!
-mainmenu.systeminfo=System Info
-mainmenu.systemdesc=Get and show device/partition informations
+mainmenu.sdfix=KitKat SD Fix
+mainmenu.sdfixdesc=Allows apps in Android 4.4 KitKat to write to SD again.
 mainmenu.cttmod=CPU Thermal Throttling Mod
 mainmenu.cttdesc=Changes the temperature at which the device clocks down. Created by <#00f>Robshr</#> on xda.
 mainmenu.sharp=Sharpening Mod
 mainmenu.sharpdesc=Changes/removes screen oversharpening with a kernel patch. Created by <#00f>Skin1980</#> on xda. Kernel must be Bump!ed! Not yet implemented.
+mainmenu.systeminfo=System Info
+mainmenu.systemdesc=Get and show device/partition informations
 
 #################################
 #
@@ -201,10 +203,69 @@ debloatinstall.finish=Apps successfully removed. Press Next to continue.
 debloatpostinstall.title=Post Debloating
 debloatpostinstall.text=Debloating Finished. Do you want to go back to Main Menu or finish?
 debloatpostinstall.checkbox=Back To Main Menu.
+
 #################################
 #
 # END DEBLOATER
 #
+
+
+#################################
+#
+# SD FIX
+#
+
+#
+#-- SD Fix instructions
+#
+sdfixinstructions.title=SD Fix Instructions
+sdfixinstructions.desc=Instructions and Warnings
+sdfixinstructions.warning=Bad things could happen. I am not responsible!
+
+#
+#-- SD Fix customizations
+#
+sdfixcustomize.title=Choose action
+sdfixcustomize.desc=Choose an action
+sdfixcustomize.1=Stock
+sdfixcustomize.1desc=Stock Android 4.4 behaviour - apps <b>cannot</b> write to SD.
+sdfixcustomize.2=Modded
+sdfixcustomize.2desc=Apps can write to SD as they please.
+sdfixcustomize.nextbutton=Install
+
+#
+#-- SD Fix confirmation
+#
+sdfixconfirmation.title=Ready to Install
+sdfixconfirmation.text=The wizard is ready to install the selected module.\
+\
+Press <b>Install</b> to begin.\
+\
+<#0000ff><b>I AM NOT RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR DEVICE\
+\
+MAKE SURE YOU HAVE A WORKING NANDROID BACKUP BEFORE CONTINUING\
+\
+</b></#>\
+If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.
+
+#
+#-- SD Fix installation
+#
+sdfixinstall.title=Installing
+sdfixinstall.desc=installs the selected module.
+sdfixinstall.finish=Module successfully installed. Press Next to continue.
+
+#
+#-- SD Fix installation finished
+#
+sdfixpostinstall.title=Post Installation
+sdfixpostinstall.text=Installation finished. Do you want to go back to Main Menu or finish?
+sdfixpostinstall.checkbox=Back To Main Menu.
+#################################
+#
+# END SD FIX
+#
+
 
 #
 #-- Final dialog

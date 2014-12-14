@@ -86,12 +86,15 @@ mainmenu.title=ImproveG3
 mainmenu.desc=Wähle deine Aktion
 mainmenu.removeapps=Entkrepeln
 mainmenu.removedesc=Auswählen, welche System-Apps du entfernen willst. BENUTZUNG AUF EIGENE GEFAHR!
-mainmenu.systeminfo=System Info
-mainmenu.systemdesc=Geräte-/Partitionsinformationen
+mainmenu.sdfix=KitKat SD Fix
+mainmenu.sdfixdesc=Erlaubt Apps unter Android 4.4 KitKat, wieder auf SD zu schreiben.
 mainmenu.cttmod=CPU Thermal Throttling Mod
 mainmenu.cttdesc=ändert die Temperatur, ab wann das Gerät heruntertaktet. Erstellt von <#00f>Robshr</#> auf xda.
 mainmenu.sharp=Oversharpening Mod
 mainmenu.sharpdesc=ändert/entfernt überzeichnung (Oversharpening) per Kernelpatch. Erstellt von <#00f>Skin1980</#> on xda. Kernel MUSS Bump!ed sein! Noch nicht implementiert.
+mainmenu.systeminfo=System Info
+mainmenu.systemdesc=Geräte-/Partitionsinformationen
+
 
 #################################
 #
@@ -201,10 +204,69 @@ debloatinstall.finish=Apps erfolgreich entfernt. Drücke Weiter um fortzufahren.
 debloatpostinstall.title=Post Entkrepeln
 debloatpostinstall.text=Entkrepeln abgeschlossen. Willst du ins Hauptmenu zurückkehren oder aufhören?
 debloatpostinstall.checkbox=Zurück zum Hauptmenu.
+
 #################################
 #
 # ENDE ENTKREPLER (DEBLOATER) 
 #
+
+
+#################################
+#
+# SD FIX
+#
+
+#
+#-- SD Fix Anleitung
+#
+sdfixinstructions.title=SD Fix Anleitung
+sdfixinstructions.desc=Anleitung und Warnung
+sdfixinstructions.warning=Es könnten schlimme Dinge geschehen. Ich bin dafür nicht verantwortlich!
+
+#
+#-- SD Fix Customizations
+#
+sdfixcustomize.title=Aktion wählen
+sdfixcustomize.desc=Wähle eine Aktion aus
+sdfixcustomize.1=Stock
+sdfixcustomize.1desc=Standard Android 4.4 Verhalten - Apps können <b>nicht</b> auf SD schreiben.
+sdfixcustomize.2=Modifiziert
+sdfixcustomize.2desc=Apps können wie früher nach Belieben auf SD schreiben.
+sdfixcustomize.nextbutton=Installieren
+
+#
+#-- SD Fix Bestätigung
+#
+sdfixconfirmation.title=Bereit zum Installieren
+sdfixconfirmation.text=Der Wizard ist bereit, das ausgewählten Modul zu installieren.\
+\
+Drücke <b>Installieren</b> um anzufangen.\
+\
+<#0000ff><b>ICH BIN NICHT HAFTBAR FüR IRGEND EINEN SCHADEN AN DEINEM GERäT\
+\
+STELLE SICHER DASS DU EIN FUNKTIONIERENDES NANDROID-BACKUP HAST, BEVOR DU WEITERMACHST\
+\
+</b></#>\
+Wenn du deine Einstellungen überprüfen oder ändern willst, drücke <b>Zurück</b>. Drücke die Menu-Taste -> ImproveG3 beenden um den Wizard zu verlassen.
+
+#
+#-- SD Fix Installation
+#
+sdfixinstall.title=Installiere
+sdfixinstall.desc=installiert das gewählte Modul.
+sdfixinstall.finish=Modul installiert. Drücke Weiter, um fortzufahren.
+
+#
+#-- SD Fix Post-Install
+#
+sdfixpostinstall.title=Post Installation
+sdfixpostinstall.text=Installation abgeschlossen. Willst du ins Hauptmenu zurückkehren?
+sdfixpostinstall.checkbox=Zurück zum Hauptmenu
+#################################
+#
+# END SD FIX
+#
+
 
 #
 #-- Abschlussdialog
