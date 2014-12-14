@@ -1,4 +1,9 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>0.8 - 2014.12.06</b>
+<*>Included Sharpening Mod by <#00f>Skin1980</#> on xda. This is dangerous!</*>
+<*>More warnings, less terms</*>
+<*>Beautified icons</*>
+<*>updated update-binary-installer with version from Skin1980's mod</*>
 <b>0.71 - 2014.12.05</b>
 <*>Added Google Search (thanks tobitege @ xda)</*>
 <*>Fixed profile/settings loss issue. Please report back</*>

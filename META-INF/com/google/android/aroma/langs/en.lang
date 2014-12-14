@@ -66,12 +66,17 @@ welcome.creator=Creator
 welcome.next=Press Next to Continue the process...
 
 #
-#-- Terms/Conditions page
+#-- Warning page
 #
-terms.title=Terms and Conditions
-terms.desc=Please read carefully the Terms and Conditions Below.
-terms.check=I Agree with these Terms and Conditions...
-terms.confirm=Please check the agreement...
+warning.title=Warning
+warning.desc=Please read carefully the Warning Below.
+warning.text=<@center><b><#0000ff>I AM NOT RESPONSIBLE FOR ANY DAMAGE TO YOUR DEVICE.\
+MAKE A NANDROID BACKUP!\
+ONLY DELETE WHAT YOU KNOW YOU DON'T NEED.</#></b>\
+\
+Sometimes things get (partially) reset, please restore a backup and try again!
+warning.check=I Know What I Do...
+warning.confirm=Please check the agreement...
 
 #
 #-- Changelog page
@@ -334,6 +339,70 @@ cttpostinstall.checkbox=Back To Main Menu.
 #################################
 #
 # END CTT MOD
+#
+
+
+#################################
+#
+# SHARPENING MOD
+#
+
+#
+#-- SHARPENING instructions
+#
+sharpinstructions.title=Sharpening Mod
+sharpinstructions.desc=Instructions and Warnings
+sharpinstructions.warning=This mod changes the Screen Oversharpening.\
+The value can be freely changed from 0 (off) to 40 (stock).\
+\
+The original was created by <#00f><b>Skin1980</b></#> on xda und is used with permission.\
+\
+This Mod extracts, patches, bumps, copies your Boot partition.\
+\
+<#00f><b>Create a backup first!\
+If the Boot parition (independent from the kernel) is not "clean", the device won't boot!\
+\
+In this case please visit the ImproveG3 XDA thread, here you can find instructions on setting up a clean Boot partition!</b></#>
+
+#
+#-- SHARPENING customize
+#
+sharpcustomize.title=Chose Sharpening Level
+sharpcustomize.desc=Chose the level of Sharpening you like.
+sharpcustomize.nextbutton=Install
+
+#
+#-- SHARPENING confirmation
+#
+sharpconfirmation.title=Ready to Install
+sharpconfirmation.text=The wizard is ready to install the selected module.\
+\
+Press <b>Install</b> to begin.\
+\
+<#0000ff><b>NEITHER SKIN1980 NOR I ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR DEVICE\
+\
+MAKE SURE YOU HAVE A WORKING NANDROID BACKUP BEFORE CONTINUING\
+\
+</b></#>\
+If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.
+
+#
+#-- SHARPENING installation
+#
+sharpinstall.title=Installing
+sharpinstall.desc=installs the selected module.
+sharpinstall.finish=Module successfully installed. Press Next to continue.
+
+#
+#-- SHARPENING installation finished
+#
+sharppostinstall.title=Post Installation
+sharppostinstall.text=Installation finished. Do you want to go back to Main Menu or finish?
+sharppostinstall.checkbox=Back To Main Menu.
+
+#################################
+#
+# END SHARPENING MOD
 #
 
 

@@ -66,12 +66,17 @@ welcome.creator=Creator
 welcome.next=Weiter drücken, um mit dem Prozess fortzufahren...
 
 #
-#-- License Seite
+#-- Warnungs Seite
 #
-terms.title=AGB
-terms.desc=Bitte lese dir die AGB genau durch.
-terms.check=Ich stimme den AGBs zu...
-terms.confirm=Eingabe überprüfen...
+warning.title=Warnung
+warning.desc=Bitte lese dir die Warnung genau durch.
+warning.text=<@center><b><#0000ff>ICH BIN NICHT HAFTBAR FüR SCHäDEN AN DEINEM GERäT.\
+MACH EIN NANDROID BACKUP!\
+LöSCHE NUR SACHEN, VON DENEN DU WEIßT DASS DU SIE NICHT BRAUCHST.</#></b>\
+\
+Manchmal werden die Einstellungen (teilweise) zurückgesetzt, bitte Nandroid wiederherstellen und nochmal versuchen!
+warning.check=Ich weiß was ich tue...
+warning.confirm=Eingabe überprüfen...
 
 #
 #-- Changelog Seite
@@ -335,6 +340,70 @@ cttpostinstall.checkbox=Zurück zum Hauptmenu
 #################################
 #
 # END CTT MOD
+#
+
+
+#################################
+#
+# SHARPENING MOD
+#
+
+#
+#-- SHARPENING Anleitung
+#
+sharpinstructions.title=Screen Sharpening Mod
+sharpinstructions.desc=Anleitung und Warnung
+sharpinstructions.warning=Diese Mod ändert die überzeichnung (Oversharpening) des Bildschirms.\
+Der Wert kann von 0 (aus) bis 40 (Stock) frei eingestellt werden.\
+\
+Das Original stammt von <#00f><b>Skin1980</b></#> auf xda und wird mit Genehmigung genutzt.\
+\
+Diese Mod extrahiert, patcht, bumpt, kopiert deine Boot Partition.\
+\
+<#00f><b>Erstelle vorher ein Backup!\
+Wenn die Boot Partition (unabhängig vom Kernel) nicht "clean" ist, bootet das Gerät danach nicht mehr!\
+\
+In diesem Fall besuche bitte den ImproveG3 XDA Thread, hier steht wie man die Boot Partition clean aufsetzt!</b></#>
+
+#
+#-- SHARPENING Anpassen
+#
+sharpcustomize.title=Sharpening Grad auswählen
+sdfixcustomize.desc=Wähle den Grad an Sharpening, den du möchtest
+sharpcustomize.nextbutton=Installieren
+
+#
+#-- SHARPENING Bestätigung
+#
+sharpconfirmation.title=Bereit zum Installieren
+sharpconfirmation.text=Der Wizard ist bereit, das ausgewählten Modul zu installieren.\
+\
+Drücke <b>Installieren</b> um anzufangen.\
+\
+<#0000ff><b>WEDER SKIN1980 NOCH ICH SIND HAFTBAR FüR IRGEND EINEN SCHADEN AN DEINEM GERäT\
+\
+STELLE SICHER DASS DU EIN FUNKTIONIERENDES NANDROID-BACKUP HAST, BEVOR DU WEITERMACHST\
+\
+</b></#>\
+Wenn du deine Einstellungen überprüfen oder ändern willst, drücke <b>Zurück</b>. Drücke die Menu-Taste -> ImproveG3 beenden um den Wizard zu verlassen.
+
+#
+#-- SHARPENING Installation
+#
+sharpinstall.title=Installiere
+sharpinstall.desc=installiert das gewählte Modul.
+sharpinstall.finish=Modul installiert. Drücke Weiter, um fortzufahren.
+
+#
+#-- SHARPENING Post-Install
+#
+sharppostinstall.title=Post Installation
+sharppostinstall.text=Installation abgeschlossen. Willst du ins Hauptmenu zurückkehren?
+sharppostinstall.checkbox=Zurück zum Hauptmenu
+
+#################################
+#
+# END SHARPENING MOD
 #
 
 

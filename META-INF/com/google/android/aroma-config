@@ -74,10 +74,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.71");
+ini_set("rom_version",          "0.8");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3");
-ini_set("rom_date",             "2014.12.05");
+ini_set("rom_date",             "2014.12.06");
 
 
 #
@@ -120,26 +120,26 @@ viewbox(
 
 #########################################################################################################
 #
-# STEP 2 - LICENSE
+# STEP 2 - WARNING
 #
 agreebox(
   #-- Title
-    "<~terms.title>",
+    "<~warning.title>",
   
   #-- Subtitle / Description
-    "<~terms.desc>",
+    "<~warning.desc>",
   
   #-- Icon
-    "@license",
+    "@alert",
   
   #-- Text Content ( Read from <AROMA Resource Dir>/license.txt )
-    resread("license.txt"),
+    "<~warning.text>",
   
   #-- Checkbox Text
-    "<~terms.check>",
+    "<~warning.check>",
   
   #-- Unchecked Alert Message
-    "<~terms.confirm>"
+    "<~warning.confirm>"
 );
 
 
@@ -199,9 +199,10 @@ menubox(
     "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                      "@customize",   #-- selected = 1
 	"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 2
 	"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 3
-	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 4
+	"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 4
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 5
 );
+
 
 
 #########################################################################################################
@@ -214,7 +215,7 @@ menubox(
 #
 # System Info Demo / selected 5
 #
-if prop("demo.prop","selected")=="4" then
+if prop("demo.prop","selected")=="5" then
 
   #-- Show Please Wait
   pleasewait("Get System Informations...");
@@ -289,9 +290,201 @@ endif;
 #
 # Oversharpening Fix / selected 4
 #
-#if prop("demo.prop","selected")=="4" then
-#  include("sharpening.edify");
-#endif;
+if prop("demo.prop","selected")=="4" then
+
+  #########################################################################################################
+  #                                                                                                       #
+  #                                       SHARPENING MOD                                                  #
+  #                                                                                                       #
+  #########################################################################################################
+
+  #########################################################################################################
+  #
+  # SHARPENING MOD STEP 1 - SPLASH
+  #
+
+  ##
+  # Show Simple Splash
+  #
+  splash(
+    #-- Duration 3000ms / 3 seconds
+    3000,
+    
+    #-- <AROMA Resource Dir>/oversharpenlogo.png
+    "oversharpenlogo"
+  );
+
+  #########################################################################################################
+  #
+  # SHARPENING MOD STEP 2 - INSTRUCTIONS
+  #
+  textbox(
+    #-- Title
+      "<~sharpinstructions.title>",
+  
+    #-- Subtitle
+      "<~sharpinstructions.desc>",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Arg 4
+      "<~sharpinstructions.warning>"
+  );
+
+  #########################################################################################################
+  #
+  # SHARPENING MOD STEP 3 - SELECT ACTION
+  #
+  selectbox(
+  #-- Title
+    "<~sharpcustomize.title>",
+  
+  #-- Sub Title
+    "<~sharpcustomize.desc>",
+  
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@personalize",
+  
+  #-- Will be saved in /tmp/aroma/ctt.prop
+    "sharp.prop",
+  
+  #-----------------[ Selectbox Without Group ]-------------------#
+  # TITLE  |  SUBTITLE                            | Initial Value #
+  #--------+--------------------------------------+---------------#
+
+    "00",    "Sharpening Disabled (Off)",          1,      #-- selected.0 = 1
+    "01",    "Sharpening set to 01",               0,      #-- selected.0 = 2
+    "02",    "Sharpening set to 02",               0,      #-- selected.0 = 3
+    "03",    "Sharpening set to 03",               0,      #-- selected.0 = 4
+    "04",    "Sharpening set to 04",               0,      #-- selected.0 = 5
+    "05",    "Sharpening set to 05",               0,      #-- selected.0 = 6
+    "06",    "Sharpening set to 06",               0,      #-- selected.0 = 7
+    "07",    "Sharpening set to 07",               0,      #-- selected.0 = 8
+    "08",    "Sharpening set to 08",               0,      #-- selected.0 = 9
+    "09",    "Sharpening set to 09",               0,      #-- selected.0 = 10
+    "10",    "Sharpening set to 10",               0,      #-- selected.0 = 11
+    "11",    "Sharpening set to 11",               0,      #-- selected.0 = 12
+    "12",    "Sharpening set to 12",               0,      #-- selected.0 = 13
+    "13",    "Sharpening set to 13",               0,      #-- selected.0 = 14
+    "14",    "Sharpening set to 14",               0,      #-- selected.0 = 15
+    "15",    "Sharpening set to 15",               0,      #-- selected.0 = 16
+    "16",    "Sharpening set to 16",               0,      #-- selected.0 = 17
+    "17",    "Sharpening set to 17",               0,      #-- selected.0 = 18
+    "18",    "Sharpening set to 18",               0,      #-- selected.0 = 19
+    "19",    "Sharpening set to 19",               0,      #-- selected.0 = 20
+    "20",    "Sharpening set to 20",               0,      #-- selected.0 = 21
+    "21",    "Sharpening set to 21",               0,      #-- selected.0 = 22
+    "22",    "Sharpening set to 22",               0,      #-- selected.0 = 23
+    "23",    "Sharpening set to 23",               0,      #-- selected.0 = 24
+    "24",    "Sharpening set to 24",               0,      #-- selected.0 = 25
+    "25",    "Sharpening set to 25",               0,      #-- selected.0 = 26
+    "26",    "Sharpening set to 26",               0,      #-- selected.0 = 27
+    "27",    "Sharpening set to 27",               0,      #-- selected.0 = 28
+    "28",    "Sharpening set to 28",               0,      #-- selected.0 = 29
+    "29",    "Sharpening set to 29",               0,      #-- selected.0 = 30
+    "30",    "Sharpening set to 30",               0,      #-- selected.0 = 31
+    "31",    "Sharpening set to 31",               0,      #-- selected.0 = 32
+    "32",    "Sharpening set to 32",               0,      #-- selected.0 = 33
+    "33",    "Sharpening set to 33",               0,      #-- selected.0 = 34
+    "34",    "Sharpening set to 34",               0,      #-- selected.0 = 35
+    "35",    "Sharpening set to 35",               0,      #-- selected.0 = 36
+    "36",    "Sharpening set to 36",               0,      #-- selected.0 = 37
+    "37",    "Sharpening set to 37",               0,      #-- selected.0 = 38
+    "38",    "Sharpening set to 38",               0,      #-- selected.0 = 39
+    "39",    "Sharpening set to 39",               0,      #-- selected.0 = 40
+    "40",    "Sharpening set to 40 (Stock)",       0       #-- selected.0 = 41
+
+  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+  
+  ##
+  #
+  # Next Screen is Installation UI, So change the next button text to "Install Now"
+  #
+  ini_set("text_next", "<~sharpcustomize.nextbutton>");
+  ini_set("icon_next", "@installbutton");
+
+  ###################################################################################################################
+  #
+  # SHARPENING MOD STEP 4 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  #
+  viewbox(
+    #-- Title
+      "<~sharpconfirmation.title>",
+
+    #-- Text
+      "<~sharpconfirmation.text>",
+
+    #-- Icon
+      "@install"
+  );
+
+  ##
+  #
+  # Next Button in successfull installation should be back to "Next >"
+  #
+  ini_set("text_next", "<~text_next>");
+  ini_set("icon_next", "@next");
+
+  #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
+  restotmp("exec_demo/sleep","sleep");
+
+  ###################################################################################################################
+  #
+  # SHARPENING MOD STEP 5 - INSTALLATION PROCESS
+  #
+  setvar("retstatus",
+    install(
+	  #-- Title
+        "<~sharpinstall.title>",
+	
+	  #-- Installation Process message
+	    "<b>"+ini_get("rom_name")+"</b> <~sharpinstall.desc>",
+	
+	  #-- Installation Icon
+        "@install",
+	
+	  #-- Installation Finish Message
+        "<~sharpinstall.finish>"
+    )
+  );
+
+  ###################################################################################################################
+  #
+  # SHARPENING MOD STEP 6 - ASK If We Want to go back to main menu
+  #
+  checkviewbox(
+    #-- Title
+      "<~sharppostinstall.title>",
+  
+    #-- Text
+      "<~sharppostinstall.text>",
+	
+    #-- Icon
+      "@welcome",
+
+    #-- Checkbox Text
+      "<~sharppostinstall.checkbox>",
+
+    #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+      "0",
+
+    #-- Save checked value in variable "reboot_it" (Optional)
+      "goto_mainmenu"
+  );
+  if
+    getvar("goto_mainmenu")=="1"
+  then
+    goto("aroma_installer_demo_pos");
+  endif;
+  
+  ##########
+  #
+  # END SHARPENING MOD
+  #
+
+endif;
 
 ##--------------------------------------
 #
@@ -334,7 +527,7 @@ if prop("demo.prop","selected")=="3" then
     "<~cttcustomize.desc>",
   
   #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
-    "@personalize",
+    "@customize",
   
   #-- Will be saved in /tmp/aroma/ctt.prop
     "ctt.prop",
@@ -415,7 +608,7 @@ if prop("demo.prop","selected")=="3" then
       "<~cttpostinstall.text>",
 	
     #-- Icon
-      "@welcome",
+      "@finish",
 
     #-- Checkbox Text
       "<~cttpostinstall.checkbox>",
@@ -481,7 +674,7 @@ if prop("demo.prop","selected")=="2" then
     "<~sdfixcustomize.desc>",
   
   #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
-    "@personalize",
+    "@customize",
   
   #-- Will be saved in /tmp/aroma/sdfix.prop
     "sdfix.prop",
@@ -560,7 +753,7 @@ if prop("demo.prop","selected")=="2" then
       "<~sdfixpostinstall.text>",
 	
     #-- Icon
-      "@welcome",
+      "@finish",
 
     #-- Checkbox Text
       "<~sdfixpostinstall.checkbox>",
@@ -625,7 +818,7 @@ if prop("demo.prop","selected")=="1" then
     "<~debloatcustomize.desc>",
   
   #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
-    "@personalize",
+    "@customize",
   
   #-- Will be saved in /tmp/aroma/customize.prop
     "customize.prop",
@@ -758,7 +951,7 @@ if prop("demo.prop","selected")=="1" then
       "<~debloatpostinstall.text>",
 	
     #-- Icon
-      "@welcome",
+      "@finish",
 
     #-- Checkbox Text
       "<~debloatpostinstall.checkbox>",

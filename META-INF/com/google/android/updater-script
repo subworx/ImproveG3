@@ -764,11 +764,36 @@ endif;
 #-- 4th big 'if' for oversharpening mod
 #
 
-#if
-#  file_getprop("/tmp/aroma/demo.prop","selected") == "4"
-#then
-#  ui_print("Applying Oversharpening Fix");
-#endif;
+if
+  file_getprop("/tmp/aroma/demo.prop","selected") == "4"
+then
+
+  #####################################################################################################
+  #
+  # BEGIN SHARPENING MOD
+  #
+
+  ui_print("@Sharpening Mod");
+  ui_print("  Copying resources");
+  package_extract_dir("oversharpen", "/tmp");
+  ui_print(" ");
+  set_progress(0.7);
+  ui_print("  Set permissions");
+  set_metadata("/tmp/apply-patch.sh", "uid", 0, "gid", 0, "mode", 0755);
+  set_metadata("/tmp/livebump.sh", "uid", 0, "gid", 0, "mode", 0755);
+  ui_print("  Running script and bumping boot image");
+  run_program("/tmp/apply-patch.sh");
+  ui_print(" ");
+  set_progress(1.0);
+  ui_print("  Done");
+  ui_print(" ");
+
+  #####################################################################################################
+  #
+  # END SHARPENING MOD
+  #
+  
+endif;
 
 
 #-- Kernel
