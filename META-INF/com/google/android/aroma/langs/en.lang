@@ -59,7 +59,7 @@ themes.desc=Please select installer theme that you want to use in this installat
 #
 welcome.title=Welcome
 welcome.text1=Welcome to 
-welcome.text2=This tool removes system apps and tweaks other things. It is only tested with D855 (international unlocked) on 10L stock rooted ROM.
+welcome.text2=This tool removes system apps and sounds and tweaks other things. It works on LG G3 (all variants) with 4.4/5.0 Stock (based) ROMs.
 welcome.version=Version
 welcome.updated=Updated
 welcome.creator=Creator
@@ -91,6 +91,8 @@ mainmenu.title=ImproveG3
 mainmenu.desc=Select your action
 mainmenu.removeapps=Debloat
 mainmenu.removedesc=Select which system apps to remove. USE AT YOUR OWN RISK! CANNOT BE UNDONE!
+mainmenu.sound=Debloat sound
+mainmenu.sounddesc=Removes System/Alarm/Notification/Ringtone sounds and Boot/Shutdown animation/sound
 mainmenu.sdfix=KitKat SD Fix
 mainmenu.sdfixdesc=Allows apps in Android 4.4 KitKat to write to SD again.
 mainmenu.cttmod=CPU Thermal Throttling Mod
@@ -117,8 +119,6 @@ debloatinstructions.warning=Choose the correct Android version! Otherwise the ap
 <#006eff><b>Safe with Alternative</b></#>: Safe to remove, but have a replacement installed. <b><#00f>Can lead to Setup Loop after Factory Reset! (esp. Keyboard and Launcher)</#></b>\
 \
 <#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store. If you moved a GApp to userspace before, using the debloater on it will <b>delete the app settings</b> for the selected app but not the app!\
-\
-<#0f0><b>Remove animations</b></#>: Remove boot/shutdown animations and sounds, plus LG bloat music.\
 \
 <#0000ff><b>Potentially dangerous</b></#>: Deleting these can or will have side-effects.\
 \
@@ -184,12 +184,6 @@ debloatcustomize.42=(26.6 MB) According to XDA, this can lead to Setup Loops aft
 debloatcustomize.43=(0.2 MB) Possible security risk as reported on XDA, possibly fixed - anyway, required for App Updater to download and install LG apps. Possibly also for Software Updates (OTA)
 debloatcustomize.44=(4.3 MB) Manages OTA Updates. Normally with root you would not want this.
 debloatcustomize.45=(0.1 MB) LG Updater, found at Settings -> About Phone -> Software Updates, used for launching App Updater and Software Updater. Causes FC in settings if this is removed but the other updaters are left intact.
-debloatcustomize.50=Remove Animations (~6 MB)
-debloatcustomize.51=(3.2 MB) Remove LG boot animation, should show stock Android animation
-debloatcustomize.52=(2.3 MB) Remove LG shutdown animation
-debloatcustomize.53=(0.2 MB) Remove LG boot sound
-debloatcustomize.54=(0.1 MB) Remove LG shutdown sound
-debloatcustomize.55=Currently not functional. Remove three music files that take up space
 debloatcustomize.nextbutton=Remove Selected
 
 #
@@ -227,6 +221,229 @@ debloatpostinstall.checkbox=Back To Main Menu.
 #
 # END DEBLOATER
 #
+
+
+#################################
+#
+# SOUND
+#
+
+#
+#-- Sound instructions
+#
+soundinstructions.title=Sound Removal Instructions
+soundinstructions.desc=Instructions and Warnings
+soundinstructions.warning=This will delete various sounds and animations.\
+The UI related files will be replaced with empty 0.1s long sounds so there will be no error messages in logcat, while the boot/shutdown animations, alarms, notifications and ringtones simply are deleted.\
+Everything together saves approx. 33 MB.\
+If bootanimation.zip is deleted, the (tiny sized) default Android boot animation plays.\
+\
+In the ImproveG3 XDA thread I linked a flashable <b>audio_restore.zip</b> file which restores all audio and animations to stock state.
+
+#
+#-- Sound customizations
+#
+soundcustomize.title=Select sounds to remove
+soundcustomize.desc=Select the sounds you want to be removed.\
+The files will be <b>deleted/replaced</b>.
+soundcustomize.10=Animations
+soundcustomize.11=Boot Animation
+soundcustomize.12=Shutdown Animation
+soundcustomize.13=Boot Sound
+soundcustomize.14=Shutdown Sound
+soundcustomize.20=UI / Camera
+soundcustomize.21=Auto Focus failure
+soundcustomize.22=Auto Focus success
+soundcustomize.23=Camera Snap
+soundcustomize.24=Camera Timer
+soundcustomize.25=Camera Timer
+soundcustomize.26=Camera Click
+soundcustomize.27=Video Camera Start
+soundcustomize.28=Video Camera Stop
+soundcustomize.29=Continuous Shot Sound
+soundcustomize.210=Video Recorder Start
+soundcustomize.211=?
+soundcustomize.212=Voice Sound - Cheese
+soundcustomize.213=Voice Sound - Kimchi
+soundcustomize.214=Voice Sound - LG
+soundcustomize.215=Voice Sound - Smile
+soundcustomize.216=Voice Sound - Torimasu
+soundcustomize.217=Voice Sound - Whisky
+soundcustomize.30= UI / System
+soundcustomize.31=Bluetooth Alert
+soundcustomize.32=Charging Error
+soundcustomize.33=Clear Ram
+soundcustomize.34=Dock
+soundcustomize.35=Effect Tick
+soundcustomize.36=Email Sent
+soundcustomize.37=Full Battery
+soundcustomize.38=Homescreen app removed
+soundcustomize.39=Homescreen app uninstalled
+soundcustomize.310=InfraRed Normal
+soundcustomize.311=Keypress - Delete
+soundcustomize.312=Keypress - Return
+soundcustomize.313=Keypress - Space
+soundcustomize.314=Keypress - Standard
+soundcustomize.315=LG Cable Connect
+soundcustomize.316=LG Media Volume
+soundcustomize.317=Lock sound
+soundcustomize.318=Lock with Cover
+soundcustomize.319=Low Battery
+soundcustomize.320=Low Battery - in Call
+soundcustomize.321=??
+soundcustomize.322=NFC transmission end
+soundcustomize.323=NFC transmission error
+soundcustomize.324=NFC transmission started
+soundcustomize.325=Silent Ring
+soundcustomize.326=?? Soundloop
+soundcustomize.327=?? Switch off
+soundcustomize.328=?? Switch on
+soundcustomize.329=Undock
+soundcustomize.330=Unlock
+soundcustomize.331=Unlock while mute
+soundcustomize.40= UI / Lock screens
+soundcustomize.41=Circle - Lock
+soundcustomize.42=Circle - Unlock 1
+soundcustomize.43=Circle - Unlock 2
+soundcustomize.44=Circle - Unlock 3
+soundcustomize.45=Circle - Unlock 4
+soundcustomize.46=Crystal - Lock
+soundcustomize.47=Crystal - Unlock
+soundcustomize.48=Dewdrop - Lock
+soundcustomize.49=Dewdrop - Touch down
+soundcustomize.410=Dewdrop - Touch released
+soundcustomize.411=Dewdrop - Unlock
+soundcustomize.412=Ink - Lock
+soundcustomize.413=Ink - Touch down
+soundcustomize.414=Ink - Unlock
+soundcustomize.415=Light - Lock
+soundcustomize.416=Light - Touch down
+soundcustomize.417=Light - Unlock
+soundcustomize.418=Mosaic - Lock
+soundcustomize.419=Mosaic - Touch down
+soundcustomize.420=Mosaic - Unlock
+soundcustomize.421=Particle - Lock
+soundcustomize.422=Particle - Unlock
+soundcustomize.423=Ripple - Lock
+soundcustomize.424=Ripple - Touch down 1
+soundcustomize.425=Ripple - Touch down 2
+soundcustomize.426=Ripple - Touch down 3
+soundcustomize.427=Ripple - Touch release 1
+soundcustomize.428=Ripple - Touch release 2
+soundcustomize.429=Ripple - Touch release 3
+soundcustomize.430=Ripple - Unlock
+soundcustomize.431=Soda - Lock
+soundcustomize.432=Soda - Touch down
+soundcustomize.433=Soda - Unlock
+soundcustomize.434=Vector - Lock
+soundcustomize.435=Vector - Touch down
+soundcustomize.436=Vector - Unlock
+soundcustomize.437=White Hole - Lock
+soundcustomize.438=White Hole - Unlock
+soundcustomize.50=Alarms
+soundcustomize.51=Acappella Good Morning
+soundcustomize.52=Afternoon Walk
+soundcustomize.53=Alarm_1
+soundcustomize.54=Alarm_2
+soundcustomize.55=Beautiful Day
+soundcustomize.56=Cello
+soundcustomize.57=Clockwork
+soundcustomize.58=Country Road
+soundcustomize.59=Dawning Sky
+soundcustomize.510=Lifes Good Alarm
+soundcustomize.511=Morning Scent
+soundcustomize.512=Running
+soundcustomize.513=Shampoo
+soundcustomize.514=Timer
+soundcustomize.515=Trumpet
+soundcustomize.516=Voice of Nature
+soundcustomize.517=Weather Forecast
+soundcustomize.518=West Winds
+soundcustomize.60=Notifications
+soundcustomize.61=Arpeggio
+soundcustomize.62=Country Blues
+soundcustomize.63=Crystal
+soundcustomize.64=Dewdrop
+soundcustomize.65=Ding Dong
+soundcustomize.66=Echo
+soundcustomize.67=Email
+soundcustomize.68=Game Over
+soundcustomize.69=Gayageum
+soundcustomize.610=Harmonics
+soundcustomize.611=Idea
+soundcustomize.612=News
+soundcustomize.613=Pebble
+soundcustomize.614=Schedule
+soundcustomize.615=Shooting Star
+soundcustomize.616=Spiral
+soundcustomize.617=Ticket
+soundcustomize.618=Twinkle
+soundcustomize.619=Whistling Bird
+soundcustomize.620=Woodpecker
+soundcustomize.70=Ringtones
+soundcustomize.71=Lifes Good
+soundcustomize.72=A Days Pleasure
+soundcustomize.73=Aurora
+soundcustomize.74=Beep
+soundcustomize.75=Bubble
+soundcustomize.76=Cowboy
+soundcustomize.77=Fiance
+soundcustomize.78=Harmonica
+soundcustomize.79=Imagination
+soundcustomize.710=Jungle Gym
+soundcustomize.711=Laser
+soundcustomize.712=Maple
+soundcustomize.713=Merry Go Round
+soundcustomize.714=Midnight Sun
+soundcustomize.715=Pick Up Your Phone
+soundcustomize.716=Rhythm Guitar
+soundcustomize.717=Rush
+soundcustomize.718=Snowflakes
+soundcustomize.719=Space Shuttle
+soundcustomize.720=Splash
+soundcustomize.721=Starlit
+soundcustomize.722=Strumming
+soundcustomize.723=Take Off
+soundcustomize.724=Timeless
+soundcustomize.725=Together
+soundcustomize.726=Trampoline
+soundcustomize.727=Tropical Fish
+soundcustomize.728=Tuning Fork
+soundcustomize.729=Ukulele
+soundcustomize.730=Xylophone
+soundcustomize.nextbutton=Remove Selected
+
+#
+#-- Sound confirmation
+#
+soundconfirmation.title=Ready to Remove
+soundconfirmation.text=The wizard is ready to REMOVE the selected sounds.\
+\
+Press <b>Remove Selected</b> to begin.\
+\
+If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.
+
+#
+#-- Sound installation
+#
+soundinstall.title=Removing sounds
+soundinstall.desc=removes sounds.\
+\
+This may take a bit.
+soundinstall.finish=Sounds successfully removed. Press Next to continue.
+
+#
+#-- Sound installation finished
+#
+soundpostinstall.title=Post Debloating
+soundpostinstall.text=Sound Debloating Finished. Do you want to go back to Main Menu or finish?
+soundpostinstall.checkbox=Back To Main Menu.
+
+#################################
+#
+# END SOUND
+#
+
 
 
 #################################

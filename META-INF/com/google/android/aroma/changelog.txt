@@ -1,14 +1,9 @@
 <b><#0f0>ImproveG3 Changes</#></b>
-<b>0.9 - 2014.12.12</b>
+<b>1.0 - 2014.12.14</b>
+<*>Added all media (boot/shutdown animations/sound, system/alarm/ringtone/notifications) into extra section for removal</*>
+<*>Merged LG PC Sync and PC Sync Service into one entry, added the USB Autorun Image that installs the Sync software on PC.</*>
+<b>0.9 - 2014.12.11</b>
 <*>Updated Debloater for 5.0 stock (based) ROMs, as the file paths changed.</*>
-<b>0.8.1 - 2014.12.08 - not officially released</b>
-<*>Added section of ABSOLUTELY COMPLETELY DANGEROUS system apps. Do not remove unless you have a backup :)
-This is to figure out what can really be deleted with no or little side effects.</*>
-<b>0.8 - 2014.12.06</b>
-<*>Included Sharpening Mod by <#00f>Skin1980</#> on xda. Have a Boot backup!</*>
-<*>More warnings, less terms</*>
-<*>Beautified icons</*>
-<*>updated update-binary-installer with version from Skin1980's mod</*>
 <b>continued at bottom</b>
 
 <#00f><b>Known Issues</b></#>
@@ -21,6 +16,14 @@ This is to figure out what can really be deleted with no or little side effects.
 <*>split aroma code into multiple files</*>
 
 <b><#0f0>Changelog continued</#></b>
+<b>0.8.1 - 2014.12.08 - not officially released</b>
+<*>Added section of ABSOLUTELY COMPLETELY DANGEROUS system apps. Do not remove unless you have a backup :)
+This is to figure out what can really be deleted with no or little side effects.</*>
+<b>0.8 - 2014.12.06</b>
+<*>Included Sharpening Mod by <#00f>Skin1980</#> on xda. Have a Boot backup!</*>
+<*>More warnings, less terms</*>
+<*>Beautified icons</*>
+<*>updated update-binary-installer with version from Skin1980's mod</*>
 <b>0.7.1 - 2014.12.05</b>
 <*>Added Google Search (thanks tobitege @ xda)</*>
 <*>Fixed profile/settings loss issue. Please report back</*>

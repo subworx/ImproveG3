@@ -928,61 +928,11 @@ then
     endif;
 
   ui_print(" ");	
-  ui_print("@ Removing Animations");
-
-	# Boot Animation
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.1") == "1"
-	then
-	  ui_print("  Removing Boot Animation");
-	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/media/bootanimation.zip");
-	endif;
-
-	# Shutdown Animation
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.2") == "1"
-	then
-	  ui_print("  Removing Shutdown Animation");
-	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/media/shutdownanimation.zip");
-	endif;
-
-	# Boot Sound
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.3") == "1"
-	then
-	  ui_print("  Removing Boot Sound");
-	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/media/audio/ui/PowerOn.ogg");
-	endif;
-
-	# Shutdown Sound
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.4") == "1"
-	then
-	  ui_print("  Removing Shutdown Sound");
-	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/media/audio/ui/PowerOff.ogg");
-	endif;
-
-	# LG Sounds
-	#if
-	#  file_getprop("/tmp/aroma/customize.prop","item.5.5") == "1"
-	#then
-	#  ui_print("  Removing LG Sounds");
-	#  #run_program("/tmp/aroma/sleep","300");
-	#  #delete(lgsound1);
-	#  #delete(lgsound2);
-	#  #delete(lgsound3);
-	#endif;
-
-  ui_print(" ");	
   ui_print("@ Removing Ultra Dangerous Stuff");
 
 	# ActionManager Service (MRG)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.1") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.1") == "1"
 	then
 	  ui_print("  Removing ActionManager Service (MRG)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -993,7 +943,7 @@ then
 	
 	# Board Content Provider (MRG)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.2") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.2") == "1"
 	then
 	  ui_print("  Removing Board Content Provider (MRG)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1004,7 +954,7 @@ then
 	
 	# DivX Permission
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.3") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.3") == "1"
 	then
 	  ui_print("  Removing com.lge.divx.permission");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1014,7 +964,7 @@ then
 	
 	# com.lge.lgdmsgcm (Software Update OTA)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.4") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.4") == "1"
 	then
 	  ui_print("  Removing com.lge.lgdmsgcm (Software Update related)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1025,7 +975,7 @@ then
 	
 	# LG DRM Permission
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.5") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.5") == "1"
 	then
 	  ui_print("  Removing com.lge.lgdrm.permission");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1035,7 +985,7 @@ then
 	
 	# LG OTA Update Permission
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.6") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.6") == "1"
 	then
 	  ui_print("  Removing com.lge.lgfota.permission");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1046,7 +996,7 @@ then
 	
 	# LG API Permissions
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.7") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.7") == "1"
 	then
 	  ui_print("  Removing com.lge.permission");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1057,7 +1007,7 @@ then
 	
 	# Content Lock
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.8") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.8") == "1"
 	then
 	  ui_print("  Removing Content Lock");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1068,7 +1018,7 @@ then
 	
     # Downloads
     if
-      file_getprop("/tmp/aroma/customize.prop","item.6.9") == "1"
+      file_getprop("/tmp/aroma/customize.prop","item.5.9") == "1"
     then
       ui_print("  Removing Downloads");
       #run_program("/tmp/aroma/sleep","300");
@@ -1080,7 +1030,7 @@ then
 
 	# DRM Service
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.10") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.10") == "1"
 	then
 	  ui_print("  Removing DRM Service");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1091,7 +1041,7 @@ then
 	
 	# ELTest
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.11") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.11") == "1"
 	then
 	  ui_print("  Removing ELTest");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1102,7 +1052,7 @@ then
 	
 	# FormManager
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.12") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.12") == "1"
 	then
 	  ui_print("  Removing FormManager");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1113,7 +1063,7 @@ then
 	
 	# Gallery
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.13") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.13") == "1"
 	then
 	  ui_print("  Removing Gallery");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1125,7 +1075,7 @@ then
 	
 	# GNSS Air Test (CDMA)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.14") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.14") == "1"
 	then
 	  ui_print("  Removing GNSS Air Test (CDMA)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1136,7 +1086,7 @@ then
 	
 	# GnssTest
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.15") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.15") == "1"
 	then
 	  ui_print("  Removing GnssTest");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1147,7 +1097,7 @@ then
 	
 	# LG GNSS
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.16") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.16") == "1"
 	then
 	  ui_print("  Removing LG GNSS");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1158,7 +1108,7 @@ then
 	
 	# com.lge.hiddenmenu - Hidden Menu
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.17") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.17") == "1"
 	then
 	  ui_print("  Removing com.lge.hiddenmenu - HiddenMenu");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1169,7 +1119,7 @@ then
 	
 	# LG Intelligent Agent
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.18") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.18") == "1"
 	then
 	  ui_print("  Removing LG Intelligent Agent");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1180,7 +1130,7 @@ then
 	
 	# LIA Informant
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.19") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.19") == "1"
 	then
 	  ui_print("  Removing LIA Informant");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1191,7 +1141,7 @@ then
 	
 	# LIA MrGDBLogger (MRG?)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.20") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.20") == "1"
 	then
 	  ui_print("  Removing LIA MrGDBLogger (MRG?)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1202,7 +1152,7 @@ then
 	
 	# LIA S4URecommender
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.21") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.21") == "1"
 	then
 	  ui_print("  Removing LIA S4URecommender");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1213,7 +1163,7 @@ then
 	
 	# LG MLT
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.22") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.22") == "1"
 	then
 	  ui_print("  Removing LG MLT");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1224,32 +1174,24 @@ then
 	
 	# LG PC Suite
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.23") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.23") == "1"
 	then
-	  ui_print("  Removing LG PC Suite");
+	  ui_print("  Removing LG PC Suite + Service");
 	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/app/LGPCSuiteUI.apk");
 	  delete("/system/app/LGPCSuiteUI.odex");
 	  delete("/system/cust/app/overlay/com.lge.pcsyncui.apk");
-	  delete_recursive("/data/data/com.lge.pcsyncui");
-	  #find and add usb image
-	endif;
-	
-	# LG PC Suite Service
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.24") == "1"
-	then
-	  ui_print("  Removing LG PC Suite Service");
-	  #run_program("/tmp/aroma/sleep","300");
 	  delete("/system/priv-app/LGPCSuite.apk");
 	  delete("/system/priv-app/LGPCSuite.odex");
 	  delete("/system/cust/app/overlay/com.lge.sync.apk");
 	  delete_recursive("/data/data/com.lge.sync");
+	  delete_recursive("/data/data/com.lge.pcsyncui");
+	  delete("/system/usbautorun.iso");
 	endif;
 	
 	# LGApduService
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.25") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.24") == "1"
 	then
 	  ui_print("  Removing LGApduService");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1260,7 +1202,7 @@ then
 	
 	# LGATCMD Service
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.26") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.25") == "1"
 	then
 	  ui_print("  Removing LGATCMD Service");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1271,7 +1213,7 @@ then
 	
 	# ??? LGERCS.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.27") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.26") == "1"
 	then
 	  ui_print("  Removing ??? LGERCS.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1281,7 +1223,7 @@ then
 	
 	# ??? LGERCSProvider.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.28") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.27") == "1"
 	then
 	  ui_print("  Removing ??? LGERCSProvider.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1291,7 +1233,7 @@ then
 	
 	# ??? LGRcsCall.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.29") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.28") == "1"
 	then
 	  ui_print("  Removing ??? LGRcsCall.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1301,7 +1243,7 @@ then
 	
 	# ??? LGRCSMessage.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.30") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.29") == "1"
 	then
 	  ui_print("  Removing ??? LGRCSMessage.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1311,7 +1253,7 @@ then
 	
 	# ??? LGRCSServices.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.31") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.30") == "1"
 	then
 	  ui_print("  Removing ??? LGRCSServices.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1321,7 +1263,7 @@ then
 	
 	# License Provider
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.32") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.31") == "1"
 	then
 	  ui_print("  Removing License Provider");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1334,7 +1276,7 @@ then
 	
 	# Live Wallpaper Picker
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.33") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.32") == "1"
 	then
 	  ui_print("  Removing Live Wallpaper Picker");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1345,7 +1287,7 @@ then
 	
 	# Lock Screen Settings
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.34") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.33") == "1"
 	then
 	  ui_print("  Removing Lock Screen Settings");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1356,7 +1298,7 @@ then
 	
 	# Multi-photo
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.35") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.34") == "1"
 	then
 	  ui_print("  Removing Multi-photo");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1367,7 +1309,7 @@ then
 	
 	# ??? Phonesky.apk
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.36") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.35") == "1"
 	then
 	  ui_print("  Removing ??? Phonesky.apk");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1377,7 +1319,7 @@ then
 	
 	# Print Spooler 1
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.37") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.36") == "1"
 	then
 	  ui_print("  Removing Print Spooler");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1388,7 +1330,7 @@ then
 
 	# Quickset SDK
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.38") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.37") == "1"
 	then
 	  ui_print("  Removing Quickset SDK");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1398,7 +1340,7 @@ then
 	
 	# Remote support service
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.39") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.38") == "1"
 	then
 	  ui_print("  Removing Remote support service");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1409,7 +1351,7 @@ then
 	
 	# Settings
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.40") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.39") == "1"
 	then
 	  ui_print("  Removing Settings");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1421,7 +1363,7 @@ then
 	
 	# Shutdown Monitor
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.41") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.40") == "1"
 	then
 	  ui_print("  Removing Shutdown Monitor");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1432,7 +1374,7 @@ then
 	
 	# Smart cleaning
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.42") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.41") == "1"
 	then
 	  ui_print("  Removing Smart cleaning");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1443,7 +1385,7 @@ then
 	
 	# Smart screen
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.43") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.42") == "1"
 	then
 	  ui_print("  Removing Smart screen");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1454,7 +1396,7 @@ then
 	
 	# SmartShare Beam (WFDS)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.44") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.43") == "1"
 	then
 	  ui_print("  Removing SmartShare Beam (WFDS)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1465,7 +1407,7 @@ then
 	
 	# SmartShare Push
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.45") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.44") == "1"
 	then
 	  ui_print("  Removing SmartShare Push");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1477,7 +1419,7 @@ then
 	
 	# SmartShare.Beam
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.46") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.45") == "1"
 	then
 	  ui_print("  Removing SmartShare.Beam");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1488,7 +1430,7 @@ then
 	
 	# SmartShare.Cloud
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.47") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.46") == "1"
 	then
 	  ui_print("  Removing SmartShare.Cloud");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1499,7 +1441,7 @@ then
 	
 	# SmartShare.DLNA
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.48") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.47") == "1"
 	then
 	  ui_print("  Removing SmartShare.DLNA");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1510,7 +1452,7 @@ then
 	
 	# SmartShare.MediaServer
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.49") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.48") == "1"
 	then
 	  ui_print("  Removing SmartShare.MediaServer");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1521,7 +1463,7 @@ then
 	
 	# SmartShare.Provider
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.50") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.49") == "1"
 	then
 	  ui_print("  Removing SmartShare.Provider");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1532,7 +1474,7 @@ then
 	
 	# Tags (NFC)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.51") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.50") == "1"
 	then
 	  ui_print("  Removing Tags (NFC)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1543,7 +1485,7 @@ then
 	
 	# Unified EULA
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.52") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.51") == "1"
 	then
 	  ui_print("  Removing Unified EULA");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1555,7 +1497,7 @@ then
 	
 	# Video
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.53") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.52") == "1"
 	then
 	  ui_print("  Removing Video");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1567,7 +1509,7 @@ then
 	
 	# Video Trim
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.54") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.53") == "1"
 	then
 	  ui_print("  Removing Video Trim");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1579,7 +1521,7 @@ then
 	
 	# Voice Mate
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.55") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.54") == "1"
 	then
 	  ui_print("  Removing Voice Mate");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1590,7 +1532,7 @@ then
 
 	# Voice Recorder
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.56") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.55") == "1"
 	then
 	  ui_print("  Removing Voice Recorder");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1602,7 +1544,7 @@ then
 	
 	# WAP Service
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.57") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.56") == "1"
 	then
 	  ui_print("  Removing WAP Service");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1613,7 +1555,7 @@ then
 	
 	# Weather
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.58") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.57") == "1"
 	then
 	  ui_print("  Removing Weather");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1625,7 +1567,7 @@ then
 	
 	# WeatherPlatform
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.59") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.58") == "1"
 	then
 	  ui_print("  Removing WeatherPlatform");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1636,7 +1578,7 @@ then
 	
 	# Weather Theme
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.60") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.59") == "1"
 	then
 	  ui_print("  Removing Weather Theme");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1647,7 +1589,7 @@ then
 
 	# Wfd Service (Qualcomm, WFDS)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.61") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.60") == "1"
 	then
 	  ui_print("  Removing Wfd Service (Qualcomm, WFDS)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1658,7 +1600,7 @@ then
 	
 	# WfdsService (WFDS)
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.62") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.61") == "1"
 	then
 	  ui_print("  Removing WfdsService (WFDS)");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1669,7 +1611,7 @@ then
 	
 	# Widevine Keybox Test
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.6.63") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.62") == "1"
 	then
 	  ui_print("  Removing Widevine Keybox Test");
 	  #run_program("/tmp/aroma/sleep","300");
@@ -1689,6 +1631,1321 @@ endif;
 
 if
   file_getprop("/tmp/aroma/demo.prop","selected") == "2"
+then
+  #####################################################################################################
+  #
+  # BEGIN SOUND
+  #
+  ui_print("@Sound Removal");
+  ui_print(" ");
+  set_progress(0.2);
+  ui_print("@Removing Animations");
+
+  # boot animation
+  if 
+    file_getprop("/tmp/aroma/sound.prop","item.1.1") == "1" 
+  then
+    ui_print("  Removing bootanimation.zip");
+	delete("/system/media/bootanimation.zip");
+  endif;
+
+  # shutdown animation
+  if 
+    file_getprop("/tmp/aroma/sound.prop","item.1.2") == "1" 
+  then
+    ui_print("  Removing shutdownanimation.zip");
+	delete("/system/media/shutdownanimation.zip");
+  endif;
+  
+  # boot sound
+  if 
+    file_getprop("/tmp/aroma/sound.prop","item.1.3") == "1" 
+  then
+    ui_print("  Removing boot sound (PowerOn.ogg)");
+	package_extract_file("sounds/PowerOn.ogg", "/system/media/audio/ui/PowerOn.ogg");
+  endif;
+
+  # shutdown sound
+  if 
+    file_getprop("/tmp/aroma/sound.prop","item.1.4") == "1" 
+  then
+    ui_print("  Removing shutdown sound (PowerOff.ogg)");
+	package_extract_file("sounds/PowerOff.ogg", "/system/media/audio/ui/PowerOff.ogg");
+  endif;
+
+  ui_print(" ");
+  set_progress(0.3);
+  ui_print("@Removing UI/Camera Sounds");
+  
+  # af_failure.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.1") == "1"
+  then
+    ui_print("  Removing af_failure.ogg");
+	package_extract_file("sounds/af_failure.ogg", "/system/media/audio/ui/af_failure.ogg");
+  endif;
+  
+  #af_success.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.2") == "1"
+  then
+    ui_print("  Removing af_success.ogg");
+	package_extract_file("sounds/af_success.ogg", "/system/media/audio/ui/af_success.ogg");
+  endif;
+  
+  # cam_snap_0.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.3") == "1"
+  then
+    ui_print("  Removing cam_snap_0.ogg");
+	package_extract_file("sounds/cam_snap_0.ogg", "/system/media/audio/ui/cam_snap_0.ogg");
+  endif;
+  
+  # cam_timer_1sec.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.4") == "1"
+  then
+    ui_print("  Removing cam_timer_1sec.ogg");
+	package_extract_file("sounds/cam_timer_1sec.ogg", "/system/media/audio/ui/cam_timer_1sec.ogg");
+  endif;
+  
+  # cam_timer_last.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.5") == "1"
+  then
+    ui_print("  Removing cam_timer_last.ogg");
+	package_extract_file("sounds/cam_timer_last.ogg", "/system/media/audio/ui/cam_timer_last.ogg");
+  endif;
+  
+  # camera_click.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.6") == "1"
+  then
+    ui_print("  Removing camera_click.ogg");
+	package_extract_file("sounds/camera_click.ogg", "/system/media/audio/ui/camera_click.ogg");
+  endif;
+  
+  # camstart.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.7") == "1"
+  then
+    ui_print("  Removing camstart.ogg");
+	package_extract_file("sounds/camstart.ogg", "/system/media/audio/ui/camstart.ogg");
+  endif;
+  
+  # camstop.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.8") == "1"
+  then
+    ui_print("  Removing camstop.ogg");
+	package_extract_file("sounds/camstop.ogg", "/system/media/audio/ui/camstop.ogg");
+  endif;
+  
+  # continuous_shot.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.9") == "1"
+  then
+    ui_print("  Removing continuous_shot.ogg");
+	package_extract_file("sounds/continuous_shot.ogg", "/system/media/audio/ui/continuous_shot.ogg");
+  endif;
+  
+  # VideoRecord.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.10") == "1"
+  then
+    ui_print("  Removing VideoRecord.ogg");
+	package_extract_file("sounds/VideoRecord.ogg", "/system/media/audio/ui/VideoRecord.ogg");
+  endif;
+  
+  # shot_snap.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.11") == "1"
+  then
+    ui_print("  Removing shot_snap.ogg");
+	package_extract_file("sounds/shot_snap.ogg", "/system/media/audio/ui/shot_snap.ogg");
+  endif;
+  
+  # voicesound_cheese.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.12") == "1"
+  then
+    ui_print("  Removing voicesound_cheese.ogg");
+	package_extract_file("sounds/voicesound_cheese.ogg", "/system/media/audio/ui/voicesound_cheese.ogg");
+  endif;
+  
+  # voicesound_kimchi.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.13") == "1"
+  then
+    ui_print("  Removing voicesound_kimchi.ogg");
+	package_extract_file("sounds/voicesound_kimchi.ogg", "/system/media/audio/ui/voicesound_kimchi.ogg");
+  endif;
+  
+  # voicesound_lg.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.14") == "1"
+  then
+    ui_print("  Removing voicesound_lg.ogg");
+	package_extract_file("sounds/voicesound_lg.ogg", "/system/media/audio/ui/voicesound_lg.ogg");
+  endif;
+  
+  # voicesound_smile.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.15") == "1"
+  then
+    ui_print("  Removing voicesound_smile.ogg");
+	package_extract_file("sounds/voicesound_smile.ogg", "/system/media/audio/ui/voicesound_smile.ogg");
+  endif;
+  
+  # voicesound_torimasu.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.16") == "1"
+  then
+    ui_print("  Removing voicesound_torimasu.ogg");
+	package_extract_file("sounds/voicesound_torimasu.ogg", "/system/media/audio/ui/voicesound_torimasu.ogg");
+  endif;
+  
+  # voicesound_whisky.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.2.17") == "1"
+  then
+    ui_print("  Removing voicesound_whisky.ogg");
+	package_extract_file("sounds/voicesound_whisky.ogg", "/system/media/audio/ui/voicesound_whisky.ogg");
+  endif;
+  
+  set_progress(0.4);
+  ui_print(" ");
+  ui_print("@Removing UI/System Sounds");
+  
+  # Bluetooth_alert.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.1") == "1"
+  then
+    ui_print("  Removing Bluetooth_alert.ogg");
+	package_extract_file("sounds/Bluetooth_alert.ogg", "/system/media/audio/ui/Bluetooth_alert.ogg");
+  endif;
+
+  # charging_error.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.2") == "1"
+  then
+    ui_print("  Removing charging_error.ogg");
+	package_extract_file("sounds/charging_error.ogg", "/system/media/audio/ui/charging_error.ogg");
+  endif;
+
+  # clear_ram.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.3") == "1"
+  then
+    ui_print("  Removing clear_ram.ogg");
+	package_extract_file("sounds/clear_ram.ogg", "/system/media/audio/ui/clear_ram.ogg");
+  endif;
+
+  # Dock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.4") == "1"
+  then
+    ui_print("  Removing Dock.ogg");
+	package_extract_file("sounds/Dock.ogg", "/system/media/audio/ui/Dock.ogg");
+  endif;
+
+  # Effect_Tick.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.5") == "1"
+  then
+    ui_print("  Removing Effect_Tick.ogg");
+	package_extract_file("sounds/Effect_Tick.ogg", "/system/media/audio/ui/Effect_Tick.ogg");
+  endif;
+
+  # Email_Sent.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.6") == "1"
+  then
+    ui_print("  Removing Email_Sent.ogg");
+	package_extract_file("sounds/Email_Sent.ogg", "/system/media/audio/ui/Email_Sent.ogg");
+  endif;
+
+  # FullBattery.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.7") == "1"
+  then
+    ui_print("  Removing FullBattery.ogg");
+	package_extract_file("sounds/FullBattery.ogg", "/system/media/audio/ui/FullBattery.ogg");
+  endif;
+
+  # Homescreen_Remove.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.8") == "1"
+  then
+    ui_print("  Removing Homescreen_Remove.ogg");
+	package_extract_file("sounds/Homescreen_Remove.ogg", "/system/media/audio/ui/Homescreen_Remove.ogg");
+  endif;
+
+  # Homescreen_Uninstall.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.9") == "1"
+  then
+    ui_print("  Removing Homescreen_Uninstall.ogg");
+	package_extract_file("sounds/Homescreen_Uninstall.ogg", "/system/media/audio/ui/Homescreen_Uninstall.ogg");
+  endif;
+
+  # IR_normal.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.10") == "1"
+  then
+    ui_print("  Removing IR_normal.ogg");
+	package_extract_file("sounds/IR_normal.ogg", "/system/media/audio/ui/IR_normal.ogg");
+  endif;
+
+  # KeypressDelete.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.11") == "1"
+  then
+    ui_print("  Removing KeypressDelete.ogg");
+	package_extract_file("sounds/KeypressDelete.ogg", "/system/media/audio/ui/KeypressDelete.ogg");
+  endif;
+
+  # KeypressReturn.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.12") == "1"
+  then
+    ui_print("  Removing KeypressReturn.ogg");
+	package_extract_file("sounds/KeypressReturn.ogg", "/system/media/audio/ui/KeypressReturn.ogg");
+  endif;
+
+  # KeypressSpacebar.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.13") == "1"
+  then
+    ui_print("  Removing KeypressSpacebar.ogg");
+	package_extract_file("sounds/KeypressSpacebar.ogg", "/system/media/audio/ui/KeypressSpacebar.ogg");
+  endif;
+
+  # KeypressStandard.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.14") == "1"
+  then
+    ui_print("  Removing KeypressStandard.ogg");
+	package_extract_file("sounds/KeypressStandard.ogg", "/system/media/audio/ui/KeypressStandard.ogg");
+  endif;
+
+  # LG_Cable_Connect.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.15") == "1"
+  then
+    ui_print("  Removing LG_Cable_Connect.ogg");
+	package_extract_file("sounds/LG_Cable_Connect.ogg", "/system/media/audio/ui/LG_Cable_Connect.ogg");
+  endif;
+
+  # LG_Media_volume.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.16") == "1"
+  then
+    ui_print("  Removing LG_Media_volume.ogg");
+	package_extract_file("sounds/LG_Media_volume.ogg", "/system/media/audio/ui/LG_Media_volume.ogg");
+  endif;
+
+  # Lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.17") == "1"
+  then
+    ui_print("  Removing Lock.ogg");
+	package_extract_file("sounds/Lock.ogg", "/system/media/audio/ui/Lock.ogg");
+  endif;
+
+  # Lock_Cover.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.18") == "1"
+  then
+    ui_print("  Removing Lock_Cover.ogg");
+	package_extract_file("sounds/Lock_Cover.ogg", "/system/media/audio/ui/Lock_Cover.ogg");
+  endif;
+
+  # LowBattery.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.19") == "1"
+  then
+    ui_print("  Removing LowBattery.ogg");
+	package_extract_file("sounds/LowBattery.ogg", "/system/media/audio/ui/LowBattery.ogg");
+  endif;
+
+  # LowBattery_incall.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.20") == "1"
+  then
+    ui_print("  Removing LowBattery_incall.ogg");
+	package_extract_file("sounds/LowBattery_incall.ogg", "/system/media/audio/ui/LowBattery_incall.ogg");
+  endif;
+
+  # MannerCancel.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.21") == "1"
+  then
+    ui_print("  Removing MannerCancel.ogg");
+	package_extract_file("sounds/MannerCancel.ogg", "/system/media/audio/ui/MannerCancel.ogg");
+  endif;
+
+  # NFC_End.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.22") == "1"
+  then
+    ui_print("  Removing NFC_End.ogg");
+	package_extract_file("sounds/NFC_End.ogg", "/system/media/audio/ui/NFC_End.ogg");
+  endif;
+
+  # NFC_Error.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.23") == "1"
+  then
+    ui_print("  Removing NFC_Error.ogg");
+	package_extract_file("sounds/NFC_Error.ogg", "/system/media/audio/ui/NFC_Error.ogg");
+  endif;
+
+  # NFC_Start.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.24") == "1"
+  then
+    ui_print("  Removing NFC_Start.ogg");
+	package_extract_file("sounds/NFC_Start.ogg", "/system/media/audio/ui/NFC_Start.ogg");
+  endif;
+
+  # SilentRing.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.25") == "1"
+  then
+    ui_print("  Removing SilentRing.ogg");
+	package_extract_file("sounds/SilentRing.ogg", "/system/media/audio/ui/SilentRing.ogg");
+  endif;
+
+  # snd_loop.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.26") == "1"
+  then
+    ui_print("  Removing snd_loop.ogg");
+	package_extract_file("sounds/snd_loop.ogg", "/system/media/audio/ui/snd_loop.ogg");
+  endif;
+
+  # switchoff.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.27") == "1"
+  then
+    ui_print("  Removing switchoff.ogg");
+	package_extract_file("sounds/switchoff.ogg", "/system/media/audio/ui/switchoff.ogg");
+  endif;
+
+  # switchon.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.28") == "1"
+  then
+    ui_print("  Removing switchon.ogg");
+	package_extract_file("sounds/switchon.ogg", "/system/media/audio/ui/switchon.ogg");
+  endif;
+
+  # Undock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.29") == "1"
+  then
+    ui_print("  Removing Undock.ogg");
+	package_extract_file("sounds/Undock.ogg", "/system/media/audio/ui/Undock.ogg");
+  endif;
+
+  # Unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.30") == "1"
+  then
+    ui_print("  Removing Unlock.ogg");
+	package_extract_file("sounds/Unlock.ogg", "/system/media/audio/ui/Unlock.ogg");
+  endif;
+
+  # unlock_mute.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.3.31") == "1"
+  then
+    ui_print("  Removing unlock_mute.ogg");
+	package_extract_file("sounds/unlock_mute.ogg", "/system/media/audio/ui/unlock_mute.ogg");
+  endif;
+
+  set_progress(0.5);
+  ui_print(" ");
+  ui_print("@Removing UI/Lock Screen Sounds");
+
+  # circle_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.1") == "1"
+  then
+    ui_print("  Removing circle_lock.ogg");
+	package_extract_file("sounds/circle_lock.ogg", "/system/media/audio/ui/circle_lock.ogg");
+  endif;
+
+  # circle_unlock1.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.2") == "1"
+  then
+    ui_print("  Removing circle_unlock1.ogg");
+	package_extract_file("sounds/circle_unlock1.ogg", "/system/media/audio/ui/circle_unlock1.ogg");
+  endif;
+
+  # circle_unlock2.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.3") == "1"
+  then
+    ui_print("  Removing circle_unlock2.ogg");
+	package_extract_file("sounds/circle_unlock2.ogg", "/system/media/audio/ui/circle_unlock2.ogg");
+  endif;
+
+  # circle_unlock3.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.4") == "1"
+  then
+    ui_print("  Removing circle_unlock3.ogg");
+	package_extract_file("sounds/circle_unlock3.ogg", "/system/media/audio/ui/circle_unlock3.ogg");
+  endif;
+
+  # circle_unlock4.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.5") == "1"
+  then
+    ui_print("  Removing circle_unlock4.ogg");
+	package_extract_file("sounds/circle_unlock4.ogg", "/system/media/audio/ui/circle_unlock4.ogg");
+  endif;
+
+  # crystal_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.6") == "1"
+  then
+    ui_print("  Removing crystal_lock.ogg");
+	package_extract_file("sounds/crystal_lock.ogg", "/system/media/audio/ui/crystal_lock.ogg");
+  endif;
+
+  # crystal_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.7") == "1"
+  then
+    ui_print("  Removing crystal_unlock.ogg");
+	package_extract_file("sounds/crystal_unlock.ogg", "/system/media/audio/ui/crystal_unlock.ogg");
+  endif;
+
+  # dewdrop_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.8") == "1"
+  then
+    ui_print("  Removing dewdrop_lock.ogg");
+	package_extract_file("sounds/dewdrop_lock.ogg", "/system/media/audio/ui/dewdrop_lock.ogg");
+  endif;
+
+  # dewdrop_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.9") == "1"
+  then
+    ui_print("  Removing dewdrop_touchdown.ogg");
+	package_extract_file("sounds/dewdrop_touchdown.ogg", "/system/media/audio/ui/dewdrop_touchdown.ogg");
+  endif;
+
+  # dewdrop_touchrelease.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.10") == "1"
+  then
+    ui_print("  Removing dewdrop_touchrelease.ogg");
+	package_extract_file("sounds/dewdrop_touchrelease.ogg", "/system/media/audio/ui/dewdrop_touchrelease.ogg");
+  endif;
+
+  # dewdrop_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.11") == "1"
+  then
+    ui_print("  Removing dewdrop_unlock.ogg");
+	package_extract_file("sounds/dewdrop_unlock.ogg", "/system/media/audio/ui/dewdrop_unlock.ogg");
+  endif;
+
+  # ink_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.12") == "1"
+  then
+    ui_print("  Removing ink_lock.ogg");
+	package_extract_file("sounds/ink_lock.ogg", "/system/media/audio/ui/ink_lock.ogg");
+  endif;
+
+  # ink_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.13") == "1"
+  then
+    ui_print("  Removing ink_touchdown.ogg");
+	package_extract_file("sounds/ink_touchdown.ogg", "/system/media/audio/ui/ink_touchdown.ogg");
+  endif;
+
+  # ink_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.14") == "1"
+  then
+    ui_print("  Removing ink_unlock.ogg");
+	package_extract_file("sounds/ink_unlock.ogg", "/system/media/audio/ui/ink_unlock.ogg");
+  endif;
+
+  # light_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.15") == "1"
+  then
+    ui_print("  Removing light_lock.ogg");
+	package_extract_file("sounds/light_lock.ogg", "/system/media/audio/ui/light_lock.ogg");
+  endif;
+
+  # light_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.16") == "1"
+  then
+    ui_print("  Removing light_touchdown.ogg");
+	package_extract_file("sounds/light_touchdown.ogg", "/system/media/audio/ui/light_touchdown.ogg");
+  endif;
+
+  # light_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.17") == "1"
+  then
+    ui_print("  Removing light_unlock.ogg");
+	package_extract_file("sounds/light_unlock.ogg", "/system/media/audio/ui/light_unlock.ogg");
+  endif;
+
+  # mosaic_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.18") == "1"
+  then
+    ui_print("  Removing mosaic_lock.ogg");
+	package_extract_file("sounds/mosaic_lock.ogg", "/system/media/audio/ui/mosaic_lock.ogg");
+  endif;
+
+  # mosaic_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.19") == "1"
+  then
+    ui_print("  Removing mosaic_touchdown.ogg");
+	package_extract_file("sounds/mosaic_touchdown.ogg", "/system/media/audio/ui/mosaic_touchdown.ogg");
+  endif;
+
+  # mosaic_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.20") == "1"
+  then
+    ui_print("  Removing mosaic_unlock.ogg");
+	package_extract_file("sounds/mosaic_unlock.ogg", "/system/media/audio/ui/mosaic_unlock.ogg");
+  endif;
+
+  # particle_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.21") == "1"
+  then
+    ui_print("  Removing particle_lock.ogg");
+	package_extract_file("sounds/particle_lock.ogg", "/system/media/audio/ui/particle_lock.ogg");
+  endif;
+
+  # particle_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.22") == "1"
+  then
+    ui_print("  Removing particle_unlock.ogg");
+	package_extract_file("sounds/particle_unlock.ogg", "/system/media/audio/ui/particle_unlock.ogg");
+  endif;
+
+  # ripple_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.23") == "1"
+  then
+    ui_print("  Removing ripple_lock.ogg");
+	package_extract_file("sounds/ripple_lock.ogg", "/system/media/audio/ui/ripple_lock.ogg");
+  endif;
+
+  # ripple_touchdown1.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.24") == "1"
+  then
+    ui_print("  Removing ripple_touchdown1.ogg");
+	package_extract_file("sounds/ripple_touchdown1.ogg", "/system/media/audio/ui/ripple_touchdown1.ogg");
+  endif;
+
+  # ripple_touchdown2.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.25") == "1"
+  then
+    ui_print("  Removing ripple_touchdown2.ogg");
+	package_extract_file("sounds/ripple_touchdown2.ogg", "/system/media/audio/ui/ripple_touchdown2.ogg");
+  endif;
+
+  # ripple_touchdown3.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.26") == "1"
+  then
+    ui_print("  Removing ripple_touchdown3.ogg");
+	package_extract_file("sounds/ripple_touchdown3.ogg", "/system/media/audio/ui/ripple_touchdown3.ogg");
+  endif;
+
+  # ripple_touchrelease1.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.27") == "1"
+  then
+    ui_print("  Removing ripple_touchrelease1.ogg");
+	package_extract_file("sounds/ripple_touchrelease1.ogg", "/system/media/audio/ui/ripple_touchrelease1.ogg");
+  endif;
+
+  # ripple_touchrelease2.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.28") == "1"
+  then
+    ui_print("  Removing ripple_touchrelease2.ogg");
+	package_extract_file("sounds/ripple_touchrelease2.ogg", "/system/media/audio/ui/ripple_touchrelease2.ogg");
+  endif;
+
+  # ripple_touchrelease3.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.29") == "1"
+  then
+    ui_print("  Removing ripple_touchrelease3.ogg");
+	package_extract_file("sounds/ripple_touchrelease3.ogg", "/system/media/audio/ui/ripple_touchrelease3.ogg");
+  endif;
+
+  # ripple_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.30") == "1"
+  then
+    ui_print("  Removing ripple_unlock.ogg");
+	package_extract_file("sounds/ripple_unlock.ogg", "/system/media/audio/ui/ripple_unlock.ogg");
+  endif;
+
+  # soda_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.31") == "1"
+  then
+    ui_print("  Removing soda_lock.ogg");
+	package_extract_file("sounds/soda_lock.ogg", "/system/media/audio/ui/soda_lock.ogg");
+  endif;
+
+  # soda_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.32") == "1"
+  then
+    ui_print("  Removing soda_touchdown.ogg");
+	package_extract_file("sounds/soda_touchdown.ogg", "/system/media/audio/ui/soda_touchdown.ogg");
+  endif;
+
+  # soda_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.33") == "1"
+  then
+    ui_print("  Removing soda_unlock.ogg");
+	package_extract_file("sounds/soda_unlock.ogg", "/system/media/audio/ui/soda_unlock.ogg");
+  endif;
+
+  # vector_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.34") == "1"
+  then
+    ui_print("  Removing vector_lock.ogg");
+	package_extract_file("sounds/vector_lock.ogg", "/system/media/audio/ui/vector_lock.ogg");
+  endif;
+
+  # vector_touchdown.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.35") == "1"
+  then
+    ui_print("  Removing vector_touchdown.ogg");
+	package_extract_file("sounds/vector_touchdown.ogg", "/system/media/audio/ui/vector_touchdown.ogg");
+  endif;
+
+  # vector_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.36") == "1"
+  then
+    ui_print("  Removing vector_unlock.ogg");
+	package_extract_file("sounds/vector_unlock.ogg", "/system/media/audio/ui/vector_unlock.ogg");
+  endif;
+
+  # whitehole_lock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.37") == "1"
+  then
+    ui_print("  Removing whitehole_lock.ogg");
+	package_extract_file("sounds/whitehole_lock.ogg", "/system/media/audio/ui/whitehole_lock.ogg");
+  endif;
+
+  # whitehole_unlock.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.4.38") == "1"
+  then
+    ui_print("  Removing whitehole_unlock.ogg");
+	package_extract_file("sounds/whitehole_unlock.ogg", "/system/media/audio/ui/whitehole_unlock.ogg");
+  endif;
+
+  set_progress(0.6);
+  ui_print(" ");
+  ui_print("@Removing Alarms");
+
+  # Acappella_Good_Morning.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.1") == "1"
+  then
+    ui_print("  Removing Acappella_Good_Morning.ogg");
+	delete("/system/media/audio/alarms/Acappella_Good_Morning.ogg");
+  endif;
+  
+  # Afternoon_Walk.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.2") == "1"
+  then
+    ui_print("  Removing Afternoon_Walk.ogg");
+	delete("/system/media/audio/alarms/Afternoon_Walk.ogg");
+  endif;
+
+  # Alarm_1.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.3") == "1"
+  then
+    ui_print("  Removing Alarm_1.ogg");
+	delete("/system/media/audio/alarms/Alarm_1.ogg");
+  endif;
+
+  # Alarm_2.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.4") == "1"
+  then
+    ui_print("  Removing Alarm_2.ogg");
+	delete("/system/media/audio/alarms/Alarm_2.ogg");
+  endif;
+
+  # Beautiful_Day.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.5") == "1"
+  then
+    ui_print("  Removing Beautiful_Day.ogg");
+	delete("/system/media/audio/alarms/Beautiful_Day.ogg");
+  endif;
+
+  # Cello.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.6") == "1"
+  then
+    ui_print("  Removing Cello.ogg");
+	delete("/system/media/audio/alarms/Cello.ogg");
+  endif;
+
+  # Clockwork.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.7") == "1"
+  then
+    ui_print("  Removing Clockwork.ogg");
+	delete("/system/media/audio/alarms/Clockwork.ogg");
+  endif;
+
+  # Country_Road.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.8") == "1"
+  then
+    ui_print("  Removing Country_Road.ogg");
+	delete("/system/media/audio/alarms/Country_Road.ogg");
+  endif;
+
+  # Dawning_Sky.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.9") == "1"
+  then
+    ui_print("  Removing Dawning_Sky.ogg");
+	delete("/system/media/audio/alarms/Dawning_Sky.ogg");
+  endif;
+
+  # Lifes_Good_Alarm.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.10") == "1"
+  then
+    ui_print("  Removing Lifes_Good_Alarm.ogg");
+	delete("/system/media/audio/alarms/Lifes_Good_Alarm.ogg");
+  endif;
+
+  # Morning_Scent.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.11") == "1"
+  then
+    ui_print("  Removing Morning_Scent.ogg");
+	delete("/system/media/audio/alarms/Morning_Scent.ogg");
+  endif;
+
+  # Running.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.12") == "1"
+  then
+    ui_print("  Removing Running.ogg");
+	delete("/system/media/audio/alarms/Running.ogg");
+  endif;
+
+  # Shampoo.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.13") == "1"
+  then
+    ui_print("  Removing Shampoo.ogg");
+	delete("/system/media/audio/alarms/Shampoo.ogg");
+  endif;
+
+  # Timer.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.14") == "1"
+  then
+    ui_print("  Removing Timer.ogg");
+	delete("/system/media/audio/alarms/Timer.ogg");
+  endif;
+
+  # Trumpet.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.15") == "1"
+  then
+    ui_print("  Removing Trumpet.ogg");
+	delete("/system/media/audio/alarms/Trumpet.ogg");
+  endif;
+
+  # Voice_of_Nature.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.16") == "1"
+  then
+    ui_print("  Removing Voice_of_Nature.ogg");
+	delete("/system/media/audio/alarms/Voice_of_Nature.ogg");
+  endif;
+
+  # Weather_Forecast.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.17") == "1"
+  then
+    ui_print("  Removing Weather_Forecast.ogg");
+	delete("/system/media/audio/alarms/Weather_Forecast.ogg");
+  endif;
+
+  # West_Winds.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.5.18") == "1"
+  then
+    ui_print("  Removing West_Winds.ogg");
+	delete("/system/media/audio/alarms/West_Winds.ogg");
+  endif;
+
+  set_progress(0.7);
+  ui_print(" ");
+  ui_print("@Removing Notification Sounds");
+
+  # Arpeggio.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.1") == "1"
+  then
+    ui_print("  Removing Arpeggio.ogg");
+	delete("/system/media/audio/notifications/Arpeggio.ogg");
+  endif;
+
+  # Country_Blues.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.2") == "1"
+  then
+    ui_print("  Removing Country_Blues.ogg");
+	delete("/system/media/audio/notifications/Country_Blues.ogg");
+  endif;
+
+  # Crystal.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.3") == "1"
+  then
+    ui_print("  Removing Crystal.ogg");
+	delete("/system/media/audio/notifications/Crystal.ogg");
+  endif;
+
+  # Dewdrop.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.4") == "1"
+  then
+    ui_print("  Removing Dewdrop.ogg");
+	delete("/system/media/audio/notifications/Dewdrop.ogg");
+  endif;
+
+  # Ding_Dong.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.5") == "1"
+  then
+    ui_print("  Removing Ding_Dong.ogg");
+	delete("/system/media/audio/notifications/Ding_Dong.ogg");
+  endif;
+
+  # Echo.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.6") == "1"
+  then
+    ui_print("  Removing Echo.ogg");
+	delete("/system/media/audio/notifications/Echo.ogg");
+  endif;
+
+  # Email.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.7") == "1"
+  then
+    ui_print("  Removing Email.ogg");
+	delete("/system/media/audio/notifications/Email.ogg");
+  endif;
+
+  # Game_Over.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.8") == "1"
+  then
+    ui_print("  Removing Game_Over.ogg");
+	delete("/system/media/audio/notifications/Game_Over.ogg");
+  endif;
+
+  # Gayageum.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.9") == "1"
+  then
+    ui_print("  Removing Gayageum.ogg");
+	delete("/system/media/audio/notifications/Gayageum.ogg");
+  endif;
+
+  # Harmonics.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.10") == "1"
+  then
+    ui_print("  Removing Harmonics.ogg");
+	delete("/system/media/audio/notifications/Harmonics.ogg");
+  endif;
+
+  # Idea.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.11") == "1"
+  then
+    ui_print("  Removing Idea.ogg");
+	delete("/system/media/audio/notifications/Idea.ogg");
+  endif;
+
+  # News.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.12") == "1"
+  then
+    ui_print("  Removing News.ogg");
+	delete("/system/media/audio/notifications/News.ogg");
+  endif;
+
+  # Pebble.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.13") == "1"
+  then
+    ui_print("  Removing Pebble.ogg");
+	delete("/system/media/audio/notifications/Pebble.ogg");
+  endif;
+
+  # Schedule.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.14") == "1"
+  then
+    ui_print("  Removing Schedule.ogg");
+	delete("/system/media/audio/notifications/Schedule.ogg");
+  endif;
+
+  # Shooting_Star.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.15") == "1"
+  then
+    ui_print("  Removing Shooting_Star.ogg");
+	delete("/system/media/audio/notifications/Shooting_Star.ogg");
+  endif;
+
+  # Spiral.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.16") == "1"
+  then
+    ui_print("  Removing Spiral.ogg");
+	delete("/system/media/audio/notifications/Spiral.ogg");
+  endif;
+
+  # Ticket.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.17") == "1"
+  then
+    ui_print("  Removing Ticket.ogg");
+	delete("/system/media/audio/notifications/Ticket.ogg");
+  endif;
+
+  # Twinkle.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.18") == "1"
+  then
+    ui_print("  Removing Twinkle.ogg");
+	delete("/system/media/audio/notifications/Twinkle.ogg");
+  endif;
+
+  # Whistling_Bird.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.19") == "1"
+  then
+    ui_print("  Removing Whistling_Bird.ogg");
+	delete("/system/media/audio/notifications/Whistling_Bird.ogg");
+  endif;
+
+  # Woodpecker.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.6.20") == "1"
+  then
+    ui_print("  Removing Woodpecker.ogg");
+	delete("/system/media/audio/notifications/Woodpecker.ogg");
+  endif;
+
+  set_progress(0.8);
+  ui_print(" ");
+  ui_print("@Removing Ringtones");
+  
+  # 00_Lifes_Good.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.1") == "1"
+  then
+    ui_print("  Removing 00_Lifes_Good.ogg");
+	delete("/system/media/audio/ringtones/00_Lifes_Good.ogg");
+  endif;
+
+  # 01_A_Days_Pleasure.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.2") == "1"
+  then
+    ui_print("  Removing 01_A_Days_Pleasure.ogg");
+	delete("/system/media/audio/ringtones/01_A_Days_Pleasure.ogg");
+
+  endif;
+
+  # 02_Aurora.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.3") == "1"
+  then
+    ui_print("  Removing 02_Aurora.ogg");
+	delete("/system/media/audio/ringtones/02_Aurora.ogg");
+  endif;
+
+  # 03_Beep.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.4") == "1"
+  then
+    ui_print("  Removing 03_Beep.ogg");
+	delete("/system/media/audio/ringtones/03_Beep.ogg");
+  endif;
+
+  # 04_Bubble.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.5") == "1"
+  then
+    ui_print("  Removing 04_Bubble.ogg");
+	delete("/system/media/audio/ringtones/04_Bubble.ogg");
+  endif;
+
+  # 05_Cowboy.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.6") == "1"
+  then
+    ui_print("  Removing 05_Cowboy.ogg");
+	delete("/system/media/audio/ringtones/05_Cowboy.ogg");
+  endif;
+
+  # 06_Fiance.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.7") == "1"
+  then
+    ui_print("  Removing 06_Fiance.ogg");
+	delete("/system/media/audio/ringtones/06_Fiance.ogg");
+  endif;
+
+  # 08_Harmonica.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.8") == "1"
+  then
+    ui_print("  Removing 08_Harmonica.ogg");
+	delete("/system/media/audio/ringtones/08_Harmonica.ogg");
+  endif;
+
+  # 09_Imagination.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.9") == "1"
+  then
+    ui_print("  Removing 09_Imagination.ogg");
+	delete("/system/media/audio/ringtones/09_Imagination.ogg");
+  endif;
+
+  # 10_Jungle_Gym.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.10") == "1"
+  then
+    ui_print("  Removing 10_Jungle_Gym.ogg");
+	delete("/system/media/audio/ringtones/10_Jungle_Gym.ogg");
+  endif;
+
+  # 11_Laser.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.11") == "1"
+  then
+    ui_print("  Removing 11_Laser.ogg");
+	delete("/system/media/audio/ringtones/11_Laser.ogg");
+  endif;
+
+  # 12_Maple.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.12") == "1"
+  then
+    ui_print("  Removing 12_Maple.ogg");
+	delete("/system/media/audio/ringtones/12_Maple.ogg");
+  endif;
+
+  # 13_Merry_Go_Round.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.13") == "1"
+  then
+    ui_print("  Removing 13_Merry_Go_Round.ogg");
+	delete("/system/media/audio/ringtones/13_Merry_Go_Round.ogg");
+  endif;
+
+  # 14_Midnight_Sun.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.14") == "1"
+  then
+    ui_print("  Removing 14_Midnight_Sun.ogg");
+	delete("/system/media/audio/ringtones/14_Midnight_Sun.ogg");
+  endif;
+
+  # 15_Pick_Up_Your_Phone.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.15") == "1"
+  then
+    ui_print("  Removing 15_Pick_Up_Your_Phone.ogg");
+	delete("/system/media/audio/ringtones/15_Pick_Up_Your_Phone.ogg");
+  endif;
+
+  # 16_Rhythm_Guitar.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.16") == "1"
+  then
+    ui_print("  Removing 16_Rhythm_Guitar.ogg");
+	delete("/system/media/audio/ringtones/16_Rhythm_Guitar.ogg");
+  endif;
+
+  # 17_Rush.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.17") == "1"
+  then
+    ui_print("  Removing 17_Rush.ogg");
+	delete("/system/media/audio/ringtones/17_Rush.ogg");
+  endif;
+
+  # 18_Snowflakes.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.18") == "1"
+  then
+    ui_print("  Removing 18_Snowflakes.ogg");
+	delete("/system/media/audio/ringtones/18_Snowflakes.ogg");
+  endif;
+
+  # 19_Space_Shuttle.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.19") == "1"
+  then
+    ui_print("  Removing 19_Space_Shuttle.ogg");
+	delete("/system/media/audio/ringtones/19_Space_Shuttle.ogg");
+  endif;
+
+  # 20_Splash.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.20") == "1"
+  then
+    ui_print("  Removing 20_Splash.ogg");
+	delete("/system/media/audio/ringtones/20_Splash.ogg");
+  endif;
+
+  # 21_Starlit.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.21") == "1"
+  then
+    ui_print("  Removing 21_Starlit.ogg");
+	delete("/system/media/audio/ringtones/21_Starlit.ogg");
+  endif;
+
+  # 22_Strumming.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.22") == "1"
+  then
+    ui_print("  Removing 22_Strumming.ogg");
+	delete("/system/media/audio/ringtones/22_Strumming.ogg");
+  endif;
+
+  # 23_Take_Off.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.23") == "1"
+  then
+    ui_print("  Removing 23_Take_Off.ogg");
+	delete("/system/media/audio/ringtones/23_Take_Off.ogg");
+  endif;
+
+  # 24_Timeless.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.24") == "1"
+  then
+    ui_print("  Removing 24_Timeless.ogg");
+	delete("/system/media/audio/ringtones/24_Timeless.ogg");
+  endif;
+
+  # 25_Together.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.25") == "1"
+  then
+    ui_print("  Removing 25_Together.ogg");
+	delete("/system/media/audio/ringtones/25_Together.ogg");
+  endif;
+
+  # 26_Trampoline.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.26") == "1"
+  then
+    ui_print("  Removing 26_Trampoline.ogg");
+	delete("/system/media/audio/ringtones/26_Trampoline.ogg");
+  endif;
+
+  # 27_Tropical_Fish.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.27") == "1"
+  then
+    ui_print("  Removing 27_Tropical_Fish.ogg");
+	delete("/system/media/audio/ringtones/27_Tropical_Fish.ogg");
+  endif;
+
+  # 28_Tuning_Fork.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.28") == "1"
+  then
+    ui_print("  Removing 28_Tuning_Fork.ogg");
+	delete("/system/media/audio/ringtones/28_Tuning_Fork.ogg");
+  endif;
+
+  # 29_Ukulele.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.29") == "1"
+  then
+    ui_print("  Removing 29_Ukulele.ogg");
+	delete("/system/media/audio/ringtones/29_Ukulele.ogg");
+  endif;
+
+  # 30_Xylophone.ogg
+  if
+    file_getprop("/tmp/aroma/sound.prop","item.7.30") == "1"
+  then
+    ui_print("  Removing 30_Xylophone.ogg");
+	delete("/system/media/audio/ringtones/30_Xylophone.ogg");
+  endif;
+
+  ui_print(" ");
+  ui_print("@Setting permissions");
+  set_progress(0.9);
+  set_perm_recursive(0, 0, 0755, 0644, "/system/media/audio");
+
+  ui_print(" ");
+	
+  #####################################################################################################
+  #
+  # END SOUND
+  #
+endif;
+  
+
+if
+  file_getprop("/tmp/aroma/demo.prop","selected") == "3"
 then
   #####################################################################################################
   #
@@ -1726,7 +2983,7 @@ endif;
 
 
 if
-  file_getprop("/tmp/aroma/demo.prop","selected") == "3"
+  file_getprop("/tmp/aroma/demo.prop","selected") == "4"
 then
   #####################################################################################################
   #
@@ -1787,7 +3044,7 @@ endif;
 #
 
 if
-  file_getprop("/tmp/aroma/demo.prop","selected") == "4"
+  file_getprop("/tmp/aroma/demo.prop","selected") == "5"
 then
 
   #####################################################################################################

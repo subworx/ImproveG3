@@ -59,7 +59,7 @@ themes.desc=Bitte wähle das Installations Thema, welches du während der Instal
 #
 welcome.title=Willkommen
 welcome.text1=Willkommen bei 
-welcome.text2=Dieses Werkzeug entfernt System-Apps und verbessert andere Dinge. Es wurde nur getestet mit dem D855 (International Unlocked) mit dem 10L stock rooted ROM
+welcome.text2=Dieses Werkzeug entfernt System-Apps und Sounds und verbessert andere Dinge. Es läuft auf dem LG G3 (alle Varianten) mit 4.4/5.0 Stock (based) ROMs.
 welcome.version=Version
 welcome.updated=Updated
 welcome.creator=Creator
@@ -91,6 +91,8 @@ mainmenu.title=ImproveG3
 mainmenu.desc=Wähle deine Aktion
 mainmenu.removeapps=Entkrepeln
 mainmenu.removedesc=Auswählen, welche System-Apps du entfernen willst. BENUTZUNG AUF EIGENE GEFAHR! KANN NICHT RüCKGäNGIG GEMACHT WERDEN!
+mainmenu.sound=Sounds Entkrepeln
+mainmenu.sounddesc=Entfernt System/Alarm/Notification/Ringtone Sounds sowie Boot/Shutdown Animation/Sound
 mainmenu.sdfix=KitKat SD Fix
 mainmenu.sdfixdesc=Erlaubt Apps unter Android 4.4 KitKat, wieder auf SD zu schreiben.
 mainmenu.cttmod=CPU Thermal Throttling Mod
@@ -117,8 +119,6 @@ debloatinstructions.warning=Wähle die korrekte Android Version! Ansonsten werde
 <#006eff><b>Sicher mit Alternative</b></#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben. </b><#00f>Können beim Factory Reset zum Setup Loop führen (besonders Keyboard und Launcher)!</#></b>\
 \
 <#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden. Solltest du eine GApp in den Userspace verschoben haben, wird der Entkrepler <b>alle Einstellungen der App</b> löschen, aber nicht die App selbst!\
-\
-<#0f0><b>Animationen entfernen</b></#>: Entfernt Boot/Shutdown Animationen und Klänge, plus LG Musik.\
 \
 <#0000ff><b>Potentiell gefährlich</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
 \
@@ -184,12 +184,6 @@ debloatcustomize.42=(26.6 MB) XDA zufolge kann das nach einem Zurücksetzen auf 
 debloatcustomize.43=(0.2 MB) Mögliches Sicherheitsrisiko wie auf XDA berichtet, möglicherweise gefixt - auf jeden Fall benötigt App Updater das zum Laden und Installieren von LG Apps. Eventuell nötig für Software Updates (OTA)
 debloatcustomize.44=(4.3 MB) Verwaltet OTA Updates. Mit Root willst du das normalerweise nicht haben.
 debloatcustomize.45=(0.1 MB) LG Updater, zu finden unter Einstellungen -> über das Telefon -> Software Updates, benutzt um App Updater und Software Updater zu starten. FC ueber Einstellungen wenn Updater entfernt aber App/Software Updates vorhanden.
-debloatcustomize.50=Animationen entfernen (~6 MB)
-debloatcustomize.51=(3.2 MB) LG Bootanimation entfernen, die Standard Android Animation sollte laufen
-debloatcustomize.52=(2.3 MB) LG Herunterfahren-Animation entfernen
-debloatcustomize.53=(0.2 MB) LG Bootsound entfernen
-debloatcustomize.54=(0.1 MB) LG Herunterfahren-Sound entfernen
-debloatcustomize.55=Aktuell nicht eingebaut. Drei platzfressende Musikdateien entfernen
 debloatcustomize.nextbutton=Entkrepeln
 
 #
@@ -227,6 +221,234 @@ debloatpostinstall.checkbox=Zurück zum Hauptmenu.
 #
 # ENDE ENTKREPLER (DEBLOATER) 
 #
+
+
+#################################
+#
+# SOUND
+#
+
+#
+#-- Sound Anleitung
+#
+soundinstructions.title=Sound Entkrepler Anleitung
+soundinstructions.desc=Anleitung und Warnung
+soundinstructions.warning=Dieses Tool löscht diverse Sounds und Animationen.\
+Die UI relevanten Dateien werden ersetzt mit 0.1s langen Sounds, so dass im logcat keine Fehler auftauchen, während Boot/Shutdown Animationen, Alarme, Benachrichtigungen und Klingeltöne einfach gelöscht werden.\
+Alles zusammen spart ca. 33 MB.\
+Falls bootanimation.zip gelöscht wird, läuft (winzig klein) die Standard Android Bootanimation.\
+\
+Im ImproveG3 XDA thread habe ich eine flashable <b>audio-restore.zip</b> Datei verlinkt, die alle Sounds und Animationen auf Stock zurücksetzt.
+
+#
+#-- Sound Auswahl
+#
+soundcustomize.title=Sounds zum Entkrepeln
+soundcustomize.desc=Wähle die Sounds aus, die du entfernen willst.\
+Die Dateien werden <b>gelöscht/ersetzt</b>.
+soundcustomize.10=Animationen
+soundcustomize.11=Boot Animation
+soundcustomize.12=Shutdown Animation
+soundcustomize.13=Boot Sound
+soundcustomize.14=Shutdown Sound
+soundcustomize.20=UI / Camera
+soundcustomize.21=Auto Focus Fehlschlag
+soundcustomize.22=Auto Focus Erfolg
+soundcustomize.23=Camera Snap
+soundcustomize.24=Camera Timer
+soundcustomize.25=Camera Timer
+soundcustomize.26=Camera Click
+soundcustomize.27=Video Camera Start
+soundcustomize.28=Video Camera Stop
+soundcustomize.29=Continuous Shot Sound
+soundcustomize.210=Video Recorder Start
+soundcustomize.211=?
+soundcustomize.212=Voice Sound - Cheese
+soundcustomize.213=Voice Sound - Kimchi
+soundcustomize.214=Voice Sound - LG
+soundcustomize.215=Voice Sound - Smile
+soundcustomize.216=Voice Sound - Torimasu
+soundcustomize.217=Voice Sound - Whisky
+soundcustomize.30= UI / System
+soundcustomize.31=Bluetooth Alert
+soundcustomize.32=Ladefehler
+soundcustomize.33=Speicher Leeren
+soundcustomize.34=Dock
+soundcustomize.35=Effect Tick
+soundcustomize.36=Email Versandt
+soundcustomize.37=Batterie voll
+soundcustomize.38=Homescreen App entferne
+soundcustomize.39=Homescreen App deinstalliert
+soundcustomize.310=Infrarot Normal
+soundcustomize.311=Tastendruck - Delete
+soundcustomize.312=Tastendruck - Return
+soundcustomize.313=Tastendruck - Space
+soundcustomize.314=Tastendruck - Standard
+soundcustomize.315=LG Kabel verbunden
+soundcustomize.316=LG Media Volume
+soundcustomize.317=Lock Sound
+soundcustomize.318=Lock Sound mit Cover
+soundcustomize.319=Batterie schwach
+soundcustomize.320=Batterie schwach - im Anruf
+soundcustomize.321=??
+soundcustomize.322=NFC übertragung Ende
+soundcustomize.323=NFC übertragung Fehler
+soundcustomize.324=NFC übertragung Gestartet
+soundcustomize.325=Silent Ring
+soundcustomize.326=?? Soundloop
+soundcustomize.327=?? Switch off
+soundcustomize.328=?? Switch on
+soundcustomize.329=Undock
+soundcustomize.330=Unlock
+soundcustomize.331=Unlock während Lautlos
+soundcustomize.40= UI / Lock screens
+soundcustomize.41=Circle - Lock
+soundcustomize.42=Circle - Unlock 1
+soundcustomize.43=Circle - Unlock 2
+soundcustomize.44=Circle - Unlock 3
+soundcustomize.45=Circle - Unlock 4
+soundcustomize.46=Crystal - Lock
+soundcustomize.47=Crystal - Unlock
+soundcustomize.48=Dewdrop - Lock
+soundcustomize.49=Dewdrop - Touch down
+soundcustomize.410=Dewdrop - Touch released
+soundcustomize.411=Dewdrop - Unlock
+soundcustomize.412=Ink - Lock
+soundcustomize.413=Ink - Touch down
+soundcustomize.414=Ink - Unlock
+soundcustomize.415=Light - Lock
+soundcustomize.416=Light - Touch down
+soundcustomize.417=Light - Unlock
+soundcustomize.418=Mosaic - Lock
+soundcustomize.419=Mosaic - Touch down
+soundcustomize.420=Mosaic - Unlock
+soundcustomize.421=Particle - Lock
+soundcustomize.422=Particle - Unlock
+soundcustomize.423=Ripple - Lock
+soundcustomize.424=Ripple - Touch down 1
+soundcustomize.425=Ripple - Touch down 2
+soundcustomize.426=Ripple - Touch down 3
+soundcustomize.427=Ripple - Touch release 1
+soundcustomize.428=Ripple - Touch release 2
+soundcustomize.429=Ripple - Touch release 3
+soundcustomize.430=Ripple - Unlock
+soundcustomize.431=Soda - Lock
+soundcustomize.432=Soda - Touch down
+soundcustomize.433=Soda - Unlock
+soundcustomize.434=Vector - Lock
+soundcustomize.435=Vector - Touch down
+soundcustomize.436=Vector - Unlock
+soundcustomize.437=White Hole - Lock
+soundcustomize.438=White Hole - Unlock
+soundcustomize.50=Alarms
+soundcustomize.51=Acappella Good Morning
+soundcustomize.52=Afternoon Walk
+soundcustomize.53=Alarm_1
+soundcustomize.54=Alarm_2
+soundcustomize.55=Beautiful Day
+soundcustomize.56=Cello
+soundcustomize.57=Clockwork
+soundcustomize.58=Country Road
+soundcustomize.59=Dawning Sky
+soundcustomize.510=Lifes Good Alarm
+soundcustomize.511=Morning Scent
+soundcustomize.512=Running
+soundcustomize.513=Shampoo
+soundcustomize.514=Timer
+soundcustomize.515=Trumpet
+soundcustomize.516=Voice of Nature
+soundcustomize.517=Weather Forecast
+soundcustomize.518=West Winds
+soundcustomize.60=Notifications
+soundcustomize.61=Arpeggio
+soundcustomize.62=Country Blues
+soundcustomize.63=Crystal
+soundcustomize.64=Dewdrop
+soundcustomize.65=Ding Dong
+soundcustomize.66=Echo
+soundcustomize.67=Email
+soundcustomize.68=Game Over
+soundcustomize.69=Gayageum
+soundcustomize.610=Harmonics
+soundcustomize.611=Idea
+soundcustomize.612=News
+soundcustomize.613=Pebble
+soundcustomize.614=Schedule
+soundcustomize.615=Shooting Star
+soundcustomize.616=Spiral
+soundcustomize.617=Ticket
+soundcustomize.618=Twinkle
+soundcustomize.619=Whistling Bird
+soundcustomize.620=Woodpecker
+soundcustomize.70=Ringtones
+soundcustomize.71=Lifes Good
+soundcustomize.72=A Days Pleasure
+soundcustomize.73=Aurora
+soundcustomize.74=Beep
+soundcustomize.75=Bubble
+soundcustomize.76=Cowboy
+soundcustomize.77=Fiance
+soundcustomize.78=Harmonica
+soundcustomize.79=Imagination
+soundcustomize.710=Jungle Gym
+soundcustomize.711=Laser
+soundcustomize.712=Maple
+soundcustomize.713=Merry Go Round
+soundcustomize.714=Midnight Sun
+soundcustomize.715=Pick Up Your Phone
+soundcustomize.716=Rhythm Guitar
+soundcustomize.717=Rush
+soundcustomize.718=Snowflakes
+soundcustomize.719=Space Shuttle
+soundcustomize.720=Splash
+soundcustomize.721=Starlit
+soundcustomize.722=Strumming
+soundcustomize.723=Take Off
+soundcustomize.724=Timeless
+soundcustomize.725=Together
+soundcustomize.726=Trampoline
+soundcustomize.727=Tropical Fish
+soundcustomize.728=Tuning Fork
+soundcustomize.729=Ukulele
+soundcustomize.730=Xylophone
+soundcustomize.nextbutton=Remove Selected
+
+#
+#-- Sound Bestätigung
+#
+soundconfirmation.title=Bereit zum Entkrepeln
+soundconfirmation.text=Der Wizard ist bereit, die ausgewählten Sounds zu LöSCHEN.\
+\
+Drücke <b>Entkrepeln</b> um anzufangen.\
+\
+<#0000ff><b>ICH BIN NICHT HAFTBAR FüR IRGEND EINEN SCHADEN AN DEINEM GERäT\
+\
+STELLE SICHER DASS DU EIN FUNKTIONIERENDES NANDROID-BACKUP HAST, BEVOR DU WEITERMACHST\
+\
+</b></#>\
+Wenn du deine Einstellungen überprüfen oder ändern willst, drücke <b>Zurück</b>. Drücke die Menu-Taste -> ImproveG3 beenden um den Wizard zu verlassen.
+
+#
+#-- Sound Installation
+#
+soundinstall.title=Sounds Entkrepeln
+soundinstall.desc=entkrepelt Sounds.\
+\
+Dies kann etwas dauern.
+soundinstall.finish=Sounds erfolgreich entfernt. Drücke Weiter um fortzufahren.
+
+#
+#-- Entkrepler Installation abgeschlossen
+#
+soundpostinstall.title=Post Entkrepeln
+soundpostinstall.text=Entkrepeln abgeschlossen. Willst du ins Hauptmenu zurückkehren oder aufhören?
+soundpostinstall.checkbox=Zurück zum Hauptmenu.
+
+#################################
+#
+# END SOUND
+#
+
 
 
 #################################

@@ -74,10 +74,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.9");
+ini_set("rom_version",          "1.0");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3");
-ini_set("rom_date",             "2014.12.12");
+ini_set("rom_date",             "2014.12.14");
 
 
 #
@@ -197,10 +197,11 @@ menubox(
   #-------------------------+-----------------------------------------------+---------------#
   
     "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                      "@customize",   #-- selected = 1
-	"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 2
-	"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 3
-	"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 4
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 5
+	"<~mainmenu.sound>",      "<~mainmenu.sounddesc>",                       "@customize",   #-- selected = 2
+	"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 3
+	"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 4
+	"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 5
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 6
 );
 
 
@@ -213,9 +214,9 @@ menubox(
 
 ##--------------------------------------
 #
-# System Info Demo / selected 5
+# System Info Demo / selected 6
 #
-if prop("demo.prop","selected")=="5" then
+if prop("demo.prop","selected")=="6" then
 
   #-- Show Please Wait
   pleasewait("Get System Informations...");
@@ -288,9 +289,9 @@ endif;
 
 ##--------------------------------------
 #
-# Oversharpening Fix / selected 4
+# Oversharpening Fix / selected 5
 #
-if prop("demo.prop","selected")=="4" then
+if prop("demo.prop","selected")=="5" then
 
   #########################################################################################################
   #                                                                                                       #
@@ -488,9 +489,9 @@ endif;
 
 ##--------------------------------------
 #
-# Temperature Mod / selected 3
+# Temperature Mod / selected 4
 #
-if prop("demo.prop","selected")=="3" then
+if prop("demo.prop","selected")=="4" then
   #########################################################################################################
   #                                                                                                       #
   #                                            CTT MOD                                                    #
@@ -635,9 +636,9 @@ endif;
 
 ##--------------------------------------
 #
-# SD Fix / selected 2
+# SD Fix / selected 3
 #
-if prop("demo.prop","selected")=="2" then
+if prop("demo.prop","selected")=="3" then
   #########################################################################################################
   #                                                                                                       #
   #                                             SD FIX                                                    #
@@ -779,6 +780,320 @@ endif;
 
 ##--------------------------------------
 #
+# Sound / selected 2
+#
+if prop("demo.prop","selected")=="2" then
+  #########################################################################################################
+  #                                                                                                       #
+  #                                              SOUNDS                                                   #
+  #                                                                                                       #
+  #########################################################################################################
+
+  #########################################################################################################
+  #
+  # SOUNDS STEP 1 - INSTRUCTIONS
+  #
+  textbox(
+    #-- Title
+      "<~soundinstructions.title>",
+  
+    #-- Subtitle
+      "<~soundinstructions.desc>",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Arg 4
+      "<~soundinstructions.warning>"
+  );
+
+  #########################################################################################################
+  #
+  # SOUND STEP 2 - CUSTOMIZE
+  #
+  checkbox(
+  #-- Title
+    "<~soundcustomize.title>",
+  
+  #-- Sub Title
+    "<~soundcustomize.desc>",
+  
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@customize",
+  
+  #-- Will be saved in /tmp/aroma/sound.prop
+    "sound.prop",
+  
+    #=----------------------------[ Checkbox With Group ]--------------------------#
+    # TITLE                       | SUBTITLE                       | Initial Value #
+    #-----------------------------+--------------------------------+---------------#
+
+    "<~soundcustomize.10>", "", 					                 2,  #-- Group 1. key = "item.1.x"
+	  "bootanimation.zip",          "<~soundcustomize.11>",          0,    #-- item.1.1 = Un-Selected by default
+      "shutdownanimation.zip",      "<~soundcustomize.12>",          0,    #-- item.1.2 = Un-Selected by default
+	  "PowerOn.ogg",                "<~soundcustomize.13>",      	 0,    #-- item.1.3 = Un-Selected by default
+	  "PowerOff.ogg",               "<~soundcustomize.14>",          0,    #-- item.1.4 = Un-Selected by default
+
+	"<~soundcustomize.20>", "",                                      2,  #-- Group 2. key = "item.2.x"
+	  "af_failure.ogg",             "<~soundcustomize.21>",          0,    #-- item.2.1 = Un-Selected by default
+	  "af_success.ogg",	            "<~soundcustomize.22>",          0,    #-- item.2.2 = Un-Selected by default
+	  "cam_snap_0",		            "<~soundcustomize.23>",    		 0,    #-- item.2.3 = Un-Selected by default
+	  "cam_timer_1sec.ogg",		    "<~soundcustomize.24>",			 0,	   #-- item.2.4 = Un-Selected by default
+	  "cam_timer_last.ogg",		    "<~soundcustomize.25>",			 0,	   #-- item.2.5 = Un-Selected by default
+	  "camera_click.ogg",		    "<~soundcustomize.26>",			 0,	   #-- item.2.6 = Un-Selected by default
+	  "camstart.ogg",		        "<~soundcustomize.27>",			 0,	   #-- item.2.7 = Un-Selected by default
+	  "camstop.ogg",		        "<~soundcustomize.28>",			 0,	   #-- item.2.8 = Un-Selected by default
+	  "ccontinuous_shot.ogg",		"<~soundcustomize.29>",			 0,	   #-- item.2.9 = Un-Selected by default
+	  "VideoRecord.ogg",		    "<~soundcustomize.210>",		 0,	   #-- item.2.10 = Un-Selected by default
+	  "shot_snap.ogg",		        "<~soundcustomize.211>",		 0,	   #-- item.2.11 = Un-Selected by default
+	  "voicesound_cheese.ogg",		"<~soundcustomize.212>",		 0,	   #-- item.2.12 = Un-Selected by default
+	  "voicesound_kimchi.ogg",		"<~soundcustomize.213>",		 0,	   #-- item.2.13 = Un-Selected by default
+	  "voicesound_lg.ogg",		    "<~soundcustomize.214>",		 0,	   #-- item.2.14 = Un-Selected by default
+	  "voicesound_smile.ogg",		"<~soundcustomize.215>",		 0,	   #-- item.2.15 = Un-Selected by default
+	  "voicesound_torimasu.ogg",	"<~soundcustomize.216>",		 0,	   #-- item.2.16 = Un-Selected by default
+	  "voicesound_whisky.ogg",      "<~soundcustomize.217>",		 0,	   #-- item.2.17 = Un-Selected by default
+
+	"<~soundcustomize.30>",	"",				   		                 2,	 #-- Group 3. key = "item.3.x"
+	  "Bluetooth_alert.ogg",		"<~soundcustomize.31>",			 0,    #-- item.3.1 = Un-Selected by default
+	  "charging_error.ogg",		    "<~soundcustomize.32>",			 0,    #-- item.3.2 = Un-Selected by default
+	  "clear_ram.ogg",		        "<~soundcustomize.33>",			 0,    #-- item.3.3 = Un-Selected by default
+	  "Dock.ogg",		            "<~soundcustomize.34>",			 0,    #-- item.3.4 = Un-Selected by default
+	  "Effect_Tick.ogg",		    "<~soundcustomize.35>",			 0,    #-- item.3.5 = Un-Selected by default
+	  "Email_Sent.ogg",		        "<~soundcustomize.36>",			 0,    #-- item.3.6 = Un-Selected by default
+	  "FullBattery.ogg",		    "<~soundcustomize.37>",			 0,    #-- item.3.7 = Un-Selected by default
+	  "Homescreen_Remove.ogg",		"<~soundcustomize.38>",			 0,    #-- item.3.8 = Un-Selected by default
+	  "Homescreen_Uninstall.ogg",	"<~soundcustomize.39>",			 0,    #-- item.3.9 = Un-Selected by default
+	  "IR_normal.ogg",		        "<~soundcustomize.310>",		 0,    #-- item.3.10 = Un-Selected by default
+	  "KeypressDelete.ogg",		    "<~soundcustomize.311>",		 0,    #-- item.3.11 = Un-Selected by default
+	  "KeypressReturn.ogg",		    "<~soundcustomize.312>",		 0,    #-- item.3.12 = Un-Selected by default
+	  "KeypressSpacebar.ogg",		"<~soundcustomize.313>",		 0,    #-- item.3.13 = Un-Selected by default
+	  "KeypressStandard.ogg",		"<~soundcustomize.314>",		 0,    #-- item.3.14 = Un-Selected by default
+	  "LG_Cable_Connect.ogg",		"<~soundcustomize.315>",		 0,    #-- item.3.15 = Un-Selected by default
+	  "LG_Media_volume.ogg",		"<~soundcustomize.316>",		 0,    #-- item.3.16 = Un-Selected by default
+	  "Lock.ogg",		            "<~soundcustomize.317>",		 0,    #-- item.3.17 = Un-Selected by default
+	  "Lock_Cover.ogg",		        "<~soundcustomize.318>",		 0,    #-- item.3.18 = Un-Selected by default
+	  "LowBattery.ogg",		        "<~soundcustomize.319>",		 0,    #-- item.3.19 = Un-Selected by default
+	  "LowBattery_incall.ogg",		"<~soundcustomize.320>",		 0,    #-- item.3.20 = Un-Selected by default
+	  "MannerCancel.ogg",		    "<~soundcustomize.321>",		 0,    #-- item.3.21 = Un-Selected by default
+	  "NFC_End.ogg",		        "<~soundcustomize.322>",		 0,    #-- item.3.22 = Un-Selected by default
+	  "NFC_Error.ogg",		        "<~soundcustomize.323>",		 0,    #-- item.3.23 = Un-Selected by default
+	  "NFC_Start.ogg",		        "<~soundcustomize.324>",		 0,    #-- item.3.24 = Un-Selected by default
+	  "SilentRing.ogg",		        "<~soundcustomize.325>",		 0,    #-- item.3.25 = Un-Selected by default
+	  "snd_loop.ogg",		        "<~soundcustomize.326>",		 0,    #-- item.3.26 = Un-Selected by default
+	  "switchoff.ogg",		        "<~soundcustomize.327>",		 0,    #-- item.3.27 = Un-Selected by default
+	  "switchon.ogg",		        "<~soundcustomize.328>",		 0,    #-- item.3.28 = Un-Selected by default
+	  "Undock.ogg",		            "<~soundcustomize.329>",		 0,    #-- item.3.29 = Un-Selected by default
+	  "Unlock.ogg",		            "<~soundcustomize.330>",		 0,    #-- item.3.30 = Un-Selected by default
+	  "unlock_mute.ogg",		    "<~soundcustomize.331>",		 0,    #-- item.3.31 = Un-Selected by default
+	  
+	"<~soundcustomize.40>", "",				   		                 2,  #-- Group 4. key = "item.4.x"
+	  "circle_lock.ogg",		    "<~soundcustomize.41>",			 0,	   #-- item.4.1 = Un-Selected by default
+	  "circle_unlock1.ogg",		    "<~soundcustomize.42>",			 0,	   #-- item.4.2 = Un-Selected by default
+	  "circle_unlock2.ogg",		    "<~soundcustomize.43>",			 0,	   #-- item.4.3 = Un-Selected by default
+	  "circle_unlock3.ogg",		    "<~soundcustomize.44>",			 0,	   #-- item.4.4 = Un-Selected by default
+	  "circle_unlock4.ogg",		    "<~soundcustomize.45>",			 0,	   #-- item.4.5 = Un-Selected by default
+	  "crystal_lock.ogg",		    "<~soundcustomize.46>",			 0,	   #-- item.4.6 = Un-Selected by default
+	  "crystal_unlock.ogg",		    "<~soundcustomize.47>",			 0,	   #-- item.4.7 = Un-Selected by default
+	  "dewdrop_lock.ogg",		    "<~soundcustomize.48>",			 0,	   #-- item.4.8 = Un-Selected by default
+	  "dewdrop_touchdown.ogg",		"<~soundcustomize.49>",			 0,	   #-- item.4.9 = Un-Selected by default
+	  "dewdrop_touchrelease.ogg", 	"<~soundcustomize.410>",		 0,	   #-- item.4.10 = Un-Selected by default
+	  "dewdrop_unlock.ogg",		    "<~soundcustomize.411>",		 0,	   #-- item.4.11 = Un-Selected by default
+	  "ink_lock.ogg",		        "<~soundcustomize.412>",		 0,	   #-- item.4.12 = Un-Selected by default
+	  "ink_touchdown.ogg",		    "<~soundcustomize.413>",		 0,	   #-- item.4.13 = Un-Selected by default
+	  "ink_unlock.ogg",		        "<~soundcustomize.414>",		 0,	   #-- item.4.14 = Un-Selected by default
+	  "light_lock.ogg",		        "<~soundcustomize.415>",		 0,	   #-- item.4.15 = Un-Selected by default
+	  "light_touchdown.ogg",		"<~soundcustomize.416>",		 0,	   #-- item.4.16 = Un-Selected by default
+	  "light_unlock.ogg",		    "<~soundcustomize.417>",		 0,	   #-- item.4.17 = Un-Selected by default
+	  "mosaic_lock.ogg",		    "<~soundcustomize.418>",		 0,	   #-- item.4.18 = Un-Selected by default
+	  "mosaic_touchdown.ogg",		"<~soundcustomize.419>",		 0,	   #-- item.4.19 = Un-Selected by default
+	  "mosaic_unlock.ogg",		    "<~soundcustomize.420>",		 0,	   #-- item.4.20 = Un-Selected by default
+	  "particle_lock.ogg",		    "<~soundcustomize.421>",		 0,	   #-- item.4.21 = Un-Selected by default
+	  "particle_unlock.ogg",		"<~soundcustomize.422>",		 0,	   #-- item.4.22 = Un-Selected by default
+	  "ripple_lock.ogg",		    "<~soundcustomize.423>",		 0,	   #-- item.4.23 = Un-Selected by default
+	  "ripple_touchdown1.ogg",		"<~soundcustomize.424>",		 0,	   #-- item.4.24 = Un-Selected by default
+	  "ripple_touchdown2.ogg",		"<~soundcustomize.425>",		 0,	   #-- item.4.25 = Un-Selected by default
+	  "ripple_touchdown3.ogg",		"<~soundcustomize.426>",		 0,	   #-- item.4.26 = Un-Selected by default
+	  "ripple_touchrelease1.ogg",	"<~soundcustomize.427>",		 0,	   #-- item.4.27 = Un-Selected by default
+	  "ripple_touchrelease2.ogg",	"<~soundcustomize.428>",		 0,	   #-- item.4.28 = Un-Selected by default
+	  "ripple_touchrelease3.ogg",	"<~soundcustomize.429>",		 0,	   #-- item.4.29 = Un-Selected by default
+	  "ripple_unlock.ogg",		    "<~soundcustomize.430>",		 0,	   #-- item.4.30 = Un-Selected by default
+	  "soda_lock.ogg",		        "<~soundcustomize.431>",		 0,	   #-- item.4.31 = Un-Selected by default
+	  "soda_touchdown.ogg",		    "<~soundcustomize.432>",		 0,	   #-- item.4.32 = Un-Selected by default
+	  "soda_unlock.ogg",		    "<~soundcustomize.433>",		 0,	   #-- item.4.33 = Un-Selected by default
+	  "vector_lock.ogg",		    "<~soundcustomize.434>",		 0,	   #-- item.4.34 = Un-Selected by default
+	  "vector_touchdown.ogg",		"<~soundcustomize.435>",		 0,	   #-- item.4.35 = Un-Selected by default
+	  "vector_unlock.ogg",		    "<~soundcustomize.436>",		 0,	   #-- item.4.36 = Un-Selected by default
+	  "whitehole_lock.ogg",		    "<~soundcustomize.437>",		 0,	   #-- item.4.37 = Un-Selected by default
+	  "whitehole_unlock.ogg",		"<~soundcustomize.438>",		 0,	   #-- item.4.38 = Un-Selected by default
+
+	"<~soundcustomize.50>", "",				   		                 2,	 #-- Group 5. key = "item.5.x"
+	  "Acappella_Good_Morning.ogg",	"<~soundcustomize.51>",			 0,    #-- item.5.1 = Un-Selected by default
+	  "Afternoon_Walk.ogg",		    "<~soundcustomize.52>",			 0,    #-- item.5.2 = Un-Selected by default
+	  "Alarm_1.ogg",		        "<~soundcustomize.53>",			 0,    #-- item.5.3 = Un-Selected by default
+	  "Alarm_2.ogg",		        "<~soundcustomize.54>",			 0,    #-- item.5.4 = Un-Selected by default
+	  "Beautiful_Day.ogg",		    "<~soundcustomize.55>",			 0,    #-- item.5.5 = Un-Selected by default
+	  "Cello.ogg",		            "<~soundcustomize.56>",			 0,    #-- item.5.6 = Un-Selected by default
+	  "Clockwork.ogg",		        "<~soundcustomize.57>",			 0,    #-- item.5.7 = Un-Selected by default
+	  "Country_Road.ogg",		    "<~soundcustomize.58>",			 0,    #-- item.5.8 = Un-Selected by default
+	  "Dawning_Sky.ogg",		    "<~soundcustomize.59>",			 0,    #-- item.5.9 = Un-Selected by default
+	  "Lifes_Good_Alarm.ogg",		"<~soundcustomize.510>",		 0,    #-- item.5.10 = Un-Selected by default
+	  "Morning_Scent.ogg",		    "<~soundcustomize.511>",		 0,    #-- item.5.11 = Un-Selected by default
+	  "Running.ogg",		        "<~soundcustomize.512>",		 0,    #-- item.5.12 = Un-Selected by default
+	  "Shampoo.ogg",		        "<~soundcustomize.513>",		 0,    #-- item.5.13 = Un-Selected by default
+	  "Timer.ogg",		            "<~soundcustomize.514>",		 0,    #-- item.5.14 = Un-Selected by default
+	  "Trumpet.ogg",		        "<~soundcustomize.515>",		 0,    #-- item.5.15 = Un-Selected by default
+	  "Voice_of_Nature.ogg",		"<~soundcustomize.516>",		 0,    #-- item.5.16 = Un-Selected by default
+	  "Weather_Forecast.ogg",		"<~soundcustomize.517>",		 0,    #-- item.5.17 = Un-Selected by default
+	  "West_Winds.ogg",		        "<~soundcustomize.518>",		 0,    #-- item.5.18 = Un-Selected by default
+
+	"<~soundcustomize.60>", "",				   		                 2,	 #-- Group 6. key = "item.6.x"
+	  "Arpeggio.ogg",		        "<~soundcustomize.61>",			 0,	   #-- item.6.1 = Un-Selected by default
+	  "Country_Blues.ogg",		    "<~soundcustomize.62>",			 0,	   #-- item.6.2 = Un-Selected by default
+	  "Crystal.ogg",		        "<~soundcustomize.63>",			 0,	   #-- item.6.3 = Un-Selected by default
+	  "Dewdrop.ogg",		        "<~soundcustomize.64>",			 0,	   #-- item.6.4 = Un-Selected by default
+	  "Ding_Dong.ogg",		        "<~soundcustomize.65>",			 0,	   #-- item.6.5 = Un-Selected by default
+	  "Echo.ogg",		            "<~soundcustomize.66>",			 0,	   #-- item.6.6 = Un-Selected by default
+	  "Email.ogg",		            "<~soundcustomize.67>",			 0,	   #-- item.6.7 = Un-Selected by default
+	  "Game_Over.ogg",		        "<~soundcustomize.68>",			 0,	   #-- item.6.8 = Un-Selected by default
+	  "Gayageum.ogg",		        "<~soundcustomize.69>",			 0,	   #-- item.6.9 = Un-Selected by default
+	  "Harmonics.ogg",		        "<~soundcustomize.610>",		 0,	   #-- item.6.10 = Un-Selected by default
+	  "Idea.ogg",		            "<~soundcustomize.611>",		 0,	   #-- item.6.11 = Un-Selected by default
+	  "News.ogg",		            "<~soundcustomize.612>",		 0,	   #-- item.6.12 = Un-Selected by default
+	  "Pebble.ogg",		            "<~soundcustomize.613>",		 0,	   #-- item.6.13 = Un-Selected by default
+	  "Schedule.ogg",		        "<~soundcustomize.614>",		 0,	   #-- item.6.14 = Un-Selected by default
+	  "Shooting_Star.ogg",		    "<~soundcustomize.615>",		 0,	   #-- item.6.15 = Un-Selected by default
+	  "Spiral.ogg",		            "<~soundcustomize.616>",		 0,	   #-- item.6.16 = Un-Selected by default
+	  "Ticket.ogg",		            "<~soundcustomize.617>",		 0,	   #-- item.6.17 = Un-Selected by default
+	  "Twinkle.ogg",		        "<~soundcustomize.618>",		 0,	   #-- item.6.18 = Un-Selected by default
+	  "Whistling_Bird.ogg",		    "<~soundcustomize.619>",		 0,	   #-- item.6.19 = Un-Selected by default
+	  "Woodpecker.ogg",		        "<~soundcustomize.620>",		 0,	   #-- item.6.20 = Un-Selected by default
+	  
+	"<~soundcustomize.70>", "",				   		                 2,  #-- Group 7. key = "item.7.x"
+	  "00_Lifes_Good.ogg",		    "<~soundcustomize.71>",			 0,    #-- item.7.1 = Un-Selected by default
+	  "01_A_Days_Pleasure.ogg",		"<~soundcustomize.72>",			 0,    #-- item.7.2 = Un-Selected by default
+	  "02_Aurora.ogg",		        "<~soundcustomize.73>",			 0,    #-- item.7.3 = Un-Selected by default
+	  "03_Beep.ogg",		        "<~soundcustomize.74>",			 0,    #-- item.7.4 = Un-Selected by default
+	  "04_Bubble.ogg",		        "<~soundcustomize.75>",			 0,    #-- item.7.5 = Un-Selected by default
+	  "05_Cowboy.ogg",		        "<~soundcustomize.76>",			 0,    #-- item.7.6 = Un-Selected by default
+	  "06_Fiance.ogg",		        "<~soundcustomize.77>",			 0,    #-- item.7.7 = Un-Selected by default
+	  "08_Harmonica.ogg",		    "<~soundcustomize.78>",			 0,    #-- item.7.8 = Un-Selected by default
+	  "09_Imagination.ogg",		    "<~soundcustomize.79>",			 0,    #-- item.7.9 = Un-Selected by default
+	  "10_Jungle_Gym.ogg",		    "<~soundcustomize.710>",		 0,    #-- item.7.10 = Un-Selected by default
+	  "11_Laser.ogg",		        "<~soundcustomize.711>",		 0,    #-- item.7.11 = Un-Selected by default
+	  "12_Maple.ogg",		        "<~soundcustomize.712>",		 0,    #-- item.7.12 = Un-Selected by default
+	  "13_Merry_Go_Round.ogg",		"<~soundcustomize.713>",		 0,    #-- item.7.13 = Un-Selected by default
+	  "14_Midnight_Sun.ogg",		"<~soundcustomize.714>",		 0,    #-- item.7.14 = Un-Selected by default
+	  "15_Pick_Up_Your_Phone.ogg",	"<~soundcustomize.715>",		 0,    #-- item.7.15 = Un-Selected by default
+	  "16_Rhythm_Guitar.ogg",		"<~soundcustomize.716>",		 0,    #-- item.7.16 = Un-Selected by default
+	  "17_Rush.ogg",		        "<~soundcustomize.717>",		 0,    #-- item.7.17 = Un-Selected by default
+	  "18_Snowflakes.ogg",		    "<~soundcustomize.718>",		 0,    #-- item.7.18 = Un-Selected by default
+	  "19_Space_Shuttle.ogg",		"<~soundcustomize.719>",		 0,    #-- item.7.19 = Un-Selected by default
+	  "20_Splash.ogg",		        "<~soundcustomize.720>",		 0,    #-- item.7.20 = Un-Selected by default
+	  "21_Starlit.ogg",		        "<~soundcustomize.721>",		 0,    #-- item.7.21 = Un-Selected by default
+	  "22_Strumming.ogg",		    "<~soundcustomize.722>",		 0,    #-- item.7.22 = Un-Selected by default
+	  "23_Take_Off.ogg",		    "<~soundcustomize.723>",		 0,    #-- item.7.23 = Un-Selected by default
+	  "24_Timeless.ogg",		    "<~soundcustomize.724>",		 0,    #-- item.7.24 = Un-Selected by default
+	  "25_Together.ogg",		    "<~soundcustomize.725>",		 0,    #-- item.7.25 = Un-Selected by default
+	  "26_Trampoline.ogg",		    "<~soundcustomize.726>",		 0,    #-- item.7.26 = Un-Selected by default
+	  "27_Tropical_Fish.ogg",		"<~soundcustomize.727>",		 0,    #-- item.7.27 = Un-Selected by default
+	  "28_Tuning_Fork.ogg",		    "<~soundcustomize.728>",		 0,    #-- item.7.28 = Un-Selected by default
+	  "29_Ukulele.ogg",		        "<~soundcustomize.729>",		 0,    #-- item.7.29 = Un-Selected by default
+	  "30_Xylophone.ogg",		    "<~soundcustomize.730>",		 0     #-- item.7.30 = Un-Selected by default
+
+    #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+
+  ##
+  #
+  # Next Screen is Installation UI, So change the next button text to "Install Now"
+  #
+  ini_set("text_next", "<~soundcustomize.nextbutton>");
+  ini_set("icon_next", "@installbutton");
+
+  ###################################################################################################################
+  #
+  # DEBLOATER STEP 3 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  #
+  viewbox(
+    #-- Title
+      "<~soundconfirmation.title>",
+
+    #-- Text
+      "<~soundconfirmation.text>",
+
+    #-- Icon
+      "@install"
+  );
+
+  ##
+  #
+  # Next Button in successfull installation should be back to "Next >"
+  #
+  ini_set("text_next", "<~text_next>");
+  ini_set("icon_next", "@next");
+
+  #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
+  restotmp("exec_demo/sleep","sleep");
+
+  ###################################################################################################################
+  #
+  # SOUND STEP 4 - INSTALLATION PROCESS
+  #
+  setvar("retstatus",
+    install(
+	  #-- Title
+        "<~soundinstall.title>",
+	
+	  #-- Installation Process message
+	    "<b>"+ini_get("rom_name")+"</b> <~soundinstall.desc>",
+	
+	  #-- Installation Icon
+        "@install",
+	
+	  #-- Installation Finish Message
+        "<~soundinstall.finish>"
+    )
+  );
+
+  ###################################################################################################################
+  #
+  # SOUND STEP 5 - ASK If We Want to go back to main menu
+  #
+  checkviewbox(
+    #-- Title
+      "<~soundpostinstall.title>",
+  
+    #-- Text
+      "<~soundpostinstall.text>",
+	
+    #-- Icon
+      "@finish",
+
+    #-- Checkbox Text
+      "<~soundpostinstall.checkbox>",
+
+    #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+      "0",
+
+    #-- Save checked value in variable "reboot_it" (Optional)
+      "goto_mainmenu"
+  );
+  if
+    getvar("goto_mainmenu")=="1"
+  then
+    goto("aroma_installer_demo_pos");
+  endif;
+
+  ##########
+  #
+  # END SOUND
+  #
+
+endif;
+
+
+##--------------------------------------
+#
 # Debloater / selected 1 - if necessary?
 #
 if prop("demo.prop","selected")=="1" then
@@ -904,77 +1219,69 @@ if prop("demo.prop","selected")=="1" then
 	  "Software Update",	"<~debloatcustomize.44>",				   		  0,    #-- item.4.4 = Un-Selected by default
 	  "Update Center",	    "<~debloatcustomize.45>",						  0,    #-- item.4.5 = Un-Selected by default
 
-    "<#0f0><~debloatcustomize.50></#>", "",	                				  2,  #-- Group 5. key = "item.5.x"
-      "Boot Animation",	    "<~debloatcustomize.51>",                     	  0,    #-- item.5.1 = Un-Selected by default
-	  "Shutdown Animation", "<~debloatcustomize.52>",                         0,    #-- item.5.2 = Un-Selected by default
-	  "Boot Sound",		    "<~debloatcustomize.53>",						  0,    #-- item.5.3 = Un-Selected by default
-	  "Shutdown Sound",	    "<~debloatcustomize.54>",						  0,    #-- item.5.4 = Un-Selected by default
-	  "Stock music",	    "<~debloatcustomize.55>",						  0,    #-- item.5.5 = Un-Selected by default
-
-    "<#00f>Extremely dangerous Sh!t (4.4 ONLY)</#>", "",	                                    2,  #-- Group 6. key = "item.6.x"
-      "ActionManager Service (MRG)", "com.lge.mrg.service (MRG)",                   0,    #-- item.6.1 = Un-Selected by default
-      "Board Content Provider (MRG)","com.lge.mrg.boardcontent (MRG)",              0,    #-- item.6.2 = Un-Selected by default
-      "com.lge.divx.permission",     "com.lge.divx.permission",                     0,    #-- item.6.3 = Un-Selected by default
-      "com.lge.lgdmsgcm",            "com.lge.lgdmsgcm (Software Updates?)",        0,    #-- item.6.4 = Un-Selected by default
-      "com.lge.lgdrm.permission",    "com.lge.lgdrm.permission",                    0,    #-- item.6.5 = Un-Selected by default
-      "com.lge.lgfota.permission",   "com.lge.lgfota.permission",                   0,    #-- item.6.6 = Un-Selected by default
-      "com.lge.permission",          "com.lge.permission (LG API Permissions)",     0,    #-- item.6.7 = Un-Selected by default
-      "Content lock",                "com.lge.privacylock",                         0,    #-- item.6.8 = Un-Selected by default
-	  "Downloads",		             "com.android.providers.downloads.ui",          0,    #-- item.6.9 = Un-Selected by default
-      "DRM Service",                 "com.lge.drmservice",                          0,    #-- item.6.10 = Un-Selected by default
-      "ELTest",                      "com.lge.eltest",                              0,    #-- item.6.11 = Un-Selected by default
-      "FormManager",                 "com.lge.formmanager",                         0,    #-- item.6.12 = Un-Selected by default
-      "Gallery",                     "com.android.gallery3d",                       0,    #-- item.6.13 = Un-Selected by default
-      "GNSS Air Test (CDMA)",        "com.lge.gnss.airtest",                        0,    #-- item.6.14 = Un-Selected by default
-      "GnssTest",                    "com.lge.gnsstest",                            0,    #-- item.6.15 = Un-Selected by default
-      "LG GNSS",                     "com.lge.gnsspostest",                         0,    #-- item.6.16 = Un-Selected by default
-      "com.lge.hiddenmenu - HiddenMenu", "com.lge.hiddenmenu",                      0,    #-- item.6.17 = Un-Selected by default
-      "LG Intelligent Agent",        "com.lge.ia",                     	            0,    #-- item.6.18 = Un-Selected by default
-      "LIA Informant",               "com.lge.ia.task.informant",                   0,    #-- item.6.19 = Un-Selected by default
-      "LIA MrGDBLogger",             "com.lge.ia.task.mrgdblogger",                 0,    #-- item.6.20 = Un-Selected by default
-      "LIA S4URecommender",          "com.lge.ia.task.s4urecommender",              0,    #-- item.6.21 = Un-Selected by default
-      "LG MLT",    	                 "com.lge.mlt",                     	        0,    #-- item.6.22 = Un-Selected by default
-      "LG PC Suite",                 "com.lge.pcsyncui",                     	    0,    #-- item.6.23 = Un-Selected by default
-      "LG PC Suite Service",         "com.lge.sync",                     	        0,    #-- item.6.24 = Un-Selected by default
-      "LGApduService",               "com.lge.smartcart.apdu.uicc",                 0,    #-- item.6.25 = Un-Selected by default
-      "LGATCMD Service",             "com.lge.android.atservice",                   0,    #-- item.6.26 = Un-Selected by default
-      "??? LGERCS.apk",              "LGERCS.apk",                     	            0,    #-- item.6.27 = Un-Selected by default
-      "??? LGERCSProvider.apk",      "LGERCSProvider.apk",                     	    0,    #-- item.6.28 = Un-Selected by default
-      "??? LGRcsCall.apk",           "LGRcsCall.apk",                     	        0,    #-- item.6.29 = Un-Selected by default
-      "??? LGRCSMessage.apk",        "LGRCSMessage.apk",                     	    0,    #-- item.6.30 = Un-Selected by default
-      "??? LGRCSServices.apk",       "LGRCSServices.apk",                           0,    #-- item.6.31 = Un-Selected by default
-      "License Provider",            "com.lge.eulaprovider",                        0,    #-- item.6.32 = Un-Selected by default
-      "Live Wallpaper Picker",       "com.android.wallpaper.livepicker",            0,    #-- item.6.33 = Un-Selected by default
-      "Lock Screen Settings",        "com.lge.lockscreensettings",                  0,    #-- item.6.34 = Un-Selected by default
-      "Multi-photo",                 "com.lge.livewallpaper.multiphoto",            0,    #-- item.6.35 = Un-Selected by default
-      "??? Phonesky.apk",            "Phonesky.apk",                                0,    #-- item.6.36 = Un-Selected by default
-      "Print Spooler 1",			 "com.android.printspooler",                    0,    #-- item.6.37 = Un-Selected by default
-	  "Quickset SDK",                "com.uei.lg.quicksetsdk.maxq616",              0,    #-- item.6.38 = Un-Selected by default
-	  "Remote support service",      "com.rsupport.rsperm",                         0,    #-- item.6.39 = Un-Selected by default
-      "Settings",                    "com.lge.settings.easy",                       0,    #-- item.6.40 = Un-Selected by default
-      "Shutdown Monitor",            "com.lge.shutdownmonitor",                     0,    #-- item.6.41 = Un-Selected by default
-      "Smart cleaning",              "com.lge.springcleaning",                      0,    #-- item.6.42 = Un-Selected by default
-      "Smart screen",                "com.lge.keepscreenon",                        0,    #-- item.6.43 = Un-Selected by default
-      "SmartShare Beam (WFDS)",      "com.lge.smartsharebeam (WDFS)",               0,    #-- item.6.44 = Un-Selected by default
-      "SmartShare Push",             "com.lge.smartsharepush",                      0,    #-- item.6.45 = Un-Selected by default
-      "SmartShare.Beam",             "itectokyo.wiflus.service",                    0,    #-- item.6.46 = Un-Selected by default
-      "SmartShare.Cloud",            "com.lge.cloudhub",                     	    0,    #-- item.6.47 = Un-Selected by default
-      "SmartShare.DLNA",             "com.lge.smartshare.dlna",                     0,    #-- item.6.48 = Un-Selected by default
-      "SmartShare.MediaServer",      "com.lge.smartshare",                          0,    #-- item.6.49 = Un-Selected by default
-      "SmartShare.Provider",         "com.lge.smartshare.provider",                 0,    #-- item.6.50 = Un-Selected by default
-      "Tags",                        "com.google.android.tag (NFC)",                0,    #-- item.6.51 = Un-Selected by default
-	  "Unified EULA",                "com.lge.eula",                       	        0,    #-- item.6.52 = Un-Selected by default
-      "Video",                       "com.lge.videoplayer",                         0,    #-- item.6.53 = Un-Selected by default
-      "Video Trim",                  "com.lge.videotool",                           0,    #-- item.6.54 = Un-Selected by default
-      "Voice Mate",                  "com.nuance.voicemate",                        0,    #-- item.6.55 = Un-Selected by default
-	  "Voice Recorder",              "com.lge.voicerecorder",                       0,    #-- item.6.56 = Un-Selected by default
-      "WAP Service",                 "com.lge.wapservice",                     	    0,    #-- item.6.57 = Un-Selected by default
-      "Weather",                     "com.lge.sizechangable.weather",               0,    #-- item.6.58 = Un-Selected by default
-      "WeatherPlatform",             "com.lge.sizechangable.weather.platform",      0,    #-- item.6.59 = Un-Selected by default
-      "Weather Theme",               "com.lge.sizechangable.weather.theme.optimus", 0,    #-- item.6.60 = Un-Selected by default
-      "Wfd Service (Qualcomm, WFDS)","com.qualcomm.wfd.service (WFDS)",             0,    #-- item.6.61 = Un-Selected by default
-	  "WfdsService (WFDS)",          "com.lge.wfds.service (WFDS)",                 0,    #-- item.6.62 = Un-Selected by default
-      "Widevine Keybox Test",        "com.lge.wv.hidden",                     	    0     #-- item.6.63 = Un-Selected by default
+    "<#00f>Extremely dangerous Sh!t (4.4 ONLY)</#>", "",	                        2,  #-- Group 5. key = "item.5.x"
+      "ActionManager Service (MRG)", "com.lge.mrg.service (MRG)",                   0,    #-- item.5.1 = Un-Selected by default
+      "Board Content Provider (MRG)","com.lge.mrg.boardcontent (MRG)",              0,    #-- item.5.2 = Un-Selected by default
+      "com.lge.divx.permission",     "com.lge.divx.permission",                     0,    #-- item.5.3 = Un-Selected by default
+      "com.lge.lgdmsgcm",            "com.lge.lgdmsgcm (Software Updates?)",        0,    #-- item.5.4 = Un-Selected by default
+      "com.lge.lgdrm.permission",    "com.lge.lgdrm.permission",                    0,    #-- item.5.5 = Un-Selected by default
+      "com.lge.lgfota.permission",   "com.lge.lgfota.permission",                   0,    #-- item.5.6 = Un-Selected by default
+      "com.lge.permission",          "com.lge.permission (LG API Permissions)",     0,    #-- item.5.7 = Un-Selected by default
+      "Content lock",                "com.lge.privacylock",                         0,    #-- item.5.8 = Un-Selected by default
+	  "Downloads",		             "com.android.providers.downloads.ui",          0,    #-- item.5.9 = Un-Selected by default
+      "DRM Service",                 "com.lge.drmservice",                          0,    #-- item.5.10 = Un-Selected by default
+      "ELTest",                      "com.lge.eltest",                              0,    #-- item.5.11 = Un-Selected by default
+      "FormManager",                 "com.lge.formmanager",                         0,    #-- item.5.12 = Un-Selected by default
+      "Gallery",                     "com.android.gallery3d",                       0,    #-- item.5.13 = Un-Selected by default
+      "GNSS Air Test (CDMA)",        "com.lge.gnss.airtest",                        0,    #-- item.5.14 = Un-Selected by default
+      "GnssTest",                    "com.lge.gnsstest",                            0,    #-- item.5.15 = Un-Selected by default
+      "LG GNSS",                     "com.lge.gnsspostest",                         0,    #-- item.5.16 = Un-Selected by default
+      "com.lge.hiddenmenu - HiddenMenu", "com.lge.hiddenmenu",                      0,    #-- item.5.17 = Un-Selected by default
+      "LG Intelligent Agent",        "com.lge.ia",                     	            0,    #-- item.5.18 = Un-Selected by default
+      "LIA Informant",               "com.lge.ia.task.informant",                   0,    #-- item.5.19 = Un-Selected by default
+      "LIA MrGDBLogger",             "com.lge.ia.task.mrgdblogger",                 0,    #-- item.5.20 = Un-Selected by default
+      "LIA S4URecommender",          "com.lge.ia.task.s4urecommender",              0,    #-- item.5.21 = Un-Selected by default
+      "LG MLT",    	                 "com.lge.mlt",                     	        0,    #-- item.5.22 = Un-Selected by default
+      "LG PC Suite + Service",       "com.lge.pcsyncui, com.lge.sync, USB Autorun ISO", 0,    #-- item.5.23 = Un-Selected by default
+      "LGApduService",               "com.lge.smartcart.apdu.uicc",                 0,    #-- item.5.24 = Un-Selected by default
+      "LGATCMD Service",             "com.lge.android.atservice",                   0,    #-- item.5.25 = Un-Selected by default
+      "??? LGERCS.apk",              "LGERCS.apk",                     	            0,    #-- item.5.26 = Un-Selected by default
+      "??? LGERCSProvider.apk",      "LGERCSProvider.apk",                     	    0,    #-- item.5.27 = Un-Selected by default
+      "??? LGRcsCall.apk",           "LGRcsCall.apk",                     	        0,    #-- item.5.28 = Un-Selected by default
+      "??? LGRCSMessage.apk",        "LGRCSMessage.apk",                     	    0,    #-- item.5.29 = Un-Selected by default
+      "??? LGRCSServices.apk",       "LGRCSServices.apk",                           0,    #-- item.5.30 = Un-Selected by default
+      "License Provider",            "com.lge.eulaprovider",                        0,    #-- item.5.31 = Un-Selected by default
+      "Live Wallpaper Picker",       "com.android.wallpaper.livepicker",            0,    #-- item.5.32 = Un-Selected by default
+      "Lock Screen Settings",        "com.lge.lockscreensettings",                  0,    #-- item.5.33 = Un-Selected by default
+      "Multi-photo",                 "com.lge.livewallpaper.multiphoto",            0,    #-- item.5.34 = Un-Selected by default
+      "??? Phonesky.apk",            "Phonesky.apk",                                0,    #-- item.5.35 = Un-Selected by default
+      "Print Spooler 1",			 "com.android.printspooler",                    0,    #-- item.5.36 = Un-Selected by default
+	  "Quickset SDK",                "com.uei.lg.quicksetsdk.maxq616",              0,    #-- item.5.37 = Un-Selected by default
+	  "Remote support service",      "com.rsupport.rsperm",                         0,    #-- item.5.38 = Un-Selected by default
+      "Settings",                    "com.lge.settings.easy",                       0,    #-- item.5.39 = Un-Selected by default
+      "Shutdown Monitor",            "com.lge.shutdownmonitor",                     0,    #-- item.5.40 = Un-Selected by default
+      "Smart cleaning",              "com.lge.springcleaning",                      0,    #-- item.5.41 = Un-Selected by default
+      "Smart screen",                "com.lge.keepscreenon",                        0,    #-- item.5.42 = Un-Selected by default
+      "SmartShare Beam (WFDS)",      "com.lge.smartsharebeam (WDFS)",               0,    #-- item.5.43 = Un-Selected by default
+      "SmartShare Push",             "com.lge.smartsharepush",                      0,    #-- item.5.44 = Un-Selected by default
+      "SmartShare.Beam",             "itectokyo.wiflus.service",                    0,    #-- item.5.45 = Un-Selected by default
+      "SmartShare.Cloud",            "com.lge.cloudhub",                     	    0,    #-- item.5.46 = Un-Selected by default
+      "SmartShare.DLNA",             "com.lge.smartshare.dlna",                     0,    #-- item.5.47 = Un-Selected by default
+      "SmartShare.MediaServer",      "com.lge.smartshare",                          0,    #-- item.5.48 = Un-Selected by default
+      "SmartShare.Provider",         "com.lge.smartshare.provider",                 0,    #-- item.5.49 = Un-Selected by default
+      "Tags",                        "com.google.android.tag (NFC)",                0,    #-- item.5.50 = Un-Selected by default
+	  "Unified EULA",                "com.lge.eula",                       	        0,    #-- item.5.51 = Un-Selected by default
+      "Video",                       "com.lge.videoplayer",                         0,    #-- item.5.52 = Un-Selected by default
+      "Video Trim",                  "com.lge.videotool",                           0,    #-- item.5.53 = Un-Selected by default
+      "Voice Mate",                  "com.nuance.voicemate",                        0,    #-- item.5.54 = Un-Selected by default
+	  "Voice Recorder",              "com.lge.voicerecorder",                       0,    #-- item.5.55 = Un-Selected by default
+      "WAP Service",                 "com.lge.wapservice",                     	    0,    #-- item.5.56 = Un-Selected by default
+      "Weather",                     "com.lge.sizechangable.weather",               0,    #-- item.5.57 = Un-Selected by default
+      "WeatherPlatform",             "com.lge.sizechangable.weather.platform",      0,    #-- item.5.58 = Un-Selected by default
+      "Weather Theme",               "com.lge.sizechangable.weather.theme.optimus", 0,    #-- item.5.59 = Un-Selected by default
+      "Wfd Service (Qualcomm, WFDS)","com.qualcomm.wfd.service (WFDS)",             0,    #-- item.5.60 = Un-Selected by default
+	  "WfdsService (WFDS)",          "com.lge.wfds.service (WFDS)",                 0,    #-- item.5.61 = Un-Selected by default
+      "Widevine Keybox Test",        "com.lge.wv.hidden",                     	    0     #-- item.5.62 = Un-Selected by default
 
     #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
   );
@@ -989,7 +1296,7 @@ if prop("demo.prop","selected")=="1" then
 
   ###################################################################################################################
   #
-  # DEBLOATER STEP 3 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  # DEBLOATER STEP 4 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
   #
   viewbox(
     #-- Title
@@ -1014,7 +1321,7 @@ if prop("demo.prop","selected")=="1" then
 
   ###################################################################################################################
   #
-  # DEBLOATER STEP 4 - INSTALLATION PROCESS
+  # DEBLOATER STEP 5 - INSTALLATION PROCESS
   #
   setvar("retstatus",
     install(
@@ -1034,7 +1341,7 @@ if prop("demo.prop","selected")=="1" then
 
   ###################################################################################################################
   #
-  # DEBLOATER STEP 5 - ASK If We Want to go back to main menu
+  # DEBLOATER STEP 6 - ASK If We Want to go back to main menu
   #
   checkviewbox(
     #-- Title
