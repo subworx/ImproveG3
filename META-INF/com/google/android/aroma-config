@@ -96,7 +96,7 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "0.3");
+ini_set("rom_version",          "0.4");
 ini_set("rom_author",           "subworx");
 ini_set("rom_device",           "LG G3 D855");
 ini_set("rom_date",             "2014.12.01");
@@ -114,9 +114,9 @@ fontresload( "1", "ttf/Roboto-Regular.ttf", "14" ); #-- Use sets of font (Font F
 include("language_select.edify");
 #include("custombox_test.edify");
 
-###################################################################################################################
+#########################################################################################################
 #
-# STEP 2 - SHOW ROM INFORMATION
+# STEP 1 - SHOW ROM INFORMATION
 #
 viewbox(
   #-- Title
@@ -140,9 +140,9 @@ viewbox(
     "@welcome"
 );
 
-###################################################################################################################
+#########################################################################################################
 #
-# STEP 3 - LICENSE
+# STEP 2 - LICENSE
 #
 agreebox(
   #-- Title
@@ -165,9 +165,9 @@ agreebox(
 );
 
 
-###################################################################################################################
+#########################################################################################################
 #
-# STEP 4 - CHANGELOG
+# STEP 3 - CHANGELOG
 #
 textbox(
   #-- Title
@@ -197,9 +197,9 @@ fontresload( "1", "ttf/Roboto-Regular.ttf", "14" );
 #
 gotolabel("aroma_installer_demo_pos");
 
-###################################################################################################################
+#########################################################################################################
 #
-# STEP 5 - SHOW MENUBOX - AROMA INSTALLER DEMO MENU
+# STEP 4 - SHOW MENUBOX - AROMA INSTALLER DEMO MENU
 #
 menubox(
   #-- Title
@@ -214,30 +214,27 @@ menubox(
   #-- Will be saved in /tmp/aroma/demo.prop
     "demo.prop",
     
-  #-------------------------+-----------------[ Menubox Items ]-------------------------+---------------#
-  # TITLE                   |  SUBTITLE                                                 |   Item Icons  #
-  #-------------------------+-----------------------------------------------------------+---------------#
+  #-------------------------+-----------[ Menubox Items ]-------------------+---------------#
+  # TITLE                   |  SUBTITLE                                     |   Item Icons  #
+  #-------------------------+-----------------------------------------------+---------------#
   
-    "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                                  "@customize",   #-- selected = 1
-	#"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 									 "@customize",   #-- selected = 
-	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",									 "@customize",	 #-- selected = 
-	#"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",									 "@customize",	 #-- selected = 
-	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",                					 "@info"         #-- selected = 2
+    "<~mainmenu.removeapps>", "<~mainmenu.removedesc>",                      "@customize",   #-- selected = 1
+	#"<~mainmenu.sdfix>",	  "<~mainmenu.sdfixdesc>",						 "@customize",	 #-- selected = 
+	#"<~mainmenu.cttmod>",     "<~mainmenu.cttdesc>", 						 "@customize",   #-- selected = 
+	#"<~mainmenu.sharp>",	  "<~mainmenu.sharpdesc>",						 "@customize",	 #-- selected = 
+	"<~mainmenu.systeminfo>", "<~mainmenu.systemdesc>",         			 "@info"         #-- selected = 2
 );
 
 
-###################################################################################################################
-#                                                                                                                 #
-#                                         AROMA INSTALLER DEMO                                                    #
-#                                                                                                                 #
-###################################################################################################################
-
-##-- insert 2+3
-##-- possibly include
+#########################################################################################################
+#                                                                                                       #
+#                                        STEP 5 - ACTIONS                                               #
+#                                                                                                       #
+#########################################################################################################
 
 ##--------------------------------------
 #
-# System Info Demo
+# System Info Demo / selected 5
 #
 if prop("demo.prop","selected")=="2" then
 
@@ -284,7 +281,7 @@ if prop("demo.prop","selected")=="2" then
       "System Information",
     
     #-- Subtitle
-      "Current system information may not supported in all devices.",
+      "Current system information may not be supported in all devices.",
     
     #-- Icon
       "@info",
@@ -310,193 +307,226 @@ if prop("demo.prop","selected")=="2" then
   
 endif;
 
-
-###################################################################################################################
-#                                                                                                                 #
-#                                           INSTALLATION DEMO                                                     #
-#                                                                                                                 #
-###################################################################################################################
-
-###################################################################################################################
+##--------------------------------------
 #
-# STEP x - INSTRUCTIONS
+# Oversharpening Fix / selected 4
 #
-textbox(
+#if prop("demo.prop","selected")=="4" then
+#  include("sharpening.edify");
+#endif;
+
+##--------------------------------------
+#
+# Temperature Mod / selected 3
+#
+#if prop("demo.prop","selected")=="3" then
+#  include("temperature.edify");
+#endif;
+
+##--------------------------------------
+#
+# SD Fix / selected 2
+#
+#if prop("demo.prop","selected")=="2" then
+#  include("sdfix.edify");
+#endif;
+
+##--------------------------------------
+#
+# Debloater / selected 1 - if necessary?
+#
+if prop("demo.prop","selected")=="1" then
+  #########################################################################################################
+  #                                                                                                       #
+  #                                           DEBLOATER                                                   #
+  #                                                                                                       #
+  #########################################################################################################
+
+  #########################################################################################################
+  #
+  # DEBLOATER STEP 1 - INSTRUCTIONS
+  #
+  textbox(
+    #-- Title
+      "<~debloatinstructions.title>",
+  
+    #-- Subtitle
+      "<~debloatinstructions.desc>",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Arg 4
+      "<~debloatinstructions.warning>"
+  );
+
+  #########################################################################################################
+  #
+  # DEBLOATER STEP 2 - CUSTOMIZE
+  #
+  checkbox(
   #-- Title
-    "<~instructions.title>",
+    "<~debloatcustomize.title>",
   
-  #-- Subtitle
-    "<~instructions.desc>",
+  #-- Sub Title
+    "<~debloatcustomize.desc>",
   
-  #-- Icon
-    "@alert",
+  #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
+    "@personalize",
   
-  #-- Arg 4
-    "<~instructions.warning>"
-);
+  #-- Will be saved in /tmp/aroma/customize.prop
+    "customize.prop",
+  
+    #----------------------------[ Checkbox With Group ]------------------------------------#
+    # TITLE               | SUBTITLE                                        | Initial Value #
+    #---------------------+-------------------------------------------------+---------------#
 
-###################################################################################################################
-#
-# STEP 6 - CUSTOMIZE
-#
-checkbox(
-#-- Title
-  "<~customize.title>",
+    "<#0f0><~debloatcustomize.10></#>", "", 					                2,  #-- Group 1. key = "item.1.x"
+	  "Accessibility",      "<~debloatcustomize.11>",                         0,    #-- item.1.1 = Un-Selected by default
+      "Answer me",          "<~debloatcustomize.12>",         				0,    #-- item.1.2 = Un-Selected by default
+	  "EasyHome",           "<~debloatcustomize.13>",      					0,    #-- item.1.3 = Un-Selected by default
+	  "E-Mail",             "<~debloatcustomize.14>",                         0,    #-- item.1.4 = Un-Selected by default
+	  "Face Unlock",        "<~debloatcustomize.15>",                         0,    #-- item.1.5 = Un-Selected by default
+	  "File Manager",       "<~debloatcustomize.16>",                			0,    #-- item.1.6 = Un-Selected by default
+	  "Home selector",	  "<~debloatcustomize.17>",                         0,    #-- item.1.7 = Un-Selected by default
+	  "LG Backup",		  "<~debloatcustomize.18>",    						0,    #-- item.1.8 = Un-Selected by default
+	  "LG Health",		  "<~debloatcustomize.19>",				   			0,	  #-- item.1.9 = Un-Selected by default
+	  "LG Keyboard Black Theme", "<~debloatcustomize.110>",					0,	  #-- item.1.10 = Un-Selected by default
+	  "LGSearchWidgetProvider", "<~debloatcustomize.111>",					0,	  #-- item.1.11 = Un-Selected by default
+	  "McAfee Security",    "<~debloatcustomize.112>", 						0,	  #-- item.1.12 = Un-Selected by default
+	  "Music widget",		  "<~debloatcustomize.113>",                     	0,	  #-- item.1.13 = Un-Selected by default
+	  "Music app",		  "<~debloatcustomize.114>",                        0,	  #-- item.1.14 = Un-Selected by default
+ 	  "Smart Notice",		  "<~debloatcustomize.115>",						0,    #-- item.1.15 = Un-Selected by default
+ 	  "Smart Tips",		  "<~debloatcustomize.116>",						0,    #-- item.1.16 = Un-Selected by default
   
-#-- Sub Title
-  "<~customize.desc>",
+    "<#0080ff><~debloatcustomize.20></#>", "", 								2,  #-- Group 2. key = "item.2.x"
+	  "Home",				  "<~debloatcustomize.21>",							0,    #-- item.2.1 = Un-Selected by default
+	  "Home Theme Optimus", "<~debloatcustomize.22>",							0,    #-- item.2.2 = Un-Selected by default
+	  "Internet",           "<~debloatcustomize.23>",               			0,    #-- item.2.3 = Un-Selected by default
+	  "LG Keyboard",        "<~debloatcustomize.24>",   						0,    #-- item.2.4 = Un-Selected by default
+      "LG Keyboard XT9",	  "<~debloatcustomize.25>",							0,	  #-- item.2.5 = Un-Selected by default
   
-#-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
-  "@personalize",
-  
-#-- Will be saved in /tmp/aroma/customize.prop
-  "customize.prop",
-  
-  #------------------------------------------------[ Checkbox Without Group ]----------------------------------------------#
-  # TITLE            |  SUBTITLE                                                                           | Initial Value #
-  #------------------+-------------------------------------------------------------------------------------+---------------#
+    "<#0f0><~debloatcustomize.30></#>", "",                                   2,  #-- Group 3. key = "item.3.x"
+	  "Chrome",             "<~debloatcustomize.31>",                         0,    #-- item.3.1 = Un-Selected by default
+	  "Drive",              "<~debloatcustomize.32>",                         0,    #-- item.3.2 = Un-Selected by default
+	  "Gmail",              "<~debloatcustomize.33>",                         0,    #-- item.3.3 = Un-Selected by default
+	  "Google Play Books",  "<~debloatcustomize.34>",                         0,    #-- item.3.4 = Un-Selected by default
+	  "Google Play Games",  "<~debloatcustomize.35>",                         0,    #-- item.3.5 = Un-Selected by default
+	  "Google Play Movies", "<~debloatcustomize.36>",                         0,    #-- item.3.6 = Un-Selected by default
+	  "Google Play Music",  "<~debloatcustomize.37>",       				   	0,    #-- item.3.7 = Un-Selected by default
+	  "Google Play Newsstand", "<~debloatcustomize.38>",                      0,    #-- item.3.8 = Un-Selected by default
+	  "Google Text-to-speech Engine", "<~debloatcustomize.39>",				0,    #-- item.3.9 = Un-Selected by default
+	  "Google+",            "<~debloatcustomize.310>",                        0,    #-- item.3.9 = Un-Selected by default
+	  "Hangouts", 	      "<~debloatcustomize.311>",                        0,    #-- item.3.10 = Un-Selected by default
+	  "Maps",               "<~debloatcustomize.312>",                        0,    #-- item.3.11 = Un-Selected by default
+	  "Street View",        "<~debloatcustomize.313>",                        0,    #-- item.3.12 = Un-Selected by default
+	  "TalkBack", 	      "<~debloatcustomize.314>",                        0,    #-- item.3.13 = Un-Selected by default
+      "YouTube",			  "<~debloatcustomize.315>",						0,    #-- item.3.14 = Un-Selected by default
 
-  "<#0f0><~customize.10></#>", "", 													                 2,  #-- Group 1. key = "item.1.x"
-	"Accessibility",      "<~customize.11>",                                                                 0,    #-- item.1.1 = Un-Selected by default
-    "Answer me",          "<~customize.12>",         														 0,    #-- item.1.2 = Un-Selected by default
-	"EasyHome",           "<~customize.13>",      										                     0,    #-- item.1.3 = Un-Selected by default
-	"E-Mail",             "<~customize.14>",                                                                 0,    #-- item.1.4 = Un-Selected by default
-	"Face Unlock",        "<~customize.15>",                                                                 0,    #-- item.1.5 = Un-Selected by default
-	"File Manager",       "<~customize.16>",                											     0,    #-- item.1.6 = Un-Selected by default
-	"Home selector",	  "<~customize.17>",                                                				 0,    #-- item.1.7 = Un-Selected by default
-	"LG Backup",		  "<~customize.18>",    															 0,    #-- item.1.8 = Un-Selected by default
-	"LG Health",		  "<~customize.19>",				   												 0,	   #-- item.1.9 = Un-Selected by default
-	"LG Keyboard Black Theme", "<~customize.110>",														     0,	   #-- item.1.10 = Un-Selected by default
-	"LGSearchWidgetProvider", "<~customize.111>",															 0,	   #-- item.1.11 = Un-Selected by default
-	"McAfee Security",    "<~customize.112>", 														   		 0,	   #-- item.1.12 = Un-Selected by default
-	"Music widget",		  "<~customize.113>",                     									   		 0,	   #-- item.1.13 = Un-Selected by default
-	"Music app",		  "<~customize.114>",                              									 0,	   #-- item.1.14 = Un-Selected by default
-	"Smart Notice",		  "<~customize.115>",																 0,    #-- item.1.15 = Un-Selected by default
-	"Smart Tips",		  "<~customize.116>",														         0,    #-- item.1.16 = Un-Selected by default
-  
-  "<#0080ff><~customize.20></#>", "", 									 	                                 2,  #-- Group 2. key = "item.2.x"
-	"Home",				  "<~customize.21>",														         0,    #-- item.2.1 = Un-Selected by default
-	"Home Theme Optimus", "<~customize.22>",																 0,    #-- item.2.2 = Un-Selected by default
-	"Internet",           "<~customize.23>",               													 0,    #-- item.2.3 = Un-Selected by default
-	"LG Keyboard",        "<~customize.24>",   																 0,    #-- item.2.4 = Un-Selected by default
-	"LG Keyboard XT9",	  "<~customize.25>",																 0,	   #-- item.2.5 = Un-Selected by default
-  
-  "<#0f0><~customize.30></#>", "",                                       							 2,  #-- Group 3. key = "item.3.x"
-	"Chrome",             "<~customize.31>",                                                    			 0,    #-- item.3.1 = Un-Selected by default
-	"Drive",              "<~customize.32>",                                                                 0,    #-- item.3.2 = Un-Selected by default
-	"Gmail",              "<~customize.33>",                                                                 0,    #-- item.3.3 = Un-Selected by default
-	"Google Play Books",  "<~customize.34>",                                                                 0,    #-- item.3.4 = Un-Selected by default
-	"Google Play Games",  "<~customize.35>",                                         				   		 0,    #-- item.3.5 = Un-Selected by default
-	"Google Play Movies", "<~customize.36>",                            					   				 0,    #-- item.3.6 = Un-Selected by default
-	"Google Play Music",  "<~customize.37>",       				   											 0,    #-- item.3.7 = Un-Selected by default
-	"Google Play Newsstand", "<~customize.38>",                                                              0,    #-- item.3.8 = Un-Selected by default
-	"Google Text-to-speech Engine", "<~customize.39>",														 0,    #-- item.3.9 = Un-Selected by default
-	"Google+",            "<~customize.310>",                                                     		   	 0,    #-- item.3.9 = Un-Selected by default
-	"Hangouts", 	      "<~customize.311>",                                      				   			 0,    #-- item.3.10 = Un-Selected by default
-	"Maps",               "<~customize.312>",                                                  	   			 0,    #-- item.3.11 = Un-Selected by default
-	"Street View",        "<~customize.313>",                                                   			 0,    #-- item.3.12 = Un-Selected by default
-	"TalkBack", 	      "<~customize.314>",                                           			   		 0,    #-- item.3.13 = Un-Selected by default
-	"YouTube",			  "<~customize.315>",																 0,    #-- item.3.14 = Un-Selected by default
+    "<#0000ff><~debloatcustomize.40></#>", "",  								2,  #-- Group 4. key = "item.4.x"
+	  "App Updates",        "<~debloatcustomize.41>",       					0,    #-- item.4.1 = Un-Selected by default
+	  "Google Search",	  "<~debloatcustomize.42>",							0,    #-- item.4.2 = Un-Selected by default
+	  "LGInstallService",   "<~debloatcustomize.43>",							0,    #-- item.4.3 = Un-Selected by default
+	  "Software Update",	  "<~debloatcustomize.44>",				   			0,    #-- item.4.4 = Un-Selected by default
+	  "Update Center",	  "<~debloatcustomize.45>",							0,	  #-- item.4.5 = Un-Selected by default
 
-  "<#0000ff><~customize.40></#>", "",  															             2,  #-- Group 4. key = "item.4.x"
-	"App Updates",        "<~customize.41>",       															 0,    #-- item.4.1 = Un-Selected by default
-	"Google Search",	  "<~customize.42>",								   								 0,    #-- item.4.2 = Un-Selected by default
-	"LGInstallService",   "<~customize.43>",																 0,    #-- item.4.3 = Un-Selected by default
-	"Software Update",	  "<~customize.44>",				   												 0,    #-- item.4.4 = Un-Selected by default
-	"Update Center",	  "<~customize.45>",																 0,	   #-- item.4.5 = Un-Selected by default
+    "<#0f0><~debloatcustomize.50></#>", "",	                				2,  #-- Group 5. key = "item.5.x"
+      "Boot Animation",	  "<~debloatcustomize.51>",                     	0,    #-- item.5.1 = Un-Selected by default
+	  "Shutdown Animation", "<~debloatcustomize.52>",                         0,    #-- item.5.2 = Un-Selected by default
+	  "Boot Sound",		  "<~debloatcustomize.53>",							0,    #-- item.5.3 = Un-Selected by default
+	  "Shutdown Sound",	  "<~debloatcustomize.54>",							0,    #-- item.5.4 = Un-Selected by default
+	  "Stock music",	      "<~debloatcustomize.55>",							0     #-- item.5.5 = Un-Selected by default
 
-  "<#0f0><~customize.50></#>", "",	                												 2,  #-- Group 5. key = "item.5.x"
-    "Boot Animation",	  "<~customize.51>",                     											 0,    #-- item.5.1 = Un-Selected by default
-	"Shutdown Animation", "<~customize.52>",                                                      			 0,    #-- item.5.2 = Un-Selected by default
-	"Boot Sound",		  "<~customize.53>",															     0,    #-- item.5.3 = Un-Selected by default
-	"Shutdown Sound",	  "<~customize.54>",														   		 0,    #-- item.5.4 = Un-Selected by default
-	"Stock music",	      "<~customize.55>",									   							 0     #-- item.5.5 = Un-Selected by default
+    #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
+  );
+
+
+  ##
+  #
+  # Next Screen is Installation UI, So change the next button text to "Install Now"
+  #
+  ini_set("text_next", "<~debloatcustomize.nextbutton>");
+  ini_set("icon_next", "@installbutton");
+
+  ###################################################################################################################
+  #
+  # DEBLOATER STEP 3 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
+  #
+  viewbox(
+    #-- Title
+      "<~debloatconfirmation.title>",
+
+    #-- Text
+      "<~debloatconfirmation.text>",
+
+    #-- Icon
+      "@install"
+  );
+
+  ##
+  #
+  # Next Button in successfull installation should be back to "Next >"
+  #
+  ini_set("text_next", "<~text_next>");
+  ini_set("icon_next", "@next");
+
+  #-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
+  restotmp("exec_demo/sleep","sleep");
+
+  ###################################################################################################################
+  #
+  # DEBLOATER STEP 4 - INSTALLATION PROCESS
+  #
+  setvar("retstatus",
+    install(
+	  #-- Title
+        "<~debloatinstall.title>",
 	
+	  #-- Installation Process message
+	    "<b>"+ini_get("rom_name")+"</b> <~debloatinstall.desc>",
 	
-  #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
-);
-
-
-##
-#
-# Next Screen is Installation UI, So change the next button text to "Install Now"
-#
-ini_set("text_next", "<~customize.nextbutton>");
-ini_set("icon_next", "@installbutton");
-
-###################################################################################################################
-#
-# STEP 9 - MAKE SURE USER KNOW THAT NEXT STEP WAS INSTALLATION PROCESS
-#
-viewbox(
-  #-- Title
-    "<~confirmation.title>",
-
-  #-- Text
-    "<~confirmation.text>",
-
-  #-- Icon
-    "@install"
-);
-
-##
-#
-# Next Button in successfull installation should be back to "Next >"
-#
-ini_set("text_next", "<~text_next>");
-ini_set("icon_next", "@next");
-
-#-- Extract sleep to /tmp/aroma/sleep. It will be used in updater-script for testing wait script
-restotmp("exec_demo/sleep","sleep");
-
-
-###################################################################################################################
-#
-# STEP 10 - INSTALLATION PROCESS
-#
-setvar("retstatus",
-  install(
-	#-- Title
-      "",
+	  #-- Installation Icon
+        "@install",
 	
-	#-- Installation Process message
-	  "<b>"+ini_get("rom_name")+"</b> <~install.desc>",
-	
-	#-- Installation Icon
-      "@install",
-	
-	#-- Installation Finish Message
-      "<~install.finish>"
-  )
-);
+	  #-- Installation Finish Message
+        "<~debloatinstall.finish>"
+    )
+  );
 
-#
-# ASK If We Want to back to demo main menu
-#
-checkviewbox(
-  #-- Title
-    "<~postinstall.title>",
+  ###################################################################################################################
+  #
+  # DEBLOATER STEP 5 - ASK If We Want to back to demo main menu
+  #
+  checkviewbox(
+    #-- Title
+      "<~debloatpostinstall.title>",
   
-  #-- Text
-    "<~postinstall.text>",
+    #-- Text
+      "<~debloatpostinstall.text>",
 	
-  #-- Icon
-    "@welcome",
+    #-- Icon
+      "@welcome",
 
-  #-- Checkbox Text
-    "<~postinstall.checkbox>",
+    #-- Checkbox Text
+      "<~debloatpostinstall.checkbox>",
 
-  #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
-    "0",
+    #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+      "0",
 
-  #-- Save checked value in variable "reboot_it" (Optional)
-    "goto_mainmenu"
-);
-if
-  getvar("goto_mainmenu")=="1"
-then
-  goto("aroma_installer_demo_pos");
+    #-- Save checked value in variable "reboot_it" (Optional)
+      "goto_mainmenu"
+  );
+  if
+    getvar("goto_mainmenu")=="1"
+  then
+    goto("aroma_installer_demo_pos");
+  endif;
+
 endif;
+##########
+#
+# END DEBLOATER
+#
 
 
 
@@ -507,9 +537,9 @@ endif;
 ini_set("text_next", "<~text_finish>");
 ini_set("icon_next", "@finish");
 
-###################################################################################################################
+#########################################################################################################
 #
-# STEP 11 - FINISH MESSAGE, Add Checkbox to Reboot or No. Save in "reboot_it" variable
+# STEP 6 - FINISH MESSAGE, Add Checkbox to Reboot or No. Save in "reboot_it" variable
 #
 # You can use return value or "reboot_it" variable to retrive checkbox value
 # Example:

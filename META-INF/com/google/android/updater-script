@@ -68,7 +68,7 @@
 # in real installation, you don't need it.... so delete the lines
 #
 #
-ui_print("Beginning with Debloating process.");
+ui_print("Beginning with requested process.");
 ui_print(" ");
 ui_print(" ");
 
@@ -82,11 +82,18 @@ run_program("/sbin/busybox", "mount", "/data");
 set_progress(0.1);
 ui_print("  Mounting /system");
 run_program("/sbin/busybox", "mount", "/system");
+ui_print(" ");
 
-ui_print("@Removing Packages");
-show_progress(0.8, "-11400"); #-- 38 package * 300ms per package = 11400ms
-##---- Customize Packages
-ui_print("@ Removing Selected Safe Packages");
+#
+#-- big if #1 for debloating script
+#
+if
+  file_getprop("/tmp/aroma/demo.prop","selected") == "1"
+then
+
+#  ui_print("@Removing Packages");
+  show_progress(0.8, "-5000");
+  ui_print("@ Removing Selected Safe Packages");
 
 ###
 # check for delete files in /data/app with titanium help
@@ -276,6 +283,7 @@ ui_print("@ Removing Selected Safe Packages");
 	  delete_recursive("/data/data/com.lge.doyouknow");
     endif;
 
+ui_print(" ");
 ui_print("@ Removing Selected Safe with Replacement Packages");
 
 	# Home
@@ -338,7 +346,7 @@ ui_print("@ Removing Selected Safe with Replacement Packages");
 	  delete_recursive("/data/data/com.lge.ime.dictionary.xt9");
     endif;
 	
-	
+ui_print(" ");	
 ui_print("@ Removing Selected Google Packages");
 	
 	# Chrome
@@ -504,7 +512,8 @@ ui_print("@ Removing Selected Google Packages");
 	  delete("/system/app/YouTube.odex");
 	  delete_recursive("/data/data/com.google.android.youtube");
     endif;
-	
+
+ui_print(" ");	
 ui_print("@ Removing Selected Potentially Unsafe Packages");
 	
 	# App Updates
@@ -564,6 +573,7 @@ ui_print("@ Removing Selected Potentially Unsafe Packages");
 	  delete_recursive("/data/data/com.lge.updatecenter");
     endif;
 
+ui_print(" ");	
 ui_print("@ Removing Selected Animations");
 
 	# Boot Animation
@@ -612,11 +622,45 @@ ui_print("@ Removing Selected Animations");
 	#  #delete(lgsound2);
 	#  #delete(lgsound3);
 	#endif;
-	
-#--- END OF Customize
+
+endif;
+
+#
+#-- END OF big if #1
+#
+
 ui_print(" ");
 
-#-- 2nd big 'if' for 'ctt mod'
+#
+#-- 2nd big 'if' for sd fix
+#
+
+#if
+#  file_getprop("/tmp/aroma/demo.prop","selected") == "2"
+#then
+#  ui_print("Applying SD card fix");
+#endif;
+
+#
+#-- 3rd big 'if' for ctt mod
+#
+
+#if
+#  file_getprop("/tmp/aroma/demo.prop","selected") == "3"
+#then
+#  ui_print("Applying CPU Thermal Throttling Mod");
+#endif;
+
+#
+#-- 4th big 'if' for oversharpening mod
+#
+
+#if
+#  file_getprop("/tmp/aroma/demo.prop","selected") == "4"
+#then
+#  ui_print("Applying Oversharpening Fix");
+#endif;
+
 
 #-- Kernel
 #ui_print("@Kernel & Mods");
@@ -640,7 +684,6 @@ ui_print(" ");
 #run_program("/tmp/aroma/sleep","500");
 #set_progress(0.93);
 
-#-- 3rd big 'if' for oversharpening mod
 
 #-- Boot Animation
 #ui_print(" Boot Animation selected = "+file_getprop("/tmp/aroma/mods.prop","selected.2"));
@@ -680,6 +723,6 @@ run_program("/sbin/busybox", "umount", "/system");
 #run_program("/sbin/busybox", "umount", "/cust");
 
 #-- Finish
-#ui_print(" ");
+ui_print(" ");
 ui_print("@Finished");
 set_progress(1);

@@ -54,6 +54,9 @@ Thanks for using AROMA Installer
 themes.title=Select Theme
 themes.desc=Please select installer theme that you want to use in this installation test:
 
+#
+#-- Welcome page
+#
 welcome.title=Welcome
 welcome.text1=Welcome to 
 welcome.text2=This tool removes system apps and tweaks other things. It is only tested with D855 (international unlocked) on 10L stock rooted ROM.
@@ -62,17 +65,26 @@ welcome.updated=Updated
 welcome.creator=Creator
 welcome.next=Press Next to Continue the process...
 
+#
+#-- Terms/Conditions page
+#
 terms.title=Terms and Conditions
 terms.desc=Please read carefully the Terms and Conditions Below.
 terms.check=I Agree with these Terms and Conditions...
 terms.confirm=Please check the agreement...
 
+#
+#-- Changelog page
+#
 changelog.title=Changelog
 changelog.desc=ImproveG3 Changelog
 
+#
+#-- Main menu
+#
 mainmenu.title=ImproveG3
 mainmenu.desc=Select your action
-mainmenu.removeapps=Remove apps
+mainmenu.removeapps=Debloat
 mainmenu.removedesc=Select which system apps to remove. USE AT YOUR OWN RISK!
 mainmenu.systeminfo=System Info
 mainmenu.systemdesc=Get and show device/partition informations
@@ -80,10 +92,18 @@ mainmenu.cttmod=CPU Thermal Throttling Mod
 mainmenu.cttdesc=Changes the temperature at which the device clocks down. Created by <#00f>Robshr</#> on xda.
 mainmenu.sharp=Sharpening Mod
 mainmenu.sharpdesc=Changes/removes screen oversharpening with a kernel patch. Created by <#00f>Skin1980</#> on xda. Kernel must be Bump!ed! Not yet implemented.
- 
-instructions.title=Instructions
-instructions.desc=Instructions and Warnings
-instructions.warning=<#0f0><b>Safe</b></#>: Apps which are safe to remove. Do NOT remove anything if you use it!\
+
+#################################
+#
+# DEBLOATER
+#
+
+#
+#-- Debloater instructions
+#
+debloatinstructions.title=Debloater Instructions
+debloatinstructions.desc=Instructions and Warnings
+debloatinstructions.warning=<#0f0><b>Safe</b></#>: Apps which are safe to remove. Do NOT remove anything if you use it!\
 <#0080ff><b>Safe with Alternative</b></#>: Safe to remove, but have a replacement installed.\
 <#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store.\
 <#0000ff><b>Potentially unsafe</b></#>: Deleting these can or will have side-effects.\
@@ -91,65 +111,71 @@ instructions.warning=<#0f0><b>Safe</b></#>: Apps which are safe to remove. Do NO
 \
 Please get in touch with me (subworx @ xda, German/English) if you have issues or you know more APKs which can be removed without side-effects.
 
-customize.title=Select apps to remove
-customize.desc=Select the apps you want to be removed.\
+#
+#-- Debloater customizations
+#
+debloatcustomize.title=Select apps to remove
+debloatcustomize.desc=Select the apps you want to be removed.\
 The files will be <b>deleted</b> from the system partition.\
 There is no way to bring these back except flashing a ROM.
-customize.10=Safe
-customize.11=More accessibility options than stock.
-customize.12=Gesture answering (move phone to head)
-customize.13=LG EasyHome dumbed down home screen
-customize.14=LG Email Client
-customize.15=Face Unlock app. Settings menu will ask to install another app if you want to use Face Unlock
-customize.16=LG simple file browser
-customize.17=Sets the default home app. Can be done manually by clearing app defaults in Settings -> Apps -> (launcher app)
-customize.18=Removal causes Settings -> Backup and Restore -> LG Backup to disapper
-customize.19=LG Health tracker, removing renders half the LG full page widget useless
-customize.110=Black theme for LG stock keyboard
-customize.111=LG Search widget
-customize.112=McAfee security software
-customize.113=LG Music player widget
-customize.114=LG Music player
-customize.115=Home screen widget "Smart Notice". Does not work in other launchers like Nova.
-customize.116=LG usage tips app. Removing makes half the LG homescreen thingie (with the health part) useless
-customize.20=Safe with Alternative
-customize.21=Default LG Launcher
-customize.22=Optimus theme for the LG Home launcher. Better set new default before removal. Do NOT remove if you use LG Home.
-customize.23=Stock browser. Only remove if e.g. Chrome or Opera is installed.
-customize.24=Stock LG keyboard. Better set new default before removal. Only remove if e.g. Swype or AOSP Keyboard is installed.
-customize.25=LG Keyboard XT9 autocorrect. Can most probably go if LG Keyboard is removed as well.
-customize.30=Google Apps
-customize.31=Browser
-customize.32=Online storage
-customize.33=Mail client
-customize.34=eBook app
-customize.35=Share achievements etc
-customize.36=Access your bought movies directly
-customize.37=Alternative music player with access to your cloud music
-customize.38=Magazines/News
-customize.39=Render text to speech
-customize.310=Social network client
-customize.311=Telephony and messaging app
-customize.312=Maps, navigation and more
-customize.313=Maps addin, enables Street View
-customize.314=Accessibility assistance, e.g. speech output
-customize.315=YouTube client
-customize.40=Potentially unsafe
-customize.41=LG App updates. If you want to download/install LG Apps, do NOT remove this
-customize.42=According to XDA, this can lead to bootloops after a factory reset. I don't intend on resetting my device, so I cannot tell if it is harmful. Can of course be reinstalled into userspace via the Play Store
-customize.43=Possible security risk as reported on XDA, possibly fixed - anyway, required for App Updater to download and install LG apps. Possibly also for Software Updates (OTA)
-customize.44=Manages OTA Updates. Normally with root you would not want this.
-customize.45=LG Updater, found at Settings -> About Phone -> Software Updates, used for launching App Updater and Software Updater. Causes FC in settings if this is removed but the other updaters are left intact.
-customize.50=Remove Animations
-customize.51=Remove LG boot animation, should show stock Android animation
-customize.52=Remove LG shutdown animation
-customize.53=Remove LG boot sound
-customize.54=Remove LG shutdown sound
-customize.55=Remove three music files that take up space
-customize.nextbutton=Remove Selected
+debloatcustomize.10=Safe
+debloatcustomize.11=More accessibility options than stock.
+debloatcustomize.12=Gesture answering (move phone to head)
+debloatcustomize.13=LG EasyHome dumbed down home screen
+debloatcustomize.14=LG Email Client
+debloatcustomize.15=Face Unlock app. Settings menu will ask to install another app if you want to use Face Unlock
+debloatcustomize.16=LG simple file browser
+debloatcustomize.17=Sets the default home app. Can be done manually by clearing app defaults in Settings -> Apps -> (launcher app)
+debloatcustomize.18=Removal causes Settings -> Backup and Restore -> LG Backup to disapper
+debloatcustomize.19=LG Health tracker, removing renders half the LG full page widget useless
+debloatcustomize.110=Black theme for LG stock keyboard
+debloatcustomize.111=LG Search widget
+debloatcustomize.112=McAfee security software
+debloatcustomize.113=LG Music player widget
+debloatcustomize.114=LG Music player
+debloatcustomize.115=Home screen widget "Smart Notice". Does not work in other launchers like Nova.
+debloatcustomize.116=LG usage tips app. Removing makes half the LG homescreen thingie (with the health part) useless
+debloatcustomize.20=Safe with Alternative
+debloatcustomize.21=Default LG Launcher
+debloatcustomize.22=Optimus theme for the LG Home launcher. Better set new default before removal. Do NOT remove if you use LG Home.
+debloatcustomize.23=Stock browser. Only remove if e.g. Chrome or Opera is installed.
+debloatcustomize.24=Stock LG keyboard. Better set new default before removal. Only remove if e.g. Swype or AOSP Keyboard is installed.
+debloatcustomize.25=LG Keyboard XT9 autocorrect. Can most probably go if LG Keyboard is removed as well.
+debloatcustomize.30=Google Apps
+debloatcustomize.31=Browser
+debloatcustomize.32=Online storage
+debloatcustomize.33=Mail client
+debloatcustomize.34=eBook app
+debloatcustomize.35=Share achievements etc
+debloatcustomize.36=Access your bought movies directly
+debloatcustomize.37=Alternative music player with access to your cloud music
+debloatcustomize.38=Magazines/News
+debloatcustomize.39=Render text to speech
+debloatcustomize.310=Social network client
+debloatcustomize.311=Telephony and messaging app
+debloatcustomize.312=Maps, navigation and more
+debloatcustomize.313=Maps addin, enables Street View
+debloatcustomize.314=Accessibility assistance, e.g. speech output
+debloatcustomize.315=YouTube client
+debloatcustomize.40=Potentially unsafe
+debloatcustomize.41=LG App updates. If you want to download/install LG Apps, do NOT remove this
+debloatcustomize.42=According to XDA, this can lead to bootloops after a factory reset. I don't intend on resetting my device, so I cannot tell if it is harmful. Can of course be reinstalled into userspace via the Play Store
+debloatcustomize.43=Possible security risk as reported on XDA, possibly fixed - anyway, required for App Updater to download and install LG apps. Possibly also for Software Updates (OTA)
+debloatcustomize.44=Manages OTA Updates. Normally with root you would not want this.
+debloatcustomize.45=LG Updater, found at Settings -> About Phone -> Software Updates, used for launching App Updater and Software Updater. Causes FC in settings if this is removed but the other updaters are left intact.
+debloatcustomize.50=Remove Animations
+debloatcustomize.51=Remove LG boot animation, should show stock Android animation
+debloatcustomize.52=Remove LG shutdown animation
+debloatcustomize.53=Remove LG boot sound
+debloatcustomize.54=Remove LG shutdown sound
+debloatcustomize.55=Remove three music files that take up space
+debloatcustomize.nextbutton=Remove Selected
 
-confirmation.title=Ready to Remove
-confirmation.text=The wizard is ready to REMOVE the selected apps.\
+#
+#-- Debloater confirmation
+#
+debloatconfirmation.title=Ready to Remove
+debloatconfirmation.text=The wizard is ready to REMOVE the selected apps.\
 \
 Press <b>Remove Selected</b> to begin.\
 \
@@ -160,19 +186,32 @@ MAKE SURE YOU HAVE A WORKING NANDROID BACKUP BEFORE CONTINUING\
 </b></#>\
 If you want to review or change any of your settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit the wizard.
 
-install.title=Removing
-install.desc=removes stuff.\
+#
+#-- Debloater installation
+#
+debloatinstall.title=Removing
+debloatinstall.desc=removes stuff.\
 \
 This may take a bit.
-install.finish=Apps successfully removed. Press Next to continue.
+debloatinstall.finish=Apps successfully removed. Press Next to continue.
 
-postinstall.title=Post Debloating
-postinstall.text=Debloating Finished. Do you want to go back to Main Menu or finish?
-postinstall.checkbox=Back To Main Menu.
+#
+#-- Debloater installation finished
+#
+debloatpostinstall.title=Post Debloating
+debloatpostinstall.text=Debloating Finished. Do you want to go back to Main Menu or finish?
+debloatpostinstall.checkbox=Back To Main Menu.
+#################################
+#
+# END DEBLOATER
+#
 
-finished.title=Debloating completed
-finished.text1=<#0f0><b>Congratulation...</b></#>
-finished.text2=</b> has debloated your device.
+#
+#-- Final dialog
+#
+finished.title=Process completed
+finished.text1=<#0f0><b>Congratulations...</b></#>
+finished.text2=</b> has finished making changes to your device.
 finished.installer=Installer Status
 finished.reboot=Reboot your device now
 
