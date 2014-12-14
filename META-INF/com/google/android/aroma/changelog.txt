@@ -1,4 +1,6 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>0.7 - 2014.12.01</b>
+<*>added approximate file sizes in Debloater module</*>
 <b>0.6 - 2014.12.01</b>
 <*>CPU Temperature Throttling Mod by <#00f>Robshr</#> on xda</*>
 <*>Removed sleep(300) on Debloating %)</*>
