@@ -1,4 +1,6 @@
 <b><#0f0>ImproveG3 Changes</#></b>
+<b>1.1 - 2014.12.??             </b>
+<*>added License to root of zip</*>
 <b>1.0 - 2014.12.14</b>
 <*>Added all media (boot/shutdown animations/sound, system/alarm/ringtone/notifications) into extra section for removal</*>
 <*>Merged LG PC Sync and PC Sync Service into one entry, added the USB Autorun Image that installs the Sync software on PC.</*>
