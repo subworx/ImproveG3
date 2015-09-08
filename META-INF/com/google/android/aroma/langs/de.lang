@@ -46,7 +46,7 @@ Benutze Backslash, bevor du eine neue Zeile beginnst \
 \
 Möglich sind auch <b> Formatierungen </b> innerhalb eines Textes.\
 \
-Danke das du den AROMA Installer benutzt.
+Danke dass du den AROMA Installer benutzt.
 
 #-- End of string without any backslash for multiline text
 
@@ -148,26 +148,26 @@ debloatcustomize.15=(1.5 MB) Face Unlock app. Verschwindet einfach aus den Einst
 debloatcustomize.16=(8.9 MB) LG simpler Dateibrowser
 debloatcustomize.17=(0.07 MB) Wählt die Standard Home App aus. Kann manuell getan werden indem du App Standards löschst in Einstellungen -> Apps -> (launcher app)
 debloatcustomize.18=(12.8 MB) Erscheint einfach nicht mehr unter Einstellungen->Sichern & ??
-debloatcustomize.19=(14.1 MB) LG Gesundheitstracker, entfernen macht das halbe LG ganzseitige Widget nutzlos
+debloatcustomize.19=(14.1 MB) LG Gesundheitstracker, entfernen macht das halbe LG Ganzseiten-Widget nutzlos
 debloatcustomize.110=(1.2 MB) Schwarzes Theme für die LG Tastatur
 debloatcustomize.111=(0.1 MB) LG Suchwidget
 debloatcustomize.112=(10.3 MB) McAfee Sicherheitssoftware
 debloatcustomize.113=(1.5 MB) LG Musikplayer Widget
 debloatcustomize.114=(10.1 MB) LG Musikplayer
 debloatcustomize.115=(7.3 MB) Home Screen "Smart Notice" Widget. Funktioniert in anderen Launchern wie Nova nicht.
-debloatcustomize.116=(4.0 MB) LG Benutzungs-Tipps App, entfernen macht das halbe LG ganzseitige Widet nutzlos
+debloatcustomize.116=(4.0 MB) LG Benutzungs-Tipps App, entfernen macht das halbe LG Ganzseiten-Widet nutzlos
 debloatcustomize.20=Sicher mit Alternative (~147 MB)
 debloatcustomize.21=(29.0 MB) Standard LG Launcher. Besser neuen Standard setzen vorm Entfernen. Kann evtl. zu Setup Loops führen, unbekannt ob das Integrieren eines anderen Launchers in /system hilft.
 debloatcustomize.22=(21.5 MB) Optimus Theme fuer LG Home Launcher. NICHT entfernen wenn du LG Home nutzt.
 debloatcustomize.23=(17.5 MB) Standard Browser. Nur entfernen wenn z.B. Chrome oder Opera installiert ist.
-debloatcustomize.24=(27.8 MB) Stock LG Tastatur. Besser neuen Standard setzen vorm Entfernen. Nur entfernen wenn z.B. Swype or AOSP Keyboard installiert ist.
+debloatcustomize.24=(27.8 MB) Stock LG Tastatur. Besser neuen Standard setzen vorm Entfernen. Nur entfernen wenn z.B. SwiftKey oder AOSP Keyboard installiert ist.
 debloatcustomize.25=(25.4 MB) LG Tastatur T9 Schreibkorrektur. Kann vermutlich weg wenn LG Tastatur gelöscht wird.
 debloatcustomize.30=Google Apps (~208 MB)
 debloatcustomize.31=(16.0 MB) Browser
 debloatcustomize.32=(12.8 MB) Onlinespeicher
 debloatcustomize.33=(8.3 MB) Mailclient.
 debloatcustomize.34=(13.3 MB) eBook App
-debloatcustomize.35=(4.5 MB) Teile Erfolge etc
+debloatcustomize.35=(4.5 MB) Teile Spiel-Erfolge etc
 debloatcustomize.36=(8.3 MB) Direkter Zugriff auf gekaufte Filme
 debloatcustomize.37=(14.4 MB) Alternativer Musicplayer mit Zugriff auf deine Cloud-Musik
 debloatcustomize.38=(13.2 MB) Zeitschriften/News

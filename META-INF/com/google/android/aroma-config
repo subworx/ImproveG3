@@ -348,7 +348,7 @@ if prop("demo.prop","selected")=="5" then
     "@personalize",
   
   #-- Will be saved in /tmp/aroma/ctt.prop
-    "sharp.prop",
+    "ctt.prop",
   
   #-----------------[ Selectbox Without Group ]-------------------#
   # TITLE  |  SUBTITLE                            | Initial Value #
