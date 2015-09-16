@@ -6,8 +6,8 @@
 
 mv /tmp/sed /sbin/
 chmod 755 /sbin/sed
-chmod 755 /tmp/busybox
-mv /tmp/busybox /sbin/
+chmod 755 /tmp/mkbootimg
+chmod 755 /tmp/unpackbootimg
 
 
 # Dump kernel to tmp folder
@@ -18,7 +18,7 @@ dd if=/dev/block/platform/msm_sdcc.1/by-name/boot of=/tmp/original-boot.img
 
 VALUE=`cat /tmp/aroma/sharp.prop`
 
-if   [ $VALUE == "selected.0=1" ]; then
+if [ $VALUE == "selected.0=1" ]; then
 sed -i 's/\x39\x01\x00\x00\x00\x00\x04\xF2\x01\x00./\x39\x01\x00\x00\x00\x00\x04\xF2\x01\x00\x00/g' /tmp/original-boot.img
 elif [ $VALUE == "selected.0=2" ]; then
 sed -i 's/\x39\x01\x00\x00\x00\x00\x04\xF2\x01\x00./\x39\x01\x00\x00\x00\x00\x04\xF2\x01\x00\x01/g' /tmp/original-boot.img

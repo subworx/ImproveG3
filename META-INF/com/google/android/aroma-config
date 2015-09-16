@@ -74,10 +74,10 @@
 # Initializing Rom Information
 #
 ini_set("rom_name",             "ImproveG3");
-ini_set("rom_version",          "1.0");
 ini_set("rom_author",           "subworx");
+ini_set("rom_version",          "1.2");
 ini_set("rom_device",           "LG G3");
-ini_set("rom_date",             "2014.12.14");
+ini_set("rom_date",             "2015.09.16");
 
 
 #
@@ -347,8 +347,8 @@ if prop("demo.prop","selected")=="5" then
   #-- Icon: <AROMA Resource Dir>/icons/personalize.png or <ThemeDir>/icon.personalize.png
     "@personalize",
   
-  #-- Will be saved in /tmp/aroma/ctt.prop
-    "ctt.prop",
+  #-- Will be saved in /tmp/aroma/sharp.prop
+    "sharp.prop",
   
   #-----------------[ Selectbox Without Group ]-------------------#
   # TITLE  |  SUBTITLE                            | Initial Value #
@@ -515,6 +515,25 @@ if prop("demo.prop","selected")=="4" then
     #-- Arg 4
       "<~cttinstructions.warning>"
   );
+  agreebox(
+  #-- Title
+    "<~cttinstructions.title>",
+  
+  #-- Subtitle / Description
+    "<~cttagree.desc>",
+  
+  #-- Icon
+    "@alert",
+  
+  #-- Text Content ( Read from <AROMA Resource Dir>/license.txt )
+    "<~cttagree.text>",
+  
+  #-- Checkbox Text
+    "<~cttagree.check>",
+  
+  #-- Unchecked Alert Message
+    "<~cttagree.confirm>"
+  );
 
   #########################################################################################################
   #
@@ -537,11 +556,20 @@ if prop("demo.prop","selected")=="4" then
   # TITLE                 |  SUBTITLE                            | Initial Value #
   #-----------------------+--------------------------------------+---------------#
 
-    "<~cttcustomize.1>",    "<~cttcustomize.1desc>",               1,      #-- selected.0 = 1
-    "<~cttcustomize.2>",    "<~cttcustomize.2desc>",               0,      #-- selected.0 = 2
-    "<~cttcustomize.3>",    "<~cttcustomize.3desc>",               0,      #-- selected.0 = 3
-    "<~cttcustomize.4>",    "<~cttcustomize.4desc>",               0       #-- selected.0 = 4
-
+    "<~cttcustomize.1>",    "<~cttcustomize.1desc>",               1,      #-- selected.0 = 1, stock
+    "<~cttcustomize.2>",    "<~cttcustomize.2desc>",               0,      #-- selected.0 = 2, stock 60
+    "<~cttcustomize.3>",    "<~cttcustomize.3desc>",               0,      #-- selected.0 = 3, stock 65
+    "<~cttcustomize.4>",    "<~cttcustomize.4desc>",               0,      #-- selected.0 = 4, stock 70
+    "<~cttcustomize.5>",    "<~cttcustomize.5desc>",               0,      #-- selected.0 = 5, stock 75
+	"<~cttcustomize.6>",    "<~cttcustomize.6desc>",               0,      #-- selected.0 = 6, stock 75 more bumps
+	"<~cttcustomize.7>",    "<~cttcustomize.7desc>",               0,      #-- selected.0 = 1, stepdown 70
+	"<~cttcustomize.8>",    "<~cttcustomize.8desc>",               0,      #-- selected.0 = 1, stepdown 75
+	"<~cttcustomize.9>",    "<~cttcustomize.9desc>",               0,      #-- selected.0 = 1, stepdown 80
+	"<~cttcustomize.10>",   "<~cttcustomize.10desc>",              0,      #-- selected.0 = 1, OC 75
+	"<~cttcustomize.11>",   "<~cttcustomize.11desc>",              0,      #-- selected.0 = 1, chupa only? 70
+	"<~cttcustomize.12>",   "<~cttcustomize.12desc>",              0,      #-- selected.0 = 1, chupa 70
+	"<~cttcustomize.13>",   "<~cttcustomize.13desc>",              0       #-- selected.0 = 1, cat6 70
+		
   #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
   );
   
@@ -1219,7 +1247,7 @@ if prop("demo.prop","selected")=="1" then
 	  "Software Update",	"<~debloatcustomize.44>",				   		  0,    #-- item.4.4 = Un-Selected by default
 	  "Update Center",	    "<~debloatcustomize.45>",						  0,    #-- item.4.5 = Un-Selected by default
 
-    "<#00f>Extremely dangerous Sh!t (4.4 ONLY)</#>", "",	                        2,  #-- Group 5. key = "item.5.x"
+    "<#00f>Extremely dangerous Sh!t</#>", "",	                                    2,  #-- Group 5. key = "item.5.x"
       "ActionManager Service (MRG)", "com.lge.mrg.service (MRG)",                   0,    #-- item.5.1 = Un-Selected by default
       "Board Content Provider (MRG)","com.lge.mrg.boardcontent (MRG)",              0,    #-- item.5.2 = Un-Selected by default
       "com.lge.divx.permission",     "com.lge.divx.permission",                     0,    #-- item.5.3 = Un-Selected by default
@@ -1253,7 +1281,7 @@ if prop("demo.prop","selected")=="1" then
       "License Provider",            "com.lge.eulaprovider",                        0,    #-- item.5.31 = Un-Selected by default
       "Live Wallpaper Picker",       "com.android.wallpaper.livepicker",            0,    #-- item.5.32 = Un-Selected by default
       "Lock Screen Settings",        "com.lge.lockscreensettings",                  0,    #-- item.5.33 = Un-Selected by default
-      "Multi-photo",                 "com.lge.livewallpaper.multiphoto",            0,    #-- item.5.34 = Un-Selected by default
+      "Multi-photo LWP",             "com.lge.livewallpaper.multiphoto",            0,    #-- item.5.34 = Un-Selected by default
       "??? Phonesky.apk",            "Phonesky.apk",                                0,    #-- item.5.35 = Un-Selected by default
       "Print Spooler 1",			 "com.android.printspooler",                    0,    #-- item.5.36 = Un-Selected by default
 	  "Quickset SDK",                "com.uei.lg.quicksetsdk.maxq616",              0,    #-- item.5.37 = Un-Selected by default
@@ -1279,9 +1307,8 @@ if prop("demo.prop","selected")=="1" then
       "Weather",                     "com.lge.sizechangable.weather",               0,    #-- item.5.57 = Un-Selected by default
       "WeatherPlatform",             "com.lge.sizechangable.weather.platform",      0,    #-- item.5.58 = Un-Selected by default
       "Weather Theme",               "com.lge.sizechangable.weather.theme.optimus", 0,    #-- item.5.59 = Un-Selected by default
-      "Wfd Service (Qualcomm, WFDS)","com.qualcomm.wfd.service (WFDS)",             0,    #-- item.5.60 = Un-Selected by default
-	  "WfdsService (WFDS)",          "com.lge.wfds.service (WFDS)",                 0,    #-- item.5.61 = Un-Selected by default
-      "Widevine Keybox Test",        "com.lge.wv.hidden",                     	    0     #-- item.5.62 = Un-Selected by default
+      "Wfd/Wfds stuff",              "com.qualcomm.wfd.service, com.lge.wfds.*",    0,    #-- item.5.60 = Un-Selected by default
+      "Widevine Keybox Test",        "com.lge.wv.hidden",                     	    0     #-- item.5.61 = Un-Selected by default
 
     #--------[ Initial Value = 0: Unselected, 1: Selected, 2: Group Item, 3: Not Visible ]---------#
   );

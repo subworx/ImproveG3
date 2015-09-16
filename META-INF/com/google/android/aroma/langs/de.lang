@@ -118,7 +118,7 @@ debloatinstructions.warning=Wähle die korrekte Android Version! Ansonsten werde
 \
 <#006eff><b>Sicher mit Alternative</b></#>: Sicher zu entfernen, aber du solltest einen Ersatz installiert haben. </b><#00f>Können beim Factory Reset zum Setup Loop führen (besonders Keyboard und Launcher)!</#></b>\
 \
-<#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden. Solltest du eine GApp in den Userspace verschoben haben, wird der Entkrepler <b>alle Einstellungen der App</b> löschen, aber nicht die App selbst!\
+<#0f0><b>Google Apps</b></#>: Alle GApps können aus dem Play Store installiert werden. Solltest du eine GApp in den Userspace verschoben oder ein Update installiert haben, wird der Entkrepler <b>alle Einstellungen der App</b> löschen, aber nicht die App im Userspace selbst!\
 \
 <#0000ff><b>Potentiell gefährlich</b></#>: Das Löschen dieser Apps kann und wird Nebenwirkungen haben.\
 \
@@ -528,20 +528,49 @@ LG taktet ab 60°C auf 1.5 GHz herunter und geht ähnlich konservativ weiter.\
 Mit dieser Modifikation taktet das G3 ab 70/75/80°C auf 2.26 GHz.\
 Der zweite und dritte Schritt sind ebenfalls erhöht, <b>die letzten vier Bumps sind im Originalzustand</b>.\
 Somit ist sichergestellt, dass das Gerät mehr Leistung liefert, aber keine gefährlichen Temperaturen erreicht werden, vorher treten die normalen Notfallmechanismen in Kraft.
+cttagree.desc=Vorbereitung!
+cttagree.text=Um CTT Mod zu benutzen, oeffne einen File Manager (TWRP/im System/adb shell) und <b>zieh ein Backup</b> von thermal-engine-8974.config, thermal-engine, thermald.conf und thermald-8974.config.\
+Wenn nicht alle Dateien vorhanden sind, kopiere nur die die es gibt.\
+Anschliessend <b>loeschst</b> du die Dateien aus /system/etc.\
+\
+Wenn das erledigt ist, mach weiter.\
+Wähle die richtige Variante!\
+Standard ist für fast alle Kernel geeignet, Stepdown ist kompatibel mit z.B. SkyDragon ROMs, der Rest passt immer speziell für ein ROM.
+cttagree.check=Ich habe die Dateien geloescht...
+cttagree.confirm=Eingabe überprüfen...
+
 
 #
 #-- CTT Customizations
 #
 cttcustomize.title=Aktion wählen
 cttcustomize.desc=Wähle eine Aktion aus
-cttcustomize.1=Stock
+cttcustomize.1=Stock zurücksetzen
 cttcustomize.1desc=LG Standard - 1.5 GHz @ 60°C
-cttcustomize.2=70°C
-cttcustomize.2desc=Mod 2.26 GHz @ <b>70</b>°C
-cttcustomize.3=75°C
-cttcustomize.3desc=Mod 2.26 GHz @ <b>75</b>°C
-cttcustomize.4=80°C
-cttcustomize.4desc=Mod 2.26 GHz @ <b>80</b>°C
+cttcustomize.2=Stock 60°C mit kleinen Aenderungen
+cttcustomize.2desc=Stock ROM 1.5 GHz @ <b>60</b>°C mit kleinen Aenderungen
+cttcustomize.3=Stock 65°C
+cttcustomize.3desc=Standard 2.34 GHz @ <b>65</b>°C
+cttcustomize.4=Stock 70°C
+cttcustomize.4desc=Standard 2.34 GHz @ <b>70</b>°C
+cttcustomize.5=Stock 75°C
+cttcustomize.5desc=Standard 2.34 GHz @ <b>75</b>°C
+cttcustomize.6=Stock 75°C mit extra Schritt
+cttcustomize.6desc=Standard 2.34 GHz @ <b>75</b>°C mit einem extra Schritt
+cttcustomize.7=Stepdown 70°C
+cttcustomize.7desc=Stepdown 2.34 GHz @ <b>70</b>°C
+cttcustomize.8=Stepdown 75°C
+cttcustomize.8desc=Stepdown 2.34 GHz @ <b>75</b>°C
+cttcustomize.9=Stepdown 80°C
+cttcustomize.9desc=Stepdown 2.34 GHz @ <b>80</b>°C
+cttcustomize.10=OC 75°C
+cttcustomize.10desc=Für OC Kernel 2.34 GHz @ <b>75</b>°C
+cttcustomize.11="D855[20h] ChupaChups ROM and kernel ONLY" 75°C
+cttcustomize.11desc=ChupaChups 2.34 GHz @ <b>75</b>°C
+cttcustomize.12=ChupaChups 70°C
+cttcustomize.12desc=ChupaChups 2.34 GHz @ <b>70</b>°C
+cttcustomize.13=Cat 6 75°C
+cttcustomize.13desc=Cat 6 2.34 GHz @ <b>75</b>°C
 cttcustomize.nextbutton=Installieren
 
 #

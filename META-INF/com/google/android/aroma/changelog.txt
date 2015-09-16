@@ -1,11 +1,13 @@
 <b><#0f0>ImproveG3 Changes</#></b>
-<b>1.1 - 2014.12.??             </b>
+<b>1.2 - 2015.09.16</b>
+<*>added CTT newest version as of 2015.09.16</*>
+<*>updated to Sharpening Mod 3.5</*>
+<*>if removing single GApps, updates in userspace will <b>not</b> get removed</*>
+<b>1.1 - 2014.12.??</b>
 <*>added License to root of zip</*>
 <b>1.0 - 2014.12.14</b>
 <*>Added all media (boot/shutdown animations/sound, system/alarm/ringtone/notifications) into extra section for removal</*>
 <*>Merged LG PC Sync and PC Sync Service into one entry, added the USB Autorun Image that installs the Sync software on PC.</*>
-<b>0.9 - 2014.12.11</b>
-<*>Updated Debloater for 5.0 stock (based) ROMs, as the file paths changed.</*>
 <b>continued at bottom</b>
 
 <#00f><b>Known Issues</b></#>
@@ -16,8 +18,11 @@
 <#0f0><b>TODO</b></#>
 <*>find details for lg sounds/music</*>
 <*>split aroma code into multiple files</*>
+<*>test if everything actually works %)</*>
 
 <b><#0f0>Changelog continued</#></b>
+<b>0.9 - 2014.12.11</b>
+<*>Updated Debloater for 5.0 stock (based) ROMs, as the file paths changed.</*>
 <b>0.8.1 - 2014.12.08 - not officially released</b>
 <*>Added section of ABSOLUTELY COMPLETELY DANGEROUS system apps. Do not remove unless you have a backup :)
 This is to figure out what can really be deleted with no or little side effects.</*>

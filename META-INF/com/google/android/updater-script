@@ -865,9 +865,6 @@ then
 	  else
 	    delete_recursive("/system/priv-app/Velvet");
 	  endif;
-	  delete("/data/app/com.google.android.googlequicksearchbox-1.apk");
-	  delete("/data/app/com.google.android.googlequicksearchbox-2.apk");
-	  delete("/data/app/com.google.android.googlequicksearchbox-3.apk");
 	  delete_recursive("/data/data/com.google.android.googlequicksearchbox");
     endif;
 
@@ -936,8 +933,15 @@ then
 	then
 	  ui_print("  Removing ActionManager Service (MRG)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGActionManager.apk");
-	  delete("/system/priv-app/LGActionManager.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+    	delete("/system/priv-app/LGActionManager.apk");
+	    delete("/system/priv-app/LGActionManager.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGActionManager");
+	  endif;
 	  delete_recursive("/data/data/com.lge.mrg.service");
 	endif;
 	
@@ -947,8 +951,15 @@ then
 	then
 	  ui_print("  Removing Board Content Provider (MRG)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/BoardContentProvider.apk");
-	  delete("/system/app/BoardContentProvider.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/BoardContentProvider.apk");
+	    delete("/system/app/BoardContentProvider.odex");
+	  else
+	    delete_recursive("/system/priv-app/BoardContentProvider");
+	  endif;
 	  delete_recursive("/data/data/com.lge.mrg.boardcontent");
 	endif;
 	
@@ -958,7 +969,14 @@ then
 	then
 	  ui_print("  Removing com.lge.divx.permission");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGDivXDRM.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGDivXDRM.apk");
+	  else
+	    delete_recursive("/system/app/LGDivXDRM");
+	  endif;
 	  delete_recursive("/data/data/com.lge.divx.permission");
 	endif;
 	
@@ -968,9 +986,14 @@ then
 	then
 	  ui_print("  Removing com.lge.lgdmsgcm (Software Update related)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGDMSGCM.apk");
-	  delete("/system/app/LGDMSGCM.odex");
-	  delete_recursive("/data/data/com.lge.lgdmsgcm");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGDMSGCM.apk");
+	    delete("/system/app/LGDMSGCM.odex");
+	    delete_recursive("/data/data/com.lge.lgdmsgcm");
+	  endif;
 	endif;
 	
 	# LG DRM Permission
@@ -979,7 +1002,14 @@ then
 	then
 	  ui_print("  Removing com.lge.lgdrm.permission");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGDrm.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGDrm.apk");
+	  else
+	    delete_recursive("/system/app/LGDrm");
+	  endif;
 	  delete_recursive("/data/data/com.lge.lgdrm.permission");
 	endif;
 	
@@ -989,8 +1019,15 @@ then
 	then
 	  ui_print("  Removing com.lge.lgfota.permission");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGFOTA.apk");
-	  delete("/system/app/LGFOTA.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGFOTA.apk");
+	    delete("/system/app/LGFOTA.odex");
+	  else
+	    delete_recursive("/system/app/LGFOTA");
+	  endif;
 	  delete_recursive("/data/data/com.lge.lgfota.permission");
 	endif;
 	
@@ -1000,9 +1037,14 @@ then
 	then
 	  ui_print("  Removing com.lge.permission");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/PermissionToAccessLgeApi.apk");
-	  delete("/system/app/PermissionToAccessLgeApi.odex");
-	  delete_recursive("/data/data/com.lge.permission");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/PermissionToAccessLgeApi.apk");
+	    delete("/system/app/PermissionToAccessLgeApi.odex");
+	    delete_recursive("/data/data/com.lge.permission");
+	  endif;
 	endif;
 	
 	# Content Lock
@@ -1011,8 +1053,15 @@ then
 	then
 	  ui_print("  Removing Content Lock");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGPrivacylock.apk");
-	  delete("/system/priv-app/LGPrivacylock.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGPrivacylock.apk");
+	    delete("/system/priv-app/LGPrivacylock.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGPrivacyLock");
+	  endif;
 	  delete_recursive("/data/data/com.lge.privacylock");
 	endif;
 	
@@ -1022,9 +1071,16 @@ then
     then
       ui_print("  Removing Downloads");
       #run_program("/tmp/aroma/sleep","300");
-	  delete("/data/preload/LGDownloadProviderUi.apk");
-	  delete("/data/preload/LGDownloadProviderUi.odex");
-  	  delete("/system/cust/overlay/app/com.android.providers.downloads.ui.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/data/preload/LGDownloadProviderUi.apk");
+	    delete("/data/preload/LGDownloadProviderUi.odex");
+  	    delete("/system/cust/overlay/app/com.android.providers.downloads.ui.apk");
+	  else
+		delete_recursive("/system/vendor/overlay/com.android.providers.downloads.ui");
+	  endif;
 	  delete_recursive("/data/data/com.android.providers.downloads.ui");
     endif;
 
@@ -1034,8 +1090,15 @@ then
 	then
 	  ui_print("  Removing DRM Service");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/DrmService.apk");
-	  delete("/system/app/DrmService.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/DrmService.apk");
+	    delete("/system/app/DrmService.odex");
+	  else
+	    delete_recursive("/system/app/DrmService");
+	  endif;
 	  delete_recursive("/data/data/com.lge.drmservice");
 	endif;
 	
@@ -1045,8 +1108,15 @@ then
 	then
 	  ui_print("  Removing ELTest");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/ELTTest.apk");
-	  delete("/system/app/ELTTest.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/ELTTest.apk");
+	    delete("/system/app/ELTTest.odex");
+	  else
+	    delete_recursive("/system/app/elt_test");
+	  endif;
 	  delete_recursive("/data/data/com.lge.eltest");
 	endif;
 	
@@ -1056,8 +1126,15 @@ then
 	then
 	  ui_print("  Removing FormManager");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGFormManager.apk");
-	  delete("/system/priv-app/LGFormManager.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGFormManager.apk");
+	    delete("/system/priv-app/LGFormManager.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGFormManager");
+	  endif;
 	  delete_recursive("/data/data/com.lge.formmanager");
 	endif;
 	
@@ -1067,9 +1144,17 @@ then
 	then
 	  ui_print("  Removing Gallery");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGGallery.apk");
-	  delete("/system/priv-app/LGGallery.odex");
-	  delete("/system/cust/overlay/app/com.android.gallery3d.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGGallery.apk");
+	    delete("/system/priv-app/LGGallery.odex");
+	    delete("/system/cust/overlay/app/com.android.gallery3d.apk");
+	  else
+	    delete_recursive("/system/priv-app/LGGallery");
+		delete_recursive("/system/vendor/overlay/com.android.gallery3d");
+	  endif;
 	  delete_recursive("/data/data/com.android.gallery3d");
 	endif;
 	
@@ -1079,8 +1164,15 @@ then
 	then
 	  ui_print("  Removing GNSS Air Test (CDMA)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/GnssAirTest.apk");
-	  delete("/system/app/GnssAirTest.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/GnssAirTest.apk");
+	    delete("/system/app/GnssAirTest.odex");
+	  else
+	    delete_recursive("/system/app/GnssAirTest");
+	  endif;
 	  delete_recursive("/data/data/com.lge.gnss.airtest");
 	endif;
 	
@@ -1090,8 +1182,15 @@ then
 	then
 	  ui_print("  Removing GnssTest");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/GnssTest.apk");
-	  delete("/system/app/GnssTest.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/GnssTest.apk");
+	    delete("/system/app/GnssTest.odex");
+	  else
+	    delete_recursive("/system/app/GnssTest");
+	  endif;
 	  delete_recursive("/data/data/com.lge.gnsstest");
 	endif;
 	
@@ -1101,8 +1200,15 @@ then
 	then
 	  ui_print("  Removing LG GNSS");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/GnssPosTest.apk");
-	  delete("/system/app/GnssPosTest.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/GnssPosTest.apk");
+	    delete("/system/app/GnssPosTest.odex");
+	  else
+	    delete_recursive("/system/app/GnssPosTest");
+	  endif;
 	  delete_recursive("/data/data/com.lge.gnsspostest");
 	endif;
 	
@@ -1112,8 +1218,15 @@ then
 	then
 	  ui_print("  Removing com.lge.hiddenmenu - HiddenMenu");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/HiddenMenu.apk");
-	  delete("/system/app/HiddenMenu.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/HiddenMenu.apk");
+	    delete("/system/app/HiddenMenu.odex");
+	  else
+	    delete_recursive("/system/app/HiddenMenu");
+	  endif;
 	  delete_recursive("/data/data/com.lge.hiddenmenu");
 	endif;
 	
@@ -1123,8 +1236,15 @@ then
 	then
 	  ui_print("  Removing LG Intelligent Agent");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGLIA.apk");
-	  delete("/system/app/LGLIA.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGLIA.apk");
+	    delete("/system/app/LGLIA.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGLIA");
+	  endif;
 	  delete_recursive("/data/data/com.lge.ia");
 	endif;
 	
@@ -1134,8 +1254,15 @@ then
 	then
 	  ui_print("  Removing LIA Informant");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LIAInformant.apk");
-	  delete("/system/app/LIAInformant.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LIAInformant.apk");
+	    delete("/system/app/LIAInformant.odex");
+	  else
+	    delete_recursive("/system/priv-app/LIAInformant");
+	  endif;
 	  delete_recursive("/data/data/com.lge.ia.task.informant");
 	endif;
 	
@@ -1145,8 +1272,15 @@ then
 	then
 	  ui_print("  Removing LIA MrGDBLogger (MRG?)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LIAMrGDBLogger.apk");
-	  delete("/system/app/LIAMrGDBLogger.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LIAMrGDBLogger.apk");
+	    delete("/system/app/LIAMrGDBLogger.odex");
+	  else
+	    delete_recursive("/system/priv-app/LIAMrGDBLogger");
+	  endif;
 	  delete_recursive("/data/data/com.lge.ia.task.mrgdblogger");
 	endif;
 	
@@ -1156,8 +1290,15 @@ then
 	then
 	  ui_print("  Removing LIA S4URecommender");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LIAS4URecommender.apk");
-	  delete("/system/app/LIAS4URecommender.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LIAS4URecommender.apk");
+	    delete("/system/app/LIAS4URecommender.odex");
+	  else
+	    delete_recursive("/system/priv-app/LIAS4URecommender");
+	  endif;
 	  delete_recursive("/data/data/com.lge.ia.task.s4urecommender");
 	endif;
 	
@@ -1167,8 +1308,15 @@ then
 	then
 	  ui_print("  Removing LG MLT");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/MLT.apk");
-	  delete("/system/priv-app/MLT.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/MLT.apk");
+	    delete("/system/priv-app/MLT.odex");
+	  else
+	    delete_recursive("/system/priv-app/MLT");
+	  endif;
 	  delete_recursive("/data/data/com.lge.mlt");
 	endif;
 	
@@ -1178,12 +1326,20 @@ then
 	then
 	  ui_print("  Removing LG PC Suite + Service");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGPCSuiteUI.apk");
-	  delete("/system/app/LGPCSuiteUI.odex");
-	  delete("/system/cust/app/overlay/com.lge.pcsyncui.apk");
-	  delete("/system/priv-app/LGPCSuite.apk");
-	  delete("/system/priv-app/LGPCSuite.odex");
-	  delete("/system/cust/app/overlay/com.lge.sync.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGPCSuiteUI.apk");
+	    delete("/system/app/LGPCSuiteUI.odex");
+	    delete("/system/cust/app/overlay/com.lge.pcsyncui.apk");
+	    delete("/system/priv-app/LGPCSuite.apk");
+	    delete("/system/priv-app/LGPCSuite.odex");
+	    delete("/system/cust/app/overlay/com.lge.sync.apk");
+	  else
+	    delete_recursive("/system/app/LGPCSuiteUI");
+		delete_recursive("/system/priv-app/LGPCSuite");
+	  endif;
 	  delete_recursive("/data/data/com.lge.sync");
 	  delete_recursive("/data/data/com.lge.pcsyncui");
 	  delete("/system/usbautorun.iso");
@@ -1195,8 +1351,15 @@ then
 	then
 	  ui_print("  Removing LGApduService");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGApduService.apk");
-	  delete("/system/app/LGApduService.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGApduService.apk");
+	    delete("/system/app/LGApduService.odex");
+	  else
+	    delete_recursive("/system/app/LGApduService");
+	  endif;
 	  delete_recursive("/data/data/com.lge.smartcard.apdu.uicc");
 	endif;
 	
@@ -1206,8 +1369,15 @@ then
 	then
 	  ui_print("  Removing LGATCMD Service");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGATCMDService.apk");
-	  delete("/system/app/LGATCMDService.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGATCMDService.apk");
+	    delete("/system/app/LGATCMDService.odex");
+	  else
+	    delete_recursive("/system/app/LGATCMDService");
+	  endif;
 	  delete_recursive("/data/data/com.lge.android.atservice");
 	endif;
 	
@@ -1217,8 +1387,15 @@ then
 	then
 	  ui_print("  Removing ??? LGERCS.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGERCS.apk");
-	  delete("/system/app/LGERCS.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGERCS.apk");
+	    delete("/system/app/LGERCS.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGERCS");
+	  endif;
 	endif;
 	
 	# ??? LGERCSProvider.apk
@@ -1227,8 +1404,15 @@ then
 	then
 	  ui_print("  Removing ??? LGERCSProvider.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGERCSProvider.apk");
-	  delete("/system/app/LGERCSProvider.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGERCSProvider.apk");
+	    delete("/system/app/LGERCSProvider.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGRCSProvider");
+	  endif;
 	endif;
 	
 	# ??? LGRcsCall.apk
@@ -1237,8 +1421,15 @@ then
 	then
 	  ui_print("  Removing ??? LGRcsCall.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGRcsCall.apk");
-	  delete("/system/priv-app/LGRcsCall.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGRcsCall.apk");
+	    delete("/system/priv-app/LGRcsCall.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGRcsCall");
+	  endif;
 	endif;
 	
 	# ??? LGRCSMessage.apk
@@ -1247,8 +1438,15 @@ then
 	then
 	  ui_print("  Removing ??? LGRCSMessage.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGRCSMessage.apk");
-	  delete("/system/priv-app/LGRCSMessage.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGRCSMessage.apk");
+	    delete("/system/priv-app/LGRCSMessage.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGRCSMessage");
+	  endif;
 	endif;
 	
 	# ??? LGRCSServices.apk
@@ -1257,8 +1455,15 @@ then
 	then
 	  ui_print("  Removing ??? LGRCSServices.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGRCSServices.apk");
-	  delete("/system/priv-app/LGRCSServices.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGRCSServices.apk");
+	    delete("/system/priv-app/LGRCSServices.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGRCSServices");
+	  endif;
 	endif;
 	
 	# License Provider
@@ -1267,10 +1472,15 @@ then
 	then
 	  ui_print("  Removing License Provider");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LicenseProvider.apk");
-	  delete("/system/app/LicenseProvider.odex");
-	  #test
-	  delete("/data/app/com.lge.eulaprovider-*.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LicenseProvider.apk");
+	    delete("/system/app/LicenseProvider.odex");
+	  else
+	    delete_recursive("/system/app/LicenseProvider");
+	  endif;
 	  delete_recursive("/data/data/com.lge.eulaprovider");
 	endif;
 	
@@ -1280,8 +1490,15 @@ then
 	then
 	  ui_print("  Removing Live Wallpaper Picker");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGLiveWallpapersPicker.apk");
-	  delete("/system/priv-app/LGLiveWallpapersPicker.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGLiveWallpapersPicker.apk");
+	    delete("/system/priv-app/LGLiveWallpapersPicker.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGLiveWallpapersPicker");
+	  endif;
 	  delete_recursive("/data/data/com.android.wallpaper.livepicker");
 	endif;
 	
@@ -1291,8 +1508,15 @@ then
 	then
 	  ui_print("  Removing Lock Screen Settings");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGLockScreenSettings.apk");
-	  delete("/system/app/LGLockScreenSettings.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGLockScreenSettings.apk");
+	    delete("/system/app/LGLockScreenSettings.odex");
+	  else
+	    delete_recursive("/system/app/LGLockScreenSettings");
+	  endif;
 	  delete_recursive("/data/data/com.lge.lockscreensettings");
 	endif;
 	
@@ -1302,8 +1526,15 @@ then
 	then
 	  ui_print("  Removing Multi-photo");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGLW_MultiPhoto.apk");
-	  delete("/system/priv-app/LGLW_MultiPhoto.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGLW_MultiPhoto.apk");
+	    delete("/system/priv-app/LGLW_MultiPhoto.odex");
+	  else
+	    delete_recursive("/system/priv-app/LGLW_MultiPhoto");
+	  endif;
 	  delete_recursive("/data/data/com.lge.livewallpaper.multiphoto");
 	endif;
 	
@@ -1313,8 +1544,15 @@ then
 	then
 	  ui_print("  Removing ??? Phonesky.apk");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/Phonesky.apk");
-	  delete("/system/priv-app/Phonesky.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/Phonesky.apk");
+	    delete("/system/priv-app/Phonesky.odex");
+	  else
+	    delete_recursive("/system/priv-app/Phonesky");
+	  endif;
 	endif;
 	
 	# Print Spooler 1
@@ -1323,8 +1561,15 @@ then
 	then
 	  ui_print("  Removing Print Spooler");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/PrintSpooler.apk");
-	  delete("/system/app/PrintSpooler.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/PrintSpooler.apk");
+	    delete("/system/app/PrintSpooler.odex");
+	  else
+	    delete_recursive("/system/app/PrintSpooler");
+	  endif;
 	  delete_recursive("/data/data/com.android.printspooler");
 	endif;
 
@@ -1334,7 +1579,14 @@ then
 	then
 	  ui_print("  Removing Quickset SDK");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/QuicksetSDK.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/QuicksetSDK.apk");
+	  else
+	    delete_recursive("/system/app/QuicksetSDK");
+	  endif;
 	  delete_recursive("/data/data/com.uei.lg.quicksetsdk.maxq616");
 	endif;
 	
@@ -1344,8 +1596,15 @@ then
 	then
 	  ui_print("  Removing Remote support service");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/rspermlge.apk");
-	  delete("/system/app/rspermlge.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/rspermlge.apk");
+	    delete("/system/app/rspermlge.odex");
+	  else
+	    delete_recursive("/system/app/rspermlge");
+	  endif;
 	  delete_recursive("/data/data/com.rsupport.rsperm");
 	endif;
 	
@@ -1355,9 +1614,16 @@ then
 	then
 	  ui_print("  Removing Settings");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGEasySettings.apk");
-	  delete("/system/app/LGEasySettings.odex");
-	  delete("/system/cust/app/overlay/com.lge.settings.easy.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGEasySettings.apk");
+	    delete("/system/app/LGEasySettings.odex");
+	    delete("/system/cust/app/overlay/com.lge.settings.easy.apk");
+	  else
+	    delete_recursive("/system/LGEasySettings");
+	  endif;
 	  delete_recursive("/data/data/com.lge.settings.easy");
 	endif;
 	
@@ -1367,8 +1633,15 @@ then
 	then
 	  ui_print("  Removing Shutdown Monitor");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/com.lge.shutdownmonitor.apk");
-	  delete("/system/app/com.lge.shutdownmonitor.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/com.lge.shutdownmonitor.apk");
+	    delete("/system/app/com.lge.shutdownmonitor.odex");
+	  else
+	    delete_recursive("/system/app/com.lge.shutdownmonitor");
+	  endif;
 	  delete_recursive("/data/data/com.lge.shutdownmonitor");
 	endif;
 	
@@ -1378,8 +1651,15 @@ then
 	then
 	  ui_print("  Removing Smart cleaning");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGSpringCleaning.apk");
-	  delete("/system/app/LGSpringCleaning.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGSpringCleaning.apk");
+	    delete("/system/app/LGSpringCleaning.odex");
+	  else
+	    delete_recursive("/system/app/LGSpringCleaning");
+	  endif;
 	  delete_recursive("/data/data/com.lge.springcleaning");
 	endif;
 	
@@ -1389,8 +1669,15 @@ then
 	then
 	  ui_print("  Removing Smart screen");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/WiseScreen.apk");
-	  delete("/system/priv-app/WiseScreen.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/WiseScreen.apk");
+	    delete("/system/priv-app/WiseScreen.odex");
+	  else
+	    delete_recursive("/system/priv-app/WiseScreen");
+	  endif;
 	  delete_recursive("/data/data/com.lge.keepscreenon");
 	endif;
 	
@@ -1400,9 +1687,14 @@ then
 	then
 	  ui_print("  Removing SmartShare Beam (WFDS)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGSmartShareBeam_WFDS.apk");
-	  delete("/system/priv-app/LGSmartShareBeam_WFDS.odex");
-	  delete_recursive("/data/data/com.lge.smartsharebeam");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGSmartShareBeam_WFDS.apk");
+	    delete("/system/priv-app/LGSmartShareBeam_WFDS.odex");
+	    delete_recursive("/data/data/com.lge.smartsharebeam");
+	  endif;
 	endif;
 	
 	# SmartShare Push
@@ -1411,9 +1703,16 @@ then
 	then
 	  ui_print("  Removing SmartShare Push");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGConnectionWizard.apk");
-	  delete("/system/priv-app/LGConnectionWizard.odex");
-	  delete("/system/cust/app/overlay/com.lge.smartsharepush.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGConnectionWizard.apk");
+	    delete("/system/priv-app/LGConnectionWizard.odex");
+	    delete("/system/cust/app/overlay/com.lge.smartsharepush.apk");
+	  else
+	    delete_recursive("/system/priv-app/LGConnectionWizard");
+	  endif;
 	  delete_recursive("/data/data/com.lge.smartsharepush");
 	endif;
 	
@@ -1423,9 +1722,14 @@ then
 	then
 	  ui_print("  Removing SmartShare.Beam");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/SmartShareBeam.apk");
-	  delete("/system/priv-app/SmartShareBeam.odex");
-	  delete_recursive("/data/data/itectokyo.wiflus.service");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/SmartShareBeam.apk");
+	    delete("/system/priv-app/SmartShareBeam.odex");
+	    delete_recursive("/data/data/itectokyo.wiflus.service");
+	  endif;
 	endif;
 	
 	# SmartShare.Cloud
@@ -1434,8 +1738,15 @@ then
 	then
 	  ui_print("  Removing SmartShare.Cloud");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/CloudHub.apk");
-	  delete("/system/app/CloudHub.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/CloudHub.apk");
+	    delete("/system/app/CloudHub.odex");
+	  else
+	    delete_recursive("/system/app/CloudHub");
+	  endif;
 	  delete_recursive("/data/data/com.lge.cloudhub");
 	endif;
 	
@@ -1445,8 +1756,15 @@ then
 	then
 	  ui_print("  Removing SmartShare.DLNA");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/SmartShareDLNA.apk");
-	  delete("/system/app/SmartShareDLNA.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/SmartShareDLNA.apk");
+	    delete("/system/app/SmartShareDLNA.odex");
+	  else
+	    delete_recursive("/system/app/SmartShareDLNA");
+	  endif;
 	  delete_recursive("/data/data/com.lge.smartshare.dlna");
 	endif;
 	
@@ -1456,8 +1774,15 @@ then
 	then
 	  ui_print("  Removing SmartShare.MediaServer");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/SmartShare.apk");
-	  delete("/system/app/SmartShare.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/SmartShare.apk");
+	    delete("/system/app/SmartShare.odex");
+	  else
+	    delete_recursive("/system/app/SmartShare");
+	  endif;
 	  delete_recursive("/data/data/com.lge.smartshare");
 	endif;
 	
@@ -1467,8 +1792,15 @@ then
 	then
 	  ui_print("  Removing SmartShare.Provider");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/SmartShareProvider.apk");
-	  delete("/system/app/SmartShareProvider.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/SmartShareProvider.apk");
+	    delete("/system/app/SmartShareProvider.odex");
+	  else
+	    delete_recursive("/system/app/SmartShareProvider");
+	  endif;
 	  delete_recursive("/data/data/com.lge.smartshare.provider");
 	endif;
 	
@@ -1478,8 +1810,15 @@ then
 	then
 	  ui_print("  Removing Tags (NFC)");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/TagGoogle.apk");
-	  delete("/system/priv-app/TagGoogle.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/TagGoogle.apk");
+	    delete("/system/priv-app/TagGoogle.odex");
+	  else
+	    delete_recursive("/system/priv-app/TagGoogle");
+	  endif;
 	  delete_recursive("/data/data/com.google.android.tag");
 	endif;
 	
@@ -1489,9 +1828,17 @@ then
 	then
 	  ui_print("  Removing Unified EULA");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/UnifiedEULA.apk");
-	  delete("/system/app/UnifiedEULA.odex");
-	  delete("/system/cust/overlay/app/com.lge.eula.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/UnifiedEULA.apk");
+	    delete("/system/app/UnifiedEULA.odex");
+	    delete("/system/cust/overlay/app/com.lge.eula.apk");
+	  else
+	    delete_recursive("/system/app/UnifiedEULA");
+		delete_recursive("/system/vendor/overlay/com.lge.eula");
+	  endif;
 	  delete_recursive("/data/data/com.lge.eula");
 	endif;
 	
@@ -1501,9 +1848,16 @@ then
 	then
 	  ui_print("  Removing Video");
 	  #run_program("/tmp/aroma/sleep","300");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
 	  delete("/system/priv-app/LGVideo.apk");
 	  delete("/system/priv-app/LGVideo.odex");
 	  delete("/system/cust/app/overlay/com.lge.videoplayer.apk");
+	  else
+	    delete_recursive("/system/LGVideo");
+	  endif;
 	  delete_recursive("/data/data/com.lge.videoplayer");
 	endif;
 	
@@ -1513,9 +1867,16 @@ then
 	then
 	  ui_print("  Removing Video Trim");
 	  #run_program("/tmp/aroma/sleep","300");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
 	  delete("/system/priv-app/LGVidClip.apk");
 	  delete("/system/priv-app/LGVidClip.odex");
 	  delete("/system/cust/app/overlay/com.lge.videotool.apk");
+	  else
+	    delete_recursive("/system/priv-app/LGVidClip");
+	  endif;
 	  delete_recursive("/data/data/com.lge.videotool");
 	endif;
 	
@@ -1525,9 +1886,14 @@ then
 	then
 	  ui_print("  Removing Voice Mate");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/data/app/com.nuance.voicemate-*.apk");
-	  delete("/data/app/com.nuance.voicemate-*.odex");
-	  delete_recursive("/data/data/com.nuance.voicemate");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/data/app/com.nuance.voicemate-*.apk");
+	    delete("/data/app/com.nuance.voicemate-*.odex");
+	    delete_recursive("/data/data/com.nuance.voicemate");
+      endif;
 	endif;
 
 	# Voice Recorder
@@ -1536,9 +1902,17 @@ then
 	then
 	  ui_print("  Removing Voice Recorder");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGVoiceRecorder.apk");
-	  delete("/system/priv-app/LGVoiceRecorder.odex");
-	  delete("/system/cust/app/overlay/com.lge.voicerecorder.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/LGVoiceRecorder.apk");
+	    delete("/system/priv-app/LGVoiceRecorder.odex");
+	    delete("/system/cust/app/overlay/com.lge.voicerecorder.apk");
+	  else
+	    delete_recursive("/system/priv-app/LGVoiceRecorder");
+		delete_recursive("/system/vendor/overlay/com.lge.voicerecorder");
+	  endif;
 	  delete_recursive("/data/data/com.lge.voicerecorder");
 	endif;
 	
@@ -1548,8 +1922,15 @@ then
 	then
 	  ui_print("  Removing WAP Service");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/WapService.apk");
-	  delete("/system/priv-app/WapService.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/WapService.apk");
+	    delete("/system/priv-app/WapService.odex");
+	  else
+	    delete_recursive("/system/priv-app/WapService");
+	  endif;
 	  delete_recursive("/data/data/com.lge.wapservice");
 	endif;
 	
@@ -1559,9 +1940,17 @@ then
 	then
 	  ui_print("  Removing Weather");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGWeather.apk");
-	  delete("/system/app/LGWeather.odex");
-	  delete("/system/cust/app/overlay/com.lge.sizechangable.weather.apk");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGWeather.apk");
+	    delete("/system/app/LGWeather.odex");
+	    delete("/system/cust/app/overlay/com.lge.sizechangable.weather.apk");
+	  else
+	    delete_recursive("/system/app/LGWeather");
+		delete_recursive("/system/vendor/overlay/com.lge.sizechangable.weather");
+	  endif;
 	  delete_recursive("/data/data/com.lge.sizechangable.weather");
 	endif;
 	
@@ -1571,8 +1960,15 @@ then
 	then
 	  ui_print("  Removing WeatherPlatform");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGWeatherService.apk");
-	  delete("/system/app/LGWeatherService.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGWeatherService.apk");
+	    delete("/system/app/LGWeatherService.odex");
+	  else
+	    delete_recursive("/system/app/LGWeatherService");
+	  endif;
 	  delete_recursive("/data/data/com.lge.sizechangable.weather.platform");
 	endif;
 	
@@ -1582,41 +1978,59 @@ then
 	then
 	  ui_print("  Removing Weather Theme");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/LGWeatherTheme.apk");
-	  delete("/system/app/LGWeatherTheme.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/LGWeatherTheme.apk");
+	    delete("/system/app/LGWeatherTheme.odex");
+	  else
+	    delete_recursive("/system/app/LGWeatherTheme");
+		delete_recursive("/system/vendor/overlay/com.lge.sizechangable.weather.theme.optimus");
+	  endif;
 	  delete_recursive("/data/data/com.lge.sizechangable.weather.theme.optimus");
 	endif;
 
-	# Wfd Service (Qualcomm, WFDS)
+	# Wfd/Wfds Stuff
 	if
 	  file_getprop("/tmp/aroma/customize.prop","item.5.60") == "1"
 	then
-	  ui_print("  Removing Wfd Service (Qualcomm, WFDS)");
+	  ui_print("  Removing Wfd/Wfds (???) Stuff");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGWFDSService.apk");
-	  delete("/system/priv-app/LGWFDSService.odex");
-	  delete_recursive("/data/data/com.lge.wfds.service");
-	endif;
-	
-	# WfdsService (WFDS)
-	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.61") == "1"
-	then
-	  ui_print("  Removing WfdsService (WFDS)");
-	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/priv-app/LGWFDSService.apk");
-	  delete("/system/priv-app/LGWFDSService.odex");
-	  delete_recursive("/data/data/com.lge.wfds.service");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/priv-app/WfdService.apk");
+	    delete("/system/priv-app/WfdService.odex");
+  	    delete("/system/priv-app/LGWFDSService.apk");
+	    delete("/system/priv-app/LGWFDSService.odex");
+	    delete_recursive("/data/data/com.lge.wfds.service");
+	  else
+	    delete_recursive("/system/app/WfdService");
+		delete_recursive("/system/app/LGWfdsServices");
+		delete_recursive("/system/app/WfdsSendService");
+        delete_recursive("/data/data/com.qualcomm.wfd.service");
+		delete_recursive("/data/data/com.lge.wfds.service.v3");
+		delete_recursive("/data/data/com.lge.wfds.service.v2");
+      endif;
 	endif;
 	
 	# Widevine Keybox Test
 	if
-	  file_getprop("/tmp/aroma/customize.prop","item.5.62") == "1"
+	  file_getprop("/tmp/aroma/customize.prop","item.5.61") == "1"
 	then
 	  ui_print("  Removing Widevine Keybox Test");
 	  #run_program("/tmp/aroma/sleep","300");
-	  delete("/system/app/WVTest.apk");
-	  delete("/system/app/WVTest.odex");
+	  if 
+	    file_getprop("/tmp/aroma/version.prop","selected.0") == "1"
+	  then
+	    # 4.4
+	    delete("/system/app/WVTest.apk");
+	    delete("/system/app/WVTest.odex");
+	  else
+	    delete_recursive("/system/app/WVTest");
+	  endif;
 	  delete_recursive("/data/data/com.lge.wv.hidden");
 	endif;
 	
@@ -2998,38 +3412,168 @@ then
     file_getprop("/tmp/aroma/ctt.prop","selected.0") == "1"
   then
     ui_print("  Restoring stock 1.5 GHz @ 60°C");
-	package_extract_dir("system_thermalstock", "/system");
+	package_extract_dir("ctt_stock", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
   endif;
   
-  # 70°C
+  # Stock modded
   if
     file_getprop("/tmp/aroma/ctt.prop","selected.0") == "2"
   then
-    ui_print("  Installing mod 2.26 GHz @ 70°C");
-	package_extract_dir("system_thermal70_v31", "/system");
+    ui_print("  Installing Stock 1.5 GHz @ 60°C with minor changes");
+	package_extract_dir("ctt_stock60mod_rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
   endif;
 
-  # 75°C
+  # Standard 65°C
   if
     file_getprop("/tmp/aroma/ctt.prop","selected.0") == "3"
   then
-    ui_print("  Installing mod 2.26 GHz @ 75°C");
-	package_extract_dir("system_thermal75_v41", "/system");
+    ui_print("  Installing Standard 2.34 GHz @ 65°C");
+	package_extract_dir("ctt_standard65rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
   endif;
 
-  # 80°C
+  # Standard 70°C
   if
     file_getprop("/tmp/aroma/ctt.prop","selected.0") == "4"
   then
-    ui_print("  Installing mod 2.26 GHz @ 80°C");
-	package_extract_dir("system_thermal80_v20", "/system");
+    ui_print("  Installing Standard 2.34 GHz @ 70°C");
+	package_extract_dir("ctt_standard70rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Standard 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "5"
+  then
+    ui_print("  Installing Standard 2.34 GHz @ 75°C");
+	package_extract_dir("ctt_standard75rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Standard 75°C extra step
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "6"
+  then
+    ui_print("  Installing Standard 2.34 GHz @ 75°C with extra step");
+	package_extract_dir("ctt_standard75rc5.1.2-4stepdowns", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Stepdown 70°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "7"
+  then
+    ui_print("  Installing Stepdown 2.34 GHz @ 70°C");
+	package_extract_dir("ctt_stepdown70rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Stepdown 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "8"
+  then
+    ui_print("  Installing Stepdown 2.34 GHz @ 75°C");
+	package_extract_dir("ctt_stepdown75rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Stepdown 80°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "9"
+  then
+    ui_print("  Installing Stepdown 2.34 GHz @ 80°C");
+	package_extract_dir("ctt_stepdown80rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # OC 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "10"
+  then
+    ui_print("  Installing OC 2.34 GHz @ 75°C");
+	package_extract_dir("ctt_oc75rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Chupa 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "11"
+  then
+    ui_print("  Installing ChupaChups 2.34 GHz @ 75°C");
+	package_extract_dir("ctt_chupa75rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Chupa 70°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "12"
+  then
+    ui_print("  Installing ChupaChups 2.34 GHz @ 70°C");
+	package_extract_dir("ctt_chupa70rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(1000, 1000, 0644, "/system/etc/thermal-engine-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine.conf");
+    set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermald.conf");
+  endif;
+
+  # Cat 6 75°C
+  if
+    file_getprop("/tmp/aroma/ctt.prop","selected.0") == "13"
+  then
+    ui_print("  Installing Cat 6 2.34 GHz @ 75°C");
+	package_extract_dir("ctt_cat675rc5.1.2", "/system");
+	ui_print("  Setting permissions");
+    set_perm(0, 0, 0644, "/system/etc/thermal-engine-8084.conf");
+    set_perm(1000, 1000, 0777, "/system/etc/thermal-engine-default.conf");
   endif;
   
-  ui_print("  Setting permissions");
-  set_perm(0, 0, 0644, "/system/etc/thermal-engine-8974.conf");
-  set_perm(0, 0, 0777, "/system/etc/thermal-engine.conf");
-  set_perm(1000, 1000, 0644, "/system/etc/thermald-8974.conf");
-  set_perm(0, 0, 0777, "/system/etc/thermald.conf");
   ui_print(" ");
   
   #####################################################################################################
@@ -3059,10 +3603,10 @@ then
   package_extract_dir("oversharpen", "/tmp");
   ui_print(" ");
   set_progress(0.7);
-  ui_print("  Set permissions");
+  ui_print("@Set permissions");
   set_metadata("/tmp/apply-patch.sh", "uid", 0, "gid", 0, "mode", 0755);
   set_metadata("/tmp/livebump.sh", "uid", 0, "gid", 0, "mode", 0755);
-  ui_print("  Running script and bumping boot image");
+  ui_print("@Running script and bumping boot image");	
   run_program("/tmp/apply-patch.sh");
   ui_print(" ");
   ui_print("  Done");

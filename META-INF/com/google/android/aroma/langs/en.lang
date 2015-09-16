@@ -118,7 +118,7 @@ debloatinstructions.warning=Choose the correct Android version! Otherwise the ap
 \
 <#006eff><b>Safe with Alternative</b></#>: Safe to remove, but have a replacement installed. <b><#00f>Can lead to Setup Loop after Factory Reset! (esp. Keyboard and Launcher)</#></b>\
 \
-<#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store. If you moved a GApp to userspace before, using the debloater on it will <b>delete the app settings</b> for the selected app but not the app!\
+<#0f0><b>Google Apps</b></#>: All GApps can be reinstalled from Play Store. If you moved a GApp to userspace before or installed an update for it, using the debloater on it will <b>delete the app settings</b> for the selected app but not the app in userspace!\
 \
 <#0000ff><b>Potentially dangerous</b></#>: Deleting these can or will have side-effects.\
 \
@@ -522,20 +522,48 @@ LG clocks down the device to 1.5 GHz starting from 60°C and keeps using similar
 With this mod the G3 clocks down to 2.26 GHz at 70/75/80°C.\
 The second and third "bump" are increased as well, <b>the last four bumps are left at factory settings</b>.\
 This ensures that the device delivers more power, but does not reach dangerous temperatures as the default emergency mechanisms will kick in.
+cttagree.desc=Preparation!
+cttagree.text=To use CTT Mod, open a File Manager (TWRP/in running System/adb shell) and <b>pull a backup</b> of thermal-engine-8974.config, thermal-engine, thermald.conf and thermald-8974.config.\
+If you don't have all of these files, copy the ones you do have.\
+Finally <b>delete</b> these files from /system/etc.\
+\
+Once this is done, you can continue.\
+Chose the correct version!\
+Standard is compatible with most kernels, Stepdown is compatible with e.g. SkyDragon ROMs, the remainder is specific for some ROMs.
+cttagree.check=I deleted the files...
+cttagree.confirm=Check your input...
 
 #
 #-- CTT customizations
 #
 cttcustomize.title=Choose action
 cttcustomize.desc=Choose an action
-cttcustomize.1=Stock
-cttcustomize.1desc=LG default - 1.5 GHz @ 60°C
-cttcustomize.2=70°C
-cttcustomize.2desc=Mod 2.26 GHz @ <b>70</b>°C
-cttcustomize.3=75°C
-cttcustomize.3desc=Mod 2.26 GHz @ <b>75</b>°C
-cttcustomize.4=80°C
-cttcustomize.4desc=Mod 2.26 GHz @ <b>80</b>°C
+cttcustomize.1=Restore Stock
+cttcustomize.1desc=LG Standard - 1.5 GHz @ 60°C
+cttcustomize.2=Stock 60°C with minor changes
+cttcustomize.2desc=Stock 1.5 GHz @ <b>60</b>°C with minor changes
+cttcustomize.3=Stock 65°C
+cttcustomize.3desc=Standard 2.34 GHz @ <b>65</b>°C
+cttcustomize.4=Stock 70°C
+cttcustomize.4desc=Standard 2.34 GHz @ <b>70</b>°C
+cttcustomize.5=Stock 75°C
+cttcustomize.5desc=Standard 2.34 GHz @ <b>75</b>°C
+cttcustomize.6=Stock 75°C with extra step
+cttcustomize.6desc=Standard 2.34 GHz @ <b>75</b>°C with one extra step
+cttcustomize.7=Stepdown 70°C
+cttcustomize.7desc=Stepdown 2.34 GHz @ <b>70</b>°C
+cttcustomize.8=Stepdown 75°C
+cttcustomize.8desc=Stepdown 2.34 GHz @ <b>75</b>°C
+cttcustomize.9=Stepdown 80°C
+cttcustomize.9desc=Stepdown 2.34 GHz @ <b>80</b>°C
+cttcustomize.10=OC 75°C
+cttcustomize.10desc=For OC Kernel 2.34 GHz @ <b>75</b>°C
+cttcustomize.11="D855[20h] ChupaChups ROM and kernel ONLY" 75°C
+cttcustomize.11desc=ChupaChups 2.34 GHz @ <b>75</b>°C
+cttcustomize.12=ChupaChups 70°C
+cttcustomize.12desc=ChupaChups 2.34 GHz @ <b>70</b>°C
+cttcustomize.13=Cat 6 75°C
+cttcustomize.13desc=Cat 6 2.34 GHz @ <b>75</b>°C
 cttcustomize.nextbutton=Install
 
 #
