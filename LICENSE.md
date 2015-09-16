@@ -4,7 +4,9 @@ Copyright (c) 2014-2015 Sub
 
 EXCEPTIONS:
 I did NOT create the following parts so please ask their creators for permission to use:
+
 CPU Thermal Throttling Mod (CTT) - Robshr on xda forums.
+
 Sharpening Mod - Skin1980 on xda forums.
 
 
